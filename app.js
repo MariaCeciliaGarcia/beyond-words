@@ -255,8 +255,8 @@ function questionSheet(q, qs, context) {
     ? correct ? (isCustom ? '和你之前写的相同' : '答对了')
       : (isCustom ? '看看你之前写的句子' : '对照一下')
     : isCustom ? '你之前写的句子' : '可以这样说';
-  return `<section class="sheet question-sheet">
-    <div class="question-heading">${promptMarkup(q)}
+  return `<section class="sheet question-sheet ${qs.revealed?'has-feedback':''}">
+    <div class="question-workspace"><div class="question-heading">${promptMarkup(q)}
     </div><div class="composition ${qs.revealed?'is-reviewed':''}">
     ${q.stem?`<p class="sentence-stem" lang="en">${esc(q.stem)}</p>`:''}<div class="input-toolbar"><div class="input-identity"><label class="input-label" for="answer"><span class="input-symbol" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m15 5 4 4M5 19l4-1 11-11a2.8 2.8 0 0 0-4-4L5 14Z"/></svg></span>${esc(q.inputLabel||'你的英文')}</label>${!qs.revealed?`<span class="composition-help">${q.stem?'先说完整句。':lesson.examSkill&&lesson.examSkill!=='speaking'?'先想，再写。':'先说，再写。'}</span>`:''}</div>${hintControls}</div>
     <textarea id="answer" placeholder="在这里输入你的英文…" lang="en" spellcheck="false" autocomplete="off" autocapitalize="off">${esc(qs.input)}</textarea>
@@ -264,7 +264,7 @@ function questionSheet(q, qs, context) {
     ${!qs.revealed ? `<div class="answer-actions">
       ${button(isEntry ? '查看表达' : '查看答案', 'reveal', 'reveal-link')}
       <div class="submit-group">${button('核对答案', 'check', 'button primary-check', qs.input.trim() ? '' : 'disabled')}</div>
-    </div>` : ''}</div>
+    </div>` : ''}</div></div>
     ${qs.revealed ? `<div class="answer-box ${correct?'is-correct':qs.checked?'is-comparison':'is-revealed'}" aria-live="polite">
       <p class="result ${qs.checked && !correct ? 'comparison' : ''}">${correct ? '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg>' : '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 8h14m-4-4 4 4-4 4M19 16H5m4-4-4 4 4 4"/></svg>'}${resultLabel}</p>
       ${qs.checked && !correct ? `<p class="input-echo">你写的：${esc(qs.input)}</p>` : ''}
