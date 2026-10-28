@@ -39,10 +39,10 @@ function focusEntryResult(){const result=app.querySelector('#entry-feedback');if
 function personalDraftForm(){return `<label class="section-label" for="custom-scene">发生了什么？</label><textarea id="custom-scene" maxlength="600" placeholder="写下对方说了什么，或当时发生了什么。">${esc(state.draft.scene||'')}</textarea><label class="section-label" for="custom-intent">你想表达什么态度？</label><textarea id="custom-intent" maxlength="300" placeholder="写下你想通过这个回应表达的态度。">${esc(state.draft.intent||'')}</textarea>${personalCheckControl()}`;}
 function pilotCustomPage(){
  const saved=state.learn.savedCustom;
- return `<section class="sheet"><p class="eyebrow section-badge">最后一步 / 我的场景</p><h2>想想你什么时候会这样回应。</h2><p class="lead">写下发生了什么，以及你想表达的态度，不需要另造英文句子。</p>${saved?`<h3>场景已保存</h3>${customList(false)}<div class="actions">${button('换个场景','continue-create','button secondary')}${button('结束创建','finish-learn')}</div>`:`${personalDraftForm()}<div class="actions">${button('保存场景','save-scenario')}${button('稍后再写','finish-learn','button secondary')}</div>`}<div class="muted-box">${saved?'每个语块只保留最近一条场景，用于之后的回忆练习。':'每个语块只保留最近一条场景。写好后对照一下：'+esc(lesson.personalPrompt||'这个回应能表达你在该场景中的态度吗？')}保存不代表场景用法已经过自动判断。</div></section>`;
+ return `<section class="sheet"><p class="eyebrow section-badge">最后一步 / 我的场景</p><h2>想想你什么时候会这样回应。</h2><p class="lead">写下发生了什么，以及你想表达的态度，不需要另造英文句子。</p>${saved?`<h3>场景已保存</h3>${customList(false)}<div class="actions">${button('继续创建','continue-create','button secondary')}${button('结束创建','finish-learn')}</div>`:`${personalDraftForm()}<div class="actions">${button('保存场景','save-scenario')}${button('稍后再写','finish-learn','button secondary')}</div>`}<div class="muted-box">${saved?'保存的场景会用于之后的回忆练习。':'写好后对照一下：'+esc(lesson.personalPrompt||'这个回应能表达你在该场景中的态度吗？')}保存不代表场景用法已经过自动判断。</div></section>`;
 }
-function personalQuestion(c,unit=lesson){
- if(unit.practiceProfile==='scenario')return {id:c.id,type:'recall',zh:'先想一句回应，再看表达。',target:'先想一句回应，再看表达。',scene:c.scene||c.zh,intent:c.intent||'',answers:[c.kind==='scenario'?unit.expression:c.en||unit.expression],hint:'态度：结合你保存的场景，回忆这个回应的用途。',feedback:'这是你保存的个人场景。对照一下：这句回应能表达你当时的态度吗？场景不贴切时可以修改。'};
+function personalQuestion(c){
+ if(scenarioUnit())return {id:c.id,type:'recall',zh:'先想一句回应，再看表达。',target:'先想一句回应，再看表达。',scene:c.scene||c.zh,intent:c.intent||'',answers:[c.kind==='scenario'?lesson.expression:c.en||lesson.expression],hint:'态度：结合你保存的场景，回忆这个回应的用途。',feedback:'这是你保存的个人场景。对照一下：这句回应能表达你当时的态度吗？场景不贴切时可以修改。'};
  return {id:c.id,zh:c.zh,answers:[c.en],hint:'先试着表达你保存的意思；想不起来时再看原句。'};
 }
 function pilotStatsMarkup(results){
@@ -51,25 +51,12 @@ function pilotStatsMarkup(results){
 }
 function editScenario(id){
  editingCustom=id||null;const c=state.custom.find(x=>x.id===id);
- showDialog(`<h2>${c?'修改场景':state.custom.length?'换个场景':'新增场景'}</h2>${!c&&state.custom.length?'<p class="small">保存后替换当前场景。</p>':''}<label class="section-label" for="edit-scene">发生了什么？</label><textarea id="edit-scene" maxlength="600">${esc(c?.scene||c?.zh||state.draft.scene||'')}</textarea><label class="section-label" for="edit-intent">你想表达什么态度？</label><textarea id="edit-intent" maxlength="300">${esc(c?.intent||state.draft.intent||'')}</textarea><p class="small">对照：${esc(lesson.personalPrompt||'这个回应能表达你当时的态度吗？')}</p><div class="ai-check-tools">${button('复制 AI 核对指令','copy-ai-check','button secondary',`data-id="${id||''}"`)}</div><div class="actions">${button('保存','commit-scenario','button',`data-id="${id||''}"`)}${button('取消','close-dialog','button secondary')}</div>`);
-}
-function pinPersonalRound(r,unit,items=r.custom){
- if(!r.review||!unit)return;
- const needed=items.filter(c=>r.review.queue.includes(c.id)&&!r.review.pinnedQuestions?.some(q=>q.id===c.id));
- if(needed.length)r.review.pinnedQuestions=[...(r.review.pinnedQuestions||unit.review),...needed.map(c=>personalQuestion(c,unit))];
-}
-function retainLatestPersonal(r,unit){
- if(!Array.isArray(r.custom)||r.custom.length<=1)return;
- pinPersonalRound(r,unit);r.custom=r.custom.slice(-1);
-}
-function savePersonalContent(content,id){
- pinPersonalRound(state,lesson);
- const current=state.custom.find(c=>c.id===id)||state.custom.at(-1);
- state.custom=[{id:current?.id||`c-${crypto.randomUUID()}`,...content}];
+ showDialog(`<h2>${c?'修改场景':'新增场景'}</h2><label class="section-label" for="edit-scene">发生了什么？</label><textarea id="edit-scene" maxlength="600">${esc(c?.scene||c?.zh||state.draft.scene||'')}</textarea><label class="section-label" for="edit-intent">你想表达什么态度？</label><textarea id="edit-intent" maxlength="300">${esc(c?.intent||state.draft.intent||'')}</textarea><p class="small">对照：${esc(lesson.personalPrompt||'这个回应能表达你当时的态度吗？')}</p><div class="ai-check-tools">${button('复制 AI 核对指令','copy-ai-check','button secondary',`data-id="${id||''}"`)}</div><div class="actions">${button('保存','commit-scenario','button',`data-id="${id||''}"`)}${button('取消','close-dialog','button secondary')}</div>`);
 }
 function saveScenario(scene,intent,id){
  if(!scene.trim()||!intent.trim()){toast('请写下场景和你想表达的态度');return false;}
  const existing=state.custom.find(x=>x.id===id);
- savePersonalContent({kind:'scenario',scene:scene.trim(),intent:intent.trim()},id);
+ if(existing)Object.assign(existing,{kind:'scenario',scene:scene.trim(),intent:intent.trim()});
+ else state.custom.push({id:`c-${crypto.randomUUID()}`,kind:'scenario',scene:scene.trim(),intent:intent.trim()});
  if(!existing){state.draft.scene='';state.draft.intent='';}save();return true;
 }

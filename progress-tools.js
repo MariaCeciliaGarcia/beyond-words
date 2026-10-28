@@ -27,7 +27,6 @@ function persistProgress(){
  let latest=null;try{latest=parseStored(localStorage.getItem(KEY));}catch{}
  if(latest&&Number(latest.generation||0)>Number(store.generation||0)){keepProgressConflict();installProgressRuntime(latest);setTimeout(()=>render(),0);return persistProgress();}
  if(latest&&Number(latest.generation||0)===Number(store.generation||0)){preserveRecordConflicts(latest.records);store.records=mergeProgressRecords(store.records,latest.records);for(const kind of ['learn','review'])if(Number(latest.resume?.[kind]?.at||0)>Number(store.resume?.[kind]?.at||0)){store.resume=store.resume||{};store.resume[kind]=latest.resume[kind];}}
- for(const [id,r]of Object.entries(store.records))retainLatestPersonal(r,unitById.get(id));
  state=store.records[lesson.id];store.activeId=lesson.id;store.ui={view,tab,filter,subfilter,search,domain,page,lastSpoken,lastExam};
  store.resume=store.resume||{};
  if(view==='study'&&state.learn&&(!state.mastered||state.learn.dailyReplay))store.resume.learn={id:lesson.id,origin:state.learn.origin,at:Date.now()};
@@ -94,7 +93,6 @@ function checkedProgress(data){
   if(r.summary&&!validResults(r.summary.results))throw Error('备份中的复习小结无法读取。');
   for(const round of [r.learn,r.review]){if(round?.pinnedLesson){for(const field of ['meaning','expression','formula','explanation','boundary','checkpoint'])if(round.pinnedLesson[field]!==undefined&&typeof round.pinnedLesson[field]!=='string')throw Error('备份中的讲解文字无法读取。');}if(round?.pinnedLesson?.examples&&(!Array.isArray(round.pinnedLesson.examples)||!round.pinnedLesson.examples.every(e=>typeof e.en==='string'&&typeof e.zh==='string')))throw Error('备份中的讲解无法读取。');}
   if(r.dailyVisits){if(typeof r.dailyVisits!=='object'||Array.isArray(r.dailyVisits))throw Error('每日进度无法读取。');for(const [day,visit]of Object.entries(r.dailyVisits))if(!/^\d{4}-\d{2}-\d{2}$/.test(day)||!visit||!['done','skip','mastered'].includes(visit.status)||!Number.isFinite(visit.at))throw Error('每日进度不完整。');}
-  retainLatestPersonal(r,unitById.get(id));
   copy.records[id]=r;
  }
  if(copy.reviewScope&&(!['cecilia'].includes(copy.reviewScope.domain)||copy.reviewScope.dateId!==undefined&&typeof copy.reviewScope.dateId!=='string'))delete copy.reviewScope;
@@ -139,3 +137,14 @@ function backupReminder(){
 
 function hasProgressConflict(){try{return !!localStorage.getItem(KEY+'.conflict');}catch{return false;}}
 function exportProgressConflict(index){let saved;try{const list=progressConflictList();saved=checkedProgress(list[Number(index)]?.data||JSON.parse(localStorage.getItem(KEY+'.conflict')||'null'));}catch{toast('暂时无法读取另一标签页副本');return;}downloadProgressText(JSON.stringify({format:'jujian-progress',formatVersion:1,exportedAt:new Date().toISOString(),data:saved},null,2),'Beyond Words-另一标签页进度副本.json');}
+
+// Repair only the untouched compaction from the short-lived v1.9.3 release.
+function recoverPersonalHistory(data){
+ if(data.personalHistoryRepair==='1.9.4')return 0;
+ let previous;try{previous=checkedProgress(JSON.parse(localStorage.getItem(KEY+'.previous')||'null'));}catch{return 0;}
+ const badRelease=Date.parse('2026-10-28T23:34:10+08:00');
+ if(Number(data.updatedAt||0)<badRelease||Number(previous.updatedAt||0)>=badRelease||Number(previous.generation||0)!==Number(data.generation||0))return 0;
+ let restored=0;
+ for(const [id,r]of Object.entries(data.records)){const old=previous.records[id];if(r.custom?.length===1&&old?.custom?.length>1&&Number(r.updatedAt||0)===Number(old.updatedAt||0)&&JSON.stringify(r.custom[0])===JSON.stringify(old.custom.at(-1))){restored+=old.custom.length-1;r.custom=old.custom;}}
+ data.personalHistoryRepair='1.9.4';return restored;
+}
