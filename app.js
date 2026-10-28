@@ -80,7 +80,7 @@ const routeURL=route=>`${location.pathname}${location.search}#${route}${route===
 const routeState=route=>({jujianRoute:route,lessonId:lesson.id,tab,filter,subfilter,search,domain,page,lastSpoken,lastExam});
 function go(next){
   if(!routes.has(next))return;
-  if(next!==view||history.state?.lessonId!==lesson.id||next==='library'&&domain==='cecilia'&&(history.state?.domain!==domain||history.state?.filter!==filter))history.pushState(routeState(next),'',routeURL(next));
+  if(next!==view||history.state?.lessonId!==lesson.id||next==='library'&&(history.state?.domain!==domain||history.state?.filter!==filter))history.pushState(routeState(next),'',routeURL(next));
   view=next;render();window.scrollTo(0,0);
 }
 function initializeNavigation(){

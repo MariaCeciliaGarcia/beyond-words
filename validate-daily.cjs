@@ -57,3 +57,5 @@ console.log('PASS: visible Cecilia directory entry; new dates appear automatical
 
 click(directory,'cecilia-learning-root');assert.equal(dr('domain'),'daily');assert.equal(dr('filter'),'all');
 assert(dr("app.innerHTML.includes('每日语料 · 按日期学习')"));
+
+click(directory,'cecilia-dates');const beforeRootBack=directory.history.entries.length;click(directory,'cecilia-learning-root');assert.equal(directory.history.entries.length,beforeRootBack+1);
