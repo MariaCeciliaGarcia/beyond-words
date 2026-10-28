@@ -125,7 +125,7 @@ function render(){
   const pages={home:homePage,library:libraryPage,study:studyPage,review:reviewPage,practice:reviewPracticePage,detail:detailPage,mastered:masteredPage,summary:summaryPage,mastery:masteryPage};
   app.innerHTML=(pages[view]||homePage)();
   state.lastView=view;save();history.replaceState(routeState(view),'',routeURL(view));
-  document.title=`${({home:'学习与复习',library:'语块库',study:'学习',review:'复习库',practice:'复习',detail:personalLabel(),mastered:'已掌握',mastery:'已标记掌握',summary:state.summary?.results?.length>0&&state.summary.results.every(x=>x.grade==='skip')?'本轮已结束':'本轮完成'})[view]||'语块练习'} · 句间`;
+  document.title=`${({home:'学习与复习',library:'语块库',study:'学习',review:'复习库',practice:'复习',detail:personalLabel(),mastered:'已掌握',mastery:'已标记掌握',summary:state.summary?.results?.length>0&&state.summary.results.every(x=>x.grade==='skip')?'本轮已结束':'本轮完成'})[view]||'语块练习'} · Beyond Words`;
 }
 function homePage(){return supportHomePage();}
 
@@ -369,7 +369,7 @@ case 'close-ai-copy':document.getElementById('ai-fallback')?.remove();document.g
 case 'manage-progress':progressManager();break;
 case 'export-progress':exportProgress();break;
 case 'export-progress-conflict':exportProgressConflict(el.dataset.index);break;
-case 'export-damaged-progress':downloadProgressText(damagedProgress,'句间-原始进度.txt','text/plain');break;
+case 'export-damaged-progress':downloadProgressText(damagedProgress,'Beyond Words-原始进度.txt','text/plain');break;
 case 'choose-progress-file':document.getElementById('progress-file').click();break;
 case 'preview-progress-paste':previewProgressImport(document.getElementById('progress-paste').value);break;
 case 'apply-progress-import':applyProgressImport(dialog.querySelector('input[name="restore-mode"]:checked')?.value||'merge');break;
@@ -437,7 +437,7 @@ case 'close-dialog':dialog.close();break;
 }});
 document.getElementById('progress-link').addEventListener('click',progressManager);
 window.addEventListener('storage',handleProgressStorage);
-document.addEventListener('change',async event=>{if(event.target.id==='progress-file'&&event.target.files?.[0]){const file=event.target.files[0];if(file.size>8000000){toast('请选择小于 8 MB 的句间备份');return;}try{previewProgressImport(await file.text());}catch{toast('文件读取失败，请重新选择');}}});
+document.addEventListener('change',async event=>{if(event.target.id==='progress-file'&&event.target.files?.[0]){const file=event.target.files[0];if(file.size>8000000){toast('请选择小于 8 MB 的Beyond Words备份');return;}try{previewProgressImport(await file.text());}catch{toast('文件读取失败，请重新选择');}}});
 document.getElementById('mastered-link').addEventListener('click',()=>go('mastered'));
 window.addEventListener('beforeunload',save);
 initializeNavigation();

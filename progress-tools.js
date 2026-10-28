@@ -70,13 +70,13 @@ function downloadProgressText(text,filename,mime='application/json'){
 function exportProgress(){
  save();store.backupMeta={...(store.backupMeta||{}),exportedAt:Date.now(),revision:store.dataRevision};save();
  const text=JSON.stringify(progressBackup(),null,2),stamp=new Date().toLocaleString('sv-SE',{timeZone:'Asia/Shanghai'}).replace(/[ :]/g,'-');
- downloadProgressText(text,`句间-学习备份-${stamp}.json`);toast('备份文件已生成，请确认已保存到下载位置');
+ downloadProgressText(text,`Beyond Words-学习备份-${stamp}.json`);toast('备份文件已生成，请确认已保存到下载位置');
 }
 function validQuestion(q){return q&&['target','scene','dialogue','intent','candidates','hint','frame','stem','inputLabel','feedback'].every(k=>q[k]===undefined||typeof q[k]==='string')&&typeof q.id==='string'&&typeof q.zh==='string'&&Array.isArray(q.answers)&&q.answers.length&&q.answers.every(a=>typeof a==='string')&&(!q.type||['input','choice','recall'].includes(q.type))&&(!q.type||q.type!=='choice'||Array.isArray(q.choices)&&q.choices.every(c=>typeof c.id==='string'&&typeof c.text==='string')&&q.choices.some(c=>c.id===q.correctChoice));}
 function validQuestionState(q){return q&&typeof q.input==='string'&&Array.isArray(q.hints)&&q.hints.every(h=>typeof h==='string');}
 function validResults(list){return Array.isArray(list)&&list.every(r=>r&&['good','hard','again','skip'].includes(r.grade));}
 function checkedProgress(data){
- if(!basicProgress(data))throw Error('这不是可识别的句间进度。');
+ if(!basicProgress(data))throw Error('这不是可识别的Beyond Words进度。');
  if(data.generation!==undefined&&(!Number.isSafeInteger(data.generation)||data.generation<0))throw Error('备份版本标记无法读取。');
  if(Object.keys(data.records).length>2000)throw Error('备份记录过多，暂时无法导入。');
  const copy=JSON.parse(JSON.stringify(data));
@@ -96,10 +96,10 @@ function checkedProgress(data){
  copy.ui=copy.ui&&typeof copy.ui==='object'&&!Array.isArray(copy.ui)?copy.ui:{};for(const field of ['view','tab','domain','filter','subfilter','search','lastSpoken','lastExam'])if(copy.ui[field]!==undefined&&typeof copy.ui[field]!=='string')delete copy.ui[field];for(const field of ['updatedAt','dataRevision'])if(!Number.isFinite(copy[field])||copy[field]<0)copy[field]=0;if(copy.activeId!==undefined&&typeof copy.activeId!=='string')copy.activeId='ever';if(copy.backupMeta){const clean={};for(const field of ['exportedAt','revision','snoozeUntil'])if(Number.isFinite(copy.backupMeta[field]))clean[field]=copy.backupMeta[field];copy.backupMeta=clean;}if(copy.resume){const clean={};for(const kind of ['learn','review'])if(typeof copy.resume[kind]?.id==='string'&&Number.isFinite(copy.resume[kind]?.at))clean[kind]=copy.resume[kind];copy.resume=clean;}return copy;
 }
 function parseProgressBackup(text){
- if(typeof text!=='string'||text.length>8000000)throw Error('请选择小于 8 MB 的句间备份。');
- let payload;try{payload=JSON.parse(text);}catch{throw Error('文件内容无法读取，请选择句间导出的 JSON 备份。');}
- if(payload.format!=='jujian-progress'||payload.formatVersion!==1)throw Error('这不是句间导出的进度备份。');
- if(typeof payload.exportedAt!=='string'||!Number.isFinite(new Date(payload.exportedAt).getTime()))throw Error('备份时间信息不完整，请选择句间导出的原始文件。');return {...payload,data:checkedProgress(payload.data)};
+ if(typeof text!=='string'||text.length>8000000)throw Error('请选择小于 8 MB 的Beyond Words备份。');
+ let payload;try{payload=JSON.parse(text);}catch{throw Error('文件内容无法读取，请选择Beyond Words导出的 JSON 备份。');}
+ if(payload.format!=='jujian-progress'||payload.formatVersion!==1)throw Error('这不是Beyond Words导出的进度备份。');
+ if(typeof payload.exportedAt!=='string'||!Number.isFinite(new Date(payload.exportedAt).getTime()))throw Error('备份时间信息不完整，请选择Beyond Words导出的原始文件。');return {...payload,data:checkedProgress(payload.data)};
 }
 function previewProgressImport(text){
  try{pendingImport=parseProgressBackup(text);}catch(e){pendingImport=null;toast(e.message);return false;}
@@ -124,7 +124,7 @@ function undoProgressImport(){
 }
 function progressManager(){
  save();const n=progressCounts(store);let undo=false;try{undo=!!localStorage.getItem(KEY+'.before-import');}catch{}
- showDialog(`<h2>进度备份</h2><p>导出一份文件，换浏览器或设备后可以导入，接着练。</p><div class="muted-box">${n.learning} 个学习中 · ${n.review} 个待复习 · ${n.mastered} 个已掌握<br>${n.custom} 条个人例句或场景</div><div class="actions">${button('导出备份','export-progress')}${button('导入备份','choose-progress-file','button secondary')}</div><input type="file" id="progress-file" accept=".json,application/json" hidden><p class="small">${store.backupMeta?.exportedAt?`上次生成备份：${esc(new Date(store.backupMeta.exportedAt).toLocaleString('zh-CN'))}`:'还没有生成过文件备份。'}请确认文件已保存到下载位置。</p><details class="import-paste"><summary>也可以粘贴备份内容</summary><label class="section-label" for="progress-paste">句间备份 JSON</label><textarea id="progress-paste" spellcheck="false"></textarea>${button('查看这份备份','preview-progress-paste','button secondary')}</details>${undo?`<div class="actions">${button('撤销上次导入','undo-progress-import','text-button')}</div>`:''}${hasProgressConflict()?`<details><summary>其他标签页留下的进度副本</summary>${progressConflictList().map((item,index)=>`<div class="actions">${button('导出副本 '+(index+1),'export-progress-conflict','text-button',`data-index="${index}"`)}<span class="small">${esc(new Date(item.at).toLocaleString('zh-CN'))}</span></div>`).join('')}</details>`:''}${damagedProgress?`<div class="actions">${button('导出原始数据','export-damaged-progress','text-button')}</div>`:''}<p class="small">普通刷新会保留已成功保存的进度；清除网站数据前请导出文件。不同浏览器和地址分别保存，可用备份迁移。</p><p class="storage-origin">当前入口：${esc(location.origin||'当前浏览器')}</p>`);
+ showDialog(`<h2>进度备份</h2><p>导出一份文件，换浏览器或设备后可以导入，接着练。</p><div class="muted-box">${n.learning} 个学习中 · ${n.review} 个待复习 · ${n.mastered} 个已掌握<br>${n.custom} 条个人例句或场景</div><div class="actions">${button('导出备份','export-progress')}${button('导入备份','choose-progress-file','button secondary')}</div><input type="file" id="progress-file" accept=".json,application/json" hidden><p class="small">${store.backupMeta?.exportedAt?`上次生成备份：${esc(new Date(store.backupMeta.exportedAt).toLocaleString('zh-CN'))}`:'还没有生成过文件备份。'}请确认文件已保存到下载位置。</p><details class="import-paste"><summary>也可以粘贴备份内容</summary><label class="section-label" for="progress-paste">Beyond Words备份 JSON</label><textarea id="progress-paste" spellcheck="false"></textarea>${button('查看这份备份','preview-progress-paste','button secondary')}</details>${undo?`<div class="actions">${button('撤销上次导入','undo-progress-import','text-button')}</div>`:''}${hasProgressConflict()?`<details><summary>其他标签页留下的进度副本</summary>${progressConflictList().map((item,index)=>`<div class="actions">${button('导出副本 '+(index+1),'export-progress-conflict','text-button',`data-index="${index}"`)}<span class="small">${esc(new Date(item.at).toLocaleString('zh-CN'))}</span></div>`).join('')}</details>`:''}${damagedProgress?`<div class="actions">${button('导出原始数据','export-damaged-progress','text-button')}</div>`:''}<p class="small">普通刷新会保留已成功保存的进度；清除网站数据前请导出文件。不同浏览器和地址分别保存，可用备份迁移。</p><p class="storage-origin">当前入口：${esc(location.origin||'当前浏览器')}</p>`);
 }
 function backupReminder(){
  const meaningful=Object.values(store.records).some(r=>r.enrolled||r.custom?.length||r.learn?.results?.length),meta=store.backupMeta||{};
@@ -133,4 +133,4 @@ function backupReminder(){
 }
 
 function hasProgressConflict(){try{return !!localStorage.getItem(KEY+'.conflict');}catch{return false;}}
-function exportProgressConflict(index){let saved;try{const list=progressConflictList();saved=checkedProgress(list[Number(index)]?.data||JSON.parse(localStorage.getItem(KEY+'.conflict')||'null'));}catch{toast('暂时无法读取另一标签页副本');return;}downloadProgressText(JSON.stringify({format:'jujian-progress',formatVersion:1,exportedAt:new Date().toISOString(),data:saved},null,2),'句间-另一标签页进度副本.json');}
+function exportProgressConflict(index){let saved;try{const list=progressConflictList();saved=checkedProgress(list[Number(index)]?.data||JSON.parse(localStorage.getItem(KEY+'.conflict')||'null'));}catch{toast('暂时无法读取另一标签页副本');return;}downloadProgressText(JSON.stringify({format:'jujian-progress',formatVersion:1,exportedAt:new Date().toISOString(),data:saved},null,2),'Beyond Words-另一标签页进度副本.json');}

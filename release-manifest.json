@@ -1,11 +1,11 @@
 {
-  "version": "1.8.0",
+  "version": "1.8.1",
   "date": "2026-10-28",
   "files": {
-    ".gitignore": "66f7816179443c4b5861b97bea177fcc63abc35ae49720e62e1611a3ba02ab01",
-    "AGENTS.md": "8ddee332a4ac8fb70a1167089bbe7d8f3d9faa8252cad8eed152b446a74833a9",
-    "README.md": "9a2f020b19b41f30153f9f99097ae6b7ef3ba3f9501dfe3db6723d61fbfad572",
-    "app.js": "3b45d9d7b76ef4b8fdb450aa55967e8449976a127926cf42cf88e7420ec7a02b",
+    ".gitignore": "93713da3db385221282078a0be4bb0dd1e4df66068c2fc839d402ae10665efa3",
+    "AGENTS.md": "7685659d0e27a058734faa63b942d3d479e3da3590834b4182c83fe63e16f043",
+    "README.md": "483fd47ebff25b12148bbf51c0b9fb003631e75c5cb42bff790f5e142c1cae9f",
+    "app.js": "92dc44ec4f9abd2e1f768eb7e885c43a8d7710afbe5f3186836df8b86da045f1",
     "catalog-audit.js": "cae831583766e6df81e838bb410a435d519319c5d216d0b48046d23771f9e49f",
     "catalog-coverage.js": "e584825951ec93fc4b72535b87820880eac35c28b547d69c5cc82fed84930dce",
     "catalog-expansion.js": "10e677251d8c1b1fec23e941bc79089901b5d8701b9e9eb0c192a90615004e40",
@@ -42,15 +42,15 @@
     "exam-task-fit.json": "270bbaff5ca0f9184b35953a3685f9194537e85a254285f001db8aa7299ed6a9",
     "exam-taxonomy.json": "6f8f5cf4b6c3ffa71fea031a576f9448bb80e5182200be4f7978ee7881610e27",
     "hint-rules.js": "97623f89fb5e02048dbdbcd1bd39ade2b1339c5a47487c2f8c138128deec22cb",
-    "index.html": "7751f6a4279c38ba98f4df6f06b300a93e36659510002bbbbd780d6d1b873deb",
+    "index.html": "6ae2c02551b857edac37bee91733cc491efad0efc7784642d8b7ee1f0183abcb",
     "learning-support.js": "001492e1fd33981b6c353c190f44ad4c2569f7cc04b3bb1edb93f3c70384cd16",
     "legacy-content.js": "71c9e5befd1f69b51c67697fe4097fe6bc57f949b96adcc53f597d3e762f5050",
     "pilot-ui.js": "01c4bdee1442c0d224e75d33ea97e2f3bbe5f37021024fb88a2466771428ccbf",
-    "progress-tools.js": "95d2e126ef648aabd9773061bf26ef85384bc9d1544c53f042e6bb604df991e1",
-    "style.css": "48048dd7bc84e2d7ba0effeb93ebd317caf4a9fc0468d91abd00ce6e3163bd46",
+    "progress-tools.js": "4c331d93328093063f1ee529a34e9f4212df8e1b27b9fcd705d51a7b22f1da60",
+    "style.css": "0c181dc7bf28eda9ba42e26efab42e7da6121f51ab7e518e2e37f424ed89dd18",
     "validate-support.cjs": "20bd1b77861e380d0f7e56268821af96f24eddb3bc1a7223df01fb6c2d53601e",
     "validate.cjs": "f166083dcd0c02bad7c25a6e05f4b2aef2b1dd506865a54385af2a1a06542a39",
     "内容审查-2026-10-28.md": "924b12f75898187586cf7b556319596ebf3e9a604908f93c7516c2ced43a8dfd",
-    "启动预览.command": "4e5dce5ce8268bde53f32ff6dcc6da143a78282edbffb82149c7c824a45209c9"
+    "启动预览.command": "34449c94bf5ed0fc9494593e1813610a3f94dce920963731c30f098319929883"
   }
 }

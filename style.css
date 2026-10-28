@@ -186,3 +186,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #26
 .home-intro.has-resume{padding:22px 0 20px;margin-bottom:12px}.home-intro.has-resume h1{font-size:36px}.home-card .actions{margin-top:auto;padding-top:22px}.home-card h2{margin:0 0 18px;font-size:28px}.home-card p.small{font-size:13px;line-height:1.7}.home-card:not(a):hover{transform:none;box-shadow:0 0 0 1px var(--surface-line),var(--surface-shadow)}
 @media(max-width:650px){.home-intro.has-resume{padding:16px 0 12px}.home-intro.has-resume h1{font-size:28px}.home-card h2{font-size:25px}.home-card .actions{padding-top:18px}}
 .header-tools #progress-link{min-height:36px;padding:8px 13px;border:1px solid #fff;border-radius:999px;background:linear-gradient(150deg,#ffffffed,#edf4fbc9);box-shadow:inset 0 1px 0 #fff,0 0 0 1px #bacde126,0 3px 8px #28486608;color:#3d6488}.header-tools #progress-link:hover{background:#edf5ff;color:#075fae}.restore-options input{accent-color:#2477c6}
+
+/* Beyond Words wordmark; retain the established glass material. */
+.brand{flex-shrink:0;letter-spacing:-.4px;white-space:nowrap}.brand-icon{font-size:11px;font-weight:700;letter-spacing:-.5px}.brand-name{font-size:21px;font-weight:650;line-height:1.2}
+@media(max-width:650px){.brand{gap:8px}.brand-name{font-size:18px}.brand-icon{width:29px;height:29px;font-size:10px}}
