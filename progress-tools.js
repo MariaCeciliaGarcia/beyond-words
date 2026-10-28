@@ -16,7 +16,7 @@ function loadStoredProgress(){
  if(mainRaw||recoveryRaw){progressReadOnly=true;damagedProgress=mainRaw||recoveryRaw;progressIssue='原进度暂时无法读取，已停止覆盖。请导入有效备份，或先导出原始数据。';storageNotice(progressIssue);}
  return null;
 }
-function recordHasProgress(r){return !!(r&&(r.userModified||r.enrolled||r.mastered||r.learn||r.review||r.custom?.length||r.history?.length||r.draft&&Object.values(r.draft).some(v=>typeof v==='string'&&v.trim())));}
+function recordHasProgress(r){return !!(r&&(r.userModified||Object.keys(r.dailyVisits||{}).length||r.enrolled||r.mastered||r.learn||r.review||r.custom?.length||r.history?.length||r.draft&&Object.values(r.draft).some(v=>typeof v==='string'&&v.trim())));}
 function mergeProgressRecords(local,remote){
  const out={...local};for(const [id,r]of Object.entries(remote||{}))if(!out[id]||!recordHasProgress(out[id])&&recordHasProgress(r)||(recordHasProgress(r)||!recordHasProgress(out[id]))&&Number(r.updatedAt||0)>Number(out[id].updatedAt||0))out[id]=r;return out;
 }
@@ -29,8 +29,8 @@ function persistProgress(){
  if(latest&&Number(latest.generation||0)===Number(store.generation||0)){preserveRecordConflicts(latest.records);store.records=mergeProgressRecords(store.records,latest.records);for(const kind of ['learn','review'])if(Number(latest.resume?.[kind]?.at||0)>Number(store.resume?.[kind]?.at||0)){store.resume=store.resume||{};store.resume[kind]=latest.resume[kind];}}
  state=store.records[lesson.id];store.activeId=lesson.id;store.ui={view,tab,filter,subfilter,search,domain,page,lastSpoken,lastExam};
  store.resume=store.resume||{};
- if(view==='study'&&state.learn&&!state.mastered)store.resume.learn={id:lesson.id,at:Date.now()};
- if(view==='practice'&&state.review&&!state.mastered)store.resume.review={id:lesson.id,at:Date.now()};
+ if(view==='study'&&state.learn&&(!state.mastered||state.learn.dailyReplay))store.resume.learn={id:lesson.id,origin:state.learn.origin,at:Date.now()};
+ if(view==='practice'&&state.review&&!state.mastered)store.resume.review={id:lesson.id,origin:state.review.origin||null,at:Date.now()};
  store.updatedAt=Date.now();store.dataRevision=Math.max(Number(store.dataRevision||0),Number(latest?.dataRevision||0))+(edited?1:0);
  for(const [id,r]of Object.entries(store.records))progressSignatures.set(id,progressSignature(r));
  if(progressReadOnly)return false;
@@ -72,8 +72,9 @@ function exportProgress(){
  const text=JSON.stringify(progressBackup(),null,2),stamp=new Date().toLocaleString('sv-SE',{timeZone:'Asia/Shanghai'}).replace(/[ :]/g,'-');
  downloadProgressText(text,`Beyond Words-学习备份-${stamp}.json`);toast('备份文件已生成，请确认已保存到下载位置');
 }
-function validQuestion(q){return q&&['target','scene','dialogue','intent','candidates','hint','frame','stem','inputLabel','feedback'].every(k=>q[k]===undefined||typeof q[k]==='string')&&typeof q.id==='string'&&typeof q.zh==='string'&&Array.isArray(q.answers)&&q.answers.length&&q.answers.every(a=>typeof a==='string')&&(!q.type||['input','choice','recall'].includes(q.type))&&(!q.type||q.type!=='choice'||Array.isArray(q.choices)&&q.choices.every(c=>typeof c.id==='string'&&typeof c.text==='string')&&q.choices.some(c=>c.id===q.correctChoice));}
-function validQuestionState(q){return q&&typeof q.input==='string'&&Array.isArray(q.hints)&&q.hints.every(h=>typeof h==='string');}
+function validHelp(items){return items===undefined||Array.isArray(items)&&items.length<=40&&items.every(i=>typeof i==='string'||i&&typeof i==='object'&&!Array.isArray(i)&&['text','zh','en','label','value'].every(k=>i[k]===undefined||typeof i[k]==='string')&&(i.role===undefined||['support','target'].includes(i.role)));}
+function validQuestion(q){return q&&validHelp(q.lexicalHints)&&validHelp(q.grammarHints)&&['target','scene','dialogue','intent','candidates','hint','frame','stem','inputLabel','feedback','guidance'].every(k=>q[k]===undefined||typeof q[k]==='string')&&typeof q.id==='string'&&typeof q.zh==='string'&&Array.isArray(q.answers)&&q.answers.length&&q.answers.every(a=>typeof a==='string')&&(!q.type||['input','choice','recall'].includes(q.type))&&(!q.type||q.type!=='choice'||Array.isArray(q.choices)&&q.choices.every(c=>typeof c.id==='string'&&typeof c.text==='string')&&q.choices.some(c=>c.id===q.correctChoice));}
+function validQuestionState(q){return q&&typeof q.input==='string'&&Array.isArray(q.hints)&&q.hints.every(h=>typeof h==='string')&&['supportSeen','targetSeen'].every(k=>q[k]===undefined||typeof q[k]==='boolean');}
 function validResults(list){return Array.isArray(list)&&list.every(r=>r&&['good','hard','again','skip'].includes(r.grade));}
 function checkedProgress(data){
  if(!basicProgress(data))throw Error('这不是可识别的Beyond Words进度。');
@@ -91,8 +92,10 @@ function checkedProgress(data){
   if(r.review){const v=r.review;if(!Array.isArray(v.queue)||!v.queue.every(id=>typeof id==='string')||!Number.isInteger(v.index)||v.index<0||v.index>v.queue.length||!validQuestionState(v.q)||!validResults(v.results)||!Array.isArray(v.retried)||!v.retried.every(id=>typeof id==='string')||!Number.isInteger(v.baseCount)||v.baseCount<1||v.baseCount>5)throw Error('备份中的复习位置不完整。');if(v.pinnedQuestions&&(!Array.isArray(v.pinnedQuestions)||!v.pinnedQuestions.length||!v.pinnedQuestions.every(validQuestion)))throw Error('备份中的原复习题无法读取。');}
   if(r.summary&&!validResults(r.summary.results))throw Error('备份中的复习小结无法读取。');
   for(const round of [r.learn,r.review]){if(round?.pinnedLesson){for(const field of ['meaning','expression','formula','explanation','boundary','checkpoint'])if(round.pinnedLesson[field]!==undefined&&typeof round.pinnedLesson[field]!=='string')throw Error('备份中的讲解文字无法读取。');}if(round?.pinnedLesson?.examples&&(!Array.isArray(round.pinnedLesson.examples)||!round.pinnedLesson.examples.every(e=>typeof e.en==='string'&&typeof e.zh==='string')))throw Error('备份中的讲解无法读取。');}
+  if(r.dailyVisits){if(typeof r.dailyVisits!=='object'||Array.isArray(r.dailyVisits))throw Error('每日进度无法读取。');for(const [day,visit]of Object.entries(r.dailyVisits))if(!/^\d{4}-\d{2}-\d{2}$/.test(day)||!visit||!['done','skip','mastered'].includes(visit.status)||!Number.isFinite(visit.at))throw Error('每日进度不完整。');}
   copy.records[id]=r;
  }
+ if(copy.reviewScope&&(!['cecilia'].includes(copy.reviewScope.domain)||copy.reviewScope.dateId!==undefined&&typeof copy.reviewScope.dateId!=='string'))delete copy.reviewScope;
  copy.ui=copy.ui&&typeof copy.ui==='object'&&!Array.isArray(copy.ui)?copy.ui:{};for(const field of ['view','tab','domain','filter','subfilter','search','lastSpoken','lastExam'])if(copy.ui[field]!==undefined&&typeof copy.ui[field]!=='string')delete copy.ui[field];for(const field of ['updatedAt','dataRevision'])if(!Number.isFinite(copy[field])||copy[field]<0)copy[field]=0;if(copy.activeId!==undefined&&typeof copy.activeId!=='string')copy.activeId='ever';if(copy.backupMeta){const clean={};for(const field of ['exportedAt','revision','snoozeUntil'])if(Number.isFinite(copy.backupMeta[field]))clean[field]=copy.backupMeta[field];copy.backupMeta=clean;}if(copy.resume){const clean={};for(const kind of ['learn','review'])if(typeof copy.resume[kind]?.id==='string'&&Number.isFinite(copy.resume[kind]?.at))clean[kind]=copy.resume[kind];copy.resume=clean;}return copy;
 }
 function parseProgressBackup(text){

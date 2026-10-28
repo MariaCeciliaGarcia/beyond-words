@@ -1,5 +1,5 @@
 {
-  "version": "1.8.0",
+  "version": "1.9.0",
   "date": "2026-10-28",
   "totals": {
     "units": 261,
@@ -4981,9 +4981,18 @@
     "v1.6.0 三种学习目标与场景练习已获用户批准落地；内容及操作互审详情见内容审查-2026-10-28.md。"
   ],
   "hintRules": {
-    "units": 261,
-    "positions": 2871,
-    "source": "hint-rules.js",
-    "mode": "transferable-rules"
+    "units": 323,
+    "positions": 3553,
+    "source": "hint-support.js + hint-rules.js",
+    "mode": "lexical-support-and-target-structure"
+  },
+  "cecilia": {
+    "date": "2026-10-28",
+    "materials": 97,
+    "supportItems": 25,
+    "newUnits": 62,
+    "sharedUnits": 8,
+    "dateUnits": 70,
+    "formalQuestions": 620
   }
 }

@@ -188,3 +188,9 @@ window.JUJIAN_PILOT = (() => {
     }
   ];
 })();
+
+// Authored lexical support for the deadline example: give the noun, generalize the time rule.
+(() => {
+ const q=window.JUJIAN_PILOT.find(u=>u.id==='p-done-with').learning[3];
+ q.lexicalHints=[{zh:'报告',en:'report',role:'support'},{zh:'周五',en:'Friday',role:'support'}];
+})();

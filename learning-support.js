@@ -33,34 +33,36 @@ async function copyPersonalCheck(id){
 function updateCopyControls(){const el=app.querySelector('[data-action="copy-ai-check"][data-id=""]');if(el)el.disabled=scenarioUnit()?!(state.draft.scene?.trim()&&state.draft.intent?.trim()):!state.draft.zh?.trim();}
 function orderedContinuation(id,origin){
  const scope=origin&&catalog.domains.some(d=>d.id===origin.domain)?origin:{domain:unitById.get(id)?.domain||domain,tab:'scene',filter:'all',subfilter:'all',search:''};
- const ordered=(scope.ids||learningSelection(scope).map(u=>u.id)).map(id=>unitById.get(id)).filter(u=>u&&u.domains.includes(scope.domain));
+ const ordered=(scope.ids||learningSelection(scope).map(u=>u.id)).map(id=>unitById.get(id)).filter(u=>unitInOrigin(u,scope));
  const at=ordered.findIndex(u=>u.id===id),rest=at<0?ordered:[...ordered.slice(at+1),...ordered.slice(0,at)];
  const unit=rest.find(u=>!record(u.id).mastered&&record(u.id).learn?.stage!=='done');
  return unit?{unit,origin:scope,next:true}:null;
 }
 function learningResumeTarget(){
  const recent=store.resume?.learn?.id||store.activeId,last=unitById.get(recent),r=last&&record(recent);
- if(last&&r.learn&&!r.mastered&&r.learn.stage!=='done')return {unit:last,origin:r.learn.origin};
+ if(last&&r.learn&&(!r.mastered||r.learn.dailyReplay)&&r.learn.stage!=='done')return {unit:last,origin:r.learn.origin};
+ if(last&&r.learn&&isCeciliaOrigin(r.learn.origin)){const next=nextCeciliaUnit(originDay(r.learn.origin),recent);if(next)return {unit:next,origin:r.learn.origin,next:true};return null;}
  const unfinished=learningUnits().sort((a,b)=>Number(record(b.id).updatedAt||0)-Number(record(a.id).updatedAt||0));
  if(unfinished.length)return {unit:unfinished[0],origin:record(unfinished[0].id).learn.origin};
+
  if(last&&r.learn)return orderedContinuation(last.id,r.learn.origin);
  return null;
 }
 function reviewResumeTarget(){
  const recent=store.resume?.review?.id,last=unitById.get(recent);
  if(last&&record(recent).review&&!record(recent).mastered)return last;
- const active=availableUnits(),pending=active.filter(u=>record(u.id).review).sort((a,b)=>Number(record(b.id).updatedAt||0)-Number(record(a.id).updatedAt||0));
+ const active=filterReviewScope(availableUnits(),store.resume?.review?.origin||store.reviewScope||null),pending=active.filter(u=>record(u.id).review).sort((a,b)=>Number(record(b.id).updatedAt||0)-Number(record(a.id).updatedAt||0));
  return pending[0]||active.sort((a,b)=>record(a.id).schedule.due-record(b.id).schedule.due)[0]||null;
 }
-function learningStatusFor(unit){const l=record(unit.id).learn;return !l?'下一个表达':({entry:'初次尝试',intro:'看讲解',exercise:`学习题 ${l.index+1} / 5`,custom:unit.practiceProfile==='scenario'?'写自己的场景':'写自己的例句',done:'已完成'}[l.stage]);}
+function learningStatusFor(unit){const l=record(unit.id).learn;const prefix=isCeciliaOrigin(l?.origin)?'Cecilia · '+ceciliaDateLabel(originDay(l.origin))+' · ':'';return prefix+(!l?'下一个表达':({entry:'初次尝试',intro:'看讲解',exercise:`学习题 ${l.index+1} / 5`,custom:unit.practiceProfile==='scenario'?'写自己的场景':'写自己的例句',done:'已完成'}[l.stage]));}
 function continueLearningHome(){
  const target=learningResumeTarget();if(!target){go('library');return;}
  selectLesson(target.unit.id);if(target.origin)applyLearningOrigin(target.origin);
- if(!state.learn)state.learn=newLearning();if(target.origin)state.learn.origin=target.origin;
+ if(!state.learn)state.learn=newLearning();if(target.origin){state.learn.origin=target.origin;state.learn.dailyReplay=!!state.mastered&&isCeciliaOrigin(target.origin);}
  save();go('study');
 }
-function continueReviewHome(){const target=reviewResumeTarget();if(!target){go('review');return;}selectLesson(target.id);if(state.review)go('practice');else startReview();}
+function continueReviewHome(){if(store.resume?.review?.origin)store.reviewScope=store.resume.review.origin;const target=reviewResumeTarget();if(!target){go('review');return;}selectLesson(target.id);if(state.review)go('practice');else startReview();}
 function supportHomePage(){
- const learn=learningResumeTarget(),review=reviewResumeTarget(),r=review&&record(review.id),due=availableUnits().filter(u=>record(u.id).schedule.due<=Date.now()).length;
- return `<section class="home-intro ${learn||review?'has-resume':''}">${learn||review?'':'<p class="eyebrow">一点一点，把表达变成自己的。</p>'}<h1>${learn||review?'接着上次，继续练。':'想说的话，<br>练到能用出来。'}</h1>${learn||review?'':'<p class="lead">学习和复习，各自保留进度。</p>'}</section><section class="home-grid"><article class="home-card"><h2>学习</h2>${learn?`<p class="resume-meaning">${esc(learn.unit.meaning)}</p><p class="small">${learningStatusFor(learn.unit)}</p>`:'<p>按场景或表达功能，找到想练的内容。</p>'}<div class="actions">${button(learn?'继续学习':'开始学习',learn?'continue-learning-home':'library')}${learn?button('选择新表达','library','text-button'):''}</div></article><article class="home-card review"><h2>复习</h2>${review?`<p class="resume-meaning">${esc(review.meaning)}</p><p class="small">${r.review?`本轮 ${r.review.index+1} / ${r.review.queue.length} 题`:r.schedule.due<=Date.now()?`${due} 个表达到期`:'尚未到期，也可以提前练习'}</p>`:'<p>先学习一个表达，再回来巩固。</p>'}<div class="actions">${button(r?.review?'继续复习':review?r.schedule.due<=Date.now()?'开始复习':'提前复习':'查看复习库',review?'continue-review-home':'review')}${review?button('查看复习库','review','text-button'):''}</div></article></section>${backupReminder()}`;
+ const learn=learningResumeTarget(),review=reviewResumeTarget(),r=review&&record(review.id),due=filterReviewScope(availableUnits(),store.resume?.review?.origin||store.reviewScope||null).filter(u=>record(u.id).schedule.due<=Date.now()).length;
+ return `<section class="home-intro ${learn||review?'has-resume':''}">${learn||review?'':'<p class="eyebrow">一点一点，把表达变成自己的。</p>'}<h1>${learn||review?'接着上次，继续练。':'想说的话，<br>练到能用出来。'}</h1>${learn||review?'':'<p class="lead">学习和复习，各自保留进度。</p>'}</section><section class="home-grid"><article class="home-card"><h2>学习</h2>${learn?`<p class="resume-meaning">${esc(learn.unit.meaning)}</p><p class="small">${learningStatusFor(learn.unit)}</p>`:'<p>按场景或表达功能，找到想练的内容。</p>'}<div class="actions">${button(learn?'继续学习':'开始学习',learn?'continue-learning-home':'library')}${learn?button('选择新表达','library','text-button'):''}</div>${ceciliaDays().length?`<div class="daily-home-entry">${button('Cecilia · '+ceciliaDays()[0].date+' 材料','cecilia-date','text-button',`data-day="${ceciliaDays()[0].id}"`)}</div>`:''}</article><article class="home-card review"><h2>复习</h2>${review?`<p class="resume-meaning">${esc(review.meaning)}</p><p class="small">${(r.review?.origin||store.resume?.review?.origin)?.domain==='cecilia'?'Cecilia · '+ceciliaDateLabel((r.review?.origin||store.resume?.review?.origin).dateId)+' · ':''}${r.review?`本轮 ${r.review.index+1} / ${r.review.queue.length} 题`:r.schedule.due<=Date.now()?`${due} 个表达到期`:'尚未到期，也可以提前练习'}</p>`:'<p>先学习一个表达，再回来巩固。</p>'}<div class="actions">${button(r?.review?'继续复习':review?r.schedule.due<=Date.now()?'开始复习':'提前复习':'查看复习库',review?'continue-review-home':'review')}${review?button('查看复习库','review','text-button'):''}</div></article></section>${backupReminder()}`;
 }

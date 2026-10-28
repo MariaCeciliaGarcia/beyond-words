@@ -90,3 +90,13 @@
 - 浏览器标签页标题固定为 Beyond Words，不添加学习、复习等页面名前缀。
 
 - 用户已确定第四张“越窗小獭”作为品牌图标，原稿保存在assets/beyond-words-original.png。仅做尺寸派生，不自动重绘或更换形象。页眉、favicon与手机收藏图标保持同源。
+
+## Cecilia 与键盘、提示（2026-10-28，v1.9.0）
+
+- 当前 Beyond Words 开发对话收到每日材料，默认按 Asia/Shanghai 日期追加 Cecilia；同一日期追加去重。其他求职/翻译对话不触发；新对话明确提到 Beyond Words 才启用个人技能 beyond-words-materials。
+- 学习入口为 Spoken English→日常/职业/Cecilia，Cecilia 内日期倒序。新增单元只属 Cecilia，已有单元以原ID引用，不复制全局掌握/复习安排、不改公共归属或未完轮次。
+- 每条原始材料保留expression/meaning及明确去向。配套词汇可作support材料，不强造十题。日期单元默认意义先行，英文原始材料按需展开。
+- record.dailyVisits[dateId]记录当天done/skip/mastered及时间；全局掌握与间隔安排仍为record级。过去已掌握不能自动算新日期已处理；再练不解除掌握。学习/复习/首页继续保留date origin。
+- 词语提示直接给所需词/搭配；句式提示说明目标结构与可迁移规则。新题写lexicalHints/grammarHints，各项显式标role support/target。配套词语不自动算忘记目标；target曝光才记依赖提示。回应题按语用场合给提示，不透露正确选项。旧原题提示保留兼容，但不能机械把整句答案当词语提示。
+- Enter执行当前安全主要动作：输入核对、揭晓后会了、讲解后练习、完成后继续。多行个人内容Enter换行，⌘/Ctrl+Enter保存。尊重显式聚焦按钮；IME、长按重复和危险弹窗须防误触，未选选择题不自动猜答案。
+- 核验增加node validate-daily.cjs与node validate-keyboard.cjs，仍运行既有题库/备份检查；发布后核对真实线上版本。

@@ -15,9 +15,9 @@ function setup(legacy=null,saved=null,options={}){
 module.exports={setup};
 if(require.main===module){
 const env=setup();const r=env.run;
-assert.equal(r('units.length'),261);
-assert.equal(r('new Set(units.map(u=>u.id)).size'),261);
-assert.equal(r('units.reduce((n,u)=>n+u.learning.length+u.review.length,0)'),2610);
+const total=r('units.length');assert.equal(total,261+r('(window.BW_CECILIA_A||[]).length+(window.BW_CECILIA_B||[]).length'));
+assert.equal(r('new Set(units.map(u=>u.id)).size'),total);
+assert.equal(r('units.reduce((n,u)=>n+u.learning.length+u.review.length,0)'),total*10);
 r(`for(const u of units){
  for(const field of ['id','meaning','expression','formula','explanation','boundary','checkpoint'])if(!u[field])throw Error(u.id+field);
  if(u.learning.length!==5||u.review.length!==5||u.examples.length!==2)throw Error(u.id+' counts');
@@ -41,8 +41,8 @@ r(`for(const u of units){
  startReview();for(let i=0;i<3;i++){if(!reviewQuestion())throw Error('review '+u.id);if(questionType(reviewQuestion())==='choice')state.review.q.choice=reviewQuestion().correctChoice;grade('good');}
  if(state.review||!state.summary||state.schedule.streak!==1)throw Error('schedule '+u.id);
 }`);
-assert.equal(r('availableUnits().length'),261);
-assert.equal(r('units.filter(u=>record(u.id).custom.length===1).length'),261);
+assert.equal(r('availableUnits().length'),total);
+assert.equal(r('units.filter(u=>record(u.id).custom.length===1).length'),total);
 // Record isolation, mastery and round-trip local persistence.
 r("selectLesson('ever');state.mastered=true;save();selectLesson('order');state.draft.zh='订单草稿';save();");
 assert.equal(r("record('ever').mastered"),true);assert.equal(r("record('order').mastered"),false);
@@ -93,7 +93,7 @@ feedback.run("selectLesson('ever');state.learn=newLearning();state.learn.q.input
 feedback.ctx.location.hash='#study/ever';feedback.listeners.popstate();
 assert.equal(feedback.run('lesson.id'),'ever');assert.equal(feedback.run('state.learn.q.input'),'ever draft');
 assert.equal(feedback.run("record('order').learn.index"),1);
-console.log('PASS: 261 units / 2610 exercises; taxonomy coverage; every-unit learning/custom/review; independent progress, mastery, persistence, legacy migration; category filters.');
+console.log('PASS: '+total+' units / '+(total*10)+' exercises; taxonomy coverage; every-unit learning/custom/review; independent progress, mastery, persistence, legacy migration; category filters.');
 
 // Retired edition filters never hide content or reappear after restoring old UI state.
 const oldEdition=setup(null,{version:2,activeId:'w-previous',records:{},ui:{view:'library',domain:'work',collection:'work1'}});
@@ -103,13 +103,13 @@ assert(!oldEdition.run("app.innerHTML.includes('按辑浏览')||app.innerHTML.in
 const entryHints=setup();
 entryHints.run(`for(const u of units){
  selectLesson(u.id);state.learn=newLearning();view='study';render();
- if(questionType(u.entry)==='input'){if(!app.innerHTML.includes('表达提示')||!app.innerHTML.includes('结构提示'))throw Error('missing entry hint '+u.id);}else if(!app.innerHTML.includes('data-action="hint"'))throw Error('missing recall hint '+u.id);
+ if(questionType(u.entry)==='input'){if(!app.innerHTML.includes('句式提示')||(window.getQuestionHelp(u.entry).words.length&&!app.innerHTML.includes('词语提示')))throw Error('missing entry hint '+u.id);}else if(!app.innerHTML.includes('data-action="hint"'))throw Error('missing recall hint '+u.id);
  if(app.innerHTML.includes('class="hint-box"'))throw Error('hint leaked '+u.id);
  state.learn.q.input='my partial answer';
 }`);
 entryHints.handlers.click({target:{closest:selector=>selector==='[data-action]'?{dataset:{action:'hint',hint:'words'}}:null}});
 assert.equal(entryHints.run('state.learn.q.input'),'my partial answer');
-assert(entryHints.run('state.learn.q.usedHint'));
+assert(entryHints.run('state.learn.q.supportSeen'));assert(!entryHints.run('state.learn.q.usedHint'));
 assert(entryHints.run("app.innerHTML.includes('class=\"hint-box\"')"));
 assert(!entryHints.run("app.innerHTML.includes('可以这样说')"));
 console.log('PASS: retired edition UI, preserved old content scope, all-unit entry hints and input persistence.');
@@ -123,15 +123,15 @@ assert.equal(r('catalog.expressionKinds.length'),6);
 r(`for(const kind of catalog.expressionKinds){if(kind.units.length<4||kind.units.some(id=>!unitById.has(id)))throw Error('kind coverage '+kind.id);}`);
 console.log('PASS: six expression kinds, content tone guard, new units in both taxonomy axes.');
 
-assert.equal(r('catalog.learningOrder.length'),261);
-assert.equal(r('new Set(catalog.learningOrder).size'),261);
+assert.equal(r('catalog.learningOrder.length'),total);
+assert.equal(r('new Set(catalog.learningOrder).size'),total);
 r(`if(catalog.learningOrder.some(id=>!unitById.has(id)))throw Error('invalid learning order');`);
 console.log('PASS: learning order covers every unit exactly once.');
 
 r(`for(const u of units)if(!u.entry.hint)throw Error('missing authored initial hint '+u.id);`);
 console.log('PASS: all 261 source hints retained; transferable display rules checked separately.');
 const pinnedHint=setup();
-pinnedHint.run("selectLesson('invite');state.learn=newLearning();state.learn.pinnedEntry={...lesson.entry,hint:''};state.learn.q.input='Would you';state.learn.q.hints=['words'];view='study';render();");
+pinnedHint.run("selectLesson('invite');state.learn=newLearning();state.learn.pinnedEntry={...lesson.entry,hint:''};state.learn.q.input='Would you';state.learn.q.hints=['frame'];view='study';render();");
 assert(pinnedHint.run("app.innerHTML.includes('动词原形')&&!app.innerHTML.includes('join us for dinner')"));
 assert.equal(pinnedHint.run('state.learn.q.input'),'Would you');
 pinnedHint.run("state.learn.q.revealed=true;render()");

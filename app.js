@@ -1,7 +1,7 @@
  'use strict';
 const KEY = 'jujian.library.v2';
 const catalog=window.JUJIAN_CATALOG;
-const originalUnits=[...(window.JUJIAN_EXTRA||[]),...(window.JUJIAN_CORE||[]),...(window.JUJIAN_DAILY_2A||[]),...(window.JUJIAN_DAILY_2B||[]),...(window.JUJIAN_DAILY_3A||[]),...(window.JUJIAN_DAILY_3B||[]),...(window.JUJIAN_WORK_1||[]),...(window.JUJIAN_WORK_2||[]),...(window.JUJIAN_WORK_3||[]),...(window.JUJIAN_PHRASES_A||[]),...(window.JUJIAN_PHRASES_B||[]),...(window.JUJIAN_DAILY_MORE_A||[]),...(window.JUJIAN_DAILY_MORE_B||[]),...(window.JUJIAN_DAILY_MORE_C||[]),...(window.JUJIAN_WORK_MORE_A||[]),...(window.JUJIAN_WORK_MORE_B||[]),...(window.JUJIAN_WORK_MORE_C||[]),...(window.JUJIAN_EXAM_A||[]),...(window.JUJIAN_EXAM_B||[]),...(window.JUJIAN_SAFETY_HEALTH||[]),...(window.JUJIAN_EXAM_TASKS||[])];
+const originalUnits=[...(window.JUJIAN_EXTRA||[]),...(window.JUJIAN_CORE||[]),...(window.JUJIAN_DAILY_2A||[]),...(window.JUJIAN_DAILY_2B||[]),...(window.JUJIAN_DAILY_3A||[]),...(window.JUJIAN_DAILY_3B||[]),...(window.JUJIAN_WORK_1||[]),...(window.JUJIAN_WORK_2||[]),...(window.JUJIAN_WORK_3||[]),...(window.JUJIAN_PHRASES_A||[]),...(window.JUJIAN_PHRASES_B||[]),...(window.JUJIAN_DAILY_MORE_A||[]),...(window.JUJIAN_DAILY_MORE_B||[]),...(window.JUJIAN_DAILY_MORE_C||[]),...(window.JUJIAN_WORK_MORE_A||[]),...(window.JUJIAN_WORK_MORE_B||[]),...(window.JUJIAN_WORK_MORE_C||[]),...(window.JUJIAN_EXAM_A||[]),...(window.JUJIAN_EXAM_B||[]),...(window.JUJIAN_SAFETY_HEALTH||[]),...(window.JUJIAN_EXAM_TASKS||[]),...(window.BW_CECILIA_A||[]),...(window.BW_CECILIA_B||[])];
 const pilotUnits=window.JUJIAN_PILOT||[];
 const units=originalUnits.map(u=>pilotUnits.find(p=>p.id===u.id)||u).concat(pilotUnits.filter(p=>!originalUnits.some(u=>u.id===p.id)));
 units.forEach(unit=>{unit.collection=unit.collection||'daily1';unit.domain=unit.domain||catalog.collections.find(c=>c.id===unit.collection)?.domain||'daily';unit.domains=unit.domains||[unit.domain];});
@@ -61,9 +61,9 @@ const app=document.getElementById('app'),dialog=document.getElementById('dialog'
 function record(id){return store.records[id]||emptyState();}
 function selectLesson(id){
   if(!unitById.has(id))return;
-  if(lesson.id===id){if(!lesson.domains.includes(domain)){domain=lesson.domains.includes(state.learn?.origin?.domain)?state.learn.origin.domain:lesson.domain;filter='all';subfilter='all';search='';page=1;}return;}
+  if(lesson.id===id){if(!lesson.domains.includes(domain)&&!(domain==='cecilia'&&ceciliaIds(filter).includes(id))){domain=lesson.domains.includes(state.learn?.origin?.domain)?state.learn.origin.domain:lesson.domain;filter='all';subfilter='all';search='';page=1;}return;}
   save();lesson=unitById.get(id);state=store.records[id]||emptyState();store.records[id]=state;store.activeId=id;editingCustom=null;
-  if(!lesson.domains.includes(domain)){domain=lesson.domain;filter='all';subfilter='all';search='';page=1;}
+  if(!lesson.domains.includes(domain)&&!(domain==='cecilia'&&ceciliaIds(filter).includes(id))){domain=lesson.domain;filter='all';subfilter='all';search='';page=1;}
 }
 const availableUnits=()=>units.filter(u=>record(u.id).enrolled&&!record(u.id).mastered);
 const masteredUnits=()=>units.filter(u=>record(u.id).mastered);
@@ -76,15 +76,16 @@ function save(){return persistProgress();}
 function toast(message){const t=document.getElementById('toast');t.textContent=message;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>{t.classList.remove('show');t.textContent='';},2400);}
 const routes=new Set(['home','library','study','review','practice','detail','mastered','summary','mastery']);
 const lessonRoutes=new Set(['study','practice','detail','summary','mastery']);
-const routeURL=route=>`${location.pathname}${location.search}#${route}${lessonRoutes.has(route)?'/'+lesson.id:''}`;
+const routeURL=route=>`${location.pathname}${location.search}#${route}${route==='library'&&domain==='cecilia'?'/cecilia'+(ceciliaDay(filter)?'/'+filter:''):lessonRoutes.has(route)?'/'+lesson.id:''}`;
 const routeState=route=>({jujianRoute:route,lessonId:lesson.id,tab,filter,subfilter,search,domain,page,lastSpoken,lastExam});
 function go(next){
   if(!routes.has(next))return;
-  if(next!==view||history.state?.lessonId!==lesson.id)history.pushState(routeState(next),'',routeURL(next));
+  if(next!==view||history.state?.lessonId!==lesson.id||next==='library'&&domain==='cecilia'&&(history.state?.domain!==domain||history.state?.filter!==filter))history.pushState(routeState(next),'',routeURL(next));
   view=next;render();window.scrollTo(0,0);
 }
 function initializeNavigation(){
-  const [requested,id]=location.hash.slice(1).split('/');
+  const [requested,id,date]=location.hash.slice(1).split('/');
+  if(requested==='library'&&id==='cecilia'){domain='cecilia';lastSpoken='cecilia';filter=ceciliaDay(date)?date:'all';page=1;}
   if(id&&unitById.has(id))selectLesson(id);
   if(routes.has(requested))view=requested;
   if(history.state?.jujianRoute){history.replaceState(routeState(view),'',routeURL(view));return;}
@@ -93,10 +94,11 @@ function initializeNavigation(){
   if(view!=='home')history.pushState(routeState(view),'',routeURL(view));
 }
 function restoreNavigation(){
-  const [route,id]=location.hash.slice(1).split('/');
+  const [route,id,date]=location.hash.slice(1).split('/');
   if(id&&unitById.has(id))selectLesson(id);
   const ui=history.state;
   if(ui?.tab){tab=ui.tab;filter=ui.filter||'all';subfilter=ui.subfilter||'all';search=ui.search||'';domain=ui.domain||lesson.domain;page=Number(ui.page)||1;lastSpoken=ui.lastSpoken||'daily';lastExam=ui.lastExam||'ielts';}
+  if(route==='library'&&id==='cecilia'){domain='cecilia';lastSpoken='cecilia';filter=ceciliaDay(date)?date:'all';}
   view=routes.has(route)?route:'home';
   if(dialog.open)dialog.close();
   render();window.scrollTo(0,0);
@@ -105,7 +107,7 @@ window.addEventListener('popstate',restoreNavigation);
 window.addEventListener('hashchange',()=>{const [route,id]=location.hash.slice(1).split('/');if(route!==view||(id&&id!==lesson.id))restoreNavigation();});
 function button(label,action,cls='button',extra=''){return `<button class="${cls}" data-action="${action}" ${extra}>${label}</button>`;}
 function crumbs(label){return `<div class="breadcrumbs">${button('首页','home','')}<span>/</span><span>${label}</span></div>`;}
-function newQuestionState(){return {input:'',revealed:false,hints:[],checked:false};}
+function newQuestionState(){return {input:'',revealed:false,hints:[],checked:false,supportSeen:false,targetSeen:false};}
 function newLearning(){return {origin:captureLearningOrigin(),contentRevision:'1.6.0',stage:'entry',index:0,q:newQuestionState(),results:[],lastResult:null,returnStage:null};}
 function enrolled(){if(!state.enrolled){state.enrolled=true;state.schedule.due=Date.now();}save();}
 function stageLabel(){if(!state.learn)return '';return {entry:'初次尝试',intro:'表达讲解',exercise:`学习题 ${state.learn.index+1} / 5`,custom:scenarioUnit()?'写自己的场景':'写自己的例句',done:'已完成'}[state.learn.stage];}
@@ -116,7 +118,7 @@ function render(){
   const current=unitById.get(lesson.id);
   const pinned=view==='study'&&state.learn?.stage!=='done'?state.learn?.pinnedLesson:view==='practice'?state.review?.pinnedLesson:null;
   lesson=pinned?{...current,...pinned}:current;
-  if(['study','practice'].includes(view)&&state.mastered)view='mastery';
+  if(['study','practice'].includes(view)&&state.mastered&&!(view==='study'&&state.learn?.dailyReplay))view='mastery';
   if(view==='mastery'&&!state.mastered)view=state.learn&&state.learn.stage!=='done'?'study':'library';
   if(view==='study'&&!state.learn)view='library';
   if(view==='practice'&&!state.review)view='review';
@@ -126,10 +128,12 @@ function render(){
   app.innerHTML=(pages[view]||homePage)();
   state.lastView=view;save();history.replaceState(routeState(view),'',routeURL(view));
   document.title='Beyond Words';
+  if(typeof window.decorateKeyboardActions==='function')window.decorateKeyboardActions();
 }
 function homePage(){return supportHomePage();}
 
 function libraryPage(){
+ if(domain==='cecilia')return ceciliaLibraryPage();
  const domainMeta=catalog.domains.find(d=>d.id===domain)||catalog.domains[0];
  domain=domainMeta.id;
  const isExam=domainMeta.track==='exam',track=isExam?'exam':'spoken';
@@ -147,7 +151,7 @@ function libraryPage(){
  const shown=visible.slice((page-1)*24,page*24);
  return `${crumbs('学习')}<div class="page-heading"><div><p class="eyebrow">${esc(domainMeta.name)}</p><h1>从想表达的意思开始。</h1><p class="lead">${esc(domainMeta.description)}</p></div></div>
  <section class="track-panel" aria-label="学习方向"><div class="domain-tabs" role="group" aria-label="学习方向">${catalog.tracks.map(t=>button(`<strong>${t.name}</strong><span>${t.description}</span>`,'track',`domain-option ${track===t.id?'selected':''}`,`data-track="${t.id}" aria-pressed="${track===t.id}"`)).join('')}</div></section>
- <section class="domain-panel" aria-label="${isExam?'选择考试':'交流场景'}"><div class="domain-tabs ${isExam?'exam-domains':''}" role="group" aria-label="${isExam?'选择考试':'交流场景'}">${catalog.domains.filter(d=>(d.track||'spoken')===track).map(d=>button(`<strong>${d.name}</strong><span>${units.filter(u=>u.domains.includes(d.id)).length} 个表达</span>`,'domain',`domain-option ${domain===d.id?'selected':''}`,`data-domain="${d.id}" aria-pressed="${domain===d.id}"`)).join('')}</div>
+ <section class="domain-panel" aria-label="${isExam?'选择考试':'交流场景'}"><div class="domain-tabs ${isExam?'exam-domains':''}" role="group" aria-label="${isExam?'选择考试':'交流场景'}">${catalog.domains.filter(d=>(d.track||'spoken')===track).map(d=>button(`<strong>${d.name}</strong><span>${d.id==='cecilia'?'每日材料':units.filter(u=>u.domains.includes(d.id)).length+' 个表达'}</span>`,'domain',`domain-option ${domain===d.id?'selected':''}`,`data-domain="${d.id}" aria-pressed="${domain===d.id}"`)).join('')}</div>
  </section>
  <div class="library-controls"><div class="tabs" role="tablist" aria-label="浏览方式">${button(isExam?'按练习目标':'按场景','tab',tab==='scene'?'active':'',`data-tab="scene" role="tab" aria-selected="${tab==='scene'}"`)}${button('按表达功能','tab',tab==='function'?'active':'',`data-tab="function" role="tab" aria-selected="${tab==='function'}"`)}</div><label class="search-label" for="library-search">查找表达<input type="search" id="library-search" placeholder="在当前路径内搜索" value="${esc(search)}" autocomplete="off"></label></div>
  <div class="category-grid" aria-label="${tab==='scene'?(isExam?'练习目标':'场景板块'):'功能板块'}">${button(`<span>全部表达</span><small>${countFor(eligible.map(u=>u.id))} 个</small>`,'filter',`category-card ${filter==='all'?'selected':''}`,'data-filter="all" aria-pressed="'+(filter==='all')+'"')}${groups.map(g=>button(`<span>${esc(g.name)}</span><small>${countFor(g.children.flatMap(c=>c.units))} 个表达</small>`,'filter',`category-card ${filter===g.id?'selected':''}`,`data-filter="${g.id}" aria-pressed="${filter===g.id}"`)).join('')}</div>
@@ -167,6 +171,7 @@ function unitCard(u){
 function learningTools(){return `<div class="session-tools">${button('标记为已掌握','master','button secondary mastery-control')}${button('退出学习','exit-learn','utility-link')}</div>`;}
 // Continue within the learner's selected scope, category and search, across pagination.
 function learningSelection(context){
+ if(context.domain==='cecilia')return ceciliaIds(context.dateId||context.filter).map(id=>unitById.get(id));
  const groups=context.tab==='scene'?catalog.scenes.filter(g=>g.domain===context.domain||g.domains?.includes(context.domain)):catalog.functions;
  const group=groups.find(g=>g.id===context.filter),sub=group?.children.find(c=>c.id===context.subfilter);
  const ids=sub?sub.units:group?[...new Set(group.children.flatMap(c=>c.units))]:null;
@@ -174,12 +179,14 @@ function learningSelection(context){
  return units.filter(u=>u.domains.includes(context.domain)&&(!ids||ids.includes(u.id))&&(!query||[u.meaning,u.expression,u.explanation].join(' ').toLowerCase().includes(query))).sort((a,b)=>(learningOrder.get(a.id)??999)-(learningOrder.get(b.id)??999));
 }
 function captureLearningOrigin(){
+ if(domain==='cecilia'&&ceciliaDay(filter))return currentDayOrigin(filter);
  if(view!=='library'&&state.learn?.origin)return state.learn.origin;
  const context=view==='library'?{domain,tab,filter,subfilter,search,page}:{domain:lesson.domains.includes(domain)?domain:lesson.domain,tab:'scene',filter:'all',subfilter:'all',search:''};
  return {...context,ids:learningSelection(context).map(u=>u.id)};
 }
 function learningOrigin(){return state.learn?.origin||captureLearningOrigin();}
 function nextLearningUnit(){
+ if(isCeciliaOrigin(learningOrigin()))return nextCeciliaUnit();
  const origin=learningOrigin();
  const ordered=(origin.ids||learningSelection(origin).map(u=>u.id)).map(id=>unitById.get(id)).filter(u=>u&&u.domains.includes(origin.domain));
  const at=ordered.findIndex(u=>u.id===lesson.id);
@@ -187,8 +194,9 @@ function nextLearningUnit(){
  return candidates.find(u=>u.id!==lesson.id&&!record(u.id).mastered&&record(u.id).learn?.stage!=='done');
 }
 function applyLearningOrigin(origin){domain=origin.domain;tab=origin.tab;filter=origin.filter;subfilter=origin.subfilter;search=origin.search;page=Number(origin.page)||1;}
-function nextReviewUnit(){return availableUnits().filter(u=>u.id!==lesson.id&&(record(u.id).review||record(u.id).schedule.due<=Date.now())).sort((a,b)=>Number(!!record(b.id).review)-Number(!!record(a.id).review)||record(a.id).schedule.due-record(b.id).schedule.due)[0];}
+function nextReviewUnit(){return filterReviewScope(availableUnits()).filter(u=>u.id!==lesson.id&&(record(u.id).review||record(u.id).schedule.due<=Date.now())).sort((a,b)=>Number(!!record(b.id).review)-Number(!!record(a.id).review)||record(a.id).schedule.due-record(b.id).schedule.due)[0];}
 function continuationMarkup(kind='learn'){
+ if(kind==='learn'?isCeciliaOrigin(learningOrigin()):reviewScopeOrigin()?.domain==='cecilia')return ceciliaContinuation(kind);
  const next=kind==='review'?nextReviewUnit():nextLearningUnit();
  if(!next)return `<div class="continuation"><p class="section-label">${kind==='review'?'其他表达暂时没有到期的复习':'当前选择中，暂时没有其他待学表达'}</p>${button(kind==='review'?'去选新表达':'返回当前选择',kind==='review'?'library':'origin-library','button secondary')}${kind==='review'?'':button('看看其他板块','browse-other','text-button')}</div>`;
  const pending=kind==='review'?!!record(next.id).review:!!record(next.id).learn;
@@ -212,7 +220,7 @@ function studyPage(){
   const current=phases.indexOf(l.stage);
   const percent={entry:5,intro:15,exercise:20+l.index*12,custom:90}[l.stage];
   const steps=['先尝试','看讲解','练表达',scenarioUnit()?'写场景':'写例句'].map((label,i)=>({label,number:i+1,state:i<current?'done':i===current?'current':'upcoming'}));
-  return `<div class="study-layout">${crumbs('学习')}${sessionBar({caption:'学习进度',label:stageLabel(),percent,tools:learningTools(),steps})}${lesson.pilot&&l.pinnedLearning&&l.contentRevision!=='1.6.0'?`<aside class="round-update"><p>练习内容已更新。可以继续当前进度，也可以从头练习新题。</p>${button('从头练新题','restart-learn','button secondary')}</aside>`:''}${l.stage==='intro'?introPage():l.stage==='custom'?customPage():questionSheet(learningQuestion(),l.q,l.stage==='entry'?'entry':'learn')}</div>`;
+  return `<div class="study-layout">${crumbs(isCeciliaOrigin(l.origin)?'Cecilia / '+ceciliaDateLabel(originDay(l.origin))+' / 学习':'学习')}${sessionBar({caption:'学习进度',label:stageLabel(),percent,tools:learningTools(),steps})}${lesson.pilot&&l.pinnedLearning&&l.contentRevision!=='1.6.0'?`<aside class="round-update"><p>练习内容已更新。可以继续当前进度，也可以从头练习新题。</p>${button('从头练新题','restart-learn','button secondary')}</aside>`:''}${l.stage==='intro'?introPage():l.stage==='custom'?customPage():questionSheet(learningQuestion(),l.q,l.stage==='entry'?'entry':'learn')}</div>`;
 }
 function introPage(){return `<section class="sheet"><p class="eyebrow section-badge"><span class="eyebrow-symbol" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h6l2 2 2-2h6v14h-6l-2 2-2-2H4Zm8 2v14"/></svg></span>先理解，再用出来</p><h1 class="large-expression">${esc(lesson.expression)}</h1>${lesson.pilot?pilotEntryFeedback():''}${lesson.examTaskLabel?`<p class="small">${esc(lesson.examTaskLabel)}</p>`:''}<p>${esc(lesson.explanation)}</p><div class="formula">${esc(lesson.formula)}</div>${lesson.examples.map(e=>`<div class="example"><p class="en">${esc(e.en)}</p><p class="zh">${esc(e.zh)}</p></div>`).join('')}<details><summary>用的时候留意什么？</summary><p>${esc(lesson.boundary)}</p></details><div class="actions">${button(state.learn.returnStage?'返回当前题':'开始练习','intro-next')}</div><p class="due-note">接下来练 5 道题。先自己想，想不起来时再看提示。</p></section>`;}
 
@@ -235,12 +243,12 @@ function questionSheet(q, qs, context) {
   const otherAnswers = q.answers.filter(a => a !== displayedAnswer);
   const lexicalHint=expressionHint(q);
   const hintControls = !qs.revealed ? `<div class="hint-wrap">
-    ${button(qs.hints.includes('frame') ? '收起结构提示' : '结构提示', 'hint', 'hint-button', `data-hint="frame" aria-expanded="${qs.hints.includes('frame')}"`)}
-    ${button(qs.hints.includes('words') ? '收起表达提示' : '表达提示', 'hint', 'hint-button', `data-hint="words" aria-expanded="${qs.hints.includes('words')}"`)}
+    ${button(qs.hints.includes('frame') ? '收起句式提示' : '句式提示', 'hint', 'hint-button', `data-hint="frame" aria-expanded="${qs.hints.includes('frame')}"`)}
+    ${window.getQuestionHelp(q).words.length?button(qs.hints.includes('words') ? '收起词语提示' : '词语提示', 'hint', 'hint-button', `data-hint="words" aria-expanded="${qs.hints.includes('words')}"`):''}
   </div>` : '';
   const hints = !qs.revealed ? `
-    ${qs.hints.includes('frame') ? `<div class="hint-box">表达结构：${esc(q.frame||lesson.formula)}</div>` : ''}
-    ${qs.hints.includes('words') ? `<div class="hint-box">${esc(lexicalHint)}</div>` : ''}` : '';
+    ${qs.hints.includes('frame') ? `<div class="hint-box">${window.renderQuestionHintContent(q,'frame')}</div>` : ''}
+    ${qs.hints.includes('words') ? `<div class="hint-box">${window.renderQuestionHintContent(q,'words')}</div>` : ''}` : '';
   const resultLabel = qs.checked
     ? correct ? (isCustom ? '和你之前写的相同' : '答对了')
       : (isCustom ? '看看你之前写的句子' : '对照一下')
@@ -253,7 +261,7 @@ function questionSheet(q, qs, context) {
     ${hints}
     ${!qs.revealed ? `<div class="answer-actions">
       ${button(isEntry ? '查看表达' : '查看答案', 'reveal', 'reveal-link')}
-      <div class="submit-group"><span class="keyboard-note">按 Enter 核对</span>${button('核对答案 <span class="submit-glyph" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 5v7H5m4-4-4 4 4 4"/></svg></span>', 'check', 'button primary-check', qs.input.trim() ? '' : 'disabled')}</div>
+      <div class="submit-group">${button('核对答案', 'check', 'button primary-check', qs.input.trim() ? '' : 'disabled')}</div>
     </div>` : ''}</div>
     ${qs.revealed ? `<div class="answer-box ${correct?'is-correct':qs.checked?'is-comparison':'is-revealed'}" aria-live="polite">
       <p class="result ${qs.checked && !correct ? 'comparison' : ''}">${correct ? '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg>' : '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 8h14m-4-4 4 4-4 4M19 16H5m4-4-4 4 4 4"/></svg>'}${resultLabel}</p>
@@ -264,7 +272,7 @@ function questionSheet(q, qs, context) {
       ${isEntry ? `<div class="actions">${button('看看讲解', 'entry-intro')}</div>` : `
         <div class="response-panel"><p class="section-label">这次练得怎么样？</p>
           <div class="grade-row">${button('会了', 'grade', '', 'data-grade="good"')}${button('不熟', 'grade', '', 'data-grade="hard"')}${button('不会', 'grade', '', 'data-grade="again"')}</div>
-          ${qs.usedHint || qs.exposed ? '<p class="assistance-note">刚才看过提示或答案，之后再试着独立答出。</p>' : ''}
+          ${qs.usedHint || qs.exposed ? '<p class="assistance-note">刚才查看目标提示或答案，之后再试着独立答出。</p>' : ''}
           <details class="grade-guide"><summary>这三个选项怎么选？</summary><p>会了：现在能完成。<br>不熟：还不熟练，或仍有差错。<br>不会：暂时想不起来。<br>看过提示也可以选“会了”，这类内容会在复习时再巩固。</p></details>
         </div>
         <div class="answer-followups">${button('再试一次', 'retry', 'utility-link')}${button('看看讲解', 'supplement', 'utility-link')}</div>`}
@@ -276,15 +284,15 @@ function customForm(){return `<label class="section-label" for="custom-zh">中�
 function customList(editable=true){return `<div class="custom-list">${state.custom.map(c=>`<article class="custom-item">${c.kind==='scenario'?`<p class="section-label">发生了什么</p><p>${esc(c.scene)}</p><p class="section-label">我的态度</p><p>${esc(c.intent)}</p><p class="en" lang="en">${esc(lesson.expression)}</p>`:`<p>${esc(c.zh)}</p><p class="en" lang="en">${esc(c.en)}</p>`}${editable?`<div class="item-actions">${button('编辑','edit-custom','text-button',`data-id="${c.id}"`)}${button('AI 核对','copy-ai-check','text-button',`data-id="${c.id}"`)}${button('删除','delete-custom','text-button',`data-id="${c.id}"`)}</div>`:''}</article>`).join('')}</div>`;}
 function resultStats(results){return ['good','hard','again'].map(g=>results.filter(r=>r.grade===g).length);}
 function statsMarkup(results){if(scenarioUnit())return pilotStatsMarkup(results);const n=resultStats(results);return `<div class="stats">${['会了','不熟','不会'].map((label,i)=>`<div class="stat"><strong>${n[i]}</strong><span>${label}</span></div>`).join('')}</div>`;}
-function completionPage(){return `<div class="study-layout">${crumbs('学习完成')}<section class="sheet"><div class="success-symbol" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></div><p class="eyebrow section-badge"><span class="eyebrow-symbol" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4h10v16H7ZM10 8h4M10 12h4M10 16h4"/></svg></span>学习小结</p><h2>这组练习，完成了。</h2><p class="lead">已加入复习库，下次换个问题再练。</p>${statsMarkup(state.learn.results)}${scenarioUnit()?'':`<p class="due-note">独立回忆（自评）${state.learn.results.filter(x=>x.grade==='good'&&!x.help).length} 次 · 看过提示或答案 ${state.learn.results.filter(x=>x.help).length} 次</p>`}<p class="small">${scenarioUnit()?'判断题根据本次选择记录，情境回忆由你自评。':'以上是你选择的状态。'}用过提示或答案的内容，复习时再巩固。</p><div class="muted-box">${personalLabel()} ${state.custom.length} 条 · ${dueText()}</div>${draftPresent()?`<div class="draft-resume"><p class="small">还有一条未完成的草稿，已为你保留。</p>${button('继续填写草稿','resume-custom','button secondary')}</div>`:''}${continuationMarkup()}<div class="actions">${button('复习这个表达','start-review','button secondary')}${button('查看'+personalLabel(),'detail','button secondary')}${button('返回首页','home','text-button')}</div></section></div>`;}
+function completionPage(){return `<div class="study-layout">${crumbs('学习完成')}<section class="sheet"><div class="success-symbol" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></div><p class="eyebrow section-badge"><span class="eyebrow-symbol" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4h10v16H7ZM10 8h4M10 12h4M10 16h4"/></svg></span>学习小结</p><h2>这组练习，完成了。</h2><p class="lead">已加入复习库，下次换个问题再练。</p>${statsMarkup(state.learn.results)}${scenarioUnit()?'':`<p class="due-note">独立回忆（自评）${state.learn.results.filter(x=>x.grade==='good'&&!x.help).length} 次 · 查看目标提示或答案 ${state.learn.results.filter(x=>x.help).length} 次</p>`}<p class="small">${scenarioUnit()?'判断题根据本次选择记录，情境回忆由你自评。':'以上是你选择的状态。'}查看目标句式或提前看答案的内容，复习时再巩固。配套词语帮助单独记录。</p><div class="muted-box">${personalLabel()} ${state.custom.length} 条 · ${dueText()}</div>${draftPresent()?`<div class="draft-resume"><p class="small">还有一条未完成的草稿，已为你保留。</p>${button('继续填写草稿','resume-custom','button secondary')}</div>`:''}${continuationMarkup()}<div class="actions">${button('复习这个表达','start-review','button secondary')}${button('查看'+personalLabel(),'detail','button secondary')}${button('返回首页','home','text-button')}</div></section></div>`;}
 function reviewPage(){
- const available=availableUnits(),due=available.filter(u=>record(u.id).schedule.due<=Date.now());
+ const available=filterReviewScope(availableUnits(),store.reviewScope||null),due=available.filter(u=>record(u.id).schedule.due<=Date.now());
  const list=[...due,...available.filter(u=>!due.includes(u))];
- return `${crumbs('复习')}<div class="page-heading"><div><p class="eyebrow">我的复习库</p><h1>让表达，再熟悉一点。</h1><p class="lead">${available.length} 个表达 · ${due.length} 个到期。每个表达有自己的进度和复习安排。</p></div></div>${list.length?`<div class="unit-grid">${list.map(u=>{const r=record(u.id),pending=!!r.review;return `<article class="library-item unit-card"><div><span class="tag">${pending?'本轮未完成':r.schedule.due<=Date.now()?'可以复习了':'已学过'}</span><h3>${esc(u.meaning)}</h3><p class="due-note">${pending?`本轮进度 ${Math.min(r.review.index,r.review.baseCount)} / ${r.review.baseCount}`:r.schedule.due<=Date.now()?'现在可以复习':`下次：${new Date(r.schedule.due).toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}`}</p><p class="small">${r.custom.length} 条${u.practiceProfile==='scenario'?'个人场景':'自己的例句'} · 每轮 3 题</p></div><div>${button(pending?'继续复习':'开始复习','start-review','button',`data-lesson="${u.id}"`)}<div class="actions compact-actions">${button(u.practiceProfile==='scenario'?'我的场景':'我的例句','detail','text-button',`data-lesson="${u.id}"`)}${pending?button('重开本轮','restart-review','text-button',`data-lesson="${u.id}"`):''}${button('标记为已掌握','master','text-button',`data-lesson="${u.id}"`)}</div></div></article>`;}).join('')}</div>`:`<div class="empty"><h3>还没有待复习的表达</h3><p>先选择一个表达开始练习；标记已掌握的内容可以随时恢复。</p><div class="actions centered">${button('去学习','library')}${masteredUnits().length?button('查看已掌握','mastered','button secondary'):''}</div></div>`}`;
+ return `${crumbs('复习')}${reviewScopeControls()}<div class="page-heading"><div><p class="eyebrow">我的复习库</p><h1>让表达，再熟悉一点。</h1><p class="lead">${available.length} 个表达 · ${due.length} 个到期。每个表达有自己的进度和复习安排。</p></div></div>${list.length?`<div class="unit-grid">${list.map(u=>{const r=record(u.id),pending=!!r.review;return `<article class="library-item unit-card"><div><span class="tag">${pending?'本轮未完成':r.schedule.due<=Date.now()?'可以复习了':'已学过'}</span><h3>${esc(u.meaning)}</h3><p class="due-note">${pending?`本轮进度 ${Math.min(r.review.index,r.review.baseCount)} / ${r.review.baseCount}`:r.schedule.due<=Date.now()?'现在可以复习':`下次：${new Date(r.schedule.due).toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}`}</p><p class="small">${r.custom.length} 条${u.practiceProfile==='scenario'?'个人场景':'自己的例句'} · 每轮 3 题</p></div><div>${button(pending?'继续复习':'开始复习','start-review','button',`data-lesson="${u.id}"`)}<div class="actions compact-actions">${button(u.practiceProfile==='scenario'?'我的场景':'我的例句','detail','text-button',`data-lesson="${u.id}"`)}${pending?button('重开本轮','restart-review','text-button',`data-lesson="${u.id}"`):''}${button('标记为已掌握','master','text-button',`data-lesson="${u.id}"`)}</div></div></article>`;}).join('')}</div>`:`<div class="empty"><h3>还没有待复习的表达</h3><p>先选择一个表达开始练习；标记已掌握的内容可以随时恢复。</p><div class="actions centered">${button('去学习','library')}${masteredUnits().length?button('查看已掌握','mastered','button secondary'):''}</div></div>`}`;
 }
 
 function pool(){return [...(state.review?.pinnedQuestions||lesson.review),...state.custom.map(personalQuestion)];}
-function startReview(){state.review=null;const all=pool(),count=Math.min(3,all.length),offset=state.cursor%all.length;state.review={contentRevision:'1.6.0',queue:Array.from({length:count},(_,i)=>all[(offset+i)%all.length].id),index:0,q:newQuestionState(),results:[],retried:[],baseCount:count,scheduled:state.schedule.due<=Date.now(),startedAt:Date.now()};state.cursor=(offset+count)%all.length;save();go('practice');}
+function startReview(){state.review=null;const all=pool(),count=Math.min(3,all.length),offset=state.cursor%all.length;state.review={origin:store.reviewScope||null,contentRevision:'1.6.0',queue:Array.from({length:count},(_,i)=>all[(offset+i)%all.length].id),index:0,q:newQuestionState(),results:[],retried:[],baseCount:count,scheduled:state.schedule.due<=Date.now(),startedAt:Date.now()};state.cursor=(offset+count)%all.length;save();go('practice');}
 function reviewQuestion(){return pool().find(q=>q.id===state.review?.queue[state.review.index]);}
 function reviewPracticePage() {
   if (!state.review) return reviewPage();
@@ -324,7 +332,7 @@ function finishReview() {
       ? Math.min(state.schedule.due, now + 600000) : now + 600000;
   }
   state.schedule.last = now;
-  state.summary = {kind:'review',results:r.results,baseCount:r.baseCount,date:now,due:state.schedule.due,earlyPractice:allGood&&!scheduled,skippedWithoutDifficulty:skipped&&!hasDifficulty};
+  state.summary = {kind:'review',origin:r.origin||null,results:r.results,baseCount:r.baseCount,date:now,due:state.schedule.due,earlyPractice:allGood&&!scheduled,skippedWithoutDifficulty:skipped&&!hasDifficulty};
   state.history.push(state.summary);
   state.history = state.history.slice(-30);
   state.review = null;
@@ -346,7 +354,7 @@ function summaryPage() {
       <p class="eyebrow section-badge"><span class="eyebrow-symbol" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4h10v16H7ZM10 8h4M10 12h4M10 16h4"/></svg></span>复习小结</p>
       <h2>${allSkipped?'本轮已结束':'这一轮，练到这里。'}</h2>
       <p class="lead">${allSkipped?`跳过 ${skipped} 题，本轮未完成练习。`:'记下自己的真实状态，比一次答对更重要。'}</p>
-      ${allSkipped?'':`${statsMarkup(s.results)}<p class="small">本轮练了 ${attempts} 次${skipped?`，跳过 ${skipped} 题`:''}。${includesExtra?'其中包含加练。':''}${scenarioUnit()?'判断题记录选择结果，情境回忆由你自评。':'以上是你选择的状态。'}</p>${scenarioUnit()?'':`<p class="due-note">独立回忆（自评）${independent} 次 · 看过提示或答案 ${helped} 次。看过提示或答案后选择“会了”，也会在复习时再巩固。</p>`}`}
+      ${allSkipped?'':`${statsMarkup(s.results)}<p class="small">本轮练了 ${attempts} 次${skipped?`，跳过 ${skipped} 题`:''}。${includesExtra?'其中包含加练。':''}${scenarioUnit()?'判断题记录选择结果，情境回忆由你自评。':'以上是你选择的状态。'}</p>${scenarioUnit()?'':`<p class="due-note">独立回忆（自评）${independent} 次 · 查看目标提示或答案 ${helped} 次。查看目标提示或答案后选择“会了”，也会在复习时再巩固。</p>`}`}
       <div class="muted-box">${dueText()}。${allSkipped?'复习安排保持不变。':s.skippedWithoutDifficulty?'本轮含跳过，保留原复习安排。':s.earlyPractice?'这次提前练习，下次复习时间不变。':'想继续练习，随时可以开始。'}</div>
       ${continuationMarkup('review')}<div class="actions">${button('返回复习库','review','button secondary')}${button('再练一轮','start-review','button outline')}${button('首页','home','text-button')}</div>
     </section></div>`;
@@ -355,13 +363,13 @@ function detailPage(){return `${crumbs(personalLabel())}<div class="page-heading
 function masteredPage(){const done=masteredUnits();return `${crumbs('已掌握')}<div class="page-heading"><div><p class="eyebrow">已掌握的表达</p><h1>会了的，也随时能找回来。</h1><p class="lead">${done.length} 个表达。进度和自建内容都保留，恢复后可以继续练习。</p></div></div>${done.length?`<div class="unit-grid">${done.map(u=>`<article class="library-item unit-card"><div><span class="tag purple">已掌握</span><h3>${esc(u.meaning)}</h3><p class="small">${record(u.id).custom.length} 条${u.practiceProfile==='scenario'?'个人场景':'自己的例句'}</p></div>${button('恢复练习','restore','button outline',`data-lesson="${u.id}"`)}</article>`).join('')}</div>`:'<div class="empty"><h3>还没有标记已掌握的内容</h3><p>可以在学习中标记，之后随时恢复。</p></div>'}`;}
 
 function currentContext(){if(view==='practice'&&state.review)return {q:reviewQuestion(),qs:state.review.q,context:'review'};if(view==='study'&&state.learn&&['entry','exercise'].includes(state.learn.stage))return {q:learningQuestion(),qs:state.learn.q,context:state.learn.stage==='entry'?'entry':'learn'};return null;}
-function showDialog(html){dialog.innerHTML=`<button class="dialog-close" data-action="close-dialog" aria-label="关闭">×</button>${html}`;dialog.showModal();}
+function showDialog(html){dialog.innerHTML=`<button class="dialog-close" data-action="close-dialog" aria-label="关闭">×</button>${html}`;dialog.showModal();if(typeof window.decorateKeyboardActions==='function')window.decorateKeyboardActions();}
 function askRestart(){showDialog(`<h2>重新开始这组学习？</h2><p class="small">${esc(lesson.meaning)}</p><p>这组学习将从头开始，你的${scenarioUnit()?'场景':'例句'}、草稿和复习记录会保留。</p><div class="actions">${button('重新开始','confirm-restart')}${button('取消','close-dialog','button secondary')}</div>`);}
 function editCustom(id){if(scenarioUnit())return editScenario(id);editingCustom=id||null;const c=state.custom.find(x=>x.id===id);showDialog(`<h2>${c?'修改例句':'新增例句'}</h2><label class="section-label" for="edit-zh">中文意思</label><input id="edit-zh" type="text" maxlength="300" value="${esc(c?.zh||state.draft.zh||'')}"><label class="section-label" for="edit-en">英文表达</label><textarea id="edit-en" maxlength="600" lang="en">${esc(c?.en||state.draft.en||'')}</textarea><div class="ai-check-tools">${button('复制 AI 核对指令','copy-ai-check','button secondary',`data-id="${id||''}"`)}</div><p class="due-note">核对后可以回来修改，再保存。</p><div class="actions">${button('保存','commit-edit','button',`data-id="${id||''}"`)}${button('取消','close-dialog','button secondary')}</div>`);}
 function grade(value){const c=currentContext();if(!c?.q)return;const effective=value;const result={id:c.q.id,grade:effective,selfGrade:questionType(c.q)==='choice'?null:value,kind:questionType(c.q),choiceCorrect:questionType(c.q)==='choice'&&c.qs.choice===c.q.correctChoice,help:!!(c.qs.usedHint||c.qs.exposed||c.qs.mistake),time:Date.now()};enrolled();if(c.context==='learn'){const l=state.learn;l.results.push(result);l.index++;l.q=newQuestionState();l.stage=l.index>=lesson.learning.length?'custom':'exercise';}else if(c.context==='review'){const r=state.review;r.results.push(result);if((effective!=='good'||result.help)&&!r.retried.includes(c.q.id)&&r.retried.length<2){r.queue.push(c.q.id);r.retried.push(c.q.id);toast('这题稍后再练，先继续');}r.index++;r.q=newQuestionState();if(r.index>=r.queue.length)finishReview();}save();render();window.scrollTo(0,0);}
-function finishLearning(){state.learn.stage='done';state.learn.savedCustom=false;enrolled();save();render();window.scrollTo(0,0);}
-document.addEventListener('input',event=>{const el=event.target;if(el.id==='library-search'){if(event.isComposing){search=el.value;save();return;}const caret=el.selectionStart;search=el.value;page=1;render();const field=document.getElementById('library-search');field.focus();try{field.setSelectionRange(caret,caret);}catch{}}else if(el.id==='answer'){const c=currentContext();if(c){c.qs.input=el.value;if(c.qs.revealed){const caret=el.selectionStart;c.qs.exposed=true;c.qs.revealed=false;c.qs.checked=false;render();const fresh=document.getElementById('answer');fresh.focus();fresh.setSelectionRange(caret,caret);}save();const check=app.querySelector('[data-action="check"]');if(check){check.disabled=!el.value.trim();check.innerHTML='核对答案 <span class="submit-glyph" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 5v7H5m4-4-4 4 4 4"/></svg></span>';}}}else if(el.id==='custom-scene'||el.id==='custom-intent'){state.draft[el.id==='custom-scene'?'scene':'intent']=el.value;save();updateCopyControls();}else if((el.id==='edit-scene'||el.id==='edit-intent')&&!editingCustom){state.draft[el.id==='edit-scene'?'scene':'intent']=el.value;save();}else if(el.id==='custom-zh'||el.id==='custom-en'){state.draft[el.id==='custom-zh'?'zh':'en']=el.value;save();updateCopyControls();}else if((el.id==='edit-zh'||el.id==='edit-en')&&!editingCustom){state.draft[el.id==='edit-zh'?'zh':'en']=el.value;save();}});
-document.addEventListener('click',event=>{const anchor=event.target.closest('a[href^="#"]');if(anchor){event.preventDefault();go(anchor.getAttribute('href').slice(1));return;}const el=event.target.closest('[data-action]');if(!el)return;const action=el.dataset.action;if(el.dataset.lesson)selectLesson(el.dataset.lesson);const c=currentContext();switch(action){
+function finishLearning(){markDailyVisit('done');state.learn.stage='done';state.learn.savedCustom=false;enrolled();save();render();window.scrollTo(0,0);}
+document.addEventListener('input',event=>{const el=event.target;if(el.id==='library-search'){if(event.isComposing){search=el.value;save();return;}const caret=el.selectionStart;search=el.value;page=1;render();const field=document.getElementById('library-search');field.focus();try{field.setSelectionRange(caret,caret);}catch{}}else if(el.id==='answer'){const c=currentContext();if(c){c.qs.input=el.value;if(c.qs.revealed){const caret=el.selectionStart;c.qs.exposed=true;c.qs.revealed=false;c.qs.checked=false;render();const fresh=document.getElementById('answer');fresh.focus();fresh.setSelectionRange(caret,caret);}save();const check=app.querySelector('[data-action="check"]');if(check){check.disabled=!el.value.trim();check.innerHTML='核对答案';}window.decorateKeyboardActions();}}else if(el.id==='custom-scene'||el.id==='custom-intent'){state.draft[el.id==='custom-scene'?'scene':'intent']=el.value;save();updateCopyControls();}else if((el.id==='edit-scene'||el.id==='edit-intent')&&!editingCustom){state.draft[el.id==='edit-scene'?'scene':'intent']=el.value;save();}else if(el.id==='custom-zh'||el.id==='custom-en'){state.draft[el.id==='custom-zh'?'zh':'en']=el.value;save();updateCopyControls();}else if((el.id==='edit-zh'||el.id==='edit-en')&&!editingCustom){state.draft[el.id==='edit-zh'?'zh':'en']=el.value;save();}});
+document.addEventListener('click',event=>{const anchor=event.target.closest('a[href^="#"]');if(anchor){event.preventDefault();go(anchor.getAttribute('href').slice(1));return;}const el=event.target.closest('[data-action]');if(!el)return;const action=el.dataset.action;if(el.dataset.lesson)selectLesson(el.dataset.lesson);if(handleCeciliaAction(action,el))return;const c=currentContext();switch(action){
 case 'continue-learning-home':continueLearningHome();break;
 case 'continue-review-home':continueReviewHome();break;
 case 'copy-ai-check':copyPersonalCheck(el.dataset.id);break;
@@ -394,19 +402,19 @@ case 'open-learn':
 case 'browse-other':applyLearningOrigin(learningOrigin());filter='all';subfilter='all';search='';page=1;go('library');break;
 case 'origin-library':applyLearningOrigin(learningOrigin());go('library');break;
 case 'next-learning':{const origin=learningOrigin(),next=nextLearningUnit();if(!next||next.id!==el.dataset.next){toast('这个表达的状态已变化，请重新选择');render();break;}selectLesson(next.id);applyLearningOrigin(origin);if(!state.learn)state.learn=newLearning();state.learn.origin=origin;save();go('study');break;}
-case 'next-review':{const next=nextReviewUnit();if(!next||next.id!==el.dataset.next){render();break;}selectLesson(next.id);if(state.review)go('practice');else startReview();break;}
+case 'next-review':{const origin=reviewScopeOrigin();const next=nextReviewUnit();if(!next||next.id!==el.dataset.next){render();break;}selectLesson(next.id);store.reviewScope=origin;if(state.review){state.review.origin=origin;go('practice');}else startReview();break;}
 case 'resume-learn':dialog.close();go('study');break;
 case 'restart-learn':dialog.close();askRestart();break;
 case 'confirm-restart':state.learn=newLearning();save();dialog.close();go('study');break;
 case 'dialog-review':dialog.close();go('review');break;
 case 'exit-learn':case 'exit-review':save();go(action==='exit-learn'?'library':'review');toast('进度已保存');break;
 case 'master':state.masteryOrigin=['review','practice','summary'].includes(view)?'review':'learn';if(dialog.open)dialog.close();showDialog(`<h2>标记为已掌握？</h2><p class="small">${esc(lesson.meaning)}</p><p>标记后，这个表达将不再出现在待学和待复习内容中。进度和自建内容会保留，之后可以恢复。</p><div class="actions">${button('确认已掌握','confirm-master')}${button('取消','close-dialog','button secondary')}</div>`);break;
-case 'confirm-master':state.mastered=true;save();dialog.close();go('mastery');break;
+case 'confirm-master':markDailyVisit('mastered');state.mastered=true;save();dialog.close();go('mastery');break;
 case 'undo-master':state.mastered=false;save();go(state.masteryOrigin==='review'?(state.review?'practice':'review'):state.learn&&state.learn.stage!=='done'?'study':'library');toast('已撤销掌握标记');break;
 case 'restore':state.mastered=false;state.schedule.due=Date.now();save();if(state.learn&&state.learn.stage!=='done')go('study');else if(state.enrolled){if(state.review)go('practice');else startReview();}else{state.learn=newLearning();save();go('study');}toast('已恢复，可以继续练习');break;
 case 'check':if(!c||questionType(c.q)!=='input'||!c.qs.input.trim()){toast('先写下英文，或直接查看答案');break;}if(c.qs.revealed||!matches(c.qs.input,c.q.answers))c.qs.exposed=true;c.qs.checked=true;c.qs.revealed=true;if(c.context==='entry'&&lesson.pilot){state.learn.entryAttempt={...c.qs};state.learn.stage='intro';}save();render();app.querySelector('.answer-box')?.scrollIntoView({block:'nearest'});break;
 case 'reveal':if(c){c.qs.revealed=true;c.qs.checked=false;if(questionType(c.q)==='input')c.qs.exposed=true;if(c.context==='entry'&&lesson.pilot){state.learn.entryAttempt={...c.qs};state.learn.stage='intro';}save();render();app.querySelector('.answer-box')?.scrollIntoView({block:'nearest'});}break;
-case 'hint':if(c){const h=el.dataset.hint;c.qs.hints=c.qs.hints.includes(h)?c.qs.hints.filter(x=>x!==h):[...c.qs.hints,h];c.qs.usedHint=true;save();render();}break;
+case 'hint':if(c){const h=el.dataset.hint;c.qs.hints=c.qs.hints.includes(h)?c.qs.hints.filter(x=>x!==h):[...c.qs.hints,h];if(c.qs.hints.includes(h))window.markQuestionHelp(c.q,c.qs,questionType(c.q)==='input'?h:'frame');save();render();}break;
 case 'edit-entry':state.learn.stage='entry';state.learn.q.revealed=false;state.learn.q.checked=false;state.learn.q.exposed=true;save();render();break;
 case 'choose-answer':if(c&&questionType(c.q)==='choice'&&!c.qs.revealed&&c.q.choices.some(x=>x.id===el.dataset.choice)){c.qs.choice=el.dataset.choice;c.qs.revealed=true;c.qs.checked=true;c.qs.mistake=c.qs.choice!==c.q.correctChoice;save();render();}break;
 case 'choice-next':if(c&&questionType(c.q)==='choice'&&c.qs.revealed)grade(c.qs.choice===c.q.correctChoice&&!c.qs.usedHint&&!c.qs.mistake?'good':'hard');break;
@@ -423,7 +431,7 @@ case 'save-custom':if(!state.draft.zh.trim()||!state.draft.en.trim()){toast('请
 case 'continue-create':state.learn.savedCustom=false;save();render();window.scrollTo(0,0);break;
 case 'finish-learn':finishLearning();if(draftPresent())toast('草稿已保留，可在小结继续填写');break;
 case 'confirm-finish':dialog.close();finishLearning();break;
-case 'start-review':if(state.review){go('practice');}else startReview();break;
+case 'start-review':if(view==='study'||view==='mastery')store.reviewScope=isCeciliaOrigin(state.learn?.origin)?{domain:'cecilia',dateId:originDay(state.learn.origin)}:null;if(state.review){state.review.origin=store.reviewScope||null;go('practice');}else startReview();break;
 case 'resume-review':go('practice');break;
 case 'restart-review':showDialog(`<h2>重新开始本轮复习？</h2><p>当前未完成轮次会重置，已完成的历史复习记录保留。</p><div class="actions">${button('重新开始','confirm-restart-review')}${button('取消','close-dialog','button secondary')}</div>`);break;
 case 'confirm-restart-review':dialog.close();startReview();break;
@@ -443,10 +451,4 @@ window.addEventListener('beforeunload',save);
 initializeNavigation();
 render();
 
-// Submit the answer directly; do not interrupt Chinese input-method composition.
-document.addEventListener('keydown', event => {
-  if (event.target.id === 'answer' && event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
-    event.preventDefault();
-    app.querySelector('[data-action="check"]')?.click();
-  }
-});
+window.installKeyboardSupport();
