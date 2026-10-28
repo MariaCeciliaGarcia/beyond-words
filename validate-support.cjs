@@ -42,3 +42,19 @@ const invalidHint=data(fresh);invalidHint.records['p-done-with'].learn.pinnedLea
  ai.el('dialog').close();ai.run("selectLesson('p-fair-enough');state.draft.scene='朋友想休息';state.draft.intent='我接受';");ai.ctx.navigator.clipboard.writeText=async value=>{copied=value;};await ai.run('copyPersonalCheck()');assert(copied.includes('朋友想休息')&&copied.includes('我接受')&&copied.includes('Fair enough.')&&!copied.includes('译成'));
  console.log('PASS: rejected malformed cursor/question metadata; AI clipboard payloads and denied-copy editor preservation.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
+
+// Keep one current personal example per expression, including legacy backups.
+{
+ const single=setup(),sr=single.run;
+ sr("selectLesson('ever');state.enrolled=true;state.custom=[{id:'c-old',zh:'旧意思',en:'Old personal sentence.'},{id:'c-new',zh:'最近的意思',en:'Latest personal sentence.'}];state.review={queue:['c-old'],index:0,q:{...newQuestionState(),input:'Unfinished review draft'},results:[],retried:[],baseCount:1,scheduled:true};state.draft={zh:'未保存草稿',en:'Unsaved.'};");
+ const legacy=JSON.parse(sr('JSON.stringify(store)')),loaded=setup(null,legacy),lr=loaded.run;
+ assert.equal(lr('state.custom.length'),1);assert.equal(lr('state.custom[0].id'),'c-new');assert.equal(lr('reviewQuestion().answers[0]'),'Old personal sentence.');assert.equal(lr('state.review.q.input'),'Unfinished review draft');assert.equal(lr('state.draft.zh'),'未保存草稿');
+ lr("state.learn=newLearning();state.learn.stage='custom';state.draft={zh:'替换后的意思',en:'Replacement personal sentence.'};view='study'");action(loaded,'save-custom');assert.equal(lr('state.custom.length'),1);assert.equal(lr('state.custom[0].id'),'c-new');assert.equal(lr('state.custom[0].en'),'Replacement personal sentence.');
+ action(loaded,'continue-create');lr("state.draft={zh:'再换一句',en:'Another personal sentence.'}");action(loaded,'save-custom');assert.equal(lr('state.custom.length'),1);assert.equal(lr('state.custom[0].en'),'Another personal sentence.');assert.equal(lr('reviewQuestion().answers[0]'),'Old personal sentence.');
+ const again=setup(null,data(loaded));assert.equal(again.run('state.custom.length'),1);assert.equal(again.run('state.custom[0].en'),'Another personal sentence.');
+ lr("state.review=null");assert.equal(lr("pool().filter(q=>q.id.startsWith('c-')).length"),1);assert.equal(lr("pool().find(q=>q.id.startsWith('c-')).answers[0]"),'Another personal sentence.');
+ lr("selectLesson('p-fair-enough');saveScenario('场景一','接受');saveScenario('场景二','理解');");assert.equal(lr('state.custom.length'),1);assert.equal(lr('state.custom[0].scene'),'场景二');
+ const currentId=lr('state.custom[0].id');lr(`state.draft.scene='另一条未保存场景';state.draft.intent='草稿态度';saveScenario('编辑当前场景','编辑态度',${JSON.stringify(currentId)})`);assert.equal(lr('state.custom.length'),1);assert.equal(lr('state.draft.scene'),'另一条未保存场景');
+ const imported=setup();assert(call(imported,'previewProgressImport',backup(legacy)));assert(imported.run("applyProgressImport('replace')"));assert.equal(imported.run("record('ever').custom.length"),1);
+ console.log('PASS: one latest personal example/scenario; repeated save replaces; legacy load/import compacts; pending review snapshot and draft preserved; future review uses only the latest.');
+}

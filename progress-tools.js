@@ -27,6 +27,7 @@ function persistProgress(){
  let latest=null;try{latest=parseStored(localStorage.getItem(KEY));}catch{}
  if(latest&&Number(latest.generation||0)>Number(store.generation||0)){keepProgressConflict();installProgressRuntime(latest);setTimeout(()=>render(),0);return persistProgress();}
  if(latest&&Number(latest.generation||0)===Number(store.generation||0)){preserveRecordConflicts(latest.records);store.records=mergeProgressRecords(store.records,latest.records);for(const kind of ['learn','review'])if(Number(latest.resume?.[kind]?.at||0)>Number(store.resume?.[kind]?.at||0)){store.resume=store.resume||{};store.resume[kind]=latest.resume[kind];}}
+ for(const [id,r]of Object.entries(store.records))retainLatestPersonal(r,unitById.get(id));
  state=store.records[lesson.id];store.activeId=lesson.id;store.ui={view,tab,filter,subfilter,search,domain,page,lastSpoken,lastExam};
  store.resume=store.resume||{};
  if(view==='study'&&state.learn&&(!state.mastered||state.learn.dailyReplay))store.resume.learn={id:lesson.id,origin:state.learn.origin,at:Date.now()};
@@ -93,6 +94,7 @@ function checkedProgress(data){
   if(r.summary&&!validResults(r.summary.results))throw Error('备份中的复习小结无法读取。');
   for(const round of [r.learn,r.review]){if(round?.pinnedLesson){for(const field of ['meaning','expression','formula','explanation','boundary','checkpoint'])if(round.pinnedLesson[field]!==undefined&&typeof round.pinnedLesson[field]!=='string')throw Error('备份中的讲解文字无法读取。');}if(round?.pinnedLesson?.examples&&(!Array.isArray(round.pinnedLesson.examples)||!round.pinnedLesson.examples.every(e=>typeof e.en==='string'&&typeof e.zh==='string')))throw Error('备份中的讲解无法读取。');}
   if(r.dailyVisits){if(typeof r.dailyVisits!=='object'||Array.isArray(r.dailyVisits))throw Error('每日进度无法读取。');for(const [day,visit]of Object.entries(r.dailyVisits))if(!/^\d{4}-\d{2}-\d{2}$/.test(day)||!visit||!['done','skip','mastered'].includes(visit.status)||!Number.isFinite(visit.at))throw Error('每日进度不完整。');}
+  retainLatestPersonal(r,unitById.get(id));
   copy.records[id]=r;
  }
  if(copy.reviewScope&&(!['cecilia'].includes(copy.reviewScope.domain)||copy.reviewScope.dateId!==undefined&&typeof copy.reviewScope.dateId!=='string'))delete copy.reviewScope;
