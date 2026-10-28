@@ -1,0 +1,197 @@
+'use strict';
+window.JUJIAN_EXAM_A=(()=>{
+ const u=(id,meaning,expression,formula,explanation,boundary,rows)=>{const item=window.JUJIAN_BUILD('exam',id,meaning,expression,formula,explanation,boundary,rows);item.domain='ielts';item.domains=['ielts','cet4','cet6','toefl'];item.examSkill='writing';return item;};
+ return [
+ u('e-lead-to','说明一种情况会带来什么结果','…lead to…','原因 + lead / leads to + 结果名词 / 动词-ing','把原因与随后出现的结果连接起来，说明影响或后果。结果可以积极，也可以消极。','to 是介词，后接名词或 -ing。lead to 表示因果，不能仅凭两件事同时出现就断定存在因果。',[
+ ['讨论作息：睡眠不足会导致注意力不集中。','A lack of sleep can lead to poor concentration.','睡眠不足：a lack of sleep；注意力不集中：poor concentration'],
+ ['讨论交通：更好的公共交通能带来更少的污染。','Better public transport can lead to less pollution.','公共交通：public transport；更少污染：less pollution'],
+ ['分析合作：清晰的沟通往往能带来更好的合作。','Clear communication often leads to better cooperation.','清晰沟通：clear communication；合作：cooperation'],
+ ['说明风险：过度依赖技术可能导致技能流失。','Overdependence on technology may lead to a loss of skills.','过度依赖：overdependence on；技能流失：a loss of skills'],
+ ['讨论学习：定期练习有助于带来更大的信心。','Regular practice can lead to greater confidence.','定期练习：regular practice；更大信心：greater confidence'],
+ ['讨论消费：冲动购物可能导致经济问题。','Impulse buying may lead to financial problems.','冲动购物：impulse buying；经济问题：financial problems'],
+ ['讨论教育：较小的班级能带来更多个别关注。','Smaller classes can lead to more individual attention.','较小班级：smaller classes；个别关注：individual attention'],
+ ['分析城市：更多绿地可能带来健康改善。','More green spaces may lead to better health.','绿地：green spaces；健康改善：better health'],
+ ['说明沟通后果：这种误解可能导致冲突。','This misunderstanding could lead to conflict.','这种误解：this misunderstanding；冲突：conflict'],
+ ['讨论工作：灵活的工作时间能带来更好的生活平衡。','Flexible working hours can lead to a better work-life balance.','灵活工时：flexible working hours；生活平衡：work-life balance']
+ ]),
+ u('e-result-from','从结果回头指出其原因','…result from…','结果 + result / results from + 原因','先说观察到的结果，再说明它源自什么原因。与 lead to 的叙述方向相反。','result from 后面是原因；result in 后面是结果。名词主语单数时用 results。',[
+ ['分析成绩变化：这种进步源于定期练习。','This improvement results from regular practice.','进步：improvement；定期练习：regular practice'],
+ ['讨论拥堵：交通问题常常源于糟糕的规划。','Traffic problems often result from poor planning.','交通问题：traffic problems；糟糕规划：poor planning'],
+ ['说明压力来源：这种压力可能源于不切实际的期待。','This pressure may result from unrealistic expectations.','不切实际的期待：unrealistic expectations'],
+ ['讨论误解：很多误解源于沟通不清。','Many misunderstandings result from unclear communication.','误解：misunderstandings；沟通不清：unclear communication'],
+ ['分析差异：这种差异源于不同的生活方式。','This difference results from different lifestyles.','差异：difference；生活方式：lifestyles'],
+ ['讨论健康：疲劳可能源于睡眠不足。','Tiredness can result from a lack of sleep.','疲劳：tiredness；睡眠不足：a lack of sleep'],
+ ['解释浪费：这种浪费源于不必要的包装。','This waste results from unnecessary packaging.','不必要的包装：unnecessary packaging'],
+ ['分析团队：更高的效率可能源于更密切的合作。','Higher efficiency may result from closer cooperation.','更高效率：higher efficiency；更密切合作：closer cooperation'],
+ ['讨论差错：这些错误源于信息不完整。','These errors result from incomplete information.','错误：errors；信息不完整：incomplete information'],
+ ['解释增长：需求增长部分源于人口变化。','The rise in demand partly results from population changes.','需求增长：the rise in demand；部分：partly']
+ ]),
+ u('e-due-to','用名词短语简洁说明原因','…due to…','结果 / 情况 + be due to + 原因名词短语','在较正式的说明中，用名词短语解释某种情况的原因。','due to 后接名词或 -ing，不直接接独立完整句子。The delay is due to rain 与 because it is raining 的结构不同。',[
+ ['解释活动延期：延期是由于恶劣天气。','The delay is due to bad weather.','延期：the delay；恶劣天气：bad weather'],
+ ['分析成本：较高的成本是由于燃料价格上涨。','The higher cost is due to rising fuel prices.','燃料价格上涨：rising fuel prices'],
+ ['解释差异：这种差异主要是由于年龄。','This difference is mainly due to age.','主要：mainly；年龄：age'],
+ ['说明取消原因：取消是由于需求不足。','The cancellation is due to a lack of demand.','取消：the cancellation；需求不足：a lack of demand'],
+ ['解释问题：这些问题是由于培训不足。','These problems are due to inadequate training.','培训不足：inadequate training'],
+ ['说明道路拥堵：拥堵部分是由于道路施工。','The congestion is partly due to roadworks.','拥堵：the congestion；道路施工：roadworks'],
+ ['分析成绩：这种改善是由于更好的教学。','This improvement is due to better teaching.','改善：improvement；更好的教学：better teaching'],
+ ['解释缺席：他的缺席是由于生病。','His absence is due to illness.','缺席：absence；生病：illness'],
+ ['分析服务不足：长时间等待是由于员工短缺。','The long wait is due to a shortage of staff.','员工短缺：a shortage of staff'],
+ ['解释兴趣变化：兴趣下降是由于重复的内容。','The decline in interest is due to repetitive content.','兴趣下降：the decline in interest；重复内容：repetitive content']
+ ]),
+ u('e-for-instance','用具体情况支持刚才的概括','For instance,…','For instance, + 支持前述观点的具体例子','在概括之后给出具体例子，让读者知道这项判断如何体现在现实中。','例子应支持前面的观点，不能把另一个未解释的概括当例子。for instance 与 for example 功能相近。',[
+ ['前句说校园能减少浪费，举例：例如，学生可以自带水瓶。','For instance, students can bring their own water bottles.','自带水瓶：bring their own water bottles'],
+ ['前句说科技能节省时间，举例：例如，人们可以在网上支付账单。','For instance, people can pay bills online.','支付账单：pay bills；在网上：online'],
+ ['前句说社区能支持老人，举例：例如，志愿者可以送餐。','For instance, volunteers can deliver meals.','志愿者：volunteers；送餐：deliver meals'],
+ ['前句说运动不一定昂贵，举例：例如，散步不需要任何器材。','For instance, walking requires no equipment.','不需要器材：requires no equipment'],
+ ['前句说课程可联系生活，举例：例如，学生可以规划家庭预算。','For instance, students can plan a household budget.','家庭预算：a household budget'],
+ ['前句说图书馆服务多样，举例：例如，它们可以提供安静的学习空间。','For instance, they can provide quiet study spaces.','安静学习空间：quiet study spaces'],
+ ['前句说交通选择可以改善，举例：例如，城市可以增加夜间公交。','For instance, cities can add more night buses.','增加夜间公交：add more night buses'],
+ ['前句说学习可更灵活，举例：例如，讲座可以被录制下来。','For instance, lectures can be recorded.','讲座：lectures；可以被录制：can be recorded'],
+ ['前句说学校能培养责任感，举例：例如，学生可以照顾校园花园。','For instance, students can look after a school garden.','照顾校园花园：look after a school garden'],
+ ['前句说小改变能节能，举例：例如，办公室可以在夜间关灯。','For instance, offices can turn off the lights at night.','关灯：turn off the lights；夜间：at night']
+ ]),
+ u('e-in-particular','从一个范围中突出具体对象','…in particular…','in particular + 被强调的对象；或 对象 + in particular','在谈过一类人或事物后，特别指出其中某一项。它强调重点，不表示只有这一项。','位置应让读者清楚它强调谁。不要把 in particular 当作因果连接词或最高级。',[
+ ['说明服务对象：这项服务对老年人尤其有帮助。','This service is helpful to older people in particular.','有帮助：helpful；老年人：older people'],
+ ['谈学习方法：我尤其重视定期反馈。','I value regular feedback in particular.','重视：value；定期反馈：regular feedback'],
+ ['比较交通方式：尤其是公交车，仍然很重要。','Buses, in particular, remain important.','公交车：buses；仍然重要：remain important'],
+ ['提出重点：我们尤其需要改善农村地区的服务。','We need to improve services in rural areas in particular.','农村地区：rural areas'],
+ ['谈能力培养：学校尤其应该重视批判性思维。','Schools should value critical thinking in particular.','重视：value；批判性思维：critical thinking'],
+ ['说明影响：小企业尤其可能受到影响。','Small businesses, in particular, may be affected.','小企业：small businesses；受到影响：be affected'],
+ ['谈环境议题：我尤其关注塑料废物。','I am concerned about plastic waste in particular.','关注：be concerned about；塑料废物：plastic waste'],
+ ['说明受益者：学生尤其能从这项改变中受益。','Students, in particular, can benefit from this change.','从中受益：benefit from'],
+ ['选择讨论对象：我想尤其讨论住房问题。','I would like to discuss housing in particular.','住房问题：housing'],
+ ['说明偏好：她尤其喜欢实践性任务。','She enjoys practical tasks in particular.','喜欢：enjoy；实践性任务：practical tasks']
+ ]),
+ u('e-rather-than','把两个选择对照，说明选择前者','…rather than…','选择的做法 + rather than + 对照的做法','对照两个选项，强调选择某种做法而不是另一种。两侧形式尽量对应。','不要与 would rather… 的完整结构混淆。比较两个名词或动作时，保持语法形式平行。',[
+ ['提出学习建议：学生应该理解观点，而不是背诵答案。','Students should understand ideas rather than memorize answers.','理解观点：understand ideas；背答案：memorize answers',['Students should understand ideas rather than memorise answers.']],
+ ['讨论出行选择：我们选择步行而不是开车。','We choose to walk rather than drive.','选择：choose to；开车：drive'],
+ ['谈评价方式：学校应该重视进步而不是排名。','Schools should value progress rather than rankings.','重视：value；排名：rankings'],
+ ['说明信息需求：人们需要证据而不是猜测。','People need evidence rather than guesses.','证据：evidence；猜测复数：guesses'],
+ ['讨论城市政策：城市应该改善服务而不是增加广告。','Cities should improve services rather than add more advertising.','改善服务：improve services；广告：advertising'],
+ ['谈沟通：我们应该倾听而不是立即作判断。','We should listen rather than judge immediately.','作判断：judge；立即：immediately'],
+ ['提出消费观：消费者应该重视质量而不是数量。','Consumers should value quality rather than quantity.','消费者：consumers；质量与数量：quality / quantity'],
+ ['说明合作选择：他们选择合作而不是竞争。','They choose to cooperate rather than compete.','合作：cooperate；竞争：compete'],
+ ['提出教育建议：教师应该鼓励提问而不是阻止提问。','Teachers should encourage questions rather than discourage them.','鼓励：encourage；阻止：discourage'],
+ ['讨论资料使用：我们需要核实信息而不是照抄。','We need to check information rather than copy it.','核实信息：check information；照抄：copy it']
+ ]),
+ u('e-instead-of','说明用一个做法替代另一个','instead of…','instead of + 名词 / 动词-ing','明确指出被替代的选择，可以放在句首，也可以放在替代做法后。','of 后接动作时用 -ing：instead of driving。不要写 instead of to drive。',[
+ ['讨论环保出行：人们可以骑车，而不是开车。','People can cycle instead of driving.','骑车：cycle；开车：driving'],
+ ['提出学习方法：学生可以讨论观点，而不是独自学习。','Students can discuss ideas instead of studying alone.','讨论观点：discuss ideas；独自学习：study alone'],
+ ['谈饮食选择：我们可以用水代替含糖饮料。','We can choose water instead of sugary drinks.','选择：choose；含糖饮料：sugary drinks'],
+ ['说明沟通替代：她发了一封邮件，而不是打电话。','She sent an email instead of calling.','发邮件过去式：sent an email；打电话：calling'],
+ ['讨论购物：人们可以修理旧物，而不是购买新物。','People can repair old items instead of buying new ones.','修理旧物：repair old items；新物：new ones'],
+ ['谈学习资料：我们可以借书，而不是买书。','We can borrow books instead of buying them.','借书：borrow books；它们：them'],
+ ['提出沟通办法：你可以说明问题，而不是保持沉默。','You can explain the problem instead of staying silent.','保持沉默：stay silent'],
+ ['谈工作空间：他们使用共享办公室，而不是租自己的办公室。','They use a shared office instead of renting their own.','共享办公室：a shared office；租：rent'],
+ ['提出放松方式：学生可以去散步，而不是一直看屏幕。','Students can go for a walk instead of looking at screens all the time.','一直看屏幕：look at screens all the time'],
+ ['讨论垃圾处理：商店可以重复使用箱子，而不是扔掉它们。','Shops can reuse boxes instead of throwing them away.','重复使用：reuse；扔掉：throw away']
+ ]),
+ u('e-both-and','同时表达两方面都成立','both…and…','both + A + and + B','把两项并列放在一起，明确不是只考虑其中一项。A、B 应有相同的语法角色。','both A and B 作主语通常用复数谓语。不要一边放名词，一边放完整句子。',[
+ ['讨论教育目标：学校应该同时培养知识和技能。','Schools should develop both knowledge and skills.','培养：develop；知识和技能：knowledge and skills'],
+ ['谈健康生活：饮食和运动都很重要。','Both diet and exercise are important.','饮食：diet；复数谓语：are'],
+ ['说明方案优点：这个办法既实用又让人负担得起。','This approach is both practical and affordable.','办法：approach；实用：practical；负担得起：affordable'],
+ ['说明共同利益：这个改变有益于学生和教师双方。','This change benefits both students and teachers.','有益于：benefits'],
+ ['谈学习来源：我们既能从成功中学习，也能从失败中学习。','We can learn from both success and failure.','成功：success；失败：failure'],
+ ['介绍设施：这座图书馆既安静又方便。','This library is both quiet and convenient.','安静：quiet；方便：convenient'],
+ ['说明影响范围：这个问题影响城市和农村地区。','This issue affects both cities and rural areas.','影响：affects；农村地区：rural areas'],
+ ['谈责任分配：政府和个人都承担责任。','Both governments and individuals have responsibilities.','个人：individuals；承担责任：have responsibilities'],
+ ['提出评价标准：我们需要同时考虑成本和质量。','We need to consider both cost and quality.','考虑：consider；成本和质量：cost and quality'],
+ ['说明团队特点：他们既有经验又有动力。','They are both experienced and motivated.','有经验：experienced；有动力：motivated']
+ ]),
+ u('e-not-only','在已有一项之外补充另一个重要方面','not only…but also…','not only + A + but also + B','强调第二项也值得注意，而不是只看到第一项。适合扩展好处、影响或要求。','两项形式保持平行。放在句首可能涉及倒装；放在句中可以避免不必要的复杂结构。',[
+ ['讨论运动好处：运动不仅改善健康，还能减轻压力。','Exercise not only improves health but also reduces stress.','改善健康：improve health；减轻压力：reduce stress'],
+ ['谈课程内容：课程不仅包括理论，还包括实践。','The course includes not only theory but also practice.','理论：theory；实践：practice'],
+ ['说明影响：这项政策不仅影响学生，还影响家庭。','This policy affects not only students but also families.','政策：policy；影响：affects'],
+ ['谈合作收获：合作不仅节省时间，还能改善结果。','Cooperation not only saves time but also improves results.','合作：cooperation；节省时间：save time'],
+ ['评价服务：这项服务不仅方便，而且可靠。','This service is not only convenient but also reliable.','方便：convenient；可靠：reliable'],
+ ['谈阅读意义：阅读不仅提供信息，还能激发想象力。','Reading not only provides information but also stimulates imagination.','激发想象力：stimulate imagination'],
+ ['讨论交通：骑车不仅便宜，还很环保。','Cycling is not only cheap but also environmentally friendly.','环保：environmentally friendly'],
+ ['说明能力要求：这份工作不仅需要知识，还需要耐心。','This job requires not only knowledge but also patience.','需要：requires；耐心：patience'],
+ ['讨论图书馆：图书馆不仅借书，还举办活动。','Libraries not only lend books but also hold events.','借出书：lend books；举办活动：hold events'],
+ ['评价方法：这种方法不仅简单，而且有效。','This method is not only simple but also effective.','方法：method；有效：effective']
+ ]),
+ u('e-in-contrast','突出与前面情况的明显不同','In contrast,…','前述情况。In contrast, + 对照的完整情况','在前面已经给出一种情况后，转向另一种明显不同的情况。','对照双方应在同一维度上有可比性。in contrast 本身不表示先后顺序或因果。',[
+ ['前句说城市住房昂贵，对照乡村：相比之下，农村住房更便宜。','In contrast, housing in rural areas is cheaper.','农村住房：housing in rural areas'],
+ ['前句说这条路线拥挤，对照另一条：相比之下，另一条路线很安静。','In contrast, the other route is quiet.','另一条路线：the other route'],
+ ['前句说线上课程灵活，对照线下：相比之下，面授课有固定的时间表。','In contrast, face-to-face classes have fixed schedules.','面授课：face-to-face classes；固定时间表：fixed schedules'],
+ ['前句说第一组偏好独立学习，对照第二组：相比之下，第二组偏好合作。','In contrast, the second group prefers cooperation.','第二组：the second group；偏好：prefers'],
+ ['前句说旧系统很慢，对照新系统：相比之下，新系统处理信息很快。','In contrast, the new system processes information quickly.','处理信息：process information'],
+ ['前句说年长顾客更看重价格，对照年轻顾客：相比之下，年轻顾客更看重设计。','In contrast, younger customers value design more.','年轻顾客：younger customers；更看重：value…more'],
+ ['前句说北部干燥，对照南部：相比之下，南部降雨很多。','In contrast, the south receives a lot of rain.','南部：the south；降雨：receive rain'],
+ ['前句说有些人很少运动，对照另一些人：相比之下，另一些人每天运动。','In contrast, others exercise every day.','另一些人：others'],
+ ['前句说第一种方案成本高，对照第二种：相比之下，第二种方案成本较低。','In contrast, the second option costs less.','第二种方案：the second option；成本较低：costs less'],
+ ['前句说过去居民主要开车，对照现在：相比之下，今天更多居民乘公交。','In contrast, more residents take the bus today.','居民：residents；乘公交：take the bus']
+ ]),
+ u('e-despite','承认一个条件，但说明结果仍不同于预期','despite…','Despite + 名词 / 动词-ing, + 完整结果','承认障碍或不利条件存在，同时指出事情依然发生。比 although 从句更适合接名词短语。','despite 后面不加 of，也不直接接普通完整句子。despite the fact that… 后才能接从句。',[
+ ['讨论一项活动：尽管下雨，活动仍继续进行。','Despite the rain, the event continued.','下雨：the rain；继续：continued'],
+ ['评价课程：尽管费用高，这门课仍受欢迎。','Despite the high cost, the course remains popular.','高费用：the high cost；仍受欢迎：remains popular'],
+ ['谈个人经历：尽管缺乏经验，我仍得到了这份工作。','Despite my lack of experience, I got the job.','缺乏经验：my lack of experience；得到工作：got the job'],
+ ['讨论技术影响：尽管有这些好处，仍有一些风险。','Despite these benefits, some risks remain.','这些好处：these benefits；仍有风险：some risks remain'],
+ ['说明团队表现：尽管时间有限，他们仍完成了任务。','Despite the limited time, they completed the task.','时间有限：the limited time；完成：completed'],
+ ['谈图书馆使用：尽管数字资源增加，图书馆仍很重要。','Despite the growth of digital resources, libraries remain important.','数字资源增加：the growth of digital resources'],
+ ['讨论学习：尽管犯了错误，她仍取得了进步。','Despite making mistakes, she made progress.','犯错误：making mistakes；取得进步：made progress'],
+ ['分析出行：尽管距离很短，很多人仍选择开车。','Despite the short distance, many people still choose to drive.','距离短：the short distance；仍：still'],
+ ['评价服务：尽管价格低，质量仍然不错。','Despite the low price, the quality is good.','低价格：the low price；质量：the quality'],
+ ['说明合作结果：尽管有分歧，我们仍找到了共同点。','Despite our differences, we found common ground.','分歧：our differences；共同点：common ground']
+ ]),
+ u('e-whether-or','说明尚未确定的两种选择','whether…or…','whether + 可能性A + or + 可能性B','在说明考虑、决定或需要核实什么时，把两种尚未确定的选择放在一起。','whether 不能随意写成 weather。whether…or… 可表达间接选择，不需要按直接问句倒装。',[
+ ['讨论学习方式：学生可以决定独自学习还是与他人学习。','Students can decide whether to study alone or with others.','独自学习：study alone；与他人：with others'],
+ ['讨论活动安排：我们需要考虑在室内还是室外举办活动。','We need to consider whether to hold the event indoors or outdoors.','举办活动：hold the event；室内／外：indoors / outdoors'],
+ ['分析消费选择：人们应该考虑租房还是买房。','People should consider whether to rent or buy a home.','租／买房：rent or buy a home'],
+ ['学校核实住宿安排：学校需要了解学生住在校内还是校外。','The school needs to know whether students live on campus or off campus.','需要了解：needs to know；校内／外：on campus / off campus'],
+ ['讨论政策：关键问题是这项政策会有帮助还是造成伤害。','The key question is whether this policy will help or cause harm.','关键问题：the key question；造成伤害：cause harm'],
+ ['谈职业选择：她还没有决定工作还是继续学习。','She has not decided whether to work or continue studying.','还没决定：has not decided；继续学习：continue studying'],
+ ['调查服务偏好：我们需要了解人们偏好线上还是线下服务。','We need to know whether people prefer online or in-person services.','线上／线下服务：online / in-person services'],
+ ['讨论调查：我们想知道参与者偏好速度还是质量。','We want to know whether participants prefer speed or quality.','参与者：participants；速度／质量：speed / quality'],
+ ['比较方法：教师需要决定采用考试还是项目。','Teachers need to decide whether to use tests or projects.','考试／项目：tests / projects'],
+ ['考虑居住选择：他们还没决定住城市还是乡村。','They have not decided whether to live in a city or a village.','还没决定：have not decided；住城市／乡村：live in a city / a village']
+ ]),
+ u('e-one-way','提出解决问题的一种具体做法','One way to…is to…','One way to + 目标动作 + is to + 具体做法','先说希望达到的目标，再提出一种可操作的办法。用 one way 避免把它夸成唯一解决方案。','目标与方法要有实际联系。两个 to 后都用动词原形，不把问题名称直接塞进动作位置。',[
+ ['提出节能办法：一种节能方法是关闭空房间的灯。','One way to save energy is to turn off lights in empty rooms.','节能：save energy；空房间的灯：lights in empty rooms'],
+ ['提出学习建议：一种提高记忆的方法是定期复习。','One way to improve memory is to review regularly.','提高记忆：improve memory；定期复习：review regularly'],
+ ['讨论交通：一种减少拥堵的方法是改善公共交通。','One way to reduce congestion is to improve public transport.','减少拥堵：reduce congestion'],
+ ['谈社区：一种帮助老人的方法是提供送餐服务。','One way to help older people is to provide meal deliveries.','送餐服务：meal deliveries'],
+ ['谈合作：一种建立信任的方法是履行承诺。','One way to build trust is to keep promises.','建立信任：build trust；履行承诺：keep promises'],
+ ['讨论健康：一种减轻压力的方法是定期锻炼。','One way to reduce stress is to exercise regularly.','减轻压力：reduce stress'],
+ ['提出环保做法：一种减少塑料垃圾的方法是重复使用袋子。','One way to reduce plastic waste is to reuse bags.','重复使用袋子：reuse bags'],
+ ['谈学习参与：一种让学生参与的方法是让他们提问。','One way to involve students is to let them ask questions.','让学生参与：involve students'],
+ ['提出消费建议：一种省钱的方法是在购物前列清单。','One way to save money is to make a list before shopping.','购物前列清单：make a list before shopping'],
+ ['谈信息理解：一种解释复杂观点的方法是使用例子。','One way to explain complex ideas is to use examples.','复杂观点：complex ideas；使用例子：use examples']
+ ]),
+ u('e-enable','说明某种条件让人能够做什么','…enable someone to…','条件 / 工具 + enable / enables + 人 + to + 动词原形','把条件与它提供的能力或机会连起来，具体说明人因此可以做什么。','人放在 enable 与 to 之间。enable someone doing 不符合这个结构；提供机会不保证每个人都会使用。',[
+ ['讨论在线资源：互联网让学生能够获得更多信息。','The internet enables students to access more information.','获取信息：access information'],
+ ['说明交通便利：公交服务让居民能够到达医院。','Bus services enable residents to reach the hospital.','居民：residents；到达：reach'],
+ ['评价课程：这门课使我能够更清楚地表达想法。','This course enables me to express ideas more clearly.','表达想法：express ideas；更清楚：more clearly'],
+ ['说明灵活工作：灵活工时让父母能够照顾孩子。','Flexible hours enable parents to care for their children.','照顾孩子：care for their children'],
+ ['谈设备：这种设备让人能够监测睡眠。','This device enables people to monitor their sleep.','设备：device；监测：monitor'],
+ ['讨论教育：奖学金让学生能够继续学习。','Scholarships enable students to continue studying.','奖学金：scholarships；继续学习：continue studying'],
+ ['说明空间用途：这个空间让团队能够一起工作。','This space enables teams to work together.','团队：teams；一起工作：work together'],
+ ['评价技术：翻译工具让旅行者能够理解路标。','Translation tools enable travellers to understand signs.','旅行者：travellers / travelers；理解路标：understand signs',['Translation tools enable travelers to understand signs.']],
+ ['谈反馈：详细反馈使她能够发现弱点。','Detailed feedback enables her to identify weaknesses.','发现弱点：identify weaknesses'],
+ ['说明培训效果：培训让员工能够安全地工作。','Training enables staff to work safely.','员工：staff；安全地：safely']
+ ]),
+ u('e-prevent','说明某种措施阻止什么事情发生','…prevent…from…','措施 + prevent / prevents + 人或事物 + from + 动词-ing','说明措施如何阻止不希望发生的行为或结果，注意交代被阻止的对象。','from 后接 -ing。prevent 强调阻止，不是仅仅增加不便；阻碍可能是暂时的，也不保证能消除全部风险。',[
+ ['讨论交通安全：安全带能防止乘客受伤。','Seat belts can prevent passengers from being injured.','安全带：seat belts；受伤：be injured'],
+ ['说明卫生措施：洗手能防止细菌传播。','Handwashing can prevent germs from spreading.','细菌：germs；传播：spread'],
+ ['讨论规则：清晰的规则能防止学生感到困惑。','Clear rules can prevent students from becoming confused.','感到困惑：become confused'],
+ ['说明信息安全：强密码能防止他人进入你的账户。','Strong passwords can prevent others from accessing your account.','进入账户：access your account'],
+ ['谈环保：过滤器可以防止有害物质进入河流。','Filters can prevent harmful substances from entering rivers.','有害物质：harmful substances；进入河流：enter rivers'],
+ ['说明设备作用：盖子可以防止食物变干。','A lid can prevent food from drying out.','盖子：a lid；变干：dry out'],
+ ['讨论工作：合理的工作量可以防止员工过度疲劳。','A reasonable workload can prevent staff from becoming exhausted.','合理工作量：a reasonable workload；过度疲劳：exhausted'],
+ ['说明费用障碍：高费用可能使学生无法参加。','High costs may prevent students from taking part.','参加：take part'],
+ ['讨论规划：提前规划可以防止资源被浪费。','Planning ahead can prevent resources from being wasted.','资源：resources；被浪费：be wasted'],
+ ['解释保护措施：围栏防止动物进入道路。','The fence prevents animals from entering the road.','围栏：the fence；进入道路：enter the road']
+ ]),
+ u('e-play-role','说明一个因素在某件事中的作用','…play a role in…','因素 + play / plays + a role in + 名词 / 动词-ing','指出一个因素参与影响结果，既能强调它的重要性，也能避免把它说成唯一原因。','role 前通常有 a，也可加 important、key 等修饰语。in 后接名词或 -ing，不接 to do。',[
+ ['讨论家庭影响：父母在儿童发展中发挥重要作用。',"Parents play an important role in children's development.",'儿童发展：children’s development；重要作用：an important role'],
+ ['讨论教育：反馈在学习中发挥关键作用。','Feedback plays a key role in learning.','关键作用：a key role；学习：learning'],
+ ['分析健康：饮食在保持健康方面发挥作用。','Diet plays a role in maintaining health.','保持健康：maintaining health'],
+ ['说明社区贡献：志愿者在支持老人方面发挥重要作用。','Volunteers play an important role in supporting older people.','支持老人：supporting older people'],
+ ['讨论环境：公共交通在减少污染方面发挥作用。','Public transport plays a role in reducing pollution.','减少污染：reducing pollution'],
+ ['分析合作：信任在团队合作中发挥关键作用。','Trust plays a key role in teamwork.','信任：trust；团队合作：teamwork'],
+ ['讨论发展：教育在经济发展中发挥重要作用。','Education plays an important role in economic development.','经济发展：economic development'],
+ ['说明习惯影响：睡眠在记忆形成中发挥作用。','Sleep plays a role in memory formation.','记忆形成：memory formation'],
+ ['讨论城市：公园在改善生活质量方面发挥作用。','Parks play a role in improving quality of life.','改善生活质量：improving quality of life'],
+ ['分析选择：价格在消费者决策中发挥重要作用。','Price plays an important role in consumer decisions.','消费者决策：consumer decisions']
+ ])
+ ];})();

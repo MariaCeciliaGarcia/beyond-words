@@ -1,0 +1,147 @@
+'use strict';
+window.JUJIAN_DAILY_2A=(()=>{const u=(...args)=>window.JUJIAN_BUILD('daily2',...args);return [
+u('d-habit','说自己或别人通常容易怎样','…tend to…','主语 + tend / tends to + 动词原形','描述经常出现的倾向，不是每次都如此。','tend to 表示倾向；不是过去的 used to。he/she 用 tends。',[
+['说自己的习惯：我通常容易忘记名字。','I tend to forget names.','忘记名字：forget names'],
+['说她的习惯：她通常起得很早。','She tends to get up early.','早起：get up early；she 后：tends'],
+['说共同的习惯：我们通常周末在家吃饭。','We tend to eat at home at weekends.','周末：at weekends / on weekends',['We tend to eat at home on weekends.']],
+['说他的习惯：他通常睡得很晚。','He tends to go to bed late.','晚睡：go to bed late'],
+['说他们的习惯：他们通常步行去上班。','They tend to walk to work.','步行上班：walk to work'],
+['说自己的倾向：我通常会提前计划。','I tend to plan ahead.','提前计划：plan ahead'],
+['说她的倾向：她通常容易担心小事。','She tends to worry about small things.','担心小事：worry about small things'],
+['说共同的习惯：我们通常坐公交。','We tend to take the bus.','坐公交：take the bus'],
+['说他的习惯：他通常在家做饭。','He tends to cook at home.','在家做饭：cook at home'],
+['说他们的习惯：他们通常早点到。','They tend to arrive early.','早点到：arrive early']
+]),
+u('d-trying','说明正在努力做什么','…am/is/are trying to…','主语 + am / is / are trying to + 动词原形','说明当前正在尝试或努力达到的目标。','try to do 强调努力完成；try doing 强调试用一种方法，看看是否有效。',[
+['说明：我正在努力学英语。',"I'm trying to learn English.",'学英语：learn English',['I am trying to learn English.']],
+['说明：她正在尝试登录。',"She's trying to log in.",'登录：log in',['She is trying to log in.']],
+['说明：我们正在努力省钱。',"We're trying to save money.",'省钱：save money',['We are trying to save money.']],
+['说明：他正在努力找工作。',"He's trying to find a job.",'找一份工作：find a job',['He is trying to find a job.']],
+['说明：他们正在努力赶公交。',"They're trying to catch the bus.",'赶上公交车：catch the bus',['They are trying to catch the bus.']],
+['说明：我正在尝试打开这个文件。',"I'm trying to open this file.",'打开文件：open a file',['I am trying to open this file.']],
+['说明：她正在努力早点起床。',"She's trying to get up earlier.",'更早起床：get up earlier',['She is trying to get up earlier.']],
+['说明：我们正在努力找到出口。',"We're trying to find the exit.",'找到出口：find the exit',['We are trying to find the exit.']],
+['说明：他正在努力修好自行车。',"He's trying to fix his bike.",'修好他的自行车：fix his bike',['He is trying to fix his bike.']],
+['说明：他们正在努力联系她。',"They're trying to contact her.",'联系她：contact her',['They are trying to contact her.']]
+]),
+u('d-need','说明需要做的事情','…need to…','I / you / we / they need to…；he / she needs to…','说明自己或他人需要完成的动作。','后面接动作时保留 to；need + 名词是另一种搭配。',[
+['说：我需要休息一下。','I need to take a break.','休息一下：take a break'],
+['说：她需要预约。','She needs to make an appointment.','预约：make an appointment'],
+['说：我们需要早点出发。','We need to leave early.','早点出发：leave early'],
+['说：他需要充手机电。','He needs to charge his phone.','给手机充电：charge his phone'],
+['说：他们需要买票。','They need to buy tickets.','买票：buy tickets'],
+['说：我需要和医生谈谈。','I need to talk to a doctor.','和医生谈：talk to a doctor'],
+['说：她需要修改地址。','She needs to change her address.','修改地址：change her address'],
+['说：我们需要在这里换车。','We need to change here.','在这里换车：change here'],
+['说：他需要早点睡觉。','He needs to go to bed earlier.','更早睡觉：go to bed earlier'],
+['说：他们需要带身份证件。','They need to bring ID.','身份证件：ID']
+]),
+u('d-about-to','说明马上就要做某事','…be about to…','主语 + am / is / are about to + 动词原形','动作即将发生，通常就在眼前。','about to 不用于泛泛讲几个月后的计划。',[
+['说：我马上就要出门了。',"I'm about to leave.",'离开、出发：leave',['I am about to leave.']],
+['说：她马上就要打电话了。',"She's about to make a call.",'打电话：make a call',['She is about to make a call.']],
+['说：我们马上就要开始吃饭了。',"We're about to eat.",'吃饭：eat',['We are about to eat.']],
+['说：他马上就要上公交车了。',"He's about to get on the bus.",'上公交：get on the bus',['He is about to get on the bus.']],
+['说：他们马上就要关门了。',"They're about to close.",'打烊：close',['They are about to close.']],
+['说：我马上就要去睡觉了。',"I'm about to go to bed.",'去睡觉：go to bed',['I am about to go to bed.']],
+['说：她马上就要付款了。',"She's about to pay.",'付款：pay',['She is about to pay.']],
+['说：我们马上就要到达了。',"We're about to arrive.",'到达：arrive',['We are about to arrive.']],
+['说：他马上就要开门了。',"He's about to open the door.",'开门：open the door',['He is about to open the door.']],
+['说：他们马上就要出发了。',"They're about to set off.",'出发：set off',['They are about to set off.']]
+]),
+u('d-just','说明刚刚完成的事情','…have/has just…','主语 + have / has + just + 动词过去分词','说明刚刚发生、与当前有关的事情。','just 放在 have / has 和过去分词之间。说出明确的过去时间时，通常用一般过去时；美式口语也常用一般过去时表达“刚刚”。',[
+['说：我刚刚到家。',"I've just got home.",'到家：get home；过去分词：got / gotten',['I have just got home.',"I've just gotten home.",'I have just gotten home.']],
+['说：她刚刚吃完午饭。',"She's just had lunch.",'吃午饭：have lunch；过去分词：had',['She has just had lunch.']],
+['说：我们刚刚买了票。',"We've just bought the tickets.",'买票：buy the tickets；过去分词：bought',['We have just bought the tickets.']],
+['说：他刚刚给我打了电话。',"He's just called me.",'给我打电话：call me；过去分词：called',['He has just called me.']],
+['说：他们刚刚离开。',"They've just left.",'离开：leave；过去分词：left',['They have just left.']],
+['说：我刚刚发了消息。',"I've just sent a message.",'发消息：send a message；过去分词：sent',['I have just sent a message.']],
+['说：她刚刚找到钥匙。',"She's just found her keys.",'找到钥匙：find her keys；过去分词：found',['She has just found her keys.']],
+['说：我们刚刚完成清洁。',"We've just finished cleaning.",'完成清洁：finish cleaning；过去分词：finished',['We have just finished cleaning.']],
+['说：他刚刚醒来。',"He's just woken up.",'醒来：wake up；过去分词：woken',['He has just woken up.']],
+['说：他们刚刚开门营业。',"They've just opened.",'开门营业：open；过去分词：opened',['They have just opened.']]
+]),
+u('d-not-yet','说明到现在还没完成某事','…haven’t/hasn’t…yet','主语 + haven’t / hasn’t + 过去分词 + … + yet','原本可能会发生或需要完成，但截至现在还没有。','yet 通常放句末；这里不是说从来没有某种经历。',[
+['说：我还没有吃午饭。',"I haven't had lunch yet.",'吃午饭：have lunch；过去分词：had',['I have not had lunch yet.']],
+['说：她还没回复。',"She hasn't replied yet.",'回复：reply；过去分词：replied',['She has not replied yet.']],
+['说：我们还没买票。',"We haven't bought the tickets yet.",'买票：buy the tickets；过去分词：bought',['We have not bought the tickets yet.']],
+['说：他还没到。',"He hasn't arrived yet.",'到达：arrive；过去分词：arrived',['He has not arrived yet.']],
+['说：他们还没决定。',"They haven't decided yet.",'决定：decide；过去分词：decided',['They have not decided yet.']],
+['说：我还没打开这个文件。',"I haven't opened this file yet.",'打开文件：open a file；过去分词：opened',['I have not opened this file yet.']],
+['说：她还没离开。',"She hasn't left yet.",'离开：leave；过去分词：left',['She has not left yet.']],
+['说：我们还没找到酒店。',"We haven't found the hotel yet.",'找到酒店：find the hotel；过去分词：found',['We have not found the hotel yet.']],
+['说：他还没打电话。',"He hasn't called yet.",'打电话：call；过去分词：called',['He has not called yet.']],
+['说：他们还没付款。',"They haven't paid yet.",'付款：pay；过去分词：paid',['They have not paid yet.']]
+]),
+u('d-origin','说明自己或别人原来来自哪里','…be originally from…','主语 + am / is / are originally from + 地方','介绍原籍或最初来自的地方，可与现在居住地不同。','不把 originally from 当成刚刚从某地旅行回来的意思。',[
+['介绍原籍：我原来来自成都。',"I'm originally from Chengdu.",'原来来自：originally from',['I am originally from Chengdu.']],
+['介绍原籍：她原来来自伦敦。',"She's originally from London.",'伦敦：London',['She is originally from London.']],
+['介绍原籍：我们原来来自同一个镇。',"We're originally from the same town.",'同一个镇：the same town',['We are originally from the same town.']],
+['介绍原籍：他原来来自加拿大。',"He's originally from Canada.",'加拿大：Canada',['He is originally from Canada.']],
+['介绍原籍：他们原来来自上海。',"They're originally from Shanghai.",'上海：Shanghai',['They are originally from Shanghai.']],
+['介绍原籍：我原来来自一个小村庄。',"I'm originally from a small village.",'一个小村庄：a small village',['I am originally from a small village.']],
+['介绍原籍：她原来来自东京。',"She's originally from Tokyo.",'东京：Tokyo',['She is originally from Tokyo.']],
+['介绍原籍：我们原来来自北京。',"We're originally from Beijing.",'北京：Beijing',['We are originally from Beijing.']],
+['介绍原籍：他原来来自一个小镇。',"He's originally from a small town.",'一个小镇：a small town',['He is originally from a small town.']],
+['介绍原籍：他们原来来自法国。',"They're originally from France.",'法国：France',['They are originally from France.']]
+]),
+u('d-frequency','询问一件事多久做一次','How often…?','How often do / does + 主语 + 动词原形…?','询问频率，如每天、每周或偶尔。','不是询问一次要花多久；does 后的主要动词仍用原形。',[
+['问：你多久做一次饭？','How often do you cook?','做饭：cook'],
+['问：她多久去游泳一次？','How often does she go swimming?','去游泳：go swimming'],
+['问：他们多久去看父母一次？','How often do they visit their parents?','看望父母：visit their parents'],
+['问：他多久坐一次公交？','How often does he take the bus?','坐公交：take the bus'],
+['核对共同的习惯：我们多久外出吃饭一次？','How often do we eat out?','外出吃饭：eat out'],
+['问：你多久运动一次？','How often do you exercise?','运动：exercise'],
+['问：她多久打电话回家一次？','How often does she call home?','打电话回家：call home'],
+['问：他们多久去一次电影院？','How often do they go to the cinema?','去电影院：go to the cinema',['How often do they go to the movies?']],
+['问：他多久清洁一次厨房？','How often does he clean the kitchen?','清洁厨房：clean the kitchen'],
+['核对共同的习惯：我们多久见面一次？','How often do we meet?','见面：meet']
+]),
+u('d-last-time','询问上一次做某事是什么时候','When was the last time…?','When was the last time + 主语 + 一般过去时…?','问最近一次发生某件事的时间。','问的是上一次，而不是有没有过经历；后面的动作一般用过去时。',[
+['问：你上次见她是什么时候？','When was the last time you saw her?','见到她：see her；过去式：saw'],
+['问：她上次给你打电话是什么时候？','When was the last time she called you?','给你打电话：call you；过去式：called'],
+['问：他们上次来这里是什么时候？','When was the last time they came here?','来这里：come here；过去式：came'],
+['问：他上次休假是什么时候？','When was the last time he took a holiday?','休假：take a holiday；过去式：took',['When was the last time he took a vacation?']],
+['一起回忆：我们上次一起吃饭是什么时候？','When was the last time we ate together?','一起吃饭：eat together；过去式：ate'],
+['问：你上次去伦敦是什么时候？','When was the last time you went to London?','去伦敦：go to London；过去式：went'],
+['问：她上次买鞋是什么时候？','When was the last time she bought shoes?','买鞋：buy shoes；过去式：bought'],
+['问：他们上次搬家是什么时候？','When was the last time they moved?','搬家：move；过去式：moved'],
+['问：他上次去游泳是什么时候？','When was the last time he went swimming?','游泳：go swimming；过去式：went'],
+['一起回忆：我们上次去海边是什么时候？','When was the last time we went to the beach?','去海边：go to the beach；过去式：went']
+]),
+u('d-duration','询问一种状态已经持续多久','How long have/has…been…?','How long have / has + 主语 + been + 状态…?','状态从过去开始，一直持续到现在。','have / has been 强调状态持续到现在。若状态已经结束，要用过去时询问那段时间。',[
+['问仍住在这里的朋友：你在这里待多久了？','How long have you been here?','在这里：here'],
+['问：她结婚多久了？','How long has she been married?','已婚状态：married'],
+['向朋友打听仍住在伦敦的那家人：他们在伦敦待多久了？','How long have they been in London?','在伦敦：in London'],
+['问：他生病多久了？','How long has he been ill?','生病状态：ill / sick',['How long has he been sick?']],
+['一起回忆仍在持续的友谊：我们做朋友多久了？','How long have we been friends?','朋友：friends'],
+['问：你醒着多久了？','How long have you been awake?','醒着：awake'],
+['向朋友打听她仍在国外的姐姐：她在国外待多久了？','How long has she been abroad?','在国外：abroad'],
+['问：他们在一起多久了？','How long have they been together?','在一起：together'],
+['向朋友打听她仍在家里的弟弟：他在家多久了？','How long has he been at home?','在家：at home'],
+['一起回忆现在仍是邻居：我们做邻居多久了？','How long have we been neighbours?','邻居：neighbours / neighbors',['How long have we been neighbors?']]
+]),
+u('d-get-to','询问怎样到达一个地方','How do I get to…?','How do I / we get to + 地点?','向人问路，询问到达目的地的方法。','get to + 地点名词表示到达某地；home、here、there 前通常不加 to，如 get home。',[
+['问路：我怎么去车站？','How do I get to the station?','车站：the station'],
+['一起问路：我们怎么去博物馆？','How do we get to the museum?','博物馆：the museum'],
+['问路：我怎么去机场？','How do I get to the airport?','机场：the airport'],
+['一起问路：我们怎么去酒店？','How do we get to the hotel?','酒店：the hotel'],
+['问路：我怎么去海边？','How do I get to the beach?','海边：the beach'],
+['问路：我怎么去图书馆？','How do I get to the library?','图书馆：the library'],
+['一起问路：我们怎么去市中心？','How do we get to the city centre?','市中心：the city centre / center',['How do we get to the city center?']],
+['问路：我怎么去医院？','How do I get to the hospital?','医院：the hospital'],
+['一起问路：我们怎么去公园？','How do we get to the park?','公园：the park'],
+['问路：我怎么去公交车站？','How do I get to the bus stop?','公交车站：the bus stop']
+]),
+u('d-book','预约座位、房间或服务','I’d like to book…','I’d / We’d like to book + 要预约的内容','说明要预订座位、住宿或具体服务。','这里的 book 是预订；已有订单的修改或取消需要另外说明。',[
+['订餐厅：我想订一张两人桌。',"I'd like to book a table for two.",'两人桌：a table for two',['I would like to book a table for two.']],
+['订酒店：我们想订一间双人房。',"We'd like to book a double room.",'双人房：a double room',['We would like to book a double room.']],
+['订服务：我想预约理发。',"I'd like to book a haircut.",'理发：a haircut',['I would like to book a haircut.']],
+['订活动：我们想预订两张票。',"We'd like to book two tickets.",'两张票：two tickets',['We would like to book two tickets.']],
+['订住宿：我想订一间住两晚的房间。',"I'd like to book a room for two nights.",'住两晚：for two nights',['I would like to book a room for two nights.']],
+['订餐厅：我们想订一张四人桌。',"We'd like to book a table for four.",'四人桌：a table for four',['We would like to book a table for four.']],
+['订服务：我想预约按摩。',"I'd like to book a massage.",'按摩：a massage',['I would like to book a massage.']],
+['订酒店：我想订一间单人房。',"I'd like to book a single room.",'单人房：a single room',['I would like to book a single room.']],
+['订课程：我们想预约一节课。',"We'd like to book a lesson.",'一节课：a lesson',['We would like to book a lesson.']],
+['订餐厅：我想订一张今晚的桌。',"I'd like to book a table for tonight.",'今晚的桌：a table for tonight',['I would like to book a table for tonight.']]
+])
+];})();

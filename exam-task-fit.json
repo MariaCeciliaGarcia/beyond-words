@@ -1,0 +1,223 @@
+{
+  "version": "2026-10-28",
+  "purpose": "按实际沟通任务补表达缺口；题目为自编微练习，不是官方真题或整套考试训练。",
+  "groups": [
+    {
+      "id": "task-letter-email",
+      "name": "书信与邮件的沟通目的",
+      "units": [
+        "et-request",
+        "et-possible",
+        "et-problem",
+        "et-alternative"
+      ],
+      "fit": {
+        "ielts": "General Training Writing Task 1；按对象选择正式程度",
+        "toefl": "Write an Email：请求、说明问题与提出可行方案"
+      }
+    },
+    {
+      "id": "task-discussion-stance",
+      "name": "立场、理由与回应他人",
+      "units": [
+        "et-partial-agree",
+        "et-add",
+        "et-main-reason"
+      ],
+      "fit": {
+        "ielts": "Writing Task 2 的立场与论证",
+        "cet4": "写作中的明确判断和理由展开",
+        "cet6": "写作中的论证及回应",
+        "toefl": "Write for an Academic Discussion 的具体回应与观点支持"
+      }
+    },
+    {
+      "id": "task-academic-overview",
+      "name": "Academic 图表的概述与比较",
+      "units": [
+        "et-overview",
+        "et-consistently",
+        "et-fall"
+      ],
+      "fit": {
+        "ielts": "Academic Writing Task 1 的主要趋势、持续比较和下降描述；不标成TOEFL图表任务"
+      }
+    },
+    {
+      "id": "task-translation-restructure",
+      "name": "翻译中的发展变化与关系重组",
+      "units": [
+        "et-important-part",
+        "et-over-past"
+      ],
+      "fit": {
+        "cet4": "段落翻译中的组成关系与延续到现在的变化",
+        "cet6": "段落翻译中的组成关系与发展变化"
+      }
+    }
+  ],
+  "units": [
+    {
+      "id": "et-request",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "email-letter",
+      "meaning": "在书信开头明确提出请求",
+      "expression": "I am writing to request…"
+    },
+    {
+      "id": "et-possible",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "email-letter",
+      "meaning": "礼貌询问某种安排能否实现",
+      "expression": "Would it be possible to…?"
+    },
+    {
+      "id": "et-problem",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "email-letter",
+      "meaning": "在书信中说明具体遇到的问题",
+      "expression": "The problem is that…"
+    },
+    {
+      "id": "et-alternative",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "email-letter",
+      "meaning": "在书信中提出可商量的替代安排",
+      "expression": "If this is not possible,…"
+    },
+    {
+      "id": "et-partial-agree",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "discussion-stance",
+      "meaning": "回应一个观点时先认可，再提出保留",
+      "expression": "While I agree that…, I…"
+    },
+    {
+      "id": "et-add",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "discussion-stance",
+      "meaning": "在讨论中补充一个尚未提出的观点",
+      "expression": "I would add that…"
+    },
+    {
+      "id": "et-main-reason",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "discussion-stance",
+      "meaning": "把自己选择或判断的首要理由说清楚",
+      "expression": "The main reason…is that…"
+    },
+    {
+      "id": "et-overview",
+      "domains": [
+        "ielts"
+      ],
+      "skill": "writing",
+      "task": "academic-data",
+      "meaning": "概括给定信息中的两项主要变化",
+      "expression": "Overall,…, while…"
+    },
+    {
+      "id": "et-consistently",
+      "domains": [
+        "ielts"
+      ],
+      "skill": "writing",
+      "task": "academic-data",
+      "meaning": "比较两组数据在整个时期的高低关系",
+      "expression": "…was consistently higher than…"
+    },
+    {
+      "id": "et-fall",
+      "domains": [
+        "ielts"
+      ],
+      "skill": "writing",
+      "task": "academic-data",
+      "meaning": "准确说明数值下降的起点与终点",
+      "expression": "…fell from…to…"
+    },
+    {
+      "id": "et-important-part",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "skill": "translation",
+      "task": "translation",
+      "meaning": "说明某事物已经成为生活或发展的重要部分",
+      "expression": "…has become an important part of…"
+    },
+    {
+      "id": "et-over-past",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "skill": "translation",
+      "task": "translation",
+      "meaning": "概括从过去持续到现在的发展变化",
+      "expression": "Over the past…,…has…"
+    }
+  ],
+  "officialSources": [
+    {
+      "title": "TOEFL iBT Writing Section",
+      "url": "https://www.eu.ets.org/content/ets-org/ca/en/toefl/test-takers/ibt/about/content/writing.html",
+      "note": "核对邮件与学术讨论的沟通目的；不配置旧综合写作。"
+    },
+    {
+      "title": "TOEFL iBT Speaking Section",
+      "url": "https://www.ets.org/toefl/test-takers/ibt/about/content/speaking.html",
+      "note": "现有四个个人经历口语单元可支持Take an Interview的一部分表达需求，不覆盖Listen and Repeat。"
+    },
+    {
+      "title": "IELTS General Training Writing",
+      "url": "https://ielts.org/take-a-test/test-types/ielts-general-training-test/ielts-general-training-format-writing",
+      "note": "书信要回应情境与目的；语体依对象。"
+    },
+    {
+      "title": "IELTS Academic Task 1 Overview",
+      "url": "https://ielts.idp.com/uae/prepare/article-overview-task-1-ielts-academic-writing",
+      "note": "概述应指出主要趋势、变化、阶段或显著特征。"
+    },
+    {
+      "title": "CET笔试",
+      "url": "https://cet.neea.edu.cn/html1/folder/16113/1586-1.htm",
+      "note": "写作与汉译英为适配目标，不把口语练习混称CET笔试。"
+    }
+  ]
+}

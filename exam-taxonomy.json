@@ -1,0 +1,1150 @@
+{
+  "version": "1.4.1",
+  "purpose": "表达练习方向，不是完整考试题型课程或官方真题；域标签是适合练习的方向，不保证某表达一定被考查或带来某个分数。",
+  "sourceNotes": [
+    {
+      "title": "TOEFL iBT Writing",
+      "url": "https://www.ets.org/toefl/test-takers/ibt/about/content/writing/.html",
+      "checked": "2026-10-28",
+      "note": "当前写作任务为Build a Sentence、Write an Email、Write for an Academic Discussion；未按旧综合写作配置。"
+    },
+    {
+      "title": "TOEFL iBT Speaking",
+      "url": "https://www.ets.org/toefl/test-takers/ibt/about/content/speaking.html",
+      "checked": "2026-10-28",
+      "note": "口语表达练习适配个人经验/偏好表达，不替代Listen and Repeat或Take an Interview真实任务训练。"
+    },
+    {
+      "title": "IELTS Academic Writing",
+      "url": "https://ielts.org/take-a-test/test-types/ielts-academic-test/ielts-academic-format-writing",
+      "checked": "2026-10-28",
+      "note": "图表表达仅标雅思Academic数据描述，未标TOEFL图表任务；雅思写作有Academic/General Training之分。"
+    },
+    {
+      "title": "IELTS Test Types",
+      "url": "https://www.ielts.org/take-a-test/test-types",
+      "checked": "2026-10-28",
+      "note": "Academic/General Training口语相同，写作不同。"
+    },
+    {
+      "title": "CET笔试",
+      "url": "https://cet.neea.edu.cn/html1/folder/16113/1586-1.htm",
+      "checked": "2026-10-28",
+      "note": "四、六级笔试包含写作和汉译英；口语新单元未标为CET笔试内容。"
+    }
+  ],
+  "authorship": "所有320题均为自编表达练习，数字是题目给定信息，不是实际统计或官方真题。",
+  "groups": [
+    {
+      "id": "exam-writing",
+      "name": "通用写作基础",
+      "description": "把原因、例子、比较与判断写清楚，再根据具体任务选用。",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "children": [
+        {
+          "id": "cause",
+          "name": "原因与结果",
+          "units": [
+            "e-lead-to",
+            "e-result-from",
+            "e-due-to"
+          ]
+        },
+        {
+          "id": "support",
+          "name": "举例与突出重点",
+          "units": [
+            "e-for-instance",
+            "e-in-particular"
+          ]
+        },
+        {
+          "id": "compare",
+          "name": "选择、比较与让步",
+          "units": [
+            "e-rather-than",
+            "e-instead-of",
+            "e-both-and",
+            "e-not-only",
+            "e-in-contrast",
+            "e-despite",
+            "e-whether-or"
+          ]
+        },
+        {
+          "id": "solutions",
+          "name": "方案与影响",
+          "units": [
+            "e-one-way",
+            "e-enable",
+            "e-prevent",
+            "e-play-role"
+          ]
+        },
+        {
+          "id": "reasoning",
+          "name": "推断、评价与限制",
+          "units": [
+            "e-suggests",
+            "e-to-extent",
+            "e-admittedly",
+            "e-outweigh",
+            "e-in-other-words",
+            "e-limitation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-chart",
+      "name": "Academic 图表描述",
+      "description": "把数值、构成与变化说准确。",
+      "domains": [
+        "ielts"
+      ],
+      "children": [
+        {
+          "id": "practice",
+          "name": "Academic 图表描述",
+          "units": [
+            "e-account-for",
+            "e-rise-from",
+            "e-remain-stable",
+            "et-overview",
+            "et-consistently",
+            "et-fall"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-translation",
+      "name": "翻译中的常用结构",
+      "description": "说明特色、历史与规模，让中文意思自然落到英文。",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "children": [
+        {
+          "id": "practice",
+          "name": "翻译中的常用结构",
+          "units": [
+            "e-known-for",
+            "e-date-back",
+            "e-cover-area",
+            "et-important-part",
+            "et-over-past"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-speaking",
+      "name": "口头经历与偏好",
+      "description": "围绕具体经历、对象和感受展开，避免空泛背诵。",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "children": [
+        {
+          "id": "practice",
+          "name": "口头经历与偏好",
+          "units": [
+            "e-favourite-memory",
+            "e-when-comes",
+            "e-appreciated",
+            "e-found-particularly"
+          ]
+        }
+      ],
+      "nameByDomain": {
+        "ielts": "口语：经历与偏好",
+        "toefl": "面试表达：经历与偏好"
+      }
+    },
+    {
+      "id": "exam-correspondence",
+      "name": "书信与邮件：请求和问题说明",
+      "nameByDomain": {
+        "ielts": "GT 书信：请求和问题说明",
+        "toefl": "邮件：请求和问题说明"
+      },
+      "description": "结合收信人和目的，说明请求、解释问题并提出替代安排。",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "children": [
+        {
+          "id": "requests",
+          "name": "提出目的与请求",
+          "units": [
+            "et-request",
+            "et-possible"
+          ]
+        },
+        {
+          "id": "problems-options",
+          "name": "解释问题与替代安排",
+          "units": [
+            "et-problem",
+            "et-alternative"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-position",
+      "name": "立场、回应与理由",
+      "nameByDomain": {
+        "toefl": "讨论回应：立场与理由"
+      },
+      "description": "回应已有观点、补充新考虑，解释自己作出判断的理由。",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "children": [
+        {
+          "id": "position-response",
+          "name": "回应和补充观点",
+          "units": [
+            "et-partial-agree",
+            "et-add"
+          ]
+        },
+        {
+          "id": "reason-development",
+          "name": "展开首要理由",
+          "units": [
+            "et-main-reason"
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "e-lead-to",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "说明一种情况会带来什么结果",
+      "expression": "…lead to…",
+      "formula": "原因 + lead / leads to + 结果名词 / 动词-ing",
+      "boundary": "to 是介词，后接名词或 -ing。lead to 表示因果，不能仅凭两件事同时出现就断定存在因果。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "cause-result",
+      "functionName": "原因与结果",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-result-from",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "从结果回头指出其原因",
+      "expression": "…result from…",
+      "formula": "结果 + result / results from + 原因",
+      "boundary": "result from 后面是原因；result in 后面是结果。名词主语单数时用 results。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "cause-result",
+      "functionName": "原因与结果",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-due-to",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "用名词短语简洁说明原因",
+      "expression": "…due to…",
+      "formula": "结果 / 情况 + be due to + 原因名词短语",
+      "boundary": "due to 后接名词或 -ing，不直接接独立完整句子。The delay is due to rain 与 because it is raining 的结构不同。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "cause-result",
+      "functionName": "原因与结果",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-for-instance",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "用具体情况支持刚才的概括",
+      "expression": "For instance,…",
+      "formula": "For instance, + 支持前述观点的具体例子",
+      "boundary": "例子应支持前面的观点，不能把另一个未解释的概括当例子。for instance 与 for example 功能相近。",
+      "functionGroup": "responses",
+      "functionSubgroup": "examples-rephrasing",
+      "functionName": "举例与换说法",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-in-particular",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "从一个范围中突出具体对象",
+      "expression": "…in particular…",
+      "formula": "in particular + 被强调的对象；或 对象 + in particular",
+      "boundary": "位置应让读者清楚它强调谁。不要把 in particular 当作因果连接词或最高级。",
+      "functionGroup": "responses",
+      "functionSubgroup": "examples-rephrasing",
+      "functionName": "举例与换说法",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-rather-than",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "把两个选择对照，说明选择前者",
+      "expression": "…rather than…",
+      "formula": "选择的做法 + rather than + 对照的做法",
+      "boundary": "不要与 would rather… 的完整结构混淆。比较两个名词或动作时，保持语法形式平行。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "exam-compare",
+      "functionName": "对照与并列",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-instead-of",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "说明用一个做法替代另一个",
+      "expression": "instead of…",
+      "formula": "instead of + 名词 / 动词-ing",
+      "boundary": "of 后接动作时用 -ing：instead of driving。不要写 instead of to drive。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "exam-compare",
+      "functionName": "对照与并列",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-both-and",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "同时表达两方面都成立",
+      "expression": "both…and…",
+      "formula": "both + A + and + B",
+      "boundary": "both A and B 作主语通常用复数谓语。不要一边放名词，一边放完整句子。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "exam-compare",
+      "functionName": "对照与并列",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-not-only",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "在已有一项之外补充另一个重要方面",
+      "expression": "not only…but also…",
+      "formula": "not only + A + but also + B",
+      "boundary": "两项形式保持平行。放在句首可能涉及倒装；放在句中可以避免不必要的复杂结构。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "exam-compare",
+      "functionName": "对照与并列",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-in-contrast",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "突出与前面情况的明显不同",
+      "expression": "In contrast,…",
+      "formula": "前述情况。In contrast, + 对照的完整情况",
+      "boundary": "对照双方应在同一维度上有可比性。in contrast 本身不表示先后顺序或因果。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "exam-compare",
+      "functionName": "对照与并列",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-despite",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "承认一个条件，但说明结果仍不同于预期",
+      "expression": "despite…",
+      "formula": "Despite + 名词 / 动词-ing, + 完整结果",
+      "boundary": "despite 后面不加 of，也不直接接普通完整句子。despite the fact that… 后才能接从句。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "qualifications",
+      "functionName": "让步与依赖",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-whether-or",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "说明尚未确定的两种选择",
+      "expression": "whether…or…",
+      "formula": "whether + 可能性A + or + 可能性B",
+      "boundary": "whether 不能随意写成 weather。whether…or… 可表达间接选择，不需要按直接问句倒装。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "exam-compare",
+      "functionName": "对照与并列",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-one-way",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "提出解决问题的一种具体做法",
+      "expression": "One way to…is to…",
+      "formula": "One way to + 目标动作 + is to + 具体做法",
+      "boundary": "目标与方法要有实际联系。两个 to 后都用动词原形，不把问题名称直接塞进动作位置。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "solution",
+      "functionName": "提出具体办法",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-enable",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "说明某种条件让人能够做什么",
+      "expression": "…enable someone to…",
+      "formula": "条件 / 工具 + enable / enables + 人 + to + 动词原形",
+      "boundary": "人放在 enable 与 to 之间。enable someone doing 不符合这个结构；提供机会不保证每个人都会使用。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "cause-result",
+      "functionName": "原因与结果",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-prevent",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "说明某种措施阻止什么事情发生",
+      "expression": "…prevent…from…",
+      "formula": "措施 + prevent / prevents + 人或事物 + from + 动词-ing",
+      "boundary": "from 后接 -ing。prevent 强调阻止，不是仅仅增加不便；阻碍可能是暂时的，也不保证能消除全部风险。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "cause-result",
+      "functionName": "原因与结果",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-play-role",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "说明一个因素在某件事中的作用",
+      "expression": "…play a role in…",
+      "formula": "因素 + play / plays + a role in + 名词 / 动词-ing",
+      "boundary": "role 前通常有 a，也可加 important、key 等修饰语。in 后接名词或 -ing，不接 to do。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "cause-result",
+      "functionName": "原因与结果",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-suggests",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "根据已给信息提出谨慎推断",
+      "expression": "This suggests that…",
+      "formula": "This suggests that + 推断的完整情况",
+      "boundary": "必须有前文依据；它不是凭空给观点加可信度的装饰，也不表示已经证明因果。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "evaluation",
+      "functionName": "谨慎推断与评价",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-to-extent",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "承认一种判断部分成立",
+      "expression": "To some extent,…",
+      "formula": "To some extent, + 部分成立的完整判断",
+      "boundary": "后面仍要给出具体判断，必要时说明限制。不要把它与 completely 同时用于同一层面的断言。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "evaluation",
+      "functionName": "谨慎推断与评价",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-admittedly",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "先承认一个事实或限制",
+      "expression": "It is true that…",
+      "formula": "It is true that + 承认的完整情况",
+      "boundary": "后面用完整陈述句。承认事实不表示赞同所有结论；可以再解释限制或不同看法，但不必机械接 however。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "evaluation",
+      "functionName": "谨慎推断与评价",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-outweigh",
+      "domains": [
+        "ielts",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "比较两方面的重要性，给出总体判断",
+      "expression": "The benefits outweigh the costs.",
+      "formula": "收益 / 风险 / 价值 + outweigh / outweighs + 相比较的另一方",
+      "boundary": "outweigh 后直接接比较对象，不加 than。不是仅仅比较优缺点的数量，也不能代替对风险的具体分析。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "evaluation",
+      "functionName": "谨慎推断与评价",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-in-other-words",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "用另一种表述澄清刚才的意思",
+      "expression": "In other words,…",
+      "formula": "前述意思。In other words, + 同义的解释",
+      "boundary": "改写应保留核心意思，不能把“可能”改成“必然”，也不能借改写加入未经说明的结论。",
+      "functionGroup": "responses",
+      "functionSubgroup": "examples-rephrasing",
+      "functionName": "举例与换说法",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-limitation",
+      "domains": [
+        "ielts",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "writing-foundation",
+      "meaning": "指出方法或证据的一个具体局限",
+      "expression": "One limitation of…is…",
+      "formula": "One limitation of + 方法 / 证据 + is + 局限",
+      "boundary": "局限要与对象有关，不能只是泛泛说“不完美”。完整情况可接 is that…；名词短语直接接 is。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "evaluation",
+      "functionName": "谨慎推断与评价",
+      "goalGroups": [
+        "exam-writing"
+      ]
+    },
+    {
+      "id": "e-account-for",
+      "domains": [
+        "ielts"
+      ],
+      "skill": "writing",
+      "task": "academic-data",
+      "meaning": "说明某一部分占总体的比例",
+      "expression": "…account for…",
+      "formula": "部分 + account / accounts for + 数量 / 比例",
+      "boundary": "比例含义与 account for 表示“解释原因”的用法不同。占比说一部分占整体的多少，与上升或下降的幅度不同。",
+      "functionGroup": "narrative",
+      "functionSubgroup": "data-description",
+      "functionName": "构成与数值变化",
+      "goalGroups": [
+        "exam-chart"
+      ]
+    },
+    {
+      "id": "e-rise-from",
+      "domains": [
+        "ielts"
+      ],
+      "skill": "writing",
+      "task": "academic-data",
+      "meaning": "准确描述数值从起点上升到终点",
+      "expression": "…rise from…to…",
+      "formula": "数量 + rose / rises from + 起点 + to + 终点",
+      "boundary": "rise 是不及物动词；过去式是 rose。rose to 终点与 rose by 增量不同，不能互换数字。",
+      "functionGroup": "narrative",
+      "functionSubgroup": "data-description",
+      "functionName": "构成与数值变化",
+      "goalGroups": [
+        "exam-chart"
+      ]
+    },
+    {
+      "id": "e-remain-stable",
+      "domains": [
+        "ielts"
+      ],
+      "skill": "writing",
+      "task": "academic-data",
+      "meaning": "说明数值或状况在一段时间内保持稳定",
+      "expression": "…remain stable…",
+      "formula": "数值 / 状况 + remain / remained stable + 时间 / 数值位置",
+      "boundary": "stable 不表示数值绝对一动不动；若存在小波动可加 relatively。at 后说明水平，不表示变化幅度。",
+      "functionGroup": "narrative",
+      "functionSubgroup": "data-description",
+      "functionName": "构成与数值变化",
+      "goalGroups": [
+        "exam-chart"
+      ]
+    },
+    {
+      "id": "e-known-for",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "skill": "translation",
+      "task": "translation",
+      "meaning": "介绍一个地方或事物以什么闻名",
+      "expression": "…be known for…",
+      "formula": "对象 + be known for + 特色 / 动词-ing",
+      "boundary": "for 后是特点或成就；be known as 后是身份或名称。its 和 their 要与前面的主语对应。",
+      "functionGroup": "information",
+      "functionSubgroup": "background-description",
+      "functionName": "特色、历史与规模",
+      "goalGroups": [
+        "exam-translation"
+      ]
+    },
+    {
+      "id": "e-date-back",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "skill": "translation",
+      "task": "translation",
+      "meaning": "说明某事物的起源可以追溯到何时",
+      "expression": "…date back to…",
+      "formula": "事物 + date / dates back to + 起源时间",
+      "boundary": "一般用 dates back to 而不是 is dated back to。接起点时间用 to；接距今多久，可直接用 dates back several hundred years。",
+      "functionGroup": "information",
+      "functionSubgroup": "background-description",
+      "functionName": "特色、历史与规模",
+      "goalGroups": [
+        "exam-translation"
+      ]
+    },
+    {
+      "id": "e-cover-area",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "skill": "translation",
+      "task": "translation",
+      "meaning": "用面积说明一个地方或设施的规模",
+      "expression": "…cover an area of…",
+      "formula": "地方 / 设施 + cover / covers an area of + 面积",
+      "boundary": "area 前有 an。平方公里用 square kilometres，不能省成 kilometres；公顷用 hectares。",
+      "functionGroup": "information",
+      "functionSubgroup": "background-description",
+      "functionName": "特色、历史与规模",
+      "goalGroups": [
+        "exam-translation"
+      ]
+    },
+    {
+      "id": "e-favourite-memory",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "speaking",
+      "task": "personal-speaking",
+      "meaning": "选出一段值得讲述的个人回忆",
+      "expression": "One of my favourite memories is…",
+      "formula": "One of my favourite memories is + 回忆中的事情 / 动词-ing",
+      "boundary": "one of 后面用 memories 复数，但主语整体是 one，后面用 is。先选一段具体回忆，再展开时间和细节。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "personal-evaluation",
+      "functionName": "口头经历与评价",
+      "goalGroups": [
+        "exam-speaking"
+      ]
+    },
+    {
+      "id": "e-when-comes",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "speaking",
+      "task": "personal-speaking",
+      "meaning": "把回答聚焦到一个具体方面",
+      "expression": "When it comes to…",
+      "formula": "When it comes to + 话题名词 / 动词-ing, + 个人判断",
+      "boundary": "to 是介词，后面可接 -ing。它不是字面上的“来到某地”，也不需要每句话都用来开头。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "personal-evaluation",
+      "functionName": "口头经历与评价",
+      "goalGroups": [
+        "exam-speaking"
+      ]
+    },
+    {
+      "id": "e-appreciated",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "speaking",
+      "task": "personal-speaking",
+      "meaning": "回顾经历中自己特别认可的地方",
+      "expression": "What I appreciated about…was…",
+      "formula": "What I appreciated about + 经历对象 + was + 认可的方面",
+      "boundary": "appreciated 不只是泛泛的喜欢，还含理解价值或感激。what 从句使用陈述语序；过去经历用 was。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "personal-evaluation",
+      "functionName": "口头经历与评价",
+      "goalGroups": [
+        "exam-speaking"
+      ]
+    },
+    {
+      "id": "e-found-particularly",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "speaking",
+      "task": "personal-speaking",
+      "meaning": "用具体评价回顾自己的体验",
+      "expression": "I found…particularly…",
+      "formula": "I found + 体验对象 + particularly + 形容词",
+      "boundary": "特别的评价应有理由或细节支持。形容词放在宾语后，不需要再加 was；不是 I found it was difficult 的同一种结构。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "personal-evaluation",
+      "functionName": "口头经历与评价",
+      "goalGroups": [
+        "exam-speaking"
+      ]
+    },
+    {
+      "id": "et-request",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "email-letter",
+      "meaning": "在书信开头明确提出请求",
+      "expression": "I am writing to request…",
+      "formula": "I am writing to request + 请求的事物 / 动作名词",
+      "boundary": "偏正式，不必写给熟人的每封消息都用。request 后可接 information 或 permission 等名词；不是礼貌套话越长越好。",
+      "functionGroup": "needs",
+      "functionSubgroup": "written-request",
+      "functionName": "书面请求与可行安排",
+      "goalGroups": [
+        "exam-correspondence"
+      ]
+    },
+    {
+      "id": "et-possible",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "email-letter",
+      "meaning": "礼貌询问某种安排能否实现",
+      "expression": "Would it be possible to…?",
+      "formula": "Would it be possible to + 动词原形？",
+      "boundary": "它是请求可行性，不是假设对方已经同意。to 后写动作；问题后应按情况交代理由与必要信息。",
+      "functionGroup": "needs",
+      "functionSubgroup": "written-request",
+      "functionName": "书面请求与可行安排",
+      "goalGroups": [
+        "exam-correspondence"
+      ]
+    },
+    {
+      "id": "et-problem",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "email-letter",
+      "meaning": "在书信中说明具体遇到的问题",
+      "expression": "The problem is that…",
+      "formula": "The problem is that + 具体问题的完整情况",
+      "boundary": "语气直接但可以保持客观，避免只批评对方。that 后要完整陈述；不要用一个模糊的“有问题”替代必要细节。",
+      "functionGroup": "problems",
+      "functionSubgroup": "written-problem",
+      "functionName": "说明需要处理的问题",
+      "goalGroups": [
+        "exam-correspondence"
+      ]
+    },
+    {
+      "id": "et-alternative",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "email-letter",
+      "meaning": "在书信中提出可商量的替代安排",
+      "expression": "If this is not possible,…",
+      "formula": "If this is not possible, + 替代方案 / 请求",
+      "boundary": "this 应有明确所指，即前面刚提出的安排。后面给真正可行的备选，不是换词重复同一个要求。",
+      "functionGroup": "plans",
+      "functionSubgroup": "change-plans",
+      "functionName": "调整安排",
+      "goalGroups": [
+        "exam-correspondence"
+      ]
+    },
+    {
+      "id": "et-partial-agree",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "discussion-stance",
+      "meaning": "回应一个观点时先认可，再提出保留",
+      "expression": "While I agree that…, I…",
+      "formula": "While I agree that + 认可的情况, I + 保留意见",
+      "boundary": "while 在这里表示让步，不是同时发生。不要虚构自己赞同的观点只为套结构；后半句应对前半句形成实质回应。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "qualifications",
+      "functionName": "让步与依赖",
+      "goalGroups": [
+        "exam-position"
+      ]
+    },
+    {
+      "id": "et-add",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "discussion-stance",
+      "meaning": "在讨论中补充一个尚未提出的观点",
+      "expression": "I would add that…",
+      "formula": "I would add that + 补充的完整观点",
+      "boundary": "不是不看前文就套用的开头。add that 后接陈述，不是先问是否可以发言。",
+      "functionGroup": "thoughts",
+      "functionSubgroup": "add-disagree",
+      "functionName": "补充与不同意见",
+      "goalGroups": [
+        "exam-position"
+      ]
+    },
+    {
+      "id": "et-main-reason",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "skill": "writing",
+      "task": "discussion-stance",
+      "meaning": "把自己选择或判断的首要理由说清楚",
+      "expression": "The main reason…is that…",
+      "formula": "The main reason + 选择或判断 + is that + 首要理由",
+      "boundary": "main 表示首要，不代表只有一个理由。reason 后可接 why 或省略 why 的解释部分；后半句用完整陈述。",
+      "functionGroup": "conditions",
+      "functionSubgroup": "cause-result",
+      "functionName": "原因与结果",
+      "goalGroups": [
+        "exam-position"
+      ]
+    },
+    {
+      "id": "et-overview",
+      "domains": [
+        "ielts"
+      ],
+      "skill": "writing",
+      "task": "academic-data",
+      "meaning": "概括给定信息中的两项主要变化",
+      "expression": "Overall,…, while…",
+      "formula": "Overall, + 一项主要变化, while + 另一项对照变化",
+      "boundary": "概述必须由给定信息支持。while 适合确有对照的趋势，不是每张图都要硬套；图表描述不加入没有根据的原因猜测。",
+      "functionGroup": "narrative",
+      "functionSubgroup": "data-description",
+      "functionName": "构成与数值变化",
+      "goalGroups": [
+        "exam-chart"
+      ]
+    },
+    {
+      "id": "et-consistently",
+      "domains": [
+        "ielts"
+      ],
+      "skill": "writing",
+      "task": "academic-data",
+      "meaning": "比较两组数据在整个时期的高低关系",
+      "expression": "…was consistently higher than…",
+      "formula": "A + was / were consistently higher than + B + 时间范围",
+      "boundary": "必须检查整个给定时期，不能只看起点与终点。比较的对象与单位要一致；没有数据支持时不推断原因。",
+      "functionGroup": "narrative",
+      "functionSubgroup": "data-description",
+      "functionName": "构成与数值变化",
+      "goalGroups": [
+        "exam-chart"
+      ]
+    },
+    {
+      "id": "et-fall",
+      "domains": [
+        "ielts"
+      ],
+      "skill": "writing",
+      "task": "academic-data",
+      "meaning": "准确说明数值下降的起点与终点",
+      "expression": "…fell from…to…",
+      "formula": "数量 + fell from + 起点 + to + 终点",
+      "boundary": "fall 是不及物动词，过去式 fell。fell to 是降至，fell by 是减少了多少；别把终点数值与减少量混用。",
+      "functionGroup": "narrative",
+      "functionSubgroup": "data-description",
+      "functionName": "构成与数值变化",
+      "goalGroups": [
+        "exam-chart"
+      ]
+    },
+    {
+      "id": "et-important-part",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "skill": "translation",
+      "task": "translation",
+      "meaning": "说明某事物已经成为生活或发展的重要部分",
+      "expression": "…has become an important part of…",
+      "formula": "单数主语 + has become an important part of + 领域；复数用 have",
+      "boundary": "an 和 of 都不可漏。become 的过去分词仍是 become；主语单复数决定 has 或 have。",
+      "functionGroup": "narrative",
+      "functionSubgroup": "recent-development",
+      "functionName": "发展变化与重要性",
+      "goalGroups": [
+        "exam-translation"
+      ]
+    },
+    {
+      "id": "et-over-past",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "skill": "translation",
+      "task": "translation",
+      "meaning": "概括从过去持续到现在的发展变化",
+      "expression": "Over the past…,…has…",
+      "formula": "Over the past + 时间段, 主语 + has / have + 过去分词",
+      "boundary": "时间范围必须延续到现在；若整个时期已经结束，要按实际情况选择过去时。has 或 have 后接过去分词。",
+      "functionGroup": "narrative",
+      "functionSubgroup": "recent-development",
+      "functionName": "发展变化与重要性",
+      "goalGroups": [
+        "exam-translation"
+      ]
+    }
+  ],
+  "sharedOldSuggestions": [
+    {
+      "id": "d-because",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "note": "可作为通用因果基础；只有确认原题情境相容才共享入口，不应把日常例句包装成官方题。"
+    },
+    {
+      "id": "d-even-though",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "note": "可作为让步从句基础，与despite名词结构区分。"
+    },
+    {
+      "id": "d-as-far-know",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "note": "个人口语知识范围，非书面证据替代。"
+    }
+  ],
+  "selectionNotes": [
+    "四级和六级共享写作基础，按实际表达负担推荐，不以考试名人为禁止基础句式。To some extent与It is true that已恢复四级入口。",
+    "通用写作基础与具体任务分开归类；图表标明Academic，书信标明GT，托福按现行邮件、学术讨论和面试表达理解适配。",
+    "入口共享ID与进度，不以重复计数冒称专项覆盖。仍未覆盖的任务在本次内容审计记录中列明。"
+  ]
+}

@@ -1,0 +1,2653 @@
+{
+  "version": "1.4.0",
+  "date": "2026-10-28",
+  "totals": {
+    "reviewedOriginalUnits": 244,
+    "currentUnits": 260,
+    "changedOriginalUnits": 49,
+    "newUnits": [
+      "s-pain",
+      "s-hurts",
+      "s-call-help",
+      "s-incident",
+      "et-request",
+      "et-possible",
+      "et-problem",
+      "et-alternative",
+      "et-partial-agree",
+      "et-add",
+      "et-main-reason",
+      "et-overview",
+      "et-consistently",
+      "et-fall",
+      "et-important-part",
+      "et-over-past"
+    ],
+    "changedFormalQuestions": 178
+  },
+  "changes": [
+    {
+      "id": "rather",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "not-sure",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'm not sure whether the shop is open.",
+            "I am not sure whether the shop is open."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'm not sure whether the shop is open.",
+            "I am not sure whether the shop is open."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "We're not sure whether he is at home.",
+            "We're not sure whether he's at home.",
+            "We are not sure whether he is at home.",
+            "We are not sure whether he's at home."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "She's not sure whether we have time.",
+            "She is not sure whether we have time."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'm not sure whether it is safe here.",
+            "I'm not sure whether it's safe here.",
+            "I am not sure whether it is safe here.",
+            "I am not sure whether it's safe here."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "They're not sure whether this is free.",
+            "They are not sure whether this is free."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'm not sure whether she is ready.",
+            "I'm not sure whether she's ready.",
+            "I am not sure whether she is ready.",
+            "I am not sure whether she's ready."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "He's not sure whether the bus stops here.",
+            "He is not sure whether the bus stops here."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "We're not sure whether they need help.",
+            "We are not sure whether they need help."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "She's not sure whether this is the right address.",
+            "She is not sure whether this is the right address."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'm not sure whether I can pay by card here.",
+            "I'm not sure whether we can pay by card here.",
+            "I am not sure whether I can pay by card here.",
+            "I am not sure whether we can pay by card here."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sounds",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "That sounds interesting.",
+            "That sounds like fun."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-availability",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Are there any rooms available tonight?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Are there any rooms available tonight?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Are there any single rooms available?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Are there any double rooms available tonight?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Are there any quiet rooms available?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-include",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "hint",
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Does this set meal include a drink?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Does this set meal include dessert?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-symptom",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "He's had a stomachache for an hour.",
+            "He has had a stomachache for an hour."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-right-route",
+      "meta": [
+        "boundary"
+      ],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Is this the right bus to the airport?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Is this the right bus to the airport?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Is this the right train to London?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Is this the right bus to the city centre?",
+            "Is this the right bus to the city center?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Is this the right train to Paris?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Is this the right bus to the hospital?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Is this the right train to Oxford?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-as-as",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'm not as tired as you are.",
+            "I am not as tired as you are."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "It isn't as quiet here as it is at home.",
+            "It is not as quiet here as it is at home."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-enough",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "zh",
+            "hint"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "zh",
+            "hint"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "zh",
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'm not alert enough to drive.",
+            "I am not alert enough to drive."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-too",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'm too sleepy to finish watching the film.",
+            "I'm too sleepy to finish watching the movie.",
+            "I am too sleepy to finish watching the film.",
+            "I am too sleepy to finish watching the movie."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d-appreciate-if",
+      "meta": [
+        "boundary"
+      ],
+      "questions": []
+    },
+    {
+      "id": "d-feeling",
+      "meta": [
+        "explanation",
+        "boundary"
+      ],
+      "questions": []
+    },
+    {
+      "id": "w-let-know",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-hand-over",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'll hand over this project to her.",
+            "I will hand over this project to her."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'll hand over this project to her.",
+            "I will hand over this project to her."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'll hand over these files to you.",
+            "I will hand over these files to you."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'll hand over this account to Mark.",
+            "I will hand over this account to Mark."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "We'll hand over the daily work to the new team.",
+            "We will hand over the daily work to the new team."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'll hand over this task to Anna.",
+            "I will hand over this task to Anna."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "We'll hand over these orders to the sales team.",
+            "We will hand over these orders to the sales team."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'll hand over the meeting notes to you.",
+            "I will hand over the meeting notes to you."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'll hand over my responsibilities to my colleague.",
+            "I will hand over my responsibilities to my colleague."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-get-back",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-confirm",
+      "meta": [
+        "checkpoint"
+      ],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if the meeting is still going ahead?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if the meeting is still going ahead?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if you've received the file?",
+            "Could you confirm if you have received the file?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if she will attend?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if the price includes delivery?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if this version is final?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if the room has been booked?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if Friday is still the deadline?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if they need help?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if this address is correct?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you confirm if we can use this link?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-deadline",
+      "meta": [
+        "checkpoint"
+      ],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the deadline to Friday?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the deadline to Friday?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the deadline to tomorrow?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the submission deadline to next week?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the review period to next Monday?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the deadline to three this afternoon?",
+            "Would it be possible to extend the deadline to 3 this afternoon?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the feedback deadline to Tuesday?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the testing period to next Monday?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the deadline to noon tomorrow?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the application period to the end of the month?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Would it be possible to extend the report deadline to Thursday?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-add",
+      "meta": [
+        "checkpoint"
+      ],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add we need more time.",
+            "I would like to add we need more time."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add we need more time.",
+            "I would like to add we need more time."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add the room is already booked.",
+            "I would like to add the room is already booked."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add this option is cheaper.",
+            "I would like to add this option is cheaper."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add the client has agreed.",
+            "I would like to add the client has agreed."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add she is available tomorrow.",
+            "I would like to add she is available tomorrow."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add we have tested the system.",
+            "I'd like to add we've tested the system.",
+            "I would like to add we have tested the system.",
+            "I would like to add we've tested the system."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add training is important.",
+            "I would like to add training is important."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add the deadline is Friday.",
+            "I would like to add the deadline is Friday."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add they need a clear answer.",
+            "I would like to add they need a clear answer."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "I'd like to add this also affects our team.",
+            "I would like to add this also affects our team."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-weigh",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "The main advantage of this option is lower cost."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "The main advantage of this option is lower cost."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "The main advantage of this system is its ease of use."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "The main advantage of starting early is that we've more time."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-scope",
+      "meta": [
+        "checkpoint"
+      ],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "That falls outside of the agreed scope."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "That falls outside of the agreed scope."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This falls outside of the scope of our support."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "That falls outside of the original plan."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This falls outside of the project scope."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "That falls outside of the work we agreed on."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "That falls outside of the scope of the service."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This falls outside of our original agreement."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "That falls outside of the current plan."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This falls outside of the scope of the training."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "That falls outside of the scope of this stage."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-experience",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "I've experience in customer service."
+          ],
+          "added": [
+            "I have experience with customer service."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "I've experience in customer service."
+          ],
+          "added": [
+            "I have experience with customer service."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "She has experience organizing events.",
+            "She has experience organising events."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "We've experience in staff training."
+          ],
+          "added": [
+            "We have experience with staff training."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "I've experience in managing small teams."
+          ],
+          "added": [
+            "I have experience managing small teams."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "He has experience with sales."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "I've experience in writing reports."
+          ],
+          "added": [
+            "I have experience writing reports."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "We've experience in processing orders."
+          ],
+          "added": [
+            "We have experience processing orders."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "She has experience with data entry."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "I've experience in working with suppliers."
+          ],
+          "added": [
+            "I have experience working with suppliers."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "They have experience with project coordination."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-example",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the project that I led last year."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the project that I led last year."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the training guide that I created."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the new process that I introduced."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the team event that I organized.",
+            "One example of this is the team event that I organised."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the report that I wrote last month."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the delivery problem that I resolved."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the presentation that I gave on Monday."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the schedule that I developed."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the set of instructions that I wrote."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "One example of this is the team project that I worked on."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p-up-to",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "zh",
+            "hint",
+            "answers"
+          ],
+          "removed": [
+            "It's up to them to confirm the address.",
+            "It is up to them to confirm the address."
+          ],
+          "added": [
+            "It's up to them to choose the delivery address.",
+            "It is up to them to choose the delivery address."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p-figure-out",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "p-get-rid-of",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "zh",
+            "hint"
+          ],
+          "removed": [],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "p-thing",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "The thing is, I'ven't got the keys yet.",
+            "The thing is that I'ven't got the keys yet."
+          ],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "The thing is, I'ven't got the keys yet.",
+            "The thing is that I'ven't got the keys yet."
+          ],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "The thing is, it'sn't open on Mondays.",
+            "The thing is that it'sn't open on Mondays."
+          ],
+          "added": []
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "The thing is, I'ven't read the details yet.",
+            "The thing is that I'ven't read the details yet."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "p-like-most",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "What I like most about this flat is the natural light.",
+            "What I like most about this apartment is the natural light.",
+            "What I like the most about this flat is the natural light.",
+            "What I like the most about this apartment is the natural light."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "What I like most about this flat is the natural light.",
+            "What I like most about this apartment is the natural light.",
+            "What I like the most about this flat is the natural light.",
+            "What I like the most about this apartment is the natural light."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p-speaking-of",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Speaking of music, would you like to listen to this?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p-make-effort",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "q-turn-down",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "I've to turn it down."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "q-go-over",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "He is going over hisn'tes.",
+            "He's going over hisn'tes."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "q-get-around",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "q-trouble",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "I've trouble remembering names."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-hear-back",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "We'ven't heard back from the supplier yet."
+          ],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "We'ven't heard back from the supplier yet."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-same-page",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "We'ren't on the same page about the budget."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-on-board",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "We'ren't on board with the proposal yet."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-concern",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "I've concerns about the schedule."
+          ],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "I've concerns about the schedule."
+          ],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "We've concerns about moving forward without testing."
+          ],
+          "added": []
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "We've serious concerns about the accuracy of these results."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-work-out",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [
+            "We'ven't worked out the details of the training yet."
+          ],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-double-check",
+      "meta": [
+        "meaning",
+        "expression",
+        "formula",
+        "explanation",
+        "boundary",
+        "checkpoint"
+      ],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "zh"
+          ],
+          "removed": [],
+          "added": []
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "zh",
+            "answers"
+          ],
+          "removed": [
+            "I'll double-check the bank details before making the payment.",
+            "I will double-check the bank details before making the payment."
+          ],
+          "added": [
+            "Could you double-check the bank details before making the payment?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "zh",
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you double-check that everyone has access?",
+            "Could you double-check everyone has access?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "zh",
+            "hint",
+            "answers"
+          ],
+          "removed": [
+            "She is double-checking the delivery address.",
+            "She's double-checking the delivery address."
+          ],
+          "added": [
+            "Could you double-check the delivery address?"
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "zh",
+            "answers"
+          ],
+          "removed": [
+            "We need to double-check whether the room is available.",
+            "We need to double-check if the room is available."
+          ],
+          "added": [
+            "Could you double-check whether the room is available?",
+            "Could you double-check if the room is available?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "zh",
+            "hint",
+            "answers"
+          ],
+          "removed": [
+            "I've double-checked the dates.",
+            "I have double-checked the dates."
+          ],
+          "added": [
+            "Could you double-check the dates?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "zh",
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you double-check the attachments before sending?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "zh",
+            "hint",
+            "answers"
+          ],
+          "removed": [
+            "He double-checked that the machine was off.",
+            "He double-checked the machine was off."
+          ],
+          "added": [
+            "Could you double-check that the machine is off?",
+            "Could you double-check the machine is off?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "zh",
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Could you double-check the spelling of the name?"
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "zh",
+            "answers"
+          ],
+          "removed": [
+            "I want to double-check that we are using the latest version.",
+            "I want to double-check that we're using the latest version.",
+            "I want to double-check we are using the latest version."
+          ],
+          "added": [
+            "Could you double-check that we are using the latest version?",
+            "Could you double-check that we're using the latest version?",
+            "Could you double-check we are using the latest version?",
+            "Could you double-check we're using the latest version?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-trade-off",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "zh",
+            "hint"
+          ],
+          "removed": [],
+          "added": []
+        }
+      ]
+    },
+    {
+      "id": "w-credit",
+      "meta": [
+        "boundary"
+      ],
+      "questions": []
+    },
+    {
+      "id": "e-both-and",
+      "meta": [
+        "meaning"
+      ],
+      "questions": []
+    },
+    {
+      "id": "e-whether-or",
+      "meta": [
+        "meaning",
+        "explanation"
+      ],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "zh",
+            "hint",
+            "answers"
+          ],
+          "removed": [
+            "The service is available whether students live on campus or off campus."
+          ],
+          "added": [
+            "The school needs to know whether students live on campus or off campus."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "zh",
+            "hint",
+            "answers"
+          ],
+          "removed": [
+            "People need support whether they are young or old."
+          ],
+          "added": [
+            "We need to know whether people prefer online or in-person services."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "zh",
+            "hint",
+            "answers"
+          ],
+          "removed": [
+            "People should have access to education whether they live in cities or villages."
+          ],
+          "added": [
+            "They have not decided whether to live in a city or a village."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-admittedly",
+      "meta": [
+        "meaning"
+      ],
+      "questions": []
+    },
+    {
+      "id": "e-account-for",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Bus journeys account for 40 percent of all journeys.",
+            "Bus journeys account for 40 per cent of all journeys."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Bus journeys account for 40 percent of all journeys.",
+            "Bus journeys account for 40 per cent of all journeys."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Housing accounts for 30 percent of total spending.",
+            "Housing accounts for 30 per cent of total spending."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Women account for 55 percent of participants.",
+            "Women account for 55 per cent of participants."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Online sales account for 50% of total sales."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "These two categories account for 70 percent of the total."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Food accounts for 25% of household spending.",
+            "Food accounts for one quarter of household spending."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Young people account for 60 percent of visitors."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Cars account for 80 percent of transport emissions."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This group accounts for one third of the sample."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Renewable energy accounts for 20 percent of total production."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-rise-from",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Sales rose from 2 million yuan to 3 million yuan.",
+            "Sales rose from 2 to 3 million yuan.",
+            "Sales rose from 2,000,000 yuan to 3,000,000 yuan."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "The price rose from 10 dollars to 15 dollars.",
+            "The price rose from $10 to $15.",
+            "The price rose from 10 to 15 dollars."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Daily use rose from 50 to 80 litres.",
+            "Daily use rose from 50 to 80 liters."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "The temperature rose from 15 to 22 degrees."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "Household income rose from 3,000 dollars a month to 4,000 dollars a month.",
+            "Household income rose from $3,000 a month to $4,000 a month.",
+            "Household income rose from $3,000 to $4,000 per month.",
+            "Household income rose from 3000 to 4000 dollars a month."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-remain-stable",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "The proportion remained stable at 20 percent."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "The unemployment rate remained stable at around 5 percent."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-date-back",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This tradition dates back to the 19th century."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This tradition dates back to the 19th century."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This festival dates back hundreds of years."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This bridge dates back to the 18th century."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This technique dates back to the early 20th century."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e-cover-area",
+      "meta": [],
+      "questions": [
+        {
+          "kind": "entry",
+          "id": "entry",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This park covers an area of 20 km².",
+            "This park covers an area of 20 square km."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This park covers an area of 20 km².",
+            "This park covers an area of 20 square km."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This lake covers an area of 50 km²."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "The campus covers an area of 100 ha."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "The exhibition covers an area of 3,000 square metres.",
+            "The exhibition covers an area of 3,000 square meters.",
+            "The exhibition covers an area of 3,000 m²."
+          ]
+        },
+        {
+          "kind": "learning",
+          "id": "l5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This forest covers an area of 200 km²."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r1",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This garden covers an area of 5 hectares.",
+            "This garden covers an area of 5 ha."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r2",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This region covers an area of 800 km²."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r3",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This nature reserve covers an area of 60 km²."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r4",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This museum covers an area of 12,000 square metres.",
+            "This museum covers an area of 12,000 square meters.",
+            "This museum covers an area of 12,000 m²."
+          ]
+        },
+        {
+          "kind": "review",
+          "id": "r5",
+          "fields": [
+            "answers"
+          ],
+          "removed": [],
+          "added": [
+            "This wetland covers an area of 30 km²."
+          ]
+        }
+      ]
+    }
+  ]
+}

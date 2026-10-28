@@ -1,0 +1,515 @@
+{
+  "schemaVersion": 1,
+  "release": "0.9.3",
+  "date": "2026-10-28",
+  "reviewers": "当前会话与独立协作会话各审12单元，并互相复核修订和分类",
+  "scope": "语言与内容逐单元检查；结构测试不替代自然度审校",
+  "summary": {
+    "units": 24,
+    "learning": 120,
+    "review": 120,
+    "changedExerciseRecords": 13,
+    "addedAcceptedAnswers": 10,
+    "removedAcceptedAnswers": 0
+  },
+  "classificationChanges": [
+    "not-sure：社交/了解彼此 → 社交/交流回应",
+    "where：新增居家/找物与故障",
+    "居家说明明确包括维修等待"
+  ],
+  "units": [
+    {
+      "id": "ever",
+      "meaning": "问有没有过某种经历",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "经历问法、人称have/has及过去分词逐题对应；保留原you复习题兼容旧记录。",
+      "changes": []
+    },
+    {
+      "id": "rather",
+      "meaning": "说出这次更想做的选择",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "眼前选择与I/we/he/she/they的would rather对应，未把一般爱好混入。",
+      "changes": []
+    },
+    {
+      "id": "could-request",
+      "meaning": "请对方帮忙做件事",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "10个具体动作与宾格、for/of搭配对应；低负担请求情境合理。",
+      "changes": []
+    },
+    {
+      "id": "invite",
+      "meaning": "邀请对方参加活动或询问参加意愿",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "直接邀请与询问第三人参加意愿的情境均明确；with me/us与题意一致。",
+      "changes": []
+    },
+    {
+      "id": "time-work",
+      "meaning": "确认这个时间是否方便",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "候选时间与宾格逐题对应；标题统一某人槽位，中午题补12pm变体。",
+      "changes": [
+        {
+          "field": "expression",
+          "before": "Does [时间] work for you / us / her / them?",
+          "after": "Does [时间] work for [某人]?"
+        },
+        {
+          "field": "learning[1]",
+          "before": {
+            "id": "l2",
+            "zh": "正在安排午饭，向朋友确认她姐姐的时间：中午十二点她方便吗？",
+            "answers": [
+              "Does noon work for her?",
+              "Does twelve o'clock work for her?"
+            ],
+            "hint": "中午十二点：noon / twelve o’clock\n她（宾格）：her"
+          },
+          "after": {
+            "id": "l2",
+            "zh": "正在安排午饭，向朋友确认她姐姐的时间：中午十二点她方便吗？",
+            "answers": [
+              "Does noon work for her?",
+              "Does twelve o'clock work for her?",
+              "Does twelve noon work for her?",
+              "Does 12 p.m. work for her?",
+              "Does 12 pm work for her?"
+            ],
+            "hint": "中午十二点：noon / twelve o’clock\n她（宾格）：her"
+          }
+        }
+      ]
+    },
+    {
+      "id": "longer",
+      "meaning": "问这件事还要多久完成",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "10题均已明确过程在进行、剩余时长与it指代；居家分类涵盖维修等待。",
+      "changes": []
+    },
+    {
+      "id": "where",
+      "meaning": "打听物品或地点在哪里",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "物品/地点均覆盖，语序与单复数正确；标题补地点，并补居家找物关联。",
+      "changes": [
+        {
+          "field": "meaning",
+          "before": "向对方打听东西在哪里",
+          "after": "打听物品或地点在哪里"
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "meaning": "询问商品或服务的价格",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "商品和服务均可问价格，shoes/pair对应are/is；提示的词语都有答案支持。",
+      "changes": []
+    },
+    {
+      "id": "permission",
+      "meaning": "确认这样做是否可以",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "本人/同伴的许可情境和第三人称动词正确；店内等候、花店拍照有实际服务情境。",
+      "changes": []
+    },
+    {
+      "id": "suggest",
+      "meaning": "提议大家一起做某件事",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "共同提议与固定we自然；公交题明确共同出行，分享题明确不同菜。",
+      "changes": [
+        {
+          "field": "learning[2]",
+          "before": {
+            "id": "l3",
+            "zh": "朋友正在想怎么去车站，你提议：我们坐公交怎么样？",
+            "answers": [
+              "Why don't we take the bus?"
+            ],
+            "hint": "坐公交：take the bus"
+          },
+          "after": {
+            "id": "l3",
+            "zh": "你和朋友一起去车站，正在商量交通方式。你提议：我们坐公交怎么样？",
+            "answers": [
+              "Why don't we take the bus?"
+            ],
+            "hint": "坐公交：take the bus"
+          }
+        },
+        {
+          "field": "review[4]",
+          "before": {
+            "id": "r5",
+            "zh": "两个人都想尝尝不同菜，你提议：我们分着吃怎么样？",
+            "answers": [
+              "Why don't we share?",
+              "Why don't we share the food?"
+            ],
+            "hint": "分着吃 / 分享：share\n这些食物：the food（可按情境省略）"
+          },
+          "after": {
+            "id": "r5",
+            "zh": "你和同伴点了不同的菜，想互相尝尝。你提议：我们分着吃怎么样？",
+            "answers": [
+              "Why don't we share?",
+              "Why don't we share the food?"
+            ],
+            "hint": "分着吃 / 分享：share\n这些食物：the food（可按情境省略）"
+          }
+        }
+      ]
+    },
+    {
+      "id": "clarify",
+      "meaning": "确认对方刚才的意思",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "确认意思与重说有区分；修清门口/屋外、姐姐年龄、父母与第三位同伴的指代。",
+      "changes": [
+        {
+          "field": "learning[1]",
+          "before": {
+            "id": "l2",
+            "zh": "对方说要在外面等，你想确认位置：你是说在外面吗？",
+            "answers": [
+              "Do you mean outside?"
+            ],
+            "hint": "在外面：outside"
+          },
+          "after": {
+            "id": "l2",
+            "zh": "对方说到门口碰面，你想确认是否要出门：你是说在外面吗？",
+            "answers": [
+              "Do you mean outside?"
+            ],
+            "hint": "在外面：outside"
+          }
+        },
+        {
+          "field": "learning[2]",
+          "before": {
+            "id": "l3",
+            "zh": "对方提到他的姐妹，你想确认：你是说你的姐姐吗？",
+            "answers": [
+              "Do you mean your older sister?",
+              "Do you mean your elder sister?"
+            ],
+            "hint": "你的姐姐：your older sister / your elder sister"
+          },
+          "after": {
+            "id": "l3",
+            "zh": "对方提到自己的姐妹，但没说年纪，你想确认：你是说你的姐姐吗？",
+            "answers": [
+              "Do you mean your older sister?",
+              "Do you mean your elder sister?"
+            ],
+            "hint": "你的姐姐：your older sister / your elder sister"
+          }
+        },
+        {
+          "field": "review[2]",
+          "before": {
+            "id": "r3",
+            "zh": "对方说他们会来，你想确认指谁：你是说他们的父母吗？",
+            "answers": [
+              "Do you mean their parents?"
+            ],
+            "hint": "他们的父母：their parents"
+          },
+          "after": {
+            "id": "r3",
+            "zh": "谈到那对兄妹时，对方说他们家有人要来，你想确认：你是说他们的父母吗？",
+            "answers": [
+              "Do you mean their parents?"
+            ],
+            "hint": "他们的父母：their parents"
+          }
+        },
+        {
+          "field": "review[4]",
+          "before": {
+            "id": "r5",
+            "zh": "对方提到他的安排，你想确认：你的意思是他今天很忙吗？",
+            "answers": [
+              "Do you mean he's busy today?",
+              "Do you mean he is busy today?"
+            ],
+            "hint": "他今天很忙：he is busy today\n缩写：he is → he’s",
+            "frame": "Do you mean + he is + 状态…?"
+          },
+          "after": {
+            "id": "r5",
+            "zh": "你和朋友谈到另一位同伴的安排，想确认：你的意思是他今天很忙吗？",
+            "answers": [
+              "Do you mean he's busy today?",
+              "Do you mean he is busy today?"
+            ],
+            "hint": "他今天很忙：he is busy today\n缩写：he is → he’s",
+            "frame": "Do you mean + he is + 状态…?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "repeat",
+      "meaning": "没听清时请对方再说一遍",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "逐题需重复的内容与答案宾语一致；不混放慢语速，不把repeat again说成语法错误。",
+      "changes": []
+    },
+    {
+      "id": "order",
+      "meaning": "礼貌地说出想要的东西",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "名词性需求与点餐/买票场景对应；补账单check不带please的全式与缩写变体。",
+      "changes": [
+        {
+          "field": "review[3]",
+          "before": {
+            "id": "r4",
+            "zh": "结账时：我们想要账单。",
+            "answers": [
+              "We'd like the bill, please.",
+              "We'd like the bill.",
+              "We'd like the check, please.",
+              "We would like the bill, please.",
+              "We would like the bill.",
+              "We would like the check, please."
+            ],
+            "hint": "账单：the bill / the check"
+          },
+          "after": {
+            "id": "r4",
+            "zh": "结账时：我们想要账单。",
+            "answers": [
+              "We'd like the bill, please.",
+              "We'd like the bill.",
+              "We'd like the check, please.",
+              "We'd like the check.",
+              "We would like the bill, please.",
+              "We would like the bill.",
+              "We would like the check, please.",
+              "We would like the check."
+            ],
+            "hint": "账单：the bill / the check"
+          }
+        }
+      ]
+    },
+    {
+      "id": "looking",
+      "meaning": "告诉别人正在找什么",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "寻找与看/期待有区分，am/is/are和物主代词对应；整理重复中文引导。",
+      "changes": [
+        {
+          "field": "learning[2]",
+          "before": {
+            "id": "l3",
+            "zh": "她在找手机，告诉朋友她正在找她的手机。",
+            "answers": [
+              "She's looking for her phone.",
+              "She is looking for her phone."
+            ],
+            "hint": "她的手机：her phone"
+          },
+          "after": {
+            "id": "l3",
+            "zh": "告诉朋友：她正在找她的手机。",
+            "answers": [
+              "She's looking for her phone.",
+              "She is looking for her phone."
+            ],
+            "hint": "她的手机：her phone"
+          }
+        }
+      ]
+    },
+    {
+      "id": "problem",
+      "meaning": "指出某个东西出了问题",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "with对象与问题含义对应，不强迫用户诊断具体故障，不以人作故障对象。",
+      "changes": []
+    },
+    {
+      "id": "not-work",
+      "meaning": "说明某个东西不能正常使用",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "修正物品个数的误导，按英文主语单复数；一副headphones仍用aren’t。",
+      "changes": [
+        {
+          "field": "explanation",
+          "before": "描述设备或功能当前不能正常使用。一个东西用 isn’t，多个用 aren’t。",
+          "after": "描述设备或功能当前不能正常使用。英文主语是单数时用 isn’t，复数时用 aren’t；headphones（耳机）按复数处理。"
+        },
+        {
+          "field": "checkpoint",
+          "before": "单个物品：isn’t working；多个物品：aren’t working。",
+          "after": "单数主语：isn’t working；复数主语：aren’t working。headphones 即使指一副耳机也用 aren’t。"
+        }
+      ]
+    },
+    {
+      "id": "change",
+      "meaning": "商量改用另一个安排",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "各题都有原安排与替代选择，instead含义对应。",
+      "changes": []
+    },
+    {
+      "id": "used-to",
+      "meaning": "说过去常有、现在不同的习惯或情况",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "全部有过去与现在对照；核对点同时覆盖过去习惯与状态。",
+      "changes": [
+        {
+          "field": "checkpoint",
+          "before": "过去常常：used to + 动词原形；人称改变时 used to 不变。",
+          "after": "过去的习惯或状态：used to + 动词原形；人称改变时 used to 不变。"
+        }
+      ]
+    },
+    {
+      "id": "opinion",
+      "meaning": "说出自己或别人的看法",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "think/thinks、完整想法与人称一致；补that+movie组合。",
+      "changes": [
+        {
+          "field": "review[3]",
+          "before": {
+            "id": "r4",
+            "zh": "转述他的看法：他觉得这部电影很有趣。",
+            "answers": [
+              "He thinks this film is interesting.",
+              "He thinks this movie is interesting.",
+              "He thinks that this film is interesting."
+            ],
+            "hint": "这部电影：this film / this movie\n有趣的：interesting"
+          },
+          "after": {
+            "id": "r4",
+            "zh": "转述他的看法：他觉得这部电影很有趣。",
+            "answers": [
+              "He thinks this film is interesting.",
+              "He thinks this movie is interesting.",
+              "He thinks that this film is interesting.",
+              "He thinks that this movie is interesting."
+            ],
+            "hint": "这部电影：this film / this movie\n有趣的：interesting"
+          }
+        }
+      ]
+    },
+    {
+      "id": "not-sure",
+      "meaning": "说明对一件事还不确定",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "if后陈述语序正确；从了解彼此移到交流回应，保留旅途不确定场景。",
+      "changes": []
+    },
+    {
+      "id": "thanks",
+      "meaning": "为对方的具体帮助或行为道谢",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "for+ing及受益人对应，感谢含正在进行与做过的动作，不误限定为过去。",
+      "changes": []
+    },
+    {
+      "id": "sorry",
+      "meaning": "为自己的具体行为道歉",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "道歉对象/ing对应；补make a noise，wasting time中文明确为浪费。",
+      "changes": [
+        {
+          "field": "learning[2]",
+          "before": {
+            "id": "l3",
+            "zh": "替自己和同伴为弄出噪音道歉。",
+            "answers": [
+              "We're sorry for making noise.",
+              "We are sorry for making noise."
+            ],
+            "hint": "弄出噪音：make noise\nmake 的 -ing：making"
+          },
+          "after": {
+            "id": "l3",
+            "zh": "替自己和同伴为弄出噪音道歉。",
+            "answers": [
+              "We're sorry for making noise.",
+              "We are sorry for making noise.",
+              "We're sorry for making a noise.",
+              "We are sorry for making a noise."
+            ],
+            "hint": "弄出噪音：make noise / make a noise\nmake 的 -ing：making"
+          }
+        },
+        {
+          "field": "review[4]",
+          "before": {
+            "id": "r5",
+            "zh": "为自己耽误对方的时间道歉。",
+            "answers": [
+              "I'm sorry for wasting your time.",
+              "I am sorry for wasting your time."
+            ],
+            "hint": "耽误你的时间：waste your time\nwaste 的 -ing：wasting"
+          },
+          "after": {
+            "id": "r5",
+            "zh": "为自己浪费了对方的时间道歉。",
+            "answers": [
+              "I'm sorry for wasting your time.",
+              "I am sorry for wasting your time."
+            ],
+            "hint": "浪费你的时间：waste your time\nwaste 的 -ing：wasting"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sounds",
+      "meaning": "回应听到的想法或消息",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "形容词与听后印象对应，含积极/消极反应，不把反应等同接受邀请。",
+      "changes": []
+    },
+    {
+      "id": "decline",
+      "meaning": "表达想参加，但说明这次不方便",
+      "reviewScope": "全部5学习题、5复习题、初试、2例句、讲解、提示、答案与分类",
+      "finding": "所有题已有邀请且理由完整；补stay home及相应缩写变体。",
+      "changes": [
+        {
+          "field": "review[1]",
+          "before": {
+            "id": "r2",
+            "zh": "朋友邀请你和同伴出门，但你们得待在家里。",
+            "answers": [
+              "We'd love to, but we have to stay at home.",
+              "We would love to, but we have to stay at home."
+            ],
+            "hint": "待在家里：stay at home"
+          },
+          "after": {
+            "id": "r2",
+            "zh": "朋友邀请你和同伴出门，但你们得待在家里。",
+            "answers": [
+              "We'd love to, but we have to stay at home.",
+              "We would love to, but we have to stay at home.",
+              "We'd love to, but we have to stay home.",
+              "We would love to, but we have to stay home."
+            ],
+            "hint": "待在家里：stay at home / stay home"
+          }
+        }
+      ]
+    }
+  ]
+}

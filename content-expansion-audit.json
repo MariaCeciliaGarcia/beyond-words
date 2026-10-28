@@ -1,0 +1,4989 @@
+{
+  "version": "1.8.0",
+  "date": "2026-10-28",
+  "totals": {
+    "units": 261,
+    "spoken": 217,
+    "exam": 44,
+    "learning": 1305,
+    "review": 1305
+  },
+  "scenes": [
+    {
+      "id": "social",
+      "name": "社交闲聊",
+      "description": "认识彼此、相约活动，也能接住对方的话。",
+      "children": [
+        {
+          "id": "get-to-know",
+          "name": "了解彼此",
+          "units": [
+            "ever",
+            "used-to",
+            "opinion",
+            "d-origin",
+            "d-work-as",
+            "d-last-time",
+            "p-make-effort",
+            "p-take-granted",
+            "q-familiar"
+          ]
+        },
+        {
+          "id": "get-together",
+          "name": "相约活动",
+          "units": [
+            "invite",
+            "suggest",
+            "time-work",
+            "decline",
+            "p-up-to",
+            "p-put-off",
+            "p-keep-mind",
+            "q-turn-down",
+            "q-might-well",
+            "q-time-to",
+            "q-as-long",
+            "q-feel-free"
+          ]
+        },
+        {
+          "id": "conversation",
+          "name": "交流回应",
+          "units": [
+            "clarify",
+            "repeat",
+            "sounds",
+            "thanks",
+            "sorry",
+            "not-sure",
+            "d-because",
+            "d-thats-why",
+            "d-what-mean",
+            "d-as-far-know",
+            "p-thing",
+            "p-you-know-what",
+            "p-makes-sense",
+            "p-fair-enough",
+            "p-speaking-of",
+            "p-turns-out",
+            "p-like-most",
+            "q-no-worries",
+            "q-take-time",
+            "q-doesnt-matter",
+            "q-never-mind",
+            "q-afraid",
+            "q-honest",
+            "q-by-way"
+          ]
+        },
+        {
+          "id": "contact",
+          "name": "联络与近况",
+          "units": [
+            "q-run-into",
+            "q-get-along",
+            "q-keep-touch",
+            "q-catch-up"
+          ]
+        }
+      ],
+      "domain": "daily"
+    },
+    {
+      "id": "home",
+      "name": "居家相处",
+      "description": "共同生活中的请求、选择、找物与维修等待。",
+      "children": [
+        {
+          "id": "help-at-home",
+          "name": "家务互助",
+          "units": [
+            "could-request",
+            "permission",
+            "thanks",
+            "sorry",
+            "d-need",
+            "d-offer-help",
+            "d-appreciate-if",
+            "d-mind-if",
+            "p-middle-of",
+            "p-put-off",
+            "p-make-effort",
+            "p-pay-attention",
+            "p-keep-mind"
+          ]
+        },
+        {
+          "id": "leisure",
+          "name": "休闲选择",
+          "units": [
+            "rather",
+            "suggest",
+            "change",
+            "time-work",
+            "d-depends",
+            "d-too",
+            "d-enough",
+            "d-look-forward",
+            "p-up-to",
+            "p-mood-for",
+            "p-end-up",
+            "q-take-up",
+            "q-might-well",
+            "q-time-to",
+            "q-worth",
+            "p-in-the-evening"
+          ]
+        },
+        {
+          "id": "home-items",
+          "name": "找物与故障",
+          "units": [
+            "looking",
+            "where",
+            "problem",
+            "not-work",
+            "longer",
+            "p-done-with",
+            "p-out-of",
+            "p-figure-out",
+            "p-get-rid-of",
+            "q-look-up",
+            "q-deal-with",
+            "q-trouble"
+          ]
+        },
+        {
+          "id": "care",
+          "name": "照护与共同生活",
+          "units": [
+            "q-look-after",
+            "q-worried",
+            "q-proud",
+            "q-let-me",
+            "q-no-need",
+            "q-feel-free"
+          ]
+        }
+      ],
+      "domain": "daily"
+    },
+    {
+      "id": "service",
+      "name": "购物点餐与服务",
+      "description": "说清需求、问明条件，遇到问题也能沟通。",
+      "children": [
+        {
+          "id": "food-shopping",
+          "name": "点餐选购",
+          "units": [
+            "order",
+            "cost",
+            "rather",
+            "sounds",
+            "d-try-on",
+            "d-recommend",
+            "d-without",
+            "d-wrong-order",
+            "p-mood-for",
+            "p-out-of",
+            "d-allergy"
+          ]
+        },
+        {
+          "id": "ask-staff",
+          "name": "咨询与找物",
+          "units": [
+            "looking",
+            "where",
+            "permission",
+            "repeat",
+            "d-wondering",
+            "d-availability",
+            "d-include",
+            "d-make-sure",
+            "q-trouble",
+            "q-look-up"
+          ]
+        },
+        {
+          "id": "service-issues",
+          "name": "问题与调整",
+          "units": [
+            "problem",
+            "not-work",
+            "could-request",
+            "longer",
+            "d-return",
+            "d-cant-seem",
+            "q-deal-with",
+            "q-no-worries",
+            "q-no-need",
+            "q-let-me"
+          ]
+        },
+        {
+          "id": "payment-conditions",
+          "name": "支付与条件",
+          "units": [
+            "d-payment",
+            "d-include",
+            "d-availability"
+          ]
+        },
+        {
+          "id": "booking",
+          "name": "预订与预约",
+          "units": [
+            "d-book",
+            "d-availability",
+            "d-wondering"
+          ]
+        }
+      ],
+      "domain": "daily"
+    },
+    {
+      "id": "travel",
+      "name": "出行旅行",
+      "description": "问路乘车、协商行程，了解途中进度。",
+      "children": [
+        {
+          "id": "transport",
+          "name": "问路与交通",
+          "units": [
+            "where",
+            "cost",
+            "looking",
+            "could-request",
+            "not-work",
+            "d-get-to",
+            "d-right-route",
+            "q-pick-up",
+            "q-drop-off",
+            "q-familiar"
+          ]
+        },
+        {
+          "id": "itinerary",
+          "name": "行程安排",
+          "units": [
+            "time-work",
+            "change",
+            "suggest",
+            "invite",
+            "rather",
+            "d-book",
+            "d-availability",
+            "d-include",
+            "d-make-sure",
+            "d-what-if",
+            "p-up-to",
+            "p-end-up",
+            "p-put-off",
+            "p-keep-mind",
+            "q-better",
+            "q-go-over",
+            "q-as-long"
+          ]
+        },
+        {
+          "id": "on-the-way",
+          "name": "途中交流与等候",
+          "units": [
+            "longer",
+            "not-sure",
+            "clarify",
+            "ever",
+            "d-just",
+            "d-not-yet",
+            "d-about-to",
+            "q-run-into"
+          ]
+        }
+      ],
+      "domain": "daily"
+    },
+    {
+      "id": "rhythm",
+      "name": "生活节奏",
+      "domain": "daily",
+      "description": "谈习惯、近期进展、原定安排和适应中的变化。",
+      "children": [
+        {
+          "id": "habits",
+          "name": "习惯与持续",
+          "units": [
+            "d-habit",
+            "d-frequency",
+            "d-duration",
+            "p-make-effort",
+            "p-put-off",
+            "p-get-rid-of",
+            "q-give-up",
+            "q-stick-to",
+            "q-cut-down",
+            "q-take-up",
+            "q-get-around",
+            "p-in-the-evening"
+          ]
+        },
+        {
+          "id": "recent-changes",
+          "name": "进展与变化",
+          "units": [
+            "d-trying",
+            "d-about-to",
+            "d-just",
+            "d-not-yet",
+            "d-get-used",
+            "d-supposed",
+            "p-done-with",
+            "p-middle-of",
+            "p-end-up",
+            "p-turns-out",
+            "q-better",
+            "q-time-to",
+            "q-go-over"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wellbeing",
+      "name": "身体与就医沟通",
+      "domain": "daily",
+      "description": "说清已知过敏、不适和需要，不提供诊断或治疗建议。",
+      "children": [
+        {
+          "id": "conditions",
+          "name": "身体情况",
+          "units": [
+            "d-allergy",
+            "d-symptom",
+            "s-pain",
+            "s-hurts"
+          ]
+        },
+        {
+          "id": "needs-help",
+          "name": "说明需要与求助",
+          "units": [
+            "d-need"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep-talk",
+      "name": "想法与关系",
+      "domain": "daily",
+      "description": "解释原因、比较条件，表达感受、愿望与个人边界。",
+      "children": [
+        {
+          "id": "explanations",
+          "name": "原因与解释",
+          "units": [
+            "d-because",
+            "d-thats-why",
+            "d-what-mean",
+            "d-as-far-know",
+            "p-thing",
+            "p-turns-out",
+            "p-makes-sense",
+            "p-fair-enough",
+            "q-honest",
+            "q-afraid",
+            "q-no-point"
+          ]
+        },
+        {
+          "id": "choices-conditions",
+          "name": "比较与条件",
+          "units": [
+            "d-even-though",
+            "d-depends",
+            "d-as-as",
+            "d-enough",
+            "d-too",
+            "d-what-if",
+            "p-up-to",
+            "p-like-most",
+            "p-keep-mind",
+            "q-as-long",
+            "q-worth",
+            "q-might-well",
+            "q-doesnt-matter",
+            "q-no-need"
+          ]
+        },
+        {
+          "id": "feelings-boundaries",
+          "name": "感受与边界",
+          "units": [
+            "d-wish",
+            "d-should-have",
+            "d-feeling",
+            "d-look-forward",
+            "d-rather-not",
+            "d-didnt-mean",
+            "d-mind-if",
+            "d-appreciate-if",
+            "p-nerves",
+            "p-cant-stand",
+            "p-fed-up",
+            "p-mood-for",
+            "p-last-thing",
+            "p-take-granted",
+            "q-worried",
+            "q-proud",
+            "q-get-along",
+            "q-no-point"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digital",
+      "name": "数字与线上生活",
+      "domain": "daily",
+      "description": "处理设备账号困难，在线沟通和核实信息。",
+      "children": [
+        {
+          "id": "accounts-devices",
+          "name": "账号与操作",
+          "units": [
+            "d-cant-seem",
+            "d-trying",
+            "problem",
+            "not-work",
+            "p-figure-out",
+            "p-get-rid-of",
+            "q-familiar",
+            "q-trouble",
+            "q-look-up",
+            "w-set-up"
+          ]
+        },
+        {
+          "id": "online-confirmation",
+          "name": "沟通与核实",
+          "units": [
+            "d-make-sure",
+            "repeat",
+            "clarify",
+            "not-sure",
+            "w-hear-back",
+            "w-bear-with"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-team",
+      "name": "团队协作",
+      "domain": "work",
+      "description": "说清职责、求助、认领任务和暂时接替。",
+      "children": [
+        {
+          "id": "roles",
+          "name": "职责与分工",
+          "units": [
+            "w-responsible",
+            "w-take-care",
+            "w-who-handle",
+            "w-help-with"
+          ]
+        },
+        {
+          "id": "handoffs",
+          "name": "协同与交接",
+          "units": [
+            "w-let-know",
+            "w-make-sure",
+            "w-hand-over",
+            "w-cover",
+            "w-up-to-speed",
+            "w-take-over",
+            "w-step-in",
+            "w-follow-through"
+          ]
+        },
+        {
+          "id": "capacity",
+          "name": "工作量与担当",
+          "units": [
+            "w-tied-up",
+            "w-capacity",
+            "w-take-on"
+          ]
+        },
+        {
+          "id": "shared-actions",
+          "name": "通用协作与应对",
+          "units": [
+            "d-need",
+            "d-trying",
+            "d-make-sure",
+            "p-done-with",
+            "p-up-to",
+            "p-out-of",
+            "p-middle-of",
+            "p-keep-mind",
+            "p-pay-attention",
+            "q-look-up",
+            "q-go-over",
+            "q-deal-with",
+            "q-trouble",
+            "q-familiar",
+            "q-feel-free",
+            "q-no-need",
+            "q-let-me",
+            "q-as-long",
+            "q-no-point"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-messages",
+      "name": "邮件与远程沟通",
+      "domain": "work",
+      "description": "说明联系目的、跟进回复、安排通话和确认信息。",
+      "children": [
+        {
+          "id": "written",
+          "name": "联系与书面说明",
+          "units": [
+            "w-reaching",
+            "w-following",
+            "w-attached",
+            "w-get-back"
+          ]
+        },
+        {
+          "id": "remote",
+          "name": "远程协调与确认",
+          "units": [
+            "w-copy",
+            "w-call",
+            "w-audio",
+            "w-confirm"
+          ]
+        },
+        {
+          "id": "updates",
+          "name": "提醒、更新与背景",
+          "units": [
+            "w-heads-up",
+            "w-keep-posted",
+            "w-touch-base",
+            "w-fill-in",
+            "w-hear-back",
+            "w-bear-with"
+          ]
+        },
+        {
+          "id": "shared-responses",
+          "name": "通用回应与表达",
+          "units": [
+            "could-request",
+            "permission",
+            "repeat",
+            "clarify",
+            "thanks",
+            "sorry",
+            "sounds",
+            "not-sure",
+            "p-makes-sense",
+            "p-fair-enough",
+            "p-thing",
+            "q-afraid",
+            "q-honest",
+            "q-take-time",
+            "q-no-worries",
+            "q-never-mind"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-project",
+      "name": "项目执行",
+      "domain": "work",
+      "description": "说明真实进度、依赖、优先级、期限和下一步。",
+      "children": [
+        {
+          "id": "status",
+          "name": "进度与依赖",
+          "units": [
+            "w-on-track",
+            "w-running-behind",
+            "w-waiting",
+            "w-completed",
+            "w-up-to-speed",
+            "w-keep-posted",
+            "w-tied-up"
+          ]
+        },
+        {
+          "id": "delivery",
+          "name": "优先级与期限",
+          "units": [
+            "w-due",
+            "w-priority",
+            "w-next-step",
+            "w-deadline"
+          ]
+        },
+        {
+          "id": "preparation",
+          "name": "准备、设置与复核",
+          "units": [
+            "w-put-together",
+            "w-set-up",
+            "w-work-out",
+            "w-double-check",
+            "w-flag"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-meeting",
+      "name": "会议讨论",
+      "domain": "work",
+      "description": "进入议题、补充观点、温和异议、形成共识与总结。",
+      "children": [
+        {
+          "id": "participation",
+          "name": "参与和表达观点",
+          "units": [
+            "w-start",
+            "w-add",
+            "w-point",
+            "w-perspective",
+            "w-run-by",
+            "w-bring-up",
+            "w-concern",
+            "w-missing",
+            "w-push-back",
+            "w-to-be-clear"
+          ]
+        },
+        {
+          "id": "decisions",
+          "name": "共识与总结",
+          "units": [
+            "w-agree",
+            "w-summarize",
+            "w-back",
+            "w-weigh",
+            "w-same-page",
+            "w-on-board",
+            "w-trade-off",
+            "w-narrow-down",
+            "w-rule-out"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-client",
+      "name": "客户与合作",
+      "domain": "work",
+      "description": "了解需求、确认范围、协商条件和交付预期。",
+      "children": [
+        {
+          "id": "requirements",
+          "name": "需求与服务范围",
+          "units": [
+            "w-requirements",
+            "w-include",
+            "w-scope",
+            "w-clarify-scope"
+          ]
+        },
+        {
+          "id": "solutions",
+          "name": "条件与交付方案",
+          "units": [
+            "w-budget",
+            "w-offer-option",
+            "w-address",
+            "w-expect",
+            "w-room",
+            "w-build-on",
+            "w-work-out",
+            "w-trade-off"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w-career",
+      "name": "求职与职业发展",
+      "domain": "work",
+      "description": "介绍工作经历与能力，说明求职动机、征求反馈和规划成长。",
+      "children": [
+        {
+          "id": "experience",
+          "name": "经历与能力",
+          "units": [
+            "w-experience",
+            "w-previous",
+            "w-example",
+            "w-strength"
+          ]
+        },
+        {
+          "id": "growth",
+          "name": "动机与成长",
+          "units": [
+            "w-interest",
+            "w-improve",
+            "w-feedback",
+            "w-goal",
+            "w-credit",
+            "w-build-on",
+            "w-take-on"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-writing",
+      "name": "通用写作基础",
+      "description": "把原因、例子、比较与判断写清楚，再根据具体任务选用。",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "children": [
+        {
+          "id": "cause",
+          "name": "原因与结果",
+          "units": [
+            "e-lead-to",
+            "e-result-from",
+            "e-due-to"
+          ]
+        },
+        {
+          "id": "support",
+          "name": "举例与突出重点",
+          "units": [
+            "e-for-instance",
+            "e-in-particular"
+          ]
+        },
+        {
+          "id": "compare",
+          "name": "选择、比较与让步",
+          "units": [
+            "e-rather-than",
+            "e-instead-of",
+            "e-both-and",
+            "e-not-only",
+            "e-in-contrast",
+            "e-despite",
+            "e-whether-or"
+          ]
+        },
+        {
+          "id": "solutions",
+          "name": "方案与影响",
+          "units": [
+            "e-one-way",
+            "e-enable",
+            "e-prevent",
+            "e-play-role"
+          ]
+        },
+        {
+          "id": "reasoning",
+          "name": "推断、评价与限制",
+          "units": [
+            "e-suggests",
+            "e-to-extent",
+            "e-admittedly",
+            "e-outweigh",
+            "e-in-other-words",
+            "e-limitation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-chart",
+      "name": "Academic 图表描述",
+      "description": "把数值、构成与变化说准确。",
+      "domains": [
+        "ielts"
+      ],
+      "children": [
+        {
+          "id": "practice",
+          "name": "Academic 图表描述",
+          "units": [
+            "e-account-for",
+            "e-rise-from",
+            "e-remain-stable",
+            "et-overview",
+            "et-consistently",
+            "et-fall"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-translation",
+      "name": "翻译中的常用结构",
+      "description": "说明特色、历史与规模，让中文意思自然落到英文。",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "children": [
+        {
+          "id": "practice",
+          "name": "翻译中的常用结构",
+          "units": [
+            "e-known-for",
+            "e-date-back",
+            "e-cover-area",
+            "et-important-part",
+            "et-over-past"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-speaking",
+      "name": "口头经历与偏好",
+      "description": "围绕具体经历、对象和感受展开，避免空泛背诵。",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "children": [
+        {
+          "id": "practice",
+          "name": "口头经历与偏好",
+          "units": [
+            "e-favourite-memory",
+            "e-when-comes",
+            "e-appreciated",
+            "e-found-particularly"
+          ]
+        }
+      ],
+      "nameByDomain": {
+        "ielts": "口语：经历与偏好",
+        "toefl": "面试表达：经历与偏好"
+      }
+    },
+    {
+      "id": "safety",
+      "domain": "daily",
+      "name": "安全与应急",
+      "description": "说清发生的事件，并请求需要的联系和帮助。",
+      "children": [
+        {
+          "id": "request-help",
+          "name": "请求联系援助",
+          "units": [
+            "s-call-help"
+          ]
+        },
+        {
+          "id": "report-events",
+          "name": "报告发生的事情",
+          "units": [
+            "s-incident"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-correspondence",
+      "name": "书信与邮件：请求和问题说明",
+      "nameByDomain": {
+        "ielts": "GT 书信：请求和问题说明",
+        "toefl": "邮件：请求和问题说明"
+      },
+      "description": "结合收信人和目的，说明请求、解释问题并提出替代安排。",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "children": [
+        {
+          "id": "requests",
+          "name": "提出目的与请求",
+          "units": [
+            "et-request",
+            "et-possible"
+          ]
+        },
+        {
+          "id": "problems-options",
+          "name": "解释问题与替代安排",
+          "units": [
+            "et-problem",
+            "et-alternative"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exam-position",
+      "name": "立场、回应与理由",
+      "nameByDomain": {
+        "toefl": "讨论回应：立场与理由"
+      },
+      "description": "回应已有观点、补充新考虑，解释自己作出判断的理由。",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "children": [
+        {
+          "id": "position-response",
+          "name": "回应和补充观点",
+          "units": [
+            "et-partial-agree",
+            "et-add"
+          ]
+        },
+        {
+          "id": "reason-development",
+          "name": "展开首要理由",
+          "units": [
+            "et-main-reason"
+          ]
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "id": "information",
+      "name": "信息与背景",
+      "description": "问经历、位置、价格与剩余时间。",
+      "children": [
+        {
+          "id": "experience",
+          "name": "经历与往事",
+          "units": [
+            "ever",
+            "used-to"
+          ]
+        },
+        {
+          "id": "practical-info",
+          "name": "位置与价格",
+          "units": [
+            "where",
+            "cost"
+          ]
+        },
+        {
+          "id": "time-left",
+          "name": "时间与进度",
+          "units": [
+            "longer"
+          ]
+        },
+        {
+          "id": "routes",
+          "name": "路线与方向",
+          "units": [
+            "d-get-to",
+            "d-right-route"
+          ]
+        },
+        {
+          "id": "service-info",
+          "name": "选择与服务条件",
+          "units": [
+            "d-availability",
+            "d-include",
+            "d-recommend",
+            "d-wondering",
+            "w-requirements"
+          ]
+        },
+        {
+          "id": "reference",
+          "name": "查找与复核",
+          "units": [
+            "q-look-up",
+            "q-go-over"
+          ]
+        },
+        {
+          "id": "background-description",
+          "name": "特色、历史与规模",
+          "units": [
+            "e-known-for",
+            "e-date-back",
+            "e-cover-area"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thoughts",
+      "name": "表达想法",
+      "description": "说出偏好、看法与不确定的事情。",
+      "children": [
+        {
+          "id": "preference",
+          "name": "眼前的选择",
+          "units": [
+            "rather"
+          ]
+        },
+        {
+          "id": "views",
+          "name": "看法与把握",
+          "units": [
+            "opinion",
+            "not-sure"
+          ]
+        },
+        {
+          "id": "knowledge-limit",
+          "name": "说明知情范围",
+          "units": [
+            "d-as-far-know"
+          ]
+        },
+        {
+          "id": "add-disagree",
+          "name": "补充与不同意见",
+          "units": [
+            "w-add",
+            "w-point",
+            "et-add"
+          ]
+        },
+        {
+          "id": "decision-right",
+          "name": "交给谁决定",
+          "units": [
+            "p-up-to"
+          ]
+        },
+        {
+          "id": "current-mood",
+          "name": "当下的兴致",
+          "units": [
+            "p-mood-for"
+          ]
+        },
+        {
+          "id": "focus",
+          "name": "引出和突出重点",
+          "units": [
+            "p-thing",
+            "p-like-most"
+          ]
+        },
+        {
+          "id": "attention-consideration",
+          "name": "留意与考虑",
+          "units": [
+            "p-pay-attention",
+            "p-keep-mind"
+          ]
+        },
+        {
+          "id": "familiarity",
+          "name": "了解与熟悉",
+          "units": [
+            "q-familiar"
+          ]
+        },
+        {
+          "id": "necessity",
+          "name": "必要性与行动时机",
+          "units": [
+            "q-no-need",
+            "q-better",
+            "q-time-to"
+          ]
+        },
+        {
+          "id": "value-options",
+          "name": "值不值得与顺势选择",
+          "units": [
+            "q-worth",
+            "q-might-well",
+            "q-no-point"
+          ]
+        },
+        {
+          "id": "tone-opening",
+          "name": "缓和与坦率",
+          "units": [
+            "q-afraid",
+            "q-honest"
+          ]
+        },
+        {
+          "id": "discussing",
+          "name": "征求意见与提出议题",
+          "units": [
+            "w-run-by",
+            "w-bring-up",
+            "w-concern",
+            "w-missing"
+          ]
+        },
+        {
+          "id": "solution",
+          "name": "提出具体办法",
+          "units": [
+            "e-one-way"
+          ]
+        },
+        {
+          "id": "evaluation",
+          "name": "谨慎推断与评价",
+          "units": [
+            "e-suggests",
+            "e-to-extent",
+            "e-admittedly",
+            "e-outweigh",
+            "e-limitation"
+          ]
+        },
+        {
+          "id": "personal-evaluation",
+          "name": "口头经历与评价",
+          "units": [
+            "e-favourite-memory",
+            "e-when-comes",
+            "e-appreciated",
+            "e-found-particularly"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "needs",
+      "name": "请求与需求",
+      "description": "请人帮忙、征求许可、说明想要什么。",
+      "children": [
+        {
+          "id": "action-request",
+          "name": "请求动作",
+          "units": [
+            "could-request",
+            "w-help-with",
+            "w-cover"
+          ]
+        },
+        {
+          "id": "ask-permission",
+          "name": "征求许可",
+          "units": [
+            "permission",
+            "d-try-on",
+            "d-payment",
+            "d-mind-if"
+          ]
+        },
+        {
+          "id": "state-needs",
+          "name": "说明需求",
+          "units": [
+            "order",
+            "looking",
+            "d-book",
+            "d-return",
+            "d-without",
+            "d-need"
+          ]
+        },
+        {
+          "id": "offer-help",
+          "name": "主动提供帮助",
+          "units": [
+            "d-offer-help"
+          ]
+        },
+        {
+          "id": "supplies",
+          "name": "物品与余量",
+          "units": [
+            "p-out-of"
+          ]
+        },
+        {
+          "id": "care-help",
+          "name": "照护与主动帮忙",
+          "units": [
+            "q-look-after",
+            "q-let-me"
+          ]
+        },
+        {
+          "id": "permission-welcome",
+          "name": "欢迎与允许",
+          "units": [
+            "q-feel-free"
+          ]
+        },
+        {
+          "id": "emergency-contact",
+          "name": "请求联系援助",
+          "units": [
+            "s-call-help"
+          ]
+        },
+        {
+          "id": "written-request",
+          "name": "书面请求与可行安排",
+          "units": [
+            "et-request",
+            "et-possible"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plans",
+      "name": "邀请与安排",
+      "description": "邀请参与、共同提议，确认或调整安排。",
+      "children": [
+        {
+          "id": "invitations",
+          "name": "发起邀请",
+          "units": [
+            "invite"
+          ]
+        },
+        {
+          "id": "suggestions",
+          "name": "共同提议",
+          "units": [
+            "suggest"
+          ]
+        },
+        {
+          "id": "time-check",
+          "name": "确认时间",
+          "units": [
+            "time-work",
+            "w-call",
+            "w-deadline"
+          ]
+        },
+        {
+          "id": "change-plans",
+          "name": "调整安排",
+          "units": [
+            "change",
+            "et-alternative"
+          ]
+        },
+        {
+          "id": "postpone",
+          "name": "推迟与拖延",
+          "units": [
+            "p-put-off",
+            "q-get-around"
+          ]
+        },
+        {
+          "id": "transport-help",
+          "name": "接送与出行协助",
+          "units": [
+            "q-pick-up",
+            "q-drop-off"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "name": "说明问题",
+      "description": "说明物品或服务哪里不正常。",
+      "children": [
+        {
+          "id": "something-wrong",
+          "name": "指出异常",
+          "units": [
+            "problem"
+          ]
+        },
+        {
+          "id": "not-working",
+          "name": "不能正常使用",
+          "units": [
+            "not-work"
+          ]
+        },
+        {
+          "id": "body-status",
+          "name": "说明身体情况",
+          "units": [
+            "d-allergy",
+            "d-symptom",
+            "s-pain",
+            "s-hurts"
+          ]
+        },
+        {
+          "id": "correction",
+          "name": "纠正与排查",
+          "units": [
+            "d-wrong-order",
+            "d-cant-seem",
+            "w-audio",
+            "w-address"
+          ]
+        },
+        {
+          "id": "finding-solutions",
+          "name": "想清与处理",
+          "units": [
+            "p-figure-out",
+            "p-get-rid-of"
+          ]
+        },
+        {
+          "id": "handling",
+          "name": "处理与困难",
+          "units": [
+            "q-deal-with",
+            "q-trouble"
+          ]
+        },
+        {
+          "id": "written-problem",
+          "name": "说明需要处理的问题",
+          "units": [
+            "et-problem"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "responses",
+      "name": "衔接与回应",
+      "description": "澄清意思、回应消息、感谢、道歉和婉拒。",
+      "children": [
+        {
+          "id": "understanding",
+          "name": "澄清与确认",
+          "units": [
+            "clarify",
+            "repeat",
+            "d-make-sure",
+            "d-what-mean",
+            "w-confirm",
+            "w-make-sure",
+            "w-to-be-clear"
+          ]
+        },
+        {
+          "id": "positive-response",
+          "name": "回应与感谢",
+          "units": [
+            "sounds",
+            "thanks"
+          ]
+        },
+        {
+          "id": "declining-apology",
+          "name": "婉拒与道歉",
+          "units": [
+            "decline",
+            "sorry"
+          ]
+        },
+        {
+          "id": "contact-updates",
+          "name": "联系与补充信息",
+          "units": [
+            "w-reaching",
+            "w-following",
+            "w-attached",
+            "w-copy",
+            "w-let-know"
+          ]
+        },
+        {
+          "id": "meeting-control",
+          "name": "引导议题与总结",
+          "units": [
+            "w-start",
+            "w-back",
+            "w-summarize"
+          ]
+        },
+        {
+          "id": "conversation-links",
+          "name": "接话与转入相关话题",
+          "units": [
+            "p-you-know-what",
+            "p-speaking-of",
+            "q-by-way"
+          ]
+        },
+        {
+          "id": "accepting",
+          "name": "理解与接受",
+          "units": [
+            "p-makes-sense",
+            "p-fair-enough"
+          ]
+        },
+        {
+          "id": "refusing",
+          "name": "拒绝机会或提议",
+          "units": [
+            "q-turn-down"
+          ]
+        },
+        {
+          "id": "reassurance",
+          "name": "安抚、耐心与撤回",
+          "units": [
+            "q-no-worries",
+            "q-take-time",
+            "q-doesnt-matter",
+            "q-never-mind"
+          ]
+        },
+        {
+          "id": "updates-context",
+          "name": "提前提醒与持续同步",
+          "units": [
+            "w-heads-up",
+            "w-keep-posted",
+            "w-touch-base",
+            "w-fill-in",
+            "w-hear-back"
+          ]
+        },
+        {
+          "id": "checking-notice",
+          "name": "复核与引起注意",
+          "units": [
+            "w-double-check",
+            "w-flag"
+          ]
+        },
+        {
+          "id": "waiting",
+          "name": "请对方耐心等待",
+          "units": [
+            "w-bear-with"
+          ]
+        },
+        {
+          "id": "examples-rephrasing",
+          "name": "举例与换说法",
+          "units": [
+            "e-for-instance",
+            "e-in-particular",
+            "e-in-other-words"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narrative",
+      "name": "经历与变化",
+      "description": "讲近期发生的事情、持续状态、背景与原定安排。",
+      "children": [
+        {
+          "id": "habits-duration",
+          "name": "习惯与持续",
+          "units": [
+            "d-habit",
+            "d-frequency",
+            "d-duration"
+          ]
+        },
+        {
+          "id": "recent-events",
+          "name": "近期发生",
+          "units": [
+            "d-about-to",
+            "d-just",
+            "d-not-yet",
+            "d-get-used",
+            "s-incident"
+          ]
+        },
+        {
+          "id": "background",
+          "name": "背景与往事",
+          "units": [
+            "d-origin",
+            "d-work-as",
+            "d-last-time"
+          ]
+        },
+        {
+          "id": "past-expectations",
+          "name": "原定与回顾",
+          "units": [
+            "d-supposed",
+            "d-should-have"
+          ]
+        },
+        {
+          "id": "outcomes",
+          "name": "事情的最终结果",
+          "units": [
+            "p-end-up",
+            "p-turns-out"
+          ]
+        },
+        {
+          "id": "deliberate-effort",
+          "name": "有意识的努力",
+          "units": [
+            "p-make-effort"
+          ]
+        },
+        {
+          "id": "encounters",
+          "name": "偶然相遇",
+          "units": [
+            "q-run-into"
+          ]
+        },
+        {
+          "id": "change-habits",
+          "name": "开始、坚持与减少",
+          "units": [
+            "q-give-up",
+            "q-stick-to",
+            "q-cut-down",
+            "q-take-up"
+          ]
+        },
+        {
+          "id": "getting-informed",
+          "name": "熟悉背景与跟上进展",
+          "units": [
+            "w-up-to-speed"
+          ]
+        },
+        {
+          "id": "data-description",
+          "name": "构成与数值变化",
+          "units": [
+            "e-account-for",
+            "e-rise-from",
+            "e-remain-stable",
+            "et-overview",
+            "et-consistently",
+            "et-fall"
+          ]
+        },
+        {
+          "id": "recent-development",
+          "name": "发展变化与重要性",
+          "units": [
+            "et-important-part",
+            "et-over-past"
+          ]
+        },
+        {
+          "id": "time-of-day",
+          "name": "说明事情发生的时段",
+          "units": [
+            "p-in-the-evening"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conditions",
+      "name": "原因与条件",
+      "description": "解释因果、让步、比较和假设条件。",
+      "children": [
+        {
+          "id": "cause-result",
+          "name": "原因与结果",
+          "units": [
+            "d-because",
+            "d-thats-why",
+            "e-lead-to",
+            "e-result-from",
+            "e-due-to",
+            "e-enable",
+            "e-prevent",
+            "e-play-role",
+            "et-main-reason"
+          ]
+        },
+        {
+          "id": "qualifications",
+          "name": "让步与依赖",
+          "units": [
+            "d-even-though",
+            "d-depends",
+            "e-despite",
+            "et-partial-agree"
+          ]
+        },
+        {
+          "id": "comparison",
+          "name": "比较与程度",
+          "units": [
+            "d-as-as",
+            "d-enough",
+            "d-too"
+          ]
+        },
+        {
+          "id": "hypotheses",
+          "name": "可能的情况",
+          "units": [
+            "d-what-if"
+          ]
+        },
+        {
+          "id": "provided",
+          "name": "条件与允许",
+          "units": [
+            "q-as-long"
+          ]
+        },
+        {
+          "id": "exam-compare",
+          "name": "对照与并列",
+          "units": [
+            "e-rather-than",
+            "e-instead-of",
+            "e-both-and",
+            "e-not-only",
+            "e-in-contrast",
+            "e-whether-or"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "relationships",
+      "name": "感受与关系",
+      "description": "表达期待、愿望、不愿意与关系修复。",
+      "children": [
+        {
+          "id": "wishes-feelings",
+          "name": "愿望、感受与期待",
+          "units": [
+            "d-wish",
+            "d-feeling",
+            "d-look-forward",
+            "q-worried",
+            "q-proud"
+          ]
+        },
+        {
+          "id": "boundaries",
+          "name": "表达个人边界",
+          "units": [
+            "d-rather-not",
+            "d-appreciate-if"
+          ]
+        },
+        {
+          "id": "repair",
+          "name": "解释本意",
+          "units": [
+            "d-didnt-mean"
+          ]
+        },
+        {
+          "id": "irritation",
+          "name": "心烦与厌烦",
+          "units": [
+            "p-nerves",
+            "p-cant-stand",
+            "p-fed-up"
+          ]
+        },
+        {
+          "id": "intentions",
+          "name": "说明不愿造成的影响",
+          "units": [
+            "p-last-thing"
+          ]
+        },
+        {
+          "id": "appreciation",
+          "name": "珍惜与重视",
+          "units": [
+            "p-take-granted"
+          ]
+        },
+        {
+          "id": "contact",
+          "name": "相处与联络",
+          "units": [
+            "q-get-along",
+            "q-keep-touch",
+            "q-catch-up"
+          ]
+        },
+        {
+          "id": "recognition",
+          "name": "承认贡献",
+          "units": [
+            "w-credit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "name": "责任与进度",
+      "description": "明确负责人、工作进展、依赖和交付行动。",
+      "children": [
+        {
+          "id": "ownership",
+          "name": "责任归属",
+          "units": [
+            "w-responsible",
+            "w-take-care",
+            "w-who-handle",
+            "w-take-over",
+            "w-step-in",
+            "w-take-on"
+          ]
+        },
+        {
+          "id": "status-report",
+          "name": "进度状态",
+          "units": [
+            "d-trying",
+            "w-on-track",
+            "w-running-behind",
+            "w-waiting",
+            "w-completed",
+            "w-due"
+          ]
+        },
+        {
+          "id": "next-delivery",
+          "name": "交接与下一步",
+          "units": [
+            "w-hand-over",
+            "w-next-step",
+            "w-get-back",
+            "w-expect"
+          ]
+        },
+        {
+          "id": "complete-busy",
+          "name": "完成与忙碌",
+          "units": [
+            "p-done-with",
+            "p-middle-of"
+          ]
+        },
+        {
+          "id": "preparing",
+          "name": "制作与设置",
+          "units": [
+            "w-put-together",
+            "w-set-up"
+          ]
+        },
+        {
+          "id": "commitments",
+          "name": "兑现与落实",
+          "units": [
+            "w-follow-through",
+            "w-work-out"
+          ]
+        },
+        {
+          "id": "workload",
+          "name": "忙碌与负荷",
+          "units": [
+            "w-tied-up",
+            "w-capacity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decisions",
+      "name": "协商与决策",
+      "description": "讨论视角、优先级、方案、范围与条件。",
+      "children": [
+        {
+          "id": "priorities",
+          "name": "优先级与权衡",
+          "units": [
+            "w-priority",
+            "w-weigh",
+            "w-perspective"
+          ]
+        },
+        {
+          "id": "shared-solutions",
+          "name": "共同方案与共识",
+          "units": [
+            "w-agree",
+            "w-offer-option"
+          ]
+        },
+        {
+          "id": "scope-terms",
+          "name": "范围与条件",
+          "units": [
+            "w-include",
+            "w-budget",
+            "w-scope",
+            "w-clarify-scope"
+          ]
+        },
+        {
+          "id": "alignment",
+          "name": "理解一致与支持参与",
+          "units": [
+            "w-same-page",
+            "w-on-board"
+          ]
+        },
+        {
+          "id": "selection",
+          "name": "筛选与排除",
+          "units": [
+            "w-narrow-down",
+            "w-rule-out"
+          ]
+        },
+        {
+          "id": "objections",
+          "name": "提出异议与代价",
+          "units": [
+            "w-push-back",
+            "w-trade-off"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "development",
+      "name": "能力与发展",
+      "description": "说明经验、能力、成长目标和反馈需求。",
+      "children": [
+        {
+          "id": "evidence",
+          "name": "经验与能力",
+          "units": [
+            "w-experience",
+            "w-previous",
+            "w-example",
+            "w-strength"
+          ]
+        },
+        {
+          "id": "motivation",
+          "name": "动机与成长方向",
+          "units": [
+            "w-interest",
+            "w-improve",
+            "w-goal"
+          ]
+        },
+        {
+          "id": "feedback",
+          "name": "请求反馈",
+          "units": [
+            "w-feedback"
+          ]
+        },
+        {
+          "id": "improvement",
+          "name": "发展与改进空间",
+          "units": [
+            "w-room",
+            "w-build-on"
+          ]
+        }
+      ]
+    }
+  ],
+  "scopes": [
+    {
+      "id": "daily",
+      "name": "成人日常交流",
+      "description": "从生活办事到深入交流，逐步练习能迁移的表达。",
+      "track": "spoken",
+      "count": 140
+    },
+    {
+      "id": "work",
+      "name": "职业交流",
+      "description": "从团队协作到项目、会议、客户合作与职业发展。",
+      "track": "spoken",
+      "count": 115
+    },
+    {
+      "id": "ielts",
+      "track": "exam",
+      "name": "雅思",
+      "description": "按通用写作、Academic 图表、GT 书信或口头表达选择内容。",
+      "count": 39
+    },
+    {
+      "id": "cet4",
+      "track": "exam",
+      "name": "四级",
+      "description": "从清楚表达基本意思开始，练习写作连接与翻译中的常用结构。",
+      "count": 28
+    },
+    {
+      "id": "cet6",
+      "track": "exam",
+      "name": "六级",
+      "description": "练习更充分的解释、比较、让步与改写，兼顾写作和翻译。",
+      "count": 30
+    },
+    {
+      "id": "toefl",
+      "track": "exam",
+      "name": "托福",
+      "description": "按邮件、讨论回应、面试表达或通用写作基础选择内容。",
+      "count": 33
+    }
+  ],
+  "units": [
+    {
+      "id": "ever",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "问有没有过某种经历",
+      "expression": "Have / Has … ever + 过去分词…?",
+      "formula": "Have + I / you / we / they + ever + 过去分词…?；Has + he / she + ever + 过去分词…?",
+      "boundary": "问到现在为止的经历。若要问某次事情何时发生，改用一般过去时；现在完成时通常不与 yesterday 等明确过去时间搭配。"
+    },
+    {
+      "id": "rather",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说出这次更想做的选择",
+      "expression": "I'd / We'd / She'd rather + 动词原形…",
+      "formula": "主语 + would rather + 动词原形…；I would 可缩写为 I’d。",
+      "boundary": "would rather + 动词原形表达更愿意做什么；不愿意做时用 would rather not + 动词原形。另一个选项可以由上下文给出。"
+    },
+    {
+      "id": "could-request",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "请对方帮忙做件事",
+      "expression": "Could you + 动词原形…?",
+      "formula": "Could you + 动词原形 + 其他内容？",
+      "boundary": "could 让请求语气较缓和；是否得体还取决于双方关系和事情给对方带来的负担。"
+    },
+    {
+      "id": "invite",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "邀请对方参加活动或询问参加意愿",
+      "expression": "Would + 人称 + like to + 动词原形…?",
+      "formula": "Would + you / he / she / they + like to + 动词原形…?",
+      "boundary": "Would you like to…? 邀请对方做事；Would you like + 名词可用来提供东西。问平时的喜好用 Do you like…?"
+    },
+    {
+      "id": "time-work",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "确认这个时间是否方便",
+      "expression": "Does [时间] work for [某人]?",
+      "formula": "Does + 一个候选时间 + work for + 人称宾格？",
+      "boundary": "用来核对已经提出的时间是否方便。若想开放地问何时有空，可说 When would be a good time for you?"
+    },
+    {
+      "id": "longer",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "问这件事还要多久完成",
+      "expression": "How much longer will [it / 事项] take?",
+      "formula": "How much longer will + it / 简短事项名词短语 + take?",
+      "boundary": "不是首次询问总耗时，也不是等待任何人或事件的万能问法。语气和情境不同，可能有催问的感觉。"
+    },
+    {
+      "id": "where",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "打听物品或地点在哪里",
+      "expression": "Do you know where … is / are?",
+      "formula": "Do you know where + 东西 / 地点 + is / are?",
+      "boundary": "where 问位置，后面用陈述语序。要问怎么到达某地，可用 How do I get to…?"
+    },
+    {
+      "id": "cost",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "询问商品或服务的价格",
+      "expression": "How much is / are …?",
+      "formula": "How much is + 单数 / 不可数主语？；How much are + 复数主语？",
+      "boundary": "这里问价格，不问数量；不把 how much 和询问可数数量的 how many 混用。"
+    },
+    {
+      "id": "permission",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "确认这样做是否可以",
+      "expression": "Is it okay if I / we / … + 一般现在时…?",
+      "formula": "Is it okay if + 主语 + 一般现在时的动作…?",
+      "boundary": "这是日常许可确认，不是让对方替你完成动作；正式规定是否允许，仍需要向有权决定的人确认。"
+    },
+    {
+      "id": "suggest",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "提议大家一起做某件事",
+      "expression": "Why don't we + 动词原形…?",
+      "formula": "Why don’t we + 动词原形 + 其他内容？",
+      "boundary": "we 包括说话人，用来提出共同方案。换成 Why don’t you…? 就是在建议对方行动；这里的 why 不要求解释原因。"
+    },
+    {
+      "id": "clarify",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "确认对方刚才的意思",
+      "expression": "Do you mean…?",
+      "formula": "Do you mean + 要确认的词语 / 简短意思？",
+      "boundary": "用来确认自己对意思的理解。若只是没听清、想请对方重复，可说 Could you say that again?"
+    },
+    {
+      "id": "repeat",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "没听清时请对方再说一遍",
+      "expression": "Could you say that again? / Could you repeat…?",
+      "formula": "Could you say that again?；Could you repeat + 没听清的内容？",
+      "boundary": "这里请求重复，不是询问对方话语的含义。repeat 本身已有重复的意思，不必再加 again；放慢速度是另一种请求。"
+    },
+    {
+      "id": "order",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "礼貌地说出想要的东西",
+      "expression": "I’d like…",
+      "formula": "I’d / We’d like + 想要的东西",
+      "boundary": "想要东西时，would like 后接名词；想做某事时接 to + 动词原形。一般喜好用 like，眼前的需求用 would like。"
+    },
+    {
+      "id": "looking",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "告诉别人正在找什么",
+      "expression": "I’m looking for…",
+      "formula": "主语 + am / is / are looking for + 要找的人或物",
+      "boundary": "look for 是寻找，look at 是看。这里不表示已经找到，也不表示期待未来的事。"
+    },
+    {
+      "id": "problem",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "指出某个东西出了问题",
+      "expression": "There’s something wrong with…",
+      "formula": "There’s something wrong with + 有问题的对象",
+      "boundary": "用于笼统说明异常，知道具体问题时也可以直接描述。对人说 something wrong with you 可能被听成人身评价，要留意语气。"
+    },
+    {
+      "id": "not-work",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明某个东西不能正常使用",
+      "expression": "…isn’t working",
+      "formula": "物品 + isn’t / aren’t working",
+      "boundary": "这里的 work 是运转或起作用。人 isn’t working 可能表示没在工作，不表示人出了故障。"
+    },
+    {
+      "id": "change",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "商量改用另一个安排",
+      "expression": "Can we…instead?",
+      "formula": "Can we + 动词原形 + … + instead?",
+      "boundary": "instead 表示改用另一个选择，原选项可以由上下文给出。要明确说替代什么，可用 instead of + 名词或动词-ing。"
+    },
+    {
+      "id": "used-to",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说过去常有、现在不同的习惯或情况",
+      "expression": "…used to…",
+      "formula": "主语 + used to + 动词原形",
+      "boundary": "不用于只发生过一次的事情。不要与 be used to（习惯于）混在一起。"
+    },
+    {
+      "id": "opinion",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说出自己或别人的看法",
+      "expression": "I think…",
+      "formula": "I / We / They think + 一个完整想法；He / She thinks + 一个完整想法",
+      "boundary": "I think 把判断说成自己的看法，语气比直接断言留有余地；转述 he / she 的看法时，动词用 thinks。"
+    },
+    {
+      "id": "not-sure",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明对一件事还不确定",
+      "expression": "I’m not sure if…",
+      "formula": "主语 + am / is / are not sure if + 陈述语序的句子",
+      "boundary": "这里的 if 表示是否，不是如果。不要把直接问句的倒装语序放在 if 后面。"
+    },
+    {
+      "id": "thanks",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "为对方的具体帮助或行为道谢",
+      "expression": "Thanks for…",
+      "formula": "Thanks for + 动词-ing…",
+      "boundary": "Thanks for… 是向对方道谢，for 后接动作时用 -ing；thanks to… 表示“多亏、由于”，含义不同。"
+    },
+    {
+      "id": "sorry",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "为自己的具体行为道歉",
+      "expression": "I’m sorry for…",
+      "formula": "I’m / We’re sorry for + 动词-ing…",
+      "boundary": "这里为自己的行为道歉，不用来表达对别人遭遇的同情。for 后接动作时使用 -ing。"
+    },
+    {
+      "id": "sounds",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "回应听到的想法或消息",
+      "expression": "That sounds…",
+      "formula": "That sounds + 形容词",
+      "boundary": "表达听后的印象，不等于承诺参加。sounds 后接形容词，如 good；sounds like 后接名词短语，如 a good idea。"
+    },
+    {
+      "id": "decline",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "表达想参加，但说明这次不方便",
+      "expression": "I’d love to, but…",
+      "formula": "I’d / We’d love to, but + 不能参加的原因",
+      "boundary": "前面需要有邀请，不能拿来直接发起邀请。这里是婉拒，不表示一定会参加。"
+    },
+    {
+      "id": "d-habit",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说自己或别人通常容易怎样",
+      "expression": "…tend to…",
+      "formula": "主语 + tend / tends to + 动词原形",
+      "boundary": "tend to 表示倾向；不是过去的 used to。he/she 用 tends。"
+    },
+    {
+      "id": "d-trying",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明正在努力做什么",
+      "expression": "…am/is/are trying to…",
+      "formula": "主语 + am / is / are trying to + 动词原形",
+      "boundary": "try to do 强调努力完成；try doing 强调试用一种方法，看看是否有效。"
+    },
+    {
+      "id": "d-need",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明需要做的事情",
+      "expression": "…need to…",
+      "formula": "I / you / we / they need to…；he / she needs to…",
+      "boundary": "后面接动作时保留 to；need + 名词是另一种搭配。"
+    },
+    {
+      "id": "d-about-to",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明马上就要做某事",
+      "expression": "…be about to…",
+      "formula": "主语 + am / is / are about to + 动词原形",
+      "boundary": "about to 不用于泛泛讲几个月后的计划。"
+    },
+    {
+      "id": "d-just",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明刚刚完成的事情",
+      "expression": "…have/has just…",
+      "formula": "主语 + have / has + just + 动词过去分词",
+      "boundary": "just 放在 have / has 和过去分词之间。说出明确的过去时间时，通常用一般过去时；美式口语也常用一般过去时表达“刚刚”。"
+    },
+    {
+      "id": "d-not-yet",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明到现在还没完成某事",
+      "expression": "…haven’t/hasn’t…yet",
+      "formula": "主语 + haven’t / hasn’t + 过去分词 + … + yet",
+      "boundary": "yet 通常放句末；这里不是说从来没有某种经历。"
+    },
+    {
+      "id": "d-origin",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明自己或别人原来来自哪里",
+      "expression": "…be originally from…",
+      "formula": "主语 + am / is / are originally from + 地方",
+      "boundary": "不把 originally from 当成刚刚从某地旅行回来的意思。"
+    },
+    {
+      "id": "d-frequency",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "询问一件事多久做一次",
+      "expression": "How often…?",
+      "formula": "How often do / does + 主语 + 动词原形…?",
+      "boundary": "不是询问一次要花多久；does 后的主要动词仍用原形。"
+    },
+    {
+      "id": "d-last-time",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "询问上一次做某事是什么时候",
+      "expression": "When was the last time…?",
+      "formula": "When was the last time + 主语 + 一般过去时…?",
+      "boundary": "问的是上一次，而不是有没有过经历；后面的动作一般用过去时。"
+    },
+    {
+      "id": "d-duration",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "询问一种状态已经持续多久",
+      "expression": "How long have/has…been…?",
+      "formula": "How long have / has + 主语 + been + 状态…?",
+      "boundary": "have / has been 强调状态持续到现在。若状态已经结束，要用过去时询问那段时间。"
+    },
+    {
+      "id": "d-get-to",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "询问怎样到达一个地方",
+      "expression": "How do I get to…?",
+      "formula": "How do I / we get to + 地点?",
+      "boundary": "get to + 地点名词表示到达某地；home、here、there 前通常不加 to，如 get home。"
+    },
+    {
+      "id": "d-book",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "预约座位、房间或服务",
+      "expression": "I’d like to book…",
+      "formula": "I’d / We’d like to book + 要预约的内容",
+      "boundary": "这里的 book 是预订；已有订单的修改或取消需要另外说明。"
+    },
+    {
+      "id": "d-availability",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "询问是否还有可用的房间、座位或时段",
+      "expression": "Is/Are there…available?",
+      "formula": "Is there + 单数…available?；Are there + 复数…available?",
+      "boundary": "available 不保证免费；注意单复数，可预约的时段可以说 any appointments。"
+    },
+    {
+      "id": "d-include",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "确认价格或服务包含什么",
+      "expression": "Does…include…?",
+      "formula": "Does + 单数项目/价格 + include + 包含内容?",
+      "boundary": "主语为单数时用 Does，include 保持原形；include 后直接接包含的东西，不加 in。"
+    },
+    {
+      "id": "d-try-on",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "询问能否试穿某件东西",
+      "expression": "Can I try…on?",
+      "formula": "Can I try + 衣物名词 + on?；代词放 try 和 on 之间",
+      "boundary": "try on 用于穿戴物；不是试吃或尝试一种活动。"
+    },
+    {
+      "id": "d-return",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明想退回购买的东西",
+      "expression": "I’d like to return…",
+      "formula": "I’d / We’d like to return + 商品",
+      "boundary": "表达请求不代表一定符合退货政策；不把 return 这里译成回家。"
+    },
+    {
+      "id": "d-recommend",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "请对方推荐合适的选择",
+      "expression": "What would you recommend…?",
+      "formula": "What would you recommend?；可接 for + 人或用途，或 as + 用途",
+      "boundary": "补充推荐对象或用途，能让对方更容易给出合适建议。for 后若写动作，用动词-ing，如 for travelling。"
+    },
+    {
+      "id": "d-without",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "点餐时请求去掉某种配料",
+      "expression": "Could I have…without…?",
+      "formula": "Could I / we have + 食物或饮料 + without + 配料?",
+      "boundary": "without 后接配料；涉及过敏还要明确说过敏，不能只靠去掉配料表达风险。"
+    },
+    {
+      "id": "d-allergy",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "明确说明对某种东西过敏",
+      "expression": "…be allergic to…",
+      "formula": "主语 + am / is / are allergic to + 过敏原",
+      "boundary": "allergic to 表达过敏，不是“不喜欢吃”；to 后接具体的东西，如 peanuts。"
+    },
+    {
+      "id": "d-symptom",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明不舒服的情况持续了多久",
+      "expression": "…have/has had…for…",
+      "formula": "主语 + have / has had + 不适 + for + 持续时间",
+      "boundary": "have / has had 表示不适持续到现在。for 后接时长，如 two days；since 后接起点，如 Monday。"
+    },
+    {
+      "id": "d-work-as",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "介绍自己或别人的工作身份",
+      "expression": "…work/works as…",
+      "formula": "主语 + work / works as + 职业名称",
+      "boundary": "as 后是职业；work for 后通常是雇主，不要混用。"
+    },
+    {
+      "id": "d-right-route",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "确认交通工具或方向是否正确",
+      "expression": "Is this the right…for/to…?",
+      "formula": "Is this the right + 交通工具/道路 + for / to + 目的地?",
+      "boundary": "bus / train 后可用 for 或 to 引出目的地；问路常说 the right way to + 地点。"
+    },
+    {
+      "id": "d-wrong-order",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "纠正拿错或送错的餐品",
+      "expression": "I ordered…, not…",
+      "formula": "I / We ordered + 所点的东西, not + 送错的东西",
+      "boundary": "只陈述订单差异，不自动变成责备对方的语气。"
+    },
+    {
+      "id": "d-payment",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "确认能否用某种方式付款",
+      "expression": "Can I/we pay…?",
+      "formula": "Can I / we pay + by card / in cash / with…?",
+      "boundary": "记住具体搭配：by card、in cash、with this card。这里不是问价格。"
+    },
+    {
+      "id": "d-because",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "解释刚才说的情况是什么原因",
+      "expression": "That’s because…",
+      "formula": "That’s because + 原因的完整句子",
+      "boundary": "because 后接完整原因；不是用来引出结果。"
+    },
+    {
+      "id": "d-thats-why",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明前面的情况造成了什么结果",
+      "expression": "That’s why…",
+      "formula": "That’s why + 结果的完整句子",
+      "boundary": "why 后陈述语序；与 That’s because 引出原因的方向不同。"
+    },
+    {
+      "id": "d-even-though",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "承认一种情况，同时说出不同于预期的结果",
+      "expression": "Even though…,…",
+      "formula": "Even though + 情况, 主语 + 另一完整句子",
+      "boundary": "even though 后接有主语和谓语的句子，主句也要完整；如“虽然很累，还是做了饭”。"
+    },
+    {
+      "id": "d-depends",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明选择取决于什么",
+      "expression": "It depends on…",
+      "formula": "It depends on + 条件名词",
+      "boundary": "on 后说出决定所依据的条件，如天气、价格或时间；不是直接回答同意或不同意。"
+    },
+    {
+      "id": "d-as-as",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明某方面不及另一方",
+      "expression": "…not as…as…",
+      "formula": "主语 + be 的否定形式 + as + 形容词 + as + 比较对象",
+      "boundary": "形容词用原级，不同时加 -er；be 跟随主语变化。"
+    },
+    {
+      "id": "d-enough",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明某方面还不足以做一件事",
+      "expression": "…not…enough to…",
+      "formula": "主语 + be 的否定形式 + 形容词 + enough to + 动词原形",
+      "boundary": "修饰形容词时 enough 放后面，如 big enough；修饰名词时放前面，如 enough time。"
+    },
+    {
+      "id": "d-too",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明程度太过而不适合做某事",
+      "expression": "…too…to…",
+      "formula": "主语 + be + too + 形容词 + to + 动词原形",
+      "boundary": "这里不是表示也；不要把 too 与 very 当成完全相同。"
+    },
+    {
+      "id": "d-wish",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "表达现在做不到的愿望",
+      "expression": "…wish…could…",
+      "formula": "主语 + wish / wishes + 主语 + could + 动词原形",
+      "boundary": "wish…could… 表达与当前能力或条件不符的愿望；could 在这里不是单纯叙述过去的能力。"
+    },
+    {
+      "id": "d-should-have",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "回顾过去本该做却没做的事",
+      "expression": "…should have…",
+      "formula": "主语 + should have + 动词过去分词",
+      "boundary": "should have + 过去分词回顾过去；should + 动词原形通常是对现在或将来的建议。"
+    },
+    {
+      "id": "d-supposed",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明原来约定或被安排做什么",
+      "expression": "…was/were supposed to…",
+      "formula": "主语 + was / were supposed to + 动词原形",
+      "boundary": "说明原定安排，不直接说明最终是否做了；要表达实际结果，可以接着交代后来发生的事。"
+    },
+    {
+      "id": "d-wondering",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "委婉地打听是否有某种情况",
+      "expression": "I was wondering if…",
+      "formula": "I was wondering if + 陈述语序的句子",
+      "boundary": "这里 was 是缓和语气，不一定指过去在想；if 后不是倒装问句。"
+    },
+    {
+      "id": "d-offer-help",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "主动询问对方是否需要自己帮忙",
+      "expression": "Would you like me/us to…?",
+      "formula": "Would you like + me / us + to + 动词原形?",
+      "boundary": "与 Would you like to 邀对方行动不同；这里动作由 me/us 所指的人做。"
+    },
+    {
+      "id": "d-mind-if",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "行动前委婉询问对方是否介意",
+      "expression": "Would you mind if I…?",
+      "formula": "Would you mind if + I / we + 动词过去式…?",
+      "boundary": "这里的过去式缓和语气，不是在问过去。回应不介意通常说 No / Not at all，注意不能按中文可以直接套 Yes。"
+    },
+    {
+      "id": "d-appreciate-if",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "约定相处中的后续配合与个人边界",
+      "expression": "I’d appreciate it if…",
+      "formula": "I’d / We’d appreciate it if you could + 动词原形…",
+      "boundary": "语气较郑重，重读时也可能带不满；熟人间要配合语调。它是在提出期待，不表示对方已经同意；appreciate it if 中保留 it。"
+    },
+    {
+      "id": "d-feeling",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说出某种情况下的感受",
+      "expression": "…feel…when…",
+      "formula": "主语 + feel / feels + 感受形容词 + when + 情况",
+      "boundary": "feel 后接感受形容词，如 relaxed；令人放松的事物则是 relaxing。when 后接有主语和谓语的完整句子。"
+    },
+    {
+      "id": "d-look-forward",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "表达对将来某件事的期待",
+      "expression": "…be looking forward to…",
+      "formula": "主语 + am / is / are looking forward to + 名词或动词-ing",
+      "boundary": "这里 to 是介词，接动作时用-ing，不是动词不定式。"
+    },
+    {
+      "id": "d-get-used",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明正在逐渐适应某种生活",
+      "expression": "…be getting used to…",
+      "formula": "主语 + am / is / are getting used to + 名词或动词-ing",
+      "boundary": "与 used to 表示过去常常不同；这里 to 后接动作时用-ing。"
+    },
+    {
+      "id": "d-rather-not",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "表达这次不太愿意做某事",
+      "expression": "…would rather not…",
+      "formula": "主语 + would rather not + 动词原形",
+      "boundary": "表达不愿意，不等于没有能力。not 放在 rather 后、动作前，如 I’d rather not discuss it。"
+    },
+    {
+      "id": "d-didnt-mean",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "解释并非故意做出某个行为",
+      "expression": "…didn’t mean to…",
+      "formula": "主语 + didn’t mean to + 动词原形",
+      "boundary": "mean to 表示打算；不是询问某句话是什么意思。解释本意不代替必要的道歉。"
+    },
+    {
+      "id": "d-what-if",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "提出一种可能情况让大家考虑",
+      "expression": "What if…?",
+      "formula": "What if + 主语 + 一般现在时…?",
+      "boundary": "用一般现在时提出可能出现的情况，如 What if it rains?；强调“如果发生了怎么办”，不是断言它一定会发生。"
+    },
+    {
+      "id": "d-make-sure",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "再次核实已经商量的信息",
+      "expression": "Just to make sure,…?",
+      "formula": "Just to make sure, + 一个完整的确认问句",
+      "boundary": "不是命令别人保证；后面仍要有完整问句，不能只堆名词。"
+    },
+    {
+      "id": "d-what-mean",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "换一种方式解释自己的意思",
+      "expression": "What I mean is…",
+      "formula": "What I mean is (that) + 完整意思",
+      "boundary": "这里澄清自己的意思；Do you mean…? 是核对对方的意思。"
+    },
+    {
+      "id": "d-as-far-know",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "在自己的知情范围内说明情况",
+      "expression": "As far as I know,…",
+      "formula": "As far as I know, + 完整信息",
+      "boundary": "仍然需要有依据；不能把它当成编造事实的免责句。"
+    },
+    {
+      "id": "d-cant-seem",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明试过了但似乎还是做不到",
+      "expression": "…can’t seem to…",
+      "formula": "主语 + can’t seem to + 动词原形",
+      "boundary": "不是所有绝对不能都需要加 seem；这里强调尝试后仍未成功。"
+    },
+    {
+      "id": "w-responsible",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明自己或同事负责什么",
+      "expression": "…am / is / are responsible for…",
+      "formula": "主语 + be responsible for + 职责 / 动词-ing",
+      "boundary": "这里说职责，不是主动承诺马上代办。也不把 responsible for 一律理解成出了问题应受责备。"
+    },
+    {
+      "id": "w-take-care",
+      "domains": [
+        "work"
+      ],
+      "meaning": "主动接下眼前的一项工作",
+      "expression": "I'll take care of…",
+      "formula": "I’ll / We’ll take care of + 要处理的事项",
+      "boundary": "这句话是接下任务的承诺，比介绍固定职责更具体。只对自己能承接的事情使用。"
+    },
+    {
+      "id": "w-who-handle",
+      "domains": [
+        "work"
+      ],
+      "meaning": "询问当前由谁经手某项工作",
+      "expression": "Who's handling…?",
+      "formula": "Who is handling + 当前的工作事项？",
+      "boundary": "问的是当前经手人，不是请听者立即接任务。who 作主语，直接接 is handling，不加 does。"
+    },
+    {
+      "id": "w-help-with",
+      "domains": [
+        "work"
+      ],
+      "meaning": "委婉说明自己需要协助",
+      "expression": "I could use some help with…",
+      "formula": "I / We could use some help with + 事项 / 动词-ing",
+      "boundary": "说明需要协助，仍留给对方安排空间；不等于已经把整项任务交给对方。"
+    },
+    {
+      "id": "w-let-know",
+      "domains": [
+        "work"
+      ],
+      "meaning": "请同事在某种情况出现时告知",
+      "expression": "Let me know if…",
+      "formula": "Let me / us know if + 主语 + 谓语",
+      "boundary": "不是问“是否知道”。如果要确认一个已约定的事实，可用确认问句；这里是在建立后续沟通。"
+    },
+    {
+      "id": "w-make-sure",
+      "domains": [
+        "work"
+      ],
+      "meaning": "提醒核实或确保一件事",
+      "expression": "Please make sure…",
+      "formula": "Please make sure + 主语 + 谓语",
+      "boundary": "比一般建议更像明确要求，语气要配合关系。不要把它当成表达自己不确定的说法。"
+    },
+    {
+      "id": "w-hand-over",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明工作或资料将交接给谁",
+      "expression": "I'll hand … over to…",
+      "formula": "I’ll hand + 工作 / 资料 + over to + 接手人",
+      "boundary": "强调交接，不只是发一份副本；交接内容和接手人都应明确。代词 it / them 放在 hand 与 over 之间。"
+    },
+    {
+      "id": "w-cover",
+      "domains": [
+        "work"
+      ],
+      "meaning": "请同事在自己暂离时顶班",
+      "expression": "Could you cover … while…?",
+      "formula": "Could you cover + 工作 + while…?；Could you cover for + 人 + while…?",
+      "boundary": "不是让对方永久接手，也不是表示支付费用。while 后说明同一时段的情况，通常不用将来式。"
+    },
+    {
+      "id": "w-reaching",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明主动联系对方的事项",
+      "expression": "I'm reaching out about…",
+      "formula": "I’m / We’re reaching out about + 联系的事项",
+      "boundary": "这里开启联系；如果是在追踪已有沟通或未答复事项，可用 following up on。不要每次普通对话都套这个开场。"
+    },
+    {
+      "id": "w-following",
+      "domains": [
+        "work"
+      ],
+      "meaning": "跟进已沟通过的事情",
+      "expression": "I'm following up on…",
+      "formula": "I’m / We’re following up on + 之前的事项",
+      "boundary": "不是第一次提出一个全新话题。follow up on 不等于催促，具体语气取决于后续内容。"
+    },
+    {
+      "id": "w-attached",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明附件及供对方做什么",
+      "expression": "I've attached … for…",
+      "formula": "I’ve / We’ve attached + 文件 + for + 用途",
+      "boundary": "只在文件确实已附上时使用；是通知已做的动作，不是承诺稍后发送。"
+    },
+    {
+      "id": "w-get-back",
+      "domains": [
+        "work"
+      ],
+      "meaning": "承诺在某个时间前回复",
+      "expression": "I'll get back to you by…",
+      "formula": "I’ll / We’ll get back to you by + 最晚回复时间",
+      "boundary": "这里承诺回复，不承诺问题一定已解决；不是表示自己会回到某个地点。"
+    },
+    {
+      "id": "w-copy",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明邮件会抄送给谁",
+      "expression": "I'll copy … in on…",
+      "formula": "I’ll copy + 人 + in on + 邮件 / 通信",
+      "boundary": "copy someone in on… 和 copy someone on… 都可表示邮件抄送；把已收到的邮件转发给别人用 forward。"
+    },
+    {
+      "id": "w-call",
+      "domains": [
+        "work"
+      ],
+      "meaning": "商量安排一次有目的的通话",
+      "expression": "Could we schedule a call to…?",
+      "formula": "Could we schedule a call to + 动词原形…？",
+      "boundary": "这是商量安排通话，不是已经确定时间。to 后表达通话目的，不等于一般邀请参加休闲活动。"
+    },
+    {
+      "id": "w-audio",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明远程沟通中听不清谁或什么",
+      "expression": "I can't hear … clearly",
+      "formula": "I / We can’t hear + 人 / 声音 + clearly",
+      "boundary": "先说明音频问题，不等于已经请求重复或放慢。也不表示自己没理解对方的意思。"
+    },
+    {
+      "id": "w-confirm",
+      "domains": [
+        "work"
+      ],
+      "meaning": "请对方核实一个待确认的事实",
+      "expression": "Could you confirm whether…?",
+      "formula": "Could you confirm whether + 主语 + 谓语？",
+      "boundary": "比自己表达“不确定”更进一步，是向掌握信息的人要确认；不能只把直接问句原样接在 whether 后。"
+    },
+    {
+      "id": "w-on-track",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明目前进度有望达到目标",
+      "expression": "…be on track to…",
+      "formula": "主语 + am / is / are on track to + 动词原形",
+      "boundary": "这是基于当前进度的判断，不是保证；事情还没有完成，不用它代替完成情况汇报。"
+    },
+    {
+      "id": "w-running-behind",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明某项工作进度落后",
+      "expression": "…be running behind on…",
+      "formula": "主语 + am / is / are running behind on + 工作事项",
+      "boundary": "这里说进度落后，不是完全没有做，也不是人走在后面。on 后明确是哪项工作。"
+    },
+    {
+      "id": "w-waiting",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明须等待的条件及后续动作",
+      "expression": "We're waiting for … before…",
+      "formula": "主语 + be waiting for + 所需人 / 事物 + before + 后续动作句",
+      "boundary": "是在报告依赖条件，不是简单问多久；before 后谈将来的后续动作时通常用一般现在时。"
+    },
+    {
+      "id": "w-completed",
+      "domains": [
+        "work"
+      ],
+      "meaning": "汇报到目前已经完成的事",
+      "expression": "So far, we've…",
+      "formula": "So far, + 主语 + have / has + 过去分词…",
+      "boundary": "不代表整个项目都完成；不与 yesterday 等明确结束的过去时间放在同一完成时分句中。"
+    },
+    {
+      "id": "w-due",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明任务应在何时前完成",
+      "expression": "…is / are due by…",
+      "formula": "交付物 / 任务 + is / are due by + 截止时间",
+      "boundary": "due by 说明最晚应完成或提交的时间，不是开始时间，也不是对实际完成进度的预测。"
+    },
+    {
+      "id": "w-priority",
+      "domains": [
+        "work"
+      ],
+      "meaning": "明确当前应优先完成什么",
+      "expression": "The priority is to…",
+      "formula": "The priority is to + 动词原形…",
+      "boundary": "说明工作顺序，不等于其他事都不重要；如果只是提出下一项步骤而非轻重次序，用 next step 更准确。"
+    },
+    {
+      "id": "w-next-step",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明接下来的一步是什么",
+      "expression": "The next step is to…",
+      "formula": "The next step is to + 动词原形…",
+      "boundary": "强调流程中接下来要做什么；若想说明哪项工作最重要，可用 The priority is to…。"
+    },
+    {
+      "id": "w-deadline",
+      "domains": [
+        "work"
+      ],
+      "meaning": "委婉协商延长某项期限",
+      "expression": "Would it be possible to extend … until…?",
+      "formula": "Would it be possible to extend + 期限 / 可延长事项 + until + 新的截止时间？",
+      "boundary": "是在提出请求，不是宣布已获延期。extend 是延长，until 后的新时间应晚于原约定。"
+    },
+    {
+      "id": "w-start",
+      "domains": [
+        "work"
+      ],
+      "meaning": "提议会议先讨论哪一项",
+      "expression": "Shall we start with…?",
+      "formula": "Shall we start with + 议题 / 动词-ing？",
+      "boundary": "这是包含自己的议程建议，不是直接询问何时开会。shall we 保持共同商量的语气。"
+    },
+    {
+      "id": "w-add",
+      "domains": [
+        "work"
+      ],
+      "meaning": "在讨论中补充一个观点",
+      "expression": "I'd like to add that…",
+      "formula": "I’d like to add that + 主语 + 谓语",
+      "boundary": "这里是补充发言，不是要求把某件东西加进清单。若尚未轮到自己，仍需要合适时机进入讨论。"
+    },
+    {
+      "id": "w-point",
+      "domains": [
+        "work"
+      ],
+      "meaning": "先承认对方观点再提出保留意见",
+      "expression": "I see your point, but…",
+      "formula": "I see your point, but + 保留意见的完整句子",
+      "boundary": "理解不等于同意。but 后应有实际理由或顾虑，避免只机械套礼貌开头。"
+    },
+    {
+      "id": "w-perspective",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明从哪个角度看问题",
+      "expression": "From … perspective,…",
+      "formula": "From + 所属关系 / 某种角色 + perspective, + 完整判断",
+      "boundary": "不是在替某个人断言其真实想法，而是明确考虑的视角。不要把 perspective 误写成表示前景的 prospect。"
+    },
+    {
+      "id": "w-agree",
+      "domains": [
+        "work"
+      ],
+      "meaning": "确认大家是否已对某项决定达成一致",
+      "expression": "Are we all agreed on…?",
+      "formula": "Are we all agreed on + 共同决定的事项？",
+      "boundary": "不是用自己的同意代替别人的意见。这个问句适用于共同讨论，不宜把沉默自动视为同意。"
+    },
+    {
+      "id": "w-summarize",
+      "domains": [
+        "work"
+      ],
+      "meaning": "用简短话收束刚才的讨论",
+      "expression": "To sum up,…",
+      "formula": "To sum up, + 讨论所得的完整句子",
+      "boundary": "后面的内容应能从前文得到；一句总结不意味着所有人已同意，仍可另行核对。"
+    },
+    {
+      "id": "w-back",
+      "domains": [
+        "work"
+      ],
+      "meaning": "把讨论带回先前的话题",
+      "expression": "Could we come back to…?",
+      "formula": "Could we come back to + 先前的话题？",
+      "boundary": "这里的 come back to 指回到议题，不是回到地点。不要用它引出从未讨论过的新话题。"
+    },
+    {
+      "id": "w-weigh",
+      "domains": [
+        "work"
+      ],
+      "meaning": "指出某个选择的主要优点",
+      "expression": "The main advantage of … is…",
+      "formula": "The main advantage of + 方案 / 动词-ing + is + 优点",
+      "boundary": "这里只陈述主要优点，不代表没有缺点或已经选定。of 后若放动作，用 -ing。"
+    },
+    {
+      "id": "w-requirements",
+      "domains": [
+        "work"
+      ],
+      "meaning": "请对方逐项讲解需求或流程",
+      "expression": "Could you walk me through…?",
+      "formula": "Could you walk me / us through + 需求 / 流程 / 方案？",
+      "boundary": "不只是重说刚才的话，也不是实际带人走路；需要解释对象时，不漏掉 me / us。"
+    },
+    {
+      "id": "w-include",
+      "domains": [
+        "work"
+      ],
+      "meaning": "明确报价包含什么及不包含什么",
+      "expression": "The quote includes…, but not…",
+      "formula": "The quote includes + 包含项目, but not + 不包含项目",
+      "boundary": "includes 引出包含项，but not 引出排除项；把两者说清楚，避免双方对报价内容理解不同。"
+    },
+    {
+      "id": "w-scope",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明新增要求超出已约定范围",
+      "expression": "That falls outside…",
+      "formula": "That / This falls outside + 已约定范围",
+      "boundary": "说明某项要求超出了之前约定，不等于拒绝继续协商；可接着讨论是否调整范围或另作安排。"
+    },
+    {
+      "id": "w-clarify-scope",
+      "domains": [
+        "work"
+      ],
+      "meaning": "澄清某项服务或工作的具体覆盖内容",
+      "expression": "Just to clarify, … covers…",
+      "formula": "Just to clarify, + 工作 / 服务 + covers + 覆盖内容",
+      "boundary": "这里核实工作内容；与列出报价包含和排除项不同，不把所有说明都当作定价说明。"
+    },
+    {
+      "id": "w-budget",
+      "domains": [
+        "work"
+      ],
+      "meaning": "询问某项条件是否可以协商",
+      "expression": "Is there any flexibility on…?",
+      "formula": "Is there any flexibility on + 待协商的条件？",
+      "boundary": "不是要求对方必须让步，也不是已经提出具体新条件。flexibility 指调整余地，是不可数名词。"
+    },
+    {
+      "id": "w-offer-option",
+      "domains": [
+        "work"
+      ],
+      "meaning": "把一种可行做法作为选项提出",
+      "expression": "One option would be to…",
+      "formula": "One option would be to + 动词原形…",
+      "boundary": "一个选项不是唯一选择，也不是自己已获授权采取的动作。后续仍可讨论利弊。"
+    },
+    {
+      "id": "w-address",
+      "domains": [
+        "work"
+      ],
+      "meaning": "承诺调查问题并说明后续动作",
+      "expression": "We'll look into … and…",
+      "formula": "I’ll / We’ll look into + 问题 + and + 后续动作",
+      "boundary": "先承诺调查，不能等同于已经解决；后续动作应是自己能做到的事，不随口保证结果。"
+    },
+    {
+      "id": "w-expect",
+      "domains": [
+        "work"
+      ],
+      "meaning": "告知对方最晚可以收到什么",
+      "expression": "You can expect … by…",
+      "formula": "You can expect + 将收到的东西 / 结果 + by + 最晚时间",
+      "boundary": "比单纯提出选项更像交付预期，不应随意承诺。by 是不晚于，不表示一定正好该时刻送达。"
+    },
+    {
+      "id": "w-experience",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明自己或他人在哪方面有经验",
+      "expression": "…have / has experience in…",
+      "formula": "主语 + have / has experience in + 领域 / 动词-ing",
+      "boundary": "experience in… 概括经验领域；要介绍一次具体经历，可继续说明当时做了什么。"
+    },
+    {
+      "id": "w-previous",
+      "domains": [
+        "work"
+      ],
+      "meaning": "讲述上一份工作中做过什么",
+      "expression": "In my previous role, I…",
+      "formula": "In my previous role, I + 过去式…",
+      "boundary": "previous role 指前一岗位；与概括经验领域不同，这句话要接具体做过的事。"
+    },
+    {
+      "id": "w-example",
+      "domains": [
+        "work"
+      ],
+      "meaning": "用具体事例支撑刚说的能力",
+      "expression": "One example of this is…",
+      "formula": "One example of this is + 具体事例的名词短语",
+      "boundary": "例子要能说明前面的观点；若没有可回指的内容，先把观点说清楚，再用 of this 衔接。"
+    },
+    {
+      "id": "w-strength",
+      "domains": [
+        "work"
+      ],
+      "meaning": "明确说出自己的一项优势",
+      "expression": "One of my strengths is…",
+      "formula": "One of my strengths is + 优势名词 / 动词-ing",
+      "boundary": "is 后可接优势名词，如 teamwork，也可接动词-ing，如 staying calm under pressure。"
+    },
+    {
+      "id": "w-interest",
+      "domains": [
+        "work"
+      ],
+      "meaning": "具体说明岗位或机会吸引自己的地方",
+      "expression": "What interests me about … is…",
+      "formula": "What interests me about + 岗位 / 机会 + is + 吸引点",
+      "boundary": "这是陈述句，不作问句倒装。what 开头的部分整体作主语，用 interests；is 后说明具体吸引点。"
+    },
+    {
+      "id": "w-improve",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明自己正在努力提升什么",
+      "expression": "I'm working on improving…",
+      "formula": "I’m / We’re working on improving + 待提升方面",
+      "boundary": "这里不是说已经掌握，而是说明正在努力。work on 后用 -ing；具体做法可以另外补充。"
+    },
+    {
+      "id": "w-feedback",
+      "domains": [
+        "work"
+      ],
+      "meaning": "礼貌征求对具体工作的反馈",
+      "expression": "I'd appreciate your feedback on…",
+      "formula": "I’d appreciate your feedback on + 工作 / 表现 / 材料",
+      "boundary": "这里请求具体反馈，不是说已经收到反馈；feedback 是不可数名词，不加 a 或复数 s。"
+    },
+    {
+      "id": "w-goal",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明自己或团队想达到的成长目标",
+      "expression": "My / Our goal is to…",
+      "formula": "My / Our goal is to + 动词原形…",
+      "boundary": "说的是希望达到的结果，不是已经取得的成果；若要说明当前的改进过程，可用 be working on…。"
+    },
+    {
+      "id": "p-done-with",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明事情做完了，或东西用好了",
+      "expression": "be done with…",
+      "formula": "主语 + be done with + 事情 / 东西",
+      "boundary": "东西“用好了”不一定表示耗尽：咖啡喝好了，也可能还有剩余。带强烈语气的 I’m done with this 还可能表示不想再继续，不能只凭这几个词确定。",
+      "practiceProfile": "compose"
+    },
+    {
+      "id": "p-up-to",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明一件事由谁决定",
+      "expression": "It’s up to…",
+      "formula": "It’s up to + 人；也可接 to + 动词原形，说明由谁决定的事",
+      "boundary": "It’s up to you 是由你决定，语气冷淡时也可能显得不想参与。be up to 还有其他意思；这里的 up to 后面是有决定权的人。"
+    },
+    {
+      "id": "p-out-of",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明某样东西已经用完",
+      "expression": "…be out of…",
+      "formula": "主语 + am / is / are out of + 已用完的东西",
+      "boundary": "out of 在这里说没有剩余，不是人在某处外面。表示某种东西卖完也可用 out of，但不表示这个地方永久不卖。"
+    },
+    {
+      "id": "p-middle-of",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明正忙于一件尚未做完的事",
+      "expression": "…be in the middle of…",
+      "formula": "主语 + be in the middle of + 事情 / 动词-ing",
+      "boundary": "of 后接动作时用 -ing：in the middle of cooking。单说 in the middle of something 可以不交代具体在忙什么。"
+    },
+    {
+      "id": "p-nerves",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "表达某个人或某种行为让人心烦",
+      "expression": "…get on someone’s nerves",
+      "formula": "烦人的人 / 事 + get / gets on + my / your / his / her / our / their + nerves",
+      "boundary": "nerves 用复数。说 You’re getting on my nerves 是在直接责备对方，容易显得不耐烦；不是委婉请求。"
+    },
+    {
+      "id": "p-cant-stand",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "强烈表达受不了某种事物或行为",
+      "expression": "…can’t stand…",
+      "formula": "主语 + can’t stand + 人 / 事物 / 动词-ing",
+      "boundary": "比 don’t like 语气强。stand 在这里是忍受，不是站立；后接动作通常用 -ing。直接说 I can’t stand you 很伤人。"
+    },
+    {
+      "id": "p-fed-up",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "表达对持续或反复发生的事感到厌烦",
+      "expression": "…be fed up with…",
+      "formula": "主语 + be fed up with + 人 / 事情 / 动词-ing",
+      "boundary": "常用于非正式交流，语气较强。with 后接动作时用 -ing；fed up 不是吃饱了，也不等于普通的身体疲劳。"
+    },
+    {
+      "id": "p-mood-for",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明当下有没有心情做某件事",
+      "expression": "…be in the mood for…",
+      "formula": "主语 + be (not) in the mood for + 事物 / 动词-ing",
+      "boundary": "for 后用名词或 -ing。也可以说 in the mood to + 动词原形。not in the mood 常用于拒绝眼前活动，不表示永远不喜欢。"
+    },
+    {
+      "id": "p-figure-out",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "通过思考或尝试弄明白一件事",
+      "expression": "…figure out…",
+      "formula": "figure out + 问题 / how、why 等引导的内容；figure it out",
+      "boundary": "代词放中间：figure it out，不说 figure out it。它强调理解或解决的过程；find out 更侧重得知信息。"
+    },
+    {
+      "id": "p-end-up",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "讲述事情最后发展成了什么结果",
+      "expression": "…end up doing…",
+      "formula": "主语 + end / ended up + 动词-ing",
+      "boundary": "后接动作时用 -ing，不是 end up to do。结果可以好也可以坏；不能一律译为失败或糟糕的结局。"
+    },
+    {
+      "id": "p-put-off",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "把一件事推迟到以后再做",
+      "expression": "…put off…",
+      "formula": "put off + 事情 / 动词-ing；put it off",
+      "boundary": "put 的过去式仍是 put。代词放中间：put it off。接动作时用 -ing；put someone off 还可能是让某人失去兴趣，意思不同。"
+    },
+    {
+      "id": "p-get-rid-of",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "处理掉不想留的东西或摆脱困扰",
+      "expression": "…get rid of…",
+      "formula": "get / got rid of + 不想留的东西 / 困扰",
+      "boundary": "不要漏掉 of。它不规定一定扔进垃圾桶；用来谈人时会显得很不友善。"
+    },
+    {
+      "id": "p-thing",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "引出眼前真正需要考虑的问题",
+      "expression": "The thing is,…",
+      "formula": "The thing is, + 完整情况；也可用 The thing is that…",
+      "boundary": "后面要说出与当前讨论相关的重点；它不是澄清自己某个词是什么意思，也不是对所有消息都适用的开场。"
+    },
+    {
+      "id": "p-like-most",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "突出最喜欢的一个方面",
+      "expression": "What I like most about…is…",
+      "formula": "What + 主语 + like / likes most about + 对象 + is + 最喜欢的方面",
+      "boundary": "what 开头的部分不是问句，不作倒装。like most 和 like the most 都可；所说的是喜好，后面要明确指出喜欢的方面。"
+    },
+    {
+      "id": "p-turns-out",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "告诉别人刚发现的实际情况",
+      "expression": "It turns out that…",
+      "formula": "It turns out (that) + 新发现的完整情况",
+      "boundary": "不是单纯报告一个早就知道的事实。turns out 引出发现，that 可以省略；后面仍按事实发生的时间选择时态。"
+    },
+    {
+      "id": "p-last-thing",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "强调自己最不愿造成的结果",
+      "expression": "The last thing I want is to…",
+      "formula": "The last thing I / we want is to + 动词原形",
+      "boundary": "last 不是动作顺序中的“最后一件事”，而是强烈表示不愿意。它说明意图，不等于影响已经消除。"
+    },
+    {
+      "id": "p-you-know-what",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "引起注意，接着说新想法或发现",
+      "expression": "You know what?",
+      "formula": "You know what? + 想告诉对方的完整内容",
+      "boundary": "是非正式的会话引子，通常不是真的考对方知道什么。它与 You know what I mean? 核对对方是否理解的作用不同。"
+    },
+    {
+      "id": "p-makes-sense",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "回应解释或想法说得通",
+      "expression": "That makes sense.",
+      "formula": "That makes sense.（独立回应）",
+      "boundary": "表示理解或认可其中的道理，不等于保证会照做。sense 不可数；that 作主语时用 makes。"
+    },
+    {
+      "id": "p-fair-enough",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "接受对方给出的理由或选择",
+      "expression": "Fair enough.",
+      "formula": "Fair enough.（独立回应）",
+      "boundary": "Fair enough 侧重接受理由或选择；That makes sense 侧重理由说得通，两者有时都自然。单独说 Fair enough 不一定把安慰、帮助或具体安排说完整，须看你想表达的全部意图。语气和上下文也影响听感。",
+      "practiceProfile": "scenario"
+    },
+    {
+      "id": "p-speaking-of",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "顺着刚提到的话题说一件相关的事",
+      "expression": "Speaking of…",
+      "formula": "Speaking of + 刚提到的主题, + 相关的新内容",
+      "boundary": "of 后的主题应与刚才的话有关；不是毫无关联地换话题。of 后可接人、事物或动作-ing。"
+    },
+    {
+      "id": "p-make-effort",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "有意识地为一件事付出努力",
+      "expression": "make an effort to…",
+      "formula": "主语 + make / makes an effort to + 动词原形",
+      "boundary": "说付出的努力，不保证最后成功。effort 前有 an，动作前用 to；常用搭配是 make an effort。"
+    },
+    {
+      "id": "p-take-granted",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "把身边的支持或便利当作理所当然",
+      "expression": "take … for granted",
+      "formula": "主语 + take / takes + 人或事物 + for granted",
+      "boundary": "take someone for granted 往往带不被珍惜的意味。take it for granted that… 还可表示未经核实就认定某事为真，与珍惜人或事物的侧重点不同。"
+    },
+    {
+      "id": "p-pay-attention",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "把注意力放到具体的人或事情上",
+      "expression": "pay attention to…",
+      "formula": "主语 + pay / pays attention to + 注意的对象",
+      "boundary": "attention 通常不可数，不加 an；对象前用 to。pay attention 强调当下留意，keep…in mind 强调考虑事情时记得某条信息。"
+    },
+    {
+      "id": "p-keep-mind",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "考虑或安排事情时记住一个重要因素",
+      "expression": "keep … in mind",
+      "formula": "keep + 重要信息 + in mind；Keep in mind that + 完整情况",
+      "boundary": "不只是把内容背下来，而是作决定时别忽略它。代词放在 keep 和 in mind 之间，如 keep that in mind；完整情况可用 keep in mind that…。"
+    },
+    {
+      "id": "q-pick-up",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "去接某个人",
+      "expression": "pick someone up",
+      "formula": "pick + 人 + up；pick up + 人",
+      "boundary": "代词放在 pick 和 up 中间。接物品时也可表示取走，但接人不一定指开车。"
+    },
+    {
+      "id": "q-drop-off",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "送某人到地方后离开",
+      "expression": "drop someone off",
+      "formula": "drop + 人 + off + at / 地点",
+      "boundary": "代词放中间。drop off 也能表示把物品送到某处；不是把人扔下。"
+    },
+    {
+      "id": "q-run-into",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "偶然碰见认识的人",
+      "expression": "run into someone",
+      "formula": "run / ran into + 人",
+      "boundary": "过去式是 ran into；这里说碰巧见面，不是撞到人。"
+    },
+    {
+      "id": "q-get-along",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明彼此相处得怎么样",
+      "expression": "get along with…",
+      "formula": "主语 + get / gets along (well) with + 人",
+      "boundary": "with 后接相处对象；well 表示相处得好。不是说跟着某人走。"
+    },
+    {
+      "id": "q-keep-touch",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "与人保持联系",
+      "expression": "keep in touch with…",
+      "formula": "keep in touch (with + 人)",
+      "boundary": "不一定频繁聊天。with 后接联系对象；和人道别也可直接说 Keep in touch.。"
+    },
+    {
+      "id": "q-catch-up",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "和熟人聊聊彼此近况",
+      "expression": "catch up with someone",
+      "formula": "catch up (with + 人)",
+      "boundary": "也可表示赶上进度；谈朋友、喝咖啡和近况时通常是在叙旧。"
+    },
+    {
+      "id": "q-look-after",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "照看人、动物或物品",
+      "expression": "look after…",
+      "formula": "look after + 照看的对象",
+      "boundary": "宾语放 after 后，不能把它拆成 look someone after。不是 look for 寻找。"
+    },
+    {
+      "id": "q-look-up",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "查找不清楚的信息",
+      "expression": "look something up",
+      "formula": "look up + 信息；look + 代词 + up",
+      "boundary": "代词放中间：look it up。不是 look for 四处寻找物品。"
+    },
+    {
+      "id": "q-deal-with",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "处理眼前的事情或困难",
+      "expression": "deal with…",
+      "formula": "deal / dealt with + 事情 / 问题",
+      "boundary": "过去式 dealt。表示处理过程，不保证问题已经解决；不能拆开 with 与宾语。"
+    },
+    {
+      "id": "q-give-up",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "停止做某事或不再继续尝试",
+      "expression": "give up…",
+      "formula": "give up + 名词 / 动词-ing；give it up",
+      "boundary": "动作使用 -ing；give up smoking 是戒烟，不是给某人烟。过去式 gave up。"
+    },
+    {
+      "id": "q-stick-to",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "坚持原定安排或原则",
+      "expression": "stick to…",
+      "formula": "stick / stuck to + 计划 / 规则 / 选择",
+      "boundary": "to 是介词，后接名词或 -ing。不是把某物粘在表面上；过去式 stuck to。"
+    },
+    {
+      "id": "q-cut-down",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "减少做某事或使用某物",
+      "expression": "cut down on…",
+      "formula": "cut down on + 名词 / 动词-ing",
+      "boundary": "on 不要省略。区别于 give up 完全放弃；这里不是砍倒树。"
+    },
+    {
+      "id": "q-turn-down",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "拒绝别人提出的邀请或机会",
+      "expression": "turn … down",
+      "formula": "turn down + 邀请 / 提议；turn + 代词 + down",
+      "boundary": "代词放中间。turn down the music 是把音量调低，不是拒绝音乐。"
+    },
+    {
+      "id": "q-take-up",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "开始一种新的爱好或活动",
+      "expression": "take up…",
+      "formula": "take up + 爱好 / 活动",
+      "boundary": "不是临时试一次；take up time 还可表示占用时间。过去式 took up。"
+    },
+    {
+      "id": "q-go-over",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "仔细再看或检查一遍",
+      "expression": "go over…",
+      "formula": "go over + 内容 / 安排",
+      "boundary": "不保证找出全部错误。过去式 went over；go over a document 不是走过文件。"
+    },
+    {
+      "id": "q-get-around",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "终于腾出时间做一直想做的事",
+      "expression": "get around to doing…",
+      "formula": "get / got around to + 动词-ing",
+      "boundary": "to 是介词，后接 -ing。它说明拖到后来才做，不表示随便绕路。"
+    },
+    {
+      "id": "q-worried",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "表达对某人或某事的担心",
+      "expression": "be worried about…",
+      "formula": "主语 + be worried about + 人 / 事情",
+      "boundary": "担心不等于事实一定会变坏；about 后接名词或 -ing，不用 worry about 与 be worried 混搭成 be worry。"
+    },
+    {
+      "id": "q-proud",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "表达为某人或某事感到骄傲",
+      "expression": "be proud of…",
+      "formula": "主语 + be proud of + 人 / 事情",
+      "boundary": "of 后接对象。对人说 I’m proud of you 往往带亲近、关心或长辈式认可，要考虑彼此关系。"
+    },
+    {
+      "id": "q-familiar",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明对某事物是否熟悉",
+      "expression": "be familiar with…",
+      "formula": "主语 + be familiar with + 事物 / 内容",
+      "boundary": "熟悉不等于精通。I’m familiar with it 是我熟悉它；It’s familiar to me 是它对我不陌生。"
+    },
+    {
+      "id": "q-trouble",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明做某事有困难",
+      "expression": "have trouble doing…",
+      "formula": "主语 + have / has trouble + 动词-ing",
+      "boundary": "trouble 此处通常不可数，不加 a；动作直接用 -ing。have trouble 不等于已经惹了麻烦。"
+    },
+    {
+      "id": "q-feel-free",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "告诉对方可以放心做某事",
+      "expression": "Feel free to…",
+      "formula": "Feel free to + 动词原形",
+      "boundary": "邀请对方自由选择，不是命令；需要自己有资格允许。不是让人真的“感觉自由”。"
+    },
+    {
+      "id": "q-no-need",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明没必要做某事",
+      "expression": "There’s no need to…",
+      "formula": "There is no need to + 动词原形",
+      "boundary": "不是禁止。There’s no need to worry 是不必担心，而不是不准担心。"
+    },
+    {
+      "id": "q-worth",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "判断一件事是否值得做",
+      "expression": "be worth doing…",
+      "formula": "主语 + be worth + 动词-ing",
+      "boundary": "worth 后用 -ing，不用 to do。It’s worth visiting 是值得去，不代表价格便宜。"
+    },
+    {
+      "id": "q-might-well",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "既然如此，不如顺便做某事",
+      "expression": "might as well…",
+      "formula": "主语 + might as well + 动词原形",
+      "boundary": "不是强烈推荐或“很可能”。常带不做也白不做、这样也可以的意味。"
+    },
+    {
+      "id": "q-better",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "提醒自己或别人最好马上采取行动",
+      "expression": "had better…",
+      "formula": "主语 + had better + 动词原形；had better not + 动词",
+      "boundary": "had better 说现在或将来，不是过去。对别人说 You’d better…可能像警告；普通建议可用 should。"
+    },
+    {
+      "id": "q-time-to",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明到了该做某事的时候",
+      "expression": "It’s time to…",
+      "formula": "It is time to + 动词原形",
+      "boundary": "to 后用原形。It’s time for lunch 的 for 后接名词；不是所有 time 后都用 to。"
+    },
+    {
+      "id": "q-no-worries",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "回应小事的道歉，让对方别介意",
+      "expression": "No worries.",
+      "formula": "No worries.",
+      "boundary": "非正式、语气轻松。对方为严重伤害道歉时，不能机械地说 No worries，好像事情毫不重要。"
+    },
+    {
+      "id": "q-take-time",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "告诉对方不用着急",
+      "expression": "Take your time.",
+      "formula": "Take your time.",
+      "boundary": "表示愿意等待，不是责怪对方花时间太久。与 Hurry up 的意思相反。"
+    },
+    {
+      "id": "q-doesnt-matter",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明某件事不影响结果或不重要",
+      "expression": "It doesn’t matter…",
+      "formula": "It does not matter (if / whether + 情况)",
+      "boundary": "不等于说对方的感受不重要。对方认真在意某事时，生硬地说 It doesn’t matter 可能显得敷衍。"
+    },
+    {
+      "id": "q-never-mind",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "撤回刚才的请求或不再追究小事",
+      "expression": "Never mind.",
+      "formula": "Never mind.",
+      "boundary": "语气要温和；不是让人“永远不要记住”。与回应道歉的 No worries 有重叠，但常用来结束刚才的话头。"
+    },
+    {
+      "id": "q-afraid",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "委婉告诉对方不太好的消息",
+      "expression": "I’m afraid…",
+      "formula": "I am afraid (that) + 不太好的情况",
+      "boundary": "这里通常不是害怕。I’m afraid of… 才常说怕某物；委婉不等于对方一定不失望。"
+    },
+    {
+      "id": "q-honest",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "坦率说出自己的真实想法",
+      "expression": "To be honest,…",
+      "formula": "To be honest, + 真实想法",
+      "boundary": "不能把坦率当作伤害人的理由。不必每句话都加；也不表示其他时候都在说谎。"
+    },
+    {
+      "id": "q-by-way",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "顺便提一件另外的事",
+      "expression": "By the way,…",
+      "formula": "By the way, + 顺便补充的话",
+      "boundary": "比 Speaking of… 更能转向新话题；正式论证里通常不把它当作段落连接词。"
+    },
+    {
+      "id": "q-as-long",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明只要满足一个条件就可以",
+      "expression": "as long as…",
+      "formula": "结果 / 允许 + as long as + 条件",
+      "boundary": "条件句谈将来时常用现在时，不必加 will。as long as 也能说时间长度，要看语境。"
+    },
+    {
+      "id": "q-no-point",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "说明做某事没有实际意义",
+      "expression": "There’s no point in…",
+      "formula": "There is no point in + 动词-ing",
+      "boundary": "in 后用 -ing。它评价行动是否有用，不是直接评价某个人没有价值；语气可能很否定。"
+    },
+    {
+      "id": "q-let-me",
+      "domains": [
+        "daily",
+        "work"
+      ],
+      "meaning": "主动表示某个动作由自己来做",
+      "expression": "Let me…",
+      "formula": "Let me + 动词原形",
+      "boundary": "有时是请求对方允许自己行动，有时是主动帮忙；语气生硬时也可能像要求对方让开。let 后不加 to。"
+    },
+    {
+      "id": "w-heads-up",
+      "domains": [
+        "work"
+      ],
+      "meaning": "提前提醒，让对方有所准备",
+      "expression": "give someone a heads-up",
+      "formula": "give + 人 + a heads-up about + 事情",
+      "boundary": "heads-up 是名词，前面用 a；重点是提前提醒，不是事情发生后汇报。"
+    },
+    {
+      "id": "w-keep-posted",
+      "domains": [
+        "work"
+      ],
+      "meaning": "持续告知事情的最新进展",
+      "expression": "keep someone posted",
+      "formula": "keep + 人 + posted on + 事情",
+      "boundary": "posted 在这里表示了解最新情况；一次告知可用 let someone know，keep someone posted 强调后续持续同步。"
+    },
+    {
+      "id": "w-touch-base",
+      "domains": [
+        "work"
+      ],
+      "meaning": "简短联系，同步一下情况",
+      "expression": "touch base with someone",
+      "formula": "touch base with + 人 + about + 事情",
+      "boundary": "不是完整汇报或深入讨论的保证；base 用单数。with 引出联系人，about 引出话题。"
+    },
+    {
+      "id": "w-fill-in",
+      "domains": [
+        "work"
+      ],
+      "meaning": "给错过信息的人补充情况",
+      "expression": "fill someone in on something",
+      "formula": "fill + 人 + in on + 事情",
+      "boundary": "人放在 fill 和 in 之间；on 后是需要补充的事情。不是填写表格的 fill in a form。"
+    },
+    {
+      "id": "w-up-to-speed",
+      "domains": [
+        "work"
+      ],
+      "meaning": "尽快了解情况，跟上工作",
+      "expression": "get up to speed on something",
+      "formula": "get up to speed on + 项目 / 系统 / 情况",
+      "boundary": "这里说了解和熟悉到能跟上，不是实际加快移动速度；get 强调进入这种状态。"
+    },
+    {
+      "id": "w-hear-back",
+      "domains": [
+        "work",
+        "daily"
+      ],
+      "meaning": "收到对方的回复",
+      "expression": "hear back from someone",
+      "formula": "hear back from + 人 / 机构",
+      "boundary": "hear from 也可指任何来信来电；hear back 特别表示对先前联系的回复。hear 的过去式是 heard。"
+    },
+    {
+      "id": "w-run-by",
+      "domains": [
+        "work"
+      ],
+      "meaning": "先让对方过目或听听意见",
+      "expression": "run something by someone",
+      "formula": "run + 想法 / 草稿 + by + 人",
+      "boundary": "不保证对方已正式批准；代词放中间，如 run it by you。run 的过去式是 ran。"
+    },
+    {
+      "id": "w-bring-up",
+      "domains": [
+        "work"
+      ],
+      "meaning": "在谈话中提出一个话题",
+      "expression": "bring something up",
+      "formula": "bring up + 话题；bring + it / them + up",
+      "boundary": "表达的是把话题提出，不保证已经解决。代词必须放中间，如 bring it up；过去式是 brought。"
+    },
+    {
+      "id": "w-same-page",
+      "domains": [
+        "work"
+      ],
+      "meaning": "确认彼此理解一致",
+      "expression": "be on the same page",
+      "formula": "be on the same page about + 事情",
+      "boundary": "不是要求每个人观点完全相同，而是确认对当前事情的理解和预期一致；page 用单数。"
+    },
+    {
+      "id": "w-on-board",
+      "domains": [
+        "work"
+      ],
+      "meaning": "愿意支持或参与某个计划",
+      "expression": "be on board with something",
+      "formula": "be on board with + 想法 / 计划 / 做法",
+      "boundary": "on board 在这里不是登上交通工具；了解一致可用 on the same page，支持计划可用 on board。"
+    },
+    {
+      "id": "w-concern",
+      "domains": [
+        "work"
+      ],
+      "meaning": "有具体顾虑，需要继续讨论",
+      "expression": "have concerns about something",
+      "formula": "have / has concerns about + 事情",
+      "boundary": "concerns 是顾虑，不是已经证实的错误。与情绪上的 worried 相比，这种说法更突出有待处理的考虑。"
+    },
+    {
+      "id": "w-missing",
+      "domains": [
+        "work"
+      ],
+      "meaning": "请对方指出自己是否遗漏了什么",
+      "expression": "Am I missing anything?",
+      "formula": "Am I missing anything?",
+      "boundary": "语气应保持开放；若带质问语气，也可能听起来像在挑战对方。不是询问某人是否想念某件事。"
+    },
+    {
+      "id": "w-put-together",
+      "domains": [
+        "work"
+      ],
+      "meaning": "整理制作成一份完整成果",
+      "expression": "put something together",
+      "formula": "put together + 方案 / 材料；put + it / them + together",
+      "boundary": "重点是组合成完整成果，不只是把东西放在一起；it / them 放在 put 和 together 之间。put 的过去式仍是 put。"
+    },
+    {
+      "id": "w-set-up",
+      "domains": [
+        "work",
+        "daily"
+      ],
+      "meaning": "建立或配置可供使用的东西",
+      "expression": "set something up",
+      "formula": "set up + 系统 / 账户 / 设备；set + it + up",
+      "boundary": "set up 是动词短语，setup 是名词或形容词；代词放中间。配置设备、建立账户都可用；安排会议也可说 set up a meeting。"
+    },
+    {
+      "id": "w-take-over",
+      "domains": [
+        "work"
+      ],
+      "meaning": "从别人手中接管工作",
+      "expression": "take over something / take over from someone",
+      "formula": "take over + 工作；take over from + 人",
+      "boundary": "take over 强调接手的一方，hand over 强调移交的一方；take over from someone 中 from 引出原负责人。"
+    },
+    {
+      "id": "w-step-in",
+      "domains": [
+        "work"
+      ],
+      "meaning": "需要时介入帮忙或处理",
+      "expression": "step in",
+      "formula": "step in to + 动词；step in when + 情况",
+      "boundary": "不一定接管整项长期职责；需要时介入是 step in，正式接替原负责人可用 take over。"
+    },
+    {
+      "id": "w-follow-through",
+      "domains": [
+        "work"
+      ],
+      "meaning": "把承诺或计划贯彻到底",
+      "expression": "follow through on something",
+      "formula": "follow through on + 承诺 / 计划 / 决定",
+      "boundary": "不是 follow up 的再次联系或追问；follow through 关注是否真的把承诺做完。"
+    },
+    {
+      "id": "w-work-out",
+      "domains": [
+        "work"
+      ],
+      "meaning": "商定或理清具体细节",
+      "expression": "work out the details",
+      "formula": "work out the details of + 安排 / 协议",
+      "boundary": "work out 也有锻炼等意思；这里的宾语 details 表明是在把具体安排弄清楚，不是 workout 这个名词。"
+    },
+    {
+      "id": "w-narrow-down",
+      "domains": [
+        "work"
+      ],
+      "meaning": "逐步缩小选择或调查范围",
+      "expression": "narrow something down",
+      "formula": "narrow down + 范围；narrow + it / them + down to + 剩余选项",
+      "boundary": "表示减少范围，尚不一定作出最后决定；代词放中间，to 引出筛选后留下的范围。"
+    },
+    {
+      "id": "w-rule-out",
+      "domains": [
+        "work"
+      ],
+      "meaning": "排除某个可能或选项",
+      "expression": "rule something out",
+      "formula": "rule out + 可能；rule + it / them + out",
+      "boundary": "排除不等于暂时不选；cannot rule out 说明仍有可能，不是断言一定会发生。代词放中间。"
+    },
+    {
+      "id": "w-double-check",
+      "domains": [
+        "work"
+      ],
+      "meaning": "请对方再核对关键信息",
+      "expression": "Could you double-check…?",
+      "formula": "Could you double-check + 信息？；Could you double-check that / whether + 完整句子？",
+      "boundary": "请求对方复核，不表示已认定对方出错。whether / if 问是否成立；that 引出希望核实的具体情况。从句都用陈述语序。"
+    },
+    {
+      "id": "w-flag",
+      "domains": [
+        "work"
+      ],
+      "meaning": "提醒对方留意某个重要事项",
+      "expression": "draw someone’s attention to…",
+      "formula": "draw + 人的 attention + to + 事情",
+      "boundary": "to 是介词，后面接要留意的内容。可以说 draw your attention to 或 draw the team’s attention to；重点是引起注意，不保证问题已解决。"
+    },
+    {
+      "id": "w-tied-up",
+      "domains": [
+        "work"
+      ],
+      "meaning": "正忙于某事，暂时抽不开身",
+      "expression": "be tied up with something",
+      "formula": "be tied up with + 当前占用时间的事情",
+      "boundary": "强调当前无法腾身，不一定是整个团队长期满负荷；不是被绳子绑住的字面意思。"
+    },
+    {
+      "id": "w-capacity",
+      "domains": [
+        "work"
+      ],
+      "meaning": "已满负荷，无法再加工作",
+      "expression": "be at capacity",
+      "formula": "人 / 团队 + be at capacity",
+      "boundary": "这里强调承载能力已满；不是仅仅此刻在忙。说明满负荷后，可以继续讨论优先顺序、分工或资源。"
+    },
+    {
+      "id": "w-take-on",
+      "domains": [
+        "work"
+      ],
+      "meaning": "接受新的工作或责任",
+      "expression": "take something on",
+      "formula": "take on + 工作 / 责任；take + it + on",
+      "boundary": "take on 可以是全新的任务；take over 特别指从别人手上接管。代词作宾语时放在中间。"
+    },
+    {
+      "id": "w-push-back",
+      "domains": [
+        "work"
+      ],
+      "meaning": "对提议或要求提出异议",
+      "expression": "push back on something",
+      "formula": "push back on + 提议 / 要求 / 决定",
+      "boundary": "push back on a proposal 是提出异议；push back a deadline 是推迟截止时间，两者结构和意思不同。"
+    },
+    {
+      "id": "w-trade-off",
+      "domains": [
+        "work"
+      ],
+      "meaning": "说明得到好处时需付出的代价",
+      "expression": "The trade-off is…",
+      "formula": "The trade-off is + 代价；The trade-off is that + 完整句子",
+      "boundary": "不是单列缺点，而是说明为得到某种好处需要接受什么代价；名词 trade-off 通常带连字符。"
+    },
+    {
+      "id": "w-room",
+      "domains": [
+        "work"
+      ],
+      "meaning": "指出仍有改进或调整空间",
+      "expression": "There is room for…",
+      "formula": "There is room for + 改进 / 调整 / 协商",
+      "boundary": "这里的 room 是不可数的“空间、余地”，不加 a，也不用复数 rooms；for 后放名词。"
+    },
+    {
+      "id": "w-build-on",
+      "domains": [
+        "work"
+      ],
+      "meaning": "在已有成果或优势上继续推进",
+      "expression": "build on something",
+      "formula": "build on + 成果 / 优势 / 已有想法",
+      "boundary": "不是从头重做，也不是字面上的盖楼；on 引出可以利用的已有基础。build 的过去式是 built。"
+    },
+    {
+      "id": "w-credit",
+      "domains": [
+        "work"
+      ],
+      "meaning": "承认某人的贡献或长处",
+      "expression": "give someone credit for something",
+      "formula": "give + 人 + credit for + 贡献 / doing",
+      "boundary": "credit 指认可，不是借贷。give someone credit for 是承认别人的功劳；直接说 I give you credit… 有时像勉强认可，注意语气。take credit for 则是把功劳归给自己。"
+    },
+    {
+      "id": "w-bear-with",
+      "domains": [
+        "work",
+        "daily"
+      ],
+      "meaning": "请对方稍等，容我处理一下",
+      "expression": "Bear with me.",
+      "formula": "Bear with me + while + 需要时间做的事",
+      "boundary": "bear 是“耐心容忍”，不是 bare；单独说时让对方短暂等待，接 while 可说明等待的原因。"
+    },
+    {
+      "id": "w-to-be-clear",
+      "domains": [
+        "work"
+      ],
+      "meaning": "明确强调自己的真实意思",
+      "expression": "To be clear, …",
+      "formula": "To be clear, + 完整句子",
+      "boundary": "不必每次说明都加这个开头；语气较直接，反复使用可能显得不耐烦。比 Just to clarify 更常突出说话人明确的立场。"
+    },
+    {
+      "id": "e-lead-to",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "说明一种情况会带来什么结果",
+      "expression": "…lead to…",
+      "formula": "原因 + lead / leads to + 结果名词 / 动词-ing",
+      "boundary": "to 是介词，后接名词或 -ing。lead to 表示因果，不能仅凭两件事同时出现就断定存在因果。"
+    },
+    {
+      "id": "e-result-from",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "从结果回头指出其原因",
+      "expression": "…result from…",
+      "formula": "结果 + result / results from + 原因",
+      "boundary": "result from 后面是原因；result in 后面是结果。名词主语单数时用 results。"
+    },
+    {
+      "id": "e-due-to",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "用名词短语简洁说明原因",
+      "expression": "…due to…",
+      "formula": "结果 / 情况 + be due to + 原因名词短语",
+      "boundary": "due to 后接名词或 -ing，不直接接独立完整句子。The delay is due to rain 与 because it is raining 的结构不同。"
+    },
+    {
+      "id": "e-for-instance",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "用具体情况支持刚才的概括",
+      "expression": "For instance,…",
+      "formula": "For instance, + 支持前述观点的具体例子",
+      "boundary": "例子应支持前面的观点，不能把另一个未解释的概括当例子。for instance 与 for example 功能相近。"
+    },
+    {
+      "id": "e-in-particular",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "从一个范围中突出具体对象",
+      "expression": "…in particular…",
+      "formula": "in particular + 被强调的对象；或 对象 + in particular",
+      "boundary": "位置应让读者清楚它强调谁。不要把 in particular 当作因果连接词或最高级。"
+    },
+    {
+      "id": "e-rather-than",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "把两个选择对照，说明选择前者",
+      "expression": "…rather than…",
+      "formula": "选择的做法 + rather than + 对照的做法",
+      "boundary": "不要与 would rather… 的完整结构混淆。比较两个名词或动作时，保持语法形式平行。"
+    },
+    {
+      "id": "e-instead-of",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "说明用一个做法替代另一个",
+      "expression": "instead of…",
+      "formula": "instead of + 名词 / 动词-ing",
+      "boundary": "of 后接动作时用 -ing：instead of driving。不要写 instead of to drive。"
+    },
+    {
+      "id": "e-both-and",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "同时表达两方面都成立",
+      "expression": "both…and…",
+      "formula": "both + A + and + B",
+      "boundary": "both A and B 作主语通常用复数谓语。不要一边放名词，一边放完整句子。"
+    },
+    {
+      "id": "e-not-only",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "在已有一项之外补充另一个重要方面",
+      "expression": "not only…but also…",
+      "formula": "not only + A + but also + B",
+      "boundary": "两项形式保持平行。放在句首可能涉及倒装；放在句中可以避免不必要的复杂结构。"
+    },
+    {
+      "id": "e-in-contrast",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "突出与前面情况的明显不同",
+      "expression": "In contrast,…",
+      "formula": "前述情况。In contrast, + 对照的完整情况",
+      "boundary": "对照双方应在同一维度上有可比性。in contrast 本身不表示先后顺序或因果。"
+    },
+    {
+      "id": "e-despite",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "承认一个条件，但说明结果仍不同于预期",
+      "expression": "despite…",
+      "formula": "Despite + 名词 / 动词-ing, + 完整结果",
+      "boundary": "despite 后面不加 of，也不直接接普通完整句子。despite the fact that… 后才能接从句。"
+    },
+    {
+      "id": "e-whether-or",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "说明尚未确定的两种选择",
+      "expression": "whether…or…",
+      "formula": "whether + 可能性A + or + 可能性B",
+      "boundary": "whether 不能随意写成 weather。whether…or… 可表达间接选择，不需要按直接问句倒装。"
+    },
+    {
+      "id": "e-one-way",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "提出解决问题的一种具体做法",
+      "expression": "One way to…is to…",
+      "formula": "One way to + 目标动作 + is to + 具体做法",
+      "boundary": "目标与方法要有实际联系。两个 to 后都用动词原形，不把问题名称直接塞进动作位置。"
+    },
+    {
+      "id": "e-enable",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "说明某种条件让人能够做什么",
+      "expression": "…enable someone to…",
+      "formula": "条件 / 工具 + enable / enables + 人 + to + 动词原形",
+      "boundary": "人放在 enable 与 to 之间。enable someone doing 不符合这个结构；提供机会不保证每个人都会使用。"
+    },
+    {
+      "id": "e-prevent",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "说明某种措施阻止什么事情发生",
+      "expression": "…prevent…from…",
+      "formula": "措施 + prevent / prevents + 人或事物 + from + 动词-ing",
+      "boundary": "from 后接 -ing。prevent 强调阻止，不是仅仅增加不便；阻碍可能是暂时的，也不保证能消除全部风险。"
+    },
+    {
+      "id": "e-play-role",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "说明一个因素在某件事中的作用",
+      "expression": "…play a role in…",
+      "formula": "因素 + play / plays + a role in + 名词 / 动词-ing",
+      "boundary": "role 前通常有 a，也可加 important、key 等修饰语。in 后接名词或 -ing，不接 to do。"
+    },
+    {
+      "id": "e-suggests",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "根据已给信息提出谨慎推断",
+      "expression": "This suggests that…",
+      "formula": "This suggests that + 推断的完整情况",
+      "boundary": "必须有前文依据；它不是凭空给观点加可信度的装饰，也不表示已经证明因果。"
+    },
+    {
+      "id": "e-to-extent",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "承认一种判断部分成立",
+      "expression": "To some extent,…",
+      "formula": "To some extent, + 部分成立的完整判断",
+      "boundary": "后面仍要给出具体判断，必要时说明限制。不要把它与 completely 同时用于同一层面的断言。"
+    },
+    {
+      "id": "e-admittedly",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "先承认一个事实或限制",
+      "expression": "It is true that…",
+      "formula": "It is true that + 承认的完整情况",
+      "boundary": "后面用完整陈述句。承认事实不表示赞同所有结论；可以再解释限制或不同看法，但不必机械接 however。"
+    },
+    {
+      "id": "e-outweigh",
+      "domains": [
+        "ielts",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "比较两方面的重要性，给出总体判断",
+      "expression": "The benefits outweigh the costs.",
+      "formula": "收益 / 风险 / 价值 + outweigh / outweighs + 相比较的另一方",
+      "boundary": "outweigh 后直接接比较对象，不加 than。不是仅仅比较优缺点的数量，也不能代替对风险的具体分析。"
+    },
+    {
+      "id": "e-in-other-words",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "用另一种表述澄清刚才的意思",
+      "expression": "In other words,…",
+      "formula": "前述意思。In other words, + 同义的解释",
+      "boundary": "改写应保留核心意思，不能把“可能”改成“必然”，也不能借改写加入未经说明的结论。"
+    },
+    {
+      "id": "e-limitation",
+      "domains": [
+        "ielts",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "指出方法或证据的一个具体局限",
+      "expression": "One limitation of…is…",
+      "formula": "One limitation of + 方法 / 证据 + is + 局限",
+      "boundary": "局限要与对象有关，不能只是泛泛说“不完美”。完整情况可接 is that…；名词短语直接接 is。"
+    },
+    {
+      "id": "e-account-for",
+      "domains": [
+        "ielts"
+      ],
+      "meaning": "说明某一部分占总体的比例",
+      "expression": "…account for…",
+      "formula": "部分 + account / accounts for + 数量 / 比例",
+      "boundary": "比例含义与 account for 表示“解释原因”的用法不同。占比说一部分占整体的多少，与上升或下降的幅度不同。"
+    },
+    {
+      "id": "e-rise-from",
+      "domains": [
+        "ielts"
+      ],
+      "meaning": "准确描述数值从起点上升到终点",
+      "expression": "…rise from…to…",
+      "formula": "数量 + rose / rises from + 起点 + to + 终点",
+      "boundary": "rise 是不及物动词；过去式是 rose。rose to 终点与 rose by 增量不同，不能互换数字。"
+    },
+    {
+      "id": "e-remain-stable",
+      "domains": [
+        "ielts"
+      ],
+      "meaning": "说明数值或状况在一段时间内保持稳定",
+      "expression": "…remain stable…",
+      "formula": "数值 / 状况 + remain / remained stable + 时间 / 数值位置",
+      "boundary": "stable 不表示数值绝对一动不动；若存在小波动可加 relatively。at 后说明水平，不表示变化幅度。"
+    },
+    {
+      "id": "e-known-for",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "meaning": "介绍一个地方或事物以什么闻名",
+      "expression": "…be known for…",
+      "formula": "对象 + be known for + 特色 / 动词-ing",
+      "boundary": "for 后是特点或成就；be known as 后是身份或名称。its 和 their 要与前面的主语对应。"
+    },
+    {
+      "id": "e-date-back",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "meaning": "说明某事物的起源可以追溯到何时",
+      "expression": "…date back to…",
+      "formula": "事物 + date / dates back to + 起源时间",
+      "boundary": "一般用 dates back to 而不是 is dated back to。接起点时间用 to；接距今多久，可直接用 dates back several hundred years。"
+    },
+    {
+      "id": "e-cover-area",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "meaning": "用面积说明一个地方或设施的规模",
+      "expression": "…cover an area of…",
+      "formula": "地方 / 设施 + cover / covers an area of + 面积",
+      "boundary": "area 前有 an。平方公里用 square kilometres，不能省成 kilometres；公顷用 hectares。"
+    },
+    {
+      "id": "e-favourite-memory",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "meaning": "选出一段值得讲述的个人回忆",
+      "expression": "One of my favourite memories is…",
+      "formula": "One of my favourite memories is + 回忆中的事情 / 动词-ing",
+      "boundary": "one of 后面用 memories 复数，但主语整体是 one，后面用 is。先选一段具体回忆，再展开时间和细节。"
+    },
+    {
+      "id": "e-when-comes",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "meaning": "把回答聚焦到一个具体方面",
+      "expression": "When it comes to…",
+      "formula": "When it comes to + 话题名词 / 动词-ing, + 个人判断",
+      "boundary": "to 是介词，后面可接 -ing。它不是字面上的“来到某地”，也不需要每句话都用来开头。"
+    },
+    {
+      "id": "e-appreciated",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "meaning": "回顾经历中自己特别认可的地方",
+      "expression": "What I appreciated about…was…",
+      "formula": "What I appreciated about + 经历对象 + was + 认可的方面",
+      "boundary": "appreciated 不只是泛泛的喜欢，还含理解价值或感激。what 从句使用陈述语序；过去经历用 was。"
+    },
+    {
+      "id": "e-found-particularly",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "meaning": "用具体评价回顾自己的体验",
+      "expression": "I found…particularly…",
+      "formula": "I found + 体验对象 + particularly + 形容词",
+      "boundary": "特别的评价应有理由或细节支持。形容词放在宾语后，不需要再加 was；不是 I found it was difficult 的同一种结构。"
+    },
+    {
+      "id": "s-pain",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明疼痛发生在什么位置",
+      "expression": "have a pain in…",
+      "formula": "主语 + have / has a pain in + 疼痛位置",
+      "boundary": "身体部位前常用 my / your / his / her；pain 也可不可数。a pain in my back 和 back pain 都自然，用 in 可以直接引出疼痛的位置。"
+    },
+    {
+      "id": "s-hurts",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "描述做什么动作时会疼",
+      "expression": "It hurts when…",
+      "formula": "It hurts when + 发生疼痛的动作或情况",
+      "boundary": "it 指当前在谈的疼痛或部位；when 后是陈述语序。表达触发疼痛的情况，不代表动作一定是病因。"
+    },
+    {
+      "id": "s-call-help",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "请别人代为联系需要的援助",
+      "expression": "Could you call…for me?",
+      "formula": "Could you call + 援助人员 / 服务 + for me / us?",
+      "boundary": "call an ambulance 是叫救护车；call the police 是报警。地点与当地联系方式仍需要具体说明，这句话本身不包含位置信息。"
+    },
+    {
+      "id": "s-incident",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "报告刚刚发生且现在需要注意的事件",
+      "expression": "There has been…",
+      "formula": "There has been + 单数事件；There have been + 复数事件",
+      "boundary": "与 There is… 描述当前有什么不同，这里说事件已经发生。现场正在着火可直接说 There is a fire；There has been a fire 更侧重刚发生的事件。明确结束的过去时间如 yesterday 通常改用过去时。"
+    },
+    {
+      "id": "et-request",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "meaning": "在书信开头明确提出请求",
+      "expression": "I am writing to request…",
+      "formula": "I am writing to request + 请求的事物 / 动作名词",
+      "boundary": "偏正式，不必写给熟人的每封消息都用。request 后可接 information 或 permission 等名词；不是礼貌套话越长越好。"
+    },
+    {
+      "id": "et-possible",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "meaning": "礼貌询问某种安排能否实现",
+      "expression": "Would it be possible to…?",
+      "formula": "Would it be possible to + 动词原形？",
+      "boundary": "它是请求可行性，不是假设对方已经同意。to 后写动作；问题后应按情况交代理由与必要信息。"
+    },
+    {
+      "id": "et-problem",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "meaning": "在书信中说明具体遇到的问题",
+      "expression": "The problem is that…",
+      "formula": "The problem is that + 具体问题的完整情况",
+      "boundary": "语气直接但可以保持客观，避免只批评对方。that 后要完整陈述；不要用一个模糊的“有问题”替代必要细节。"
+    },
+    {
+      "id": "et-alternative",
+      "domains": [
+        "ielts",
+        "toefl"
+      ],
+      "meaning": "在书信中提出可商量的替代安排",
+      "expression": "If this is not possible,…",
+      "formula": "If this is not possible, + 替代方案 / 请求",
+      "boundary": "this 应有明确所指，即前面刚提出的安排。后面给真正可行的备选，不是换词重复同一个要求。"
+    },
+    {
+      "id": "et-partial-agree",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "回应一个观点时先认可，再提出保留",
+      "expression": "While I agree that…, I…",
+      "formula": "While I agree that + 认可的情况, I + 保留意见",
+      "boundary": "while 在这里表示让步，不是同时发生。不要虚构自己赞同的观点只为套结构；后半句应对前半句形成实质回应。"
+    },
+    {
+      "id": "et-add",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "在讨论中补充一个尚未提出的观点",
+      "expression": "I would add that…",
+      "formula": "I would add that + 补充的完整观点",
+      "boundary": "不是不看前文就套用的开头。add that 后接陈述，不是先问是否可以发言。"
+    },
+    {
+      "id": "et-main-reason",
+      "domains": [
+        "ielts",
+        "cet4",
+        "cet6",
+        "toefl"
+      ],
+      "meaning": "把自己选择或判断的首要理由说清楚",
+      "expression": "The main reason…is that…",
+      "formula": "The main reason + 选择或判断 + is that + 首要理由",
+      "boundary": "main 表示首要，不代表只有一个理由。reason 后可接 why 或省略 why 的解释部分；后半句用完整陈述。"
+    },
+    {
+      "id": "et-overview",
+      "domains": [
+        "ielts"
+      ],
+      "meaning": "概括给定信息中的两项主要变化",
+      "expression": "Overall,…, while…",
+      "formula": "Overall, + 一项主要变化, while + 另一项对照变化",
+      "boundary": "概述必须由给定信息支持。while 适合确有对照的趋势，不是每张图都要硬套；图表描述不加入没有根据的原因猜测。"
+    },
+    {
+      "id": "et-consistently",
+      "domains": [
+        "ielts"
+      ],
+      "meaning": "比较两组数据在整个时期的高低关系",
+      "expression": "…was consistently higher than…",
+      "formula": "A + was / were consistently higher than + B + 时间范围",
+      "boundary": "必须检查整个给定时期，不能只看起点与终点。比较的对象与单位要一致；没有数据支持时不推断原因。"
+    },
+    {
+      "id": "et-fall",
+      "domains": [
+        "ielts"
+      ],
+      "meaning": "准确说明数值下降的起点与终点",
+      "expression": "…fell from…to…",
+      "formula": "数量 + fell from + 起点 + to + 终点",
+      "boundary": "fall 是不及物动词，过去式 fell。fell to 是降至，fell by 是减少了多少；别把终点数值与减少量混用。"
+    },
+    {
+      "id": "et-important-part",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "meaning": "说明某事物已经成为生活或发展的重要部分",
+      "expression": "…has become an important part of…",
+      "formula": "单数主语 + has become an important part of + 领域；复数用 have",
+      "boundary": "an 和 of 都不可漏。become 的过去分词仍是 become；主语单复数决定 has 或 have。"
+    },
+    {
+      "id": "et-over-past",
+      "domains": [
+        "cet4",
+        "cet6"
+      ],
+      "meaning": "概括从过去持续到现在的发展变化",
+      "expression": "Over the past…,…has…",
+      "formula": "Over the past + 时间段, 主语 + has / have + 过去分词",
+      "boundary": "时间范围必须延续到现在；若整个时期已经结束，要按实际情况选择过去时。has 或 have 后接过去分词。"
+    },
+    {
+      "id": "p-in-the-evening",
+      "domains": [
+        "daily"
+      ],
+      "meaning": "说明事情发生在晚上这个时段",
+      "expression": "in the evening",
+      "formula": "动作或状态 + in the evening",
+      "boundary": "in the evening 不单独等于“今晚”。this evening、tonight 可以指今晚，但没有调用本次练习的目标语块。习惯场景中的 in the evenings 也自然；不要把复数形式直接套到一次性的安排里。",
+      "practiceProfile": "compose"
+    }
+  ],
+  "learningOrder": [
+    "p-in-the-evening",
+    "p-done-with",
+    "p-fair-enough",
+    "order",
+    "d-need",
+    "could-request",
+    "permission",
+    "thanks",
+    "sorry",
+    "sounds",
+    "p-makes-sense",
+    "p-up-to",
+    "where",
+    "cost",
+    "looking",
+    "not-work",
+    "problem",
+    "d-offer-help",
+    "d-payment",
+    "d-without",
+    "p-out-of",
+    "q-let-me",
+    "q-no-need",
+    "q-time-to",
+    "q-no-worries",
+    "q-take-time",
+    "q-never-mind",
+    "q-look-after",
+    "q-pick-up",
+    "q-drop-off",
+    "q-worried",
+    "q-proud",
+    "q-familiar",
+    "q-trouble",
+    "q-keep-touch",
+    "q-by-way",
+    "q-honest",
+    "q-afraid",
+    "d-book",
+    "d-try-on",
+    "d-return",
+    "invite",
+    "suggest",
+    "time-work",
+    "repeat",
+    "clarify",
+    "change",
+    "decline",
+    "opinion",
+    "not-sure",
+    "rather",
+    "d-rather-not",
+    "d-work-as",
+    "d-origin",
+    "d-feeling",
+    "p-mood-for",
+    "p-cant-stand",
+    "p-thing",
+    "d-about-to",
+    "q-run-into",
+    "q-get-along",
+    "q-catch-up",
+    "q-look-up",
+    "q-deal-with",
+    "q-give-up",
+    "q-stick-to",
+    "q-cut-down",
+    "q-turn-down",
+    "q-take-up",
+    "q-go-over",
+    "q-worth",
+    "q-doesnt-matter",
+    "q-feel-free",
+    "q-better",
+    "q-as-long",
+    "d-trying",
+    "d-just",
+    "d-not-yet",
+    "p-middle-of",
+    "d-because",
+    "d-thats-why",
+    "d-depends",
+    "d-too",
+    "d-enough",
+    "d-get-to",
+    "d-right-route",
+    "d-wrong-order",
+    "d-availability",
+    "d-include",
+    "d-recommend",
+    "d-allergy",
+    "d-symptom",
+    "d-frequency",
+    "longer",
+    "ever",
+    "used-to",
+    "d-last-time",
+    "d-duration",
+    "d-habit",
+    "d-look-forward",
+    "d-get-used",
+    "p-nerves",
+    "p-fed-up",
+    "p-figure-out",
+    "p-put-off",
+    "p-get-rid-of",
+    "p-pay-attention",
+    "p-keep-mind",
+    "p-make-effort",
+    "p-end-up",
+    "p-you-know-what",
+    "p-speaking-of",
+    "p-turns-out",
+    "p-take-granted",
+    "d-didnt-mean",
+    "d-what-mean",
+    "d-make-sure",
+    "d-cant-seem",
+    "d-as-far-know",
+    "d-even-though",
+    "d-as-as",
+    "d-mind-if",
+    "d-wondering",
+    "d-appreciate-if",
+    "d-supposed",
+    "d-wish",
+    "d-should-have",
+    "d-what-if",
+    "p-like-most",
+    "p-last-thing",
+    "w-take-care",
+    "w-help-with",
+    "w-let-know",
+    "w-call",
+    "w-audio",
+    "w-attached",
+    "w-confirm",
+    "w-get-back",
+    "w-heads-up",
+    "w-keep-posted",
+    "w-hear-back",
+    "w-fill-in",
+    "w-bring-up",
+    "w-put-together",
+    "w-set-up",
+    "w-double-check",
+    "w-take-over",
+    "w-take-on",
+    "w-tied-up",
+    "w-bear-with",
+    "w-responsible",
+    "w-who-handle",
+    "w-cover",
+    "w-copy",
+    "w-start",
+    "w-add",
+    "w-back",
+    "w-agree",
+    "w-due",
+    "w-completed",
+    "w-waiting",
+    "w-next-step",
+    "w-on-track",
+    "w-running-behind",
+    "w-priority",
+    "w-deadline",
+    "w-reaching",
+    "w-following",
+    "w-make-sure",
+    "w-hand-over",
+    "w-requirements",
+    "w-include",
+    "w-budget",
+    "w-offer-option",
+    "w-experience",
+    "w-previous",
+    "w-strength",
+    "w-goal",
+    "w-improve",
+    "w-feedback",
+    "w-example",
+    "w-interest",
+    "w-point",
+    "w-perspective",
+    "w-summarize",
+    "w-weigh",
+    "w-scope",
+    "w-clarify-scope",
+    "w-address",
+    "w-expect",
+    "q-get-around",
+    "q-might-well",
+    "q-no-point",
+    "w-touch-base",
+    "w-up-to-speed",
+    "w-run-by",
+    "w-same-page",
+    "w-on-board",
+    "w-concern",
+    "w-missing",
+    "w-step-in",
+    "w-follow-through",
+    "w-work-out",
+    "w-narrow-down",
+    "w-rule-out",
+    "w-flag",
+    "w-capacity",
+    "w-push-back",
+    "w-trade-off",
+    "w-room",
+    "w-build-on",
+    "w-credit",
+    "w-to-be-clear",
+    "e-lead-to",
+    "e-result-from",
+    "e-due-to",
+    "e-for-instance",
+    "e-in-particular",
+    "e-rather-than",
+    "e-instead-of",
+    "e-both-and",
+    "e-not-only",
+    "e-in-contrast",
+    "e-despite",
+    "e-whether-or",
+    "e-one-way",
+    "e-enable",
+    "e-prevent",
+    "e-play-role",
+    "e-suggests",
+    "e-to-extent",
+    "e-admittedly",
+    "e-outweigh",
+    "e-in-other-words",
+    "e-limitation",
+    "e-account-for",
+    "e-rise-from",
+    "e-remain-stable",
+    "e-known-for",
+    "e-date-back",
+    "e-cover-area",
+    "e-favourite-memory",
+    "e-when-comes",
+    "e-appreciated",
+    "e-found-particularly",
+    "s-pain",
+    "s-hurts",
+    "s-call-help",
+    "s-incident",
+    "et-request",
+    "et-possible",
+    "et-problem",
+    "et-alternative",
+    "et-partial-agree",
+    "et-add",
+    "et-main-reason",
+    "et-overview",
+    "et-consistently",
+    "et-fall",
+    "et-important-part",
+    "et-over-past"
+  ],
+  "reviewNotes": [
+    "原244内容整体语言与任务适配审查，Spoken212全部逐单元逐题审读，考试32独立复审。",
+    "本轮49原单元、178正式题有内容/提示/接受形式修订（不代表178主答案原来都错）。新增4健康应急和12具体考试任务。",
+    "错误自动缩写与词内替换已修根因，词汇have不再一律缩写，增加真实错误及正确状态表达的回归。",
+    "22共用书面表达明确为通用写作基础；专项任务按官方当前任务类型匹配，不以入口计数替代覆盖。",
+    "13个受题意修订影响的单元，既有未完成轮保留原题/草稿/提示/队列，旧错误备选过滤，新轮用修正源。",
+    "全260/2600程序检查通过，浏览器为具体修正点和新增代表主线抽验，未逐题浏览器点击全部2600题。",
+    "仍存在任务缺口，见内容审查-2026-10-28.md；不是完整考试课程或母语者所有表达。",
+    "v1.6.0 三种学习目标与场景练习已获用户批准落地；内容及操作互审详情见内容审查-2026-10-28.md。"
+  ],
+  "hintRules": {
+    "units": 261,
+    "positions": 2871,
+    "source": "hint-rules.js",
+    "mode": "transferable-rules"
+  }
+}
