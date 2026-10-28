@@ -34,3 +34,26 @@ const text=restored.run('JSON.stringify(progressBackup())'),portable=setup();ass
 const bad=JSON.parse(text);bad.data.records['used-to'].dailyVisits[day].status='invalid';assert(!portable.run(`previewProgressImport(${JSON.stringify(JSON.stringify(bad))})`));
 const brokenHints=JSON.parse(text);brokenHints.data.records['used-to'].learn.pinnedEntry={id:'entry',zh:'坏提示',answers:['Test.'],lexicalHints:[null]};assert(!portable.run(`previewProgressImport(${JSON.stringify(JSON.stringify(brokenHints))})`));
 console.log('PASS: all daily materials accounted for; public libraries isolated; per-date visits versus shared mastery; exact continuation; scoped review; portable daily progress and malformed-data rejection.');
+
+// The daily entry is a directory, not a shortcut hardwired to the latest date.
+const directory=setup(),dr=directory.run;
+dr("view='home';render()");
+assert(dr("app.innerHTML.includes('data-action=\"cecilia-dates\"')"));
+assert(!dr("app.innerHTML.includes('data-action=\"cecilia-date\"')"));
+click(directory,'cecilia-dates');
+assert.equal(dr('domain'),'cecilia');assert.equal(dr('filter'),'all');
+assert(dr("app.innerHTML.includes('按日期选择材料')"));
+assert(dr("app.innerHTML.includes('2026年10月28日')"));
+dr("window.BW_DAILY_MATERIALS.push({id:'2026-10-29',date:'2026-10-29',items:[{expression:'get on someone’s nerves',meaning:'让人心烦',unitId:'p-nerves'}]});render()");
+assert(dr("app.innerHTML.indexOf('data-day=\"2026-10-29\"')<app.innerHTML.indexOf('data-day=\"2026-10-28\"')"));
+click(directory,'cecilia-date',{day:'2026-10-29'});
+assert.equal(dr('filter'),'2026-10-29');assert(dr("app.innerHTML.includes('返回日期目录')"));
+click(directory,'cecilia-dates');assert.equal(dr('filter'),'all');
+click(directory,'domain',{domain:'daily'});assert.equal(dr('domain'),'daily');
+click(directory,'domain',{domain:'cecilia'});assert.equal(dr('filter'),'all');
+assert(dr("app.innerHTML.includes('2026年10月29日')&&app.innerHTML.includes('2026年10月28日')"));
+assert(dr("routeURL('library').endsWith('#library/cecilia')"));
+console.log('PASS: visible Cecilia directory entry; new dates appear automatically in descending order; both dates open and return independently.');
+
+click(directory,'cecilia-learning-root');assert.equal(dr('domain'),'daily');assert.equal(dr('filter'),'all');
+assert(dr("app.innerHTML.includes('每日语料 · 按日期学习')"));

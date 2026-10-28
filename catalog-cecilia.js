@@ -1,6 +1,7 @@
 'use strict';
 (() => {
  const c=window.JUJIAN_CATALOG;
+ c.tracks.find(t=>t.id==='spoken').description='日常交流、职业交流与 Cecilia 每日语料';
  c.domains.push({id:'cecilia',track:'spoken',name:'Cecilia',description:'每天遇见的表达，按日期收好，接着学、接着复习。'});
  c.collections.push({id:'cecilia',domain:'cecilia',name:'Cecilia',description:'每日材料'});
  const added=[...(window.BW_CECILIA_A||[]),...(window.BW_CECILIA_B||[])];

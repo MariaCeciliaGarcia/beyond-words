@@ -4,7 +4,7 @@
 
 ## 当前功能
 
-- Spoken English（日常交流、职业交流）和考试顺利（雅思、四级、六级、托福）表达库。
+- Spoken English（日常交流、职业交流、Cecilia 每日语料）和考试顺利（雅思、四级、六级、托福）表达库。
 - 323 个表达单元；输入造句、情境判断、无输入回忆等练法。三种不同练法首先在 `in the evening`、`be done with…`、`Fair enough.` 落地。
 - 默认隐藏英文与提示，按需查看用法规则；个人例句和个人场景可保存、修改、复习。
 - 首页直接继续上次学习或复习，保留当前题目、输入、提示和队列。
@@ -20,7 +20,7 @@
 
 https://mariaceciliagarcia.github.io/beyond-words/
 
-当天材料可直达：`#library/cecilia/2026-10-28`。未来材料继续按日期追加，不覆盖已有日期与学习记录。
+Cecilia 日期目录：`#library/cecilia`；点击首页 Cecilia 进入全部日期，按新到旧显示。当天材料可直达：`#library/cecilia/2026-10-28`。未来材料继续按日期追加，不覆盖已有日期与学习记录。
 
 ## 本地运行
 

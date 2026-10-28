@@ -203,3 +203,15 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #26
 .keyboard-shortcut{font:inherit;font-size:11px;font-weight:500;margin-left:9px;opacity:.8;white-space:nowrap}.button[data-keyboard-default],.grade-row [data-keyboard-default]{position:relative}.question-hint-line+.question-hint-line{margin-top:7px}.question-hint-lines{line-height:1.8}
 
 .daily-home-entry{margin-top:12px;padding-top:10px;border-top:1px solid #e5ebf2}.daily-home-entry .text-button{min-height:36px;text-align:left;line-height:1.5}
+
+/* Cecilia is a peer of daily/work; dates form its visible child directory. */
+.domain-panel .spoken-domains{grid-template-columns:repeat(3,minmax(0,1fr))}
+.spoken-domains .domain-option{flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;min-height:82px}
+.daily-home-link{display:flex;align-items:center;justify-content:space-between;width:100%;gap:12px;padding:14px 18px;border-radius:18px;text-align:left;color:#254c6a;border:1px solid #d4e3f1;background:linear-gradient(145deg,#fff,#edf5ff);box-shadow:var(--indicator-rim),0 3px 8px #315d8810}
+.daily-home-link strong{font-size:18px;font-weight:600}.daily-home-link small{display:block;font-size:13px;color:#526e88;margin-top:4px}.daily-home-entry>p{margin:9px 4px 0}.daily-home-link:hover{filter:brightness(1.015)}
+.breadcrumbs{flex-wrap:wrap;row-gap:6px}.breadcrumbs button{min-height:36px}
+@media(max-width:650px){.domain-panel .spoken-domains{grid-template-columns:1fr}.spoken-domains .domain-option{flex-direction:row;align-items:center;justify-content:space-between;min-height:60px}.daily-card .actions>.button{width:100%}}
+@media(prefers-reduced-transparency:reduce){.daily-home-link{background:#f2f7fd}}
+@media(prefers-contrast:more){.daily-home-link{border-color:#7896b5}}
+
+.daily-card{flex-direction:column;align-items:stretch}.daily-card h3{line-height:1.4}.daily-card .actions{justify-content:flex-start}
