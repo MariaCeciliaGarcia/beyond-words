@@ -14,11 +14,28 @@ function pilotQuestionSheet(q,qs,context){
  ${choice?`<div class="actions">${button('下一题','choice-next')}</div>`:`<div class="response-panel"><p class="section-label">这次想起来了吗？</p><div class="grade-row">${button('会了','grade','','data-grade="good"')}${button('不熟','grade','','data-grade="hard"')}${button('不会','grade','','data-grade="again"')}</div><p class="small">按自己刚才的回忆判断。</p></div>`}<div class="answer-followups">${button('看看讲解','supplement','utility-link')}</div></div>`:''}</section>`;
 }
 function pilotEntryFeedback(){
- const attempt=state.learn?.entryAttempt;
- if(!attempt||!attempt.input?.trim())return '';
- const q=state.learn.pinnedEntry||lesson.entry,correct=attempt.checked&&matches(attempt.input,q.answers);
- return `<div class="entry-feedback"><p class="section-label">${correct?'这次表达出来了':'对照一下刚才的尝试'}</p>${correct?`<p class="en">${esc(attempt.input)}</p>`:`<p class="small">你写的：${esc(attempt.input)}</p><p class="en">${esc(q.answers[0])}</p>`}${!correct?'<p class="small">看看本题表达怎样使用这个语块，也可以回去修改。</p>':''}${button('返回修改','edit-entry','utility-link')}</div>`;
+ const l=state.learn;
+ if(!l||l.returnStage)return '';
+ const attempt=l.entryAttempt||l.q,q=l.pinnedEntry||lesson.entry;
+ if(questionType(q)!=='input'||!attempt||!attempt.revealed)return '';
+ const correct=attempt.checked&&matches(attempt.input,q.answers),assisted=attempt.targetSeen||attempt.usedHint||attempt.exposed;
+ const title=correct?(assisted?'借助提示，答对了':'答对了！'):attempt.checked?'对照一下刚才的表达':'先认识这个表达';
+ const note=correct?'刚才这句话，你表达出来了。':attempt.checked?'先看看本题的表达，再对照你的尝试。':'没想起来也没关系，先看看它怎么说。';
+ const path=correct?'m6 12 4 4 8-8':attempt.checked?'M5 8h14m-4-4 4 4-4 4M19 16H5m4-4-4 4 4 4':'M4 5h6l2 2 2-2h6v14h-6l-2 2-2-2H4Zm8 2v14';
+ return `<div id="entry-feedback" class="entry-feedback entry-result ${correct?'entry-result-success':'entry-result-neutral'}" tabindex="-1" role="status" aria-label="${title}"><span class="entry-result-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="${path}" pathLength="1"/></svg></span><h2 class="entry-result-title">${title}</h2><p class="entry-result-note">${note}</p>${correct?`<p class="entry-result-answer" lang="en">${esc(attempt.input)}</p>`:attempt.checked?`<div class="entry-result-comparison"><p class="small">你写的：<span lang="en">${esc(attempt.input)}</span></p><p class="entry-result-answer" lang="en">${esc(q.answers[0])}</p></div>`:''}${attempt.input?.trim()&&!correct?button('返回修改','edit-entry','utility-link'):''}<p class="entry-result-next">${entryCreditQuestion()?'这题已计入进度，接下来换个情境练。':'接下来，看看这个表达怎么用。'}</p>${correct?`<div class="actions entry-result-actions">${button(entryCreditQuestion()?'继续练新题':'开始练习','intro-next')}${button('返回修改','edit-entry','text-button')}</div>`:''}</div>`;
 }
+function entryCreditQuestion(){
+ const l=state.learn;if(!l||l.returnStage)return null;
+ const a=l.entryAttempt||l.q,e=l.pinnedEntry||lesson.entry;
+ if(!a?.checked||!a.revealed||a.exposed||questionType(e)!=='input'||!matches(a.input,e.answers))return null;
+ return (l.pinnedLearning||lesson.learning).find(q=>questionType(q)==='input'&&normalize(q.target||q.zh)===normalize(e.target||e.zh)&&normalize(q.stem||'')===normalize(e.stem||'')&&matches(a.input,q.answers))||null;
+}
+function skipCreditedEntry(l){const questions=l.pinnedLearning||lesson.learning;while(l.index<questions.length&&questions[l.index].id===l.entryCreditId)l.index++;}
+function beginLearningExercises(){const l=state.learn,credit=entryCreditQuestion(),a=l.entryAttempt||l.q;l.stage='exercise';l.index=0;
+ if(credit&&!l.results.some(r=>r.id===credit.id)){l.entryCreditId=credit.id;l.results.push({id:credit.id,grade:'good',selfGrade:null,kind:'input',help:!!(a.usedHint||a.targetSeen),source:'entry-check',time:Date.now()});}
+ l.q=newQuestionState();skipCreditedEntry(l);enrolled();
+}
+function focusEntryResult(){const result=app.querySelector('#entry-feedback');if(result){window.scrollTo(0,0);result.focus({preventScroll:true});}}
 function personalDraftForm(){return `<label class="section-label" for="custom-scene">发生了什么？</label><textarea id="custom-scene" maxlength="600" placeholder="写下对方说了什么，或当时发生了什么。">${esc(state.draft.scene||'')}</textarea><label class="section-label" for="custom-intent">你想表达什么态度？</label><textarea id="custom-intent" maxlength="300" placeholder="写下你想通过这个回应表达的态度。">${esc(state.draft.intent||'')}</textarea>${personalCheckControl()}`;}
 function pilotCustomPage(){
  const saved=state.learn.savedCustom;

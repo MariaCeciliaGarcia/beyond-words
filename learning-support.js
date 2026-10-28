@@ -54,7 +54,7 @@ function reviewResumeTarget(){
  const active=filterReviewScope(availableUnits(),store.resume?.review?.origin||store.reviewScope||null),pending=active.filter(u=>record(u.id).review).sort((a,b)=>Number(record(b.id).updatedAt||0)-Number(record(a.id).updatedAt||0));
  return pending[0]||active.sort((a,b)=>record(a.id).schedule.due-record(b.id).schedule.due)[0]||null;
 }
-function learningStatusFor(unit){const l=record(unit.id).learn;const prefix=isCeciliaOrigin(l?.origin)?'Cecilia · '+ceciliaDateLabel(originDay(l.origin))+' · ':'';return prefix+(!l?'下一个表达':({entry:'初次尝试',intro:'看讲解',exercise:`学习题 ${l.index+1} / 5`,custom:unit.practiceProfile==='scenario'?'写自己的场景':'写自己的例句',done:'已完成'}[l.stage]));}
+function learningStatusFor(unit){const l=record(unit.id).learn;const prefix=isCeciliaOrigin(l?.origin)?'Cecilia · '+ceciliaDateLabel(originDay(l.origin))+' · ':'';return prefix+(!l?'下一个表达':({entry:'初次尝试',intro:'看讲解',exercise:`学习题 ${Math.max(l.results.length,l.index)+1} / ${(l.pinnedLearning||unit.learning).length}`,custom:unit.practiceProfile==='scenario'?'写自己的场景':'写自己的例句',done:'已完成'}[l.stage]));}
 function continueLearningHome(){
  const target=learningResumeTarget();if(!target){go('library');return;}
  selectLesson(target.unit.id);if(target.origin)applyLearningOrigin(target.origin);

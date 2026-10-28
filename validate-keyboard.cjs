@@ -37,3 +37,26 @@ help=JSON.parse(e.run("JSON.stringify(window.getQuestionHelp({id:'explicit',zh:'
 e.run("selectLesson('p-fair-enough')");help=JSON.parse(e.run('JSON.stringify(window.getQuestionHelp(lesson.entry))'));assert.equal(help.words.length,0);assert(!JSON.stringify(help.frame).includes('Fair enough.'));assert(help.frame.every(h=>h.role==='target'));e.run("let scenarioHintTest={};window.markQuestionHelp(lesson.entry,scenarioHintTest,'frame')");assert(e.run('scenarioHintTest.usedHint'));assert(e.run('scenarioHintTest.targetSeen'));
 e.run("selectLesson('c28-come-on')");const pragmaticWords=JSON.parse(e.run('JSON.stringify(window.getQuestionHelp(lesson.learning[0]))'));assert(pragmaticWords.frame.some(h=>h.text.includes('bullshit')&&h.role==='target'));e.run("let comparisonWordTest={};window.markQuestionHelp(lesson.learning[0],comparisonWordTest,'frame')");assert(e.run('comparisonWordTest.usedHint'));
 const counts=e.run("units.reduce((n,u)=>{selectLesson(u.id);for(const q of [u.entry,...u.learning,...u.review]){const h=window.getQuestionHelp(q);if(!Array.isArray(h.words)||!Array.isArray(h.frame))throw Error(u.id+q.id);n++;}return n;},0)");console.log(`PASS: ${counts} real question help models; direct vocabulary, inflections, reusable by-rule, explicit roles, target-only difficulty tracking, and pragmatic choice guidance.`);
+// A successful initial attempt is real work, not an immediate duplicate drill.
+{
+ const flow=setup(),fr=flow.run;
+ const clickFlow=(action)=>flow.handlers.click({target:{closest:s=>s==='[data-action]'?{dataset:{action}}:null}});
+ fr("selectLesson('c28-drive-nuts');state.learn=newLearning();state.learn.q.input=lesson.entry.answers[0];view='study';render()");
+ clickFlow('check');assert.equal(fr('state.learn.stage'),'intro');
+ assert(fr("app.innerHTML.indexOf('entry-result-success')<app.innerHTML.indexOf('large-expression')"));
+ assert(fr("app.innerHTML.includes('答对了！')&&app.innerHTML.includes('这题已计入进度')"));
+ clickFlow('intro-next');assert.equal(fr('state.learn.index'),1);assert.equal(fr('state.learn.results.length'),1);assert.equal(fr('state.learn.results[0].selfGrade'),null);
+ assert(fr("learningQuestion().zh!==lesson.entry.zh"));assert.equal(fr('stageLabel()'),'学习题 2 / 5');
+ const restored=setup(null,JSON.parse(flow.map.get('jujian.library.v2')));assert.equal(restored.run('state.learn.index'),1);assert.equal(restored.run('state.learn.entryCreditId'),'l1');
+ fr("while(state.learn.stage==='exercise')grade('good')");assert.equal(fr('state.learn.results.length'),5);assert.equal(fr('state.learn.stage'),'custom');
+ fr("state.learn=newLearning();state.learn.q={...newQuestionState(),input:'Not the answer.',checked:true,revealed:true};state.learn.stage='intro';render()");
+ assert(fr("app.innerHTML.includes('entry-result-neutral')&&!app.innerHTML.includes('entry-result-success')"));assert.equal(fr('entryCreditQuestion()'),null);
+ clickFlow('intro-next');assert.equal(fr('state.learn.index'),0);
+ fr("state.learn=newLearning();state.learn.q={...newQuestionState(),input:lesson.entry.answers[0],checked:true,revealed:true,exposed:true};state.learn.stage='intro'");assert.equal(fr('entryCreditQuestion()'),null);
+ fr("state.learn=newLearning();state.learn.q.revealed=true;state.learn.stage='intro';render()");assert(fr("app.innerHTML.includes('先认识这个表达')&&!app.innerHTML.includes('答对了！')"));
+ fr("state.learn=newLearning();state.learn.pinnedLearning=JSON.parse(JSON.stringify(lesson.learning));[state.learn.pinnedLearning[0],state.learn.pinnedLearning[4]]=[state.learn.pinnedLearning[4],state.learn.pinnedLearning[0]];state.learn.q={...newQuestionState(),input:lesson.entry.answers[0],checked:true,revealed:true};state.learn.stage='intro';beginLearningExercises()");
+ assert.equal(fr('state.learn.index'),0);assert.equal(fr('state.learn.results.length'),1);
+ fr("while(state.learn.stage==='exercise'){if(learningQuestion().id===state.learn.entryCreditId)throw Error('duplicate');grade('good')}");assert.equal(fr('state.learn.results.length'),5);
+ fr("state.learn.returnStage='exercise';render()");assert.equal(fr('pilotEntryFeedback()'),'');
+ console.log('PASS: prominent first-attempt outcomes; no false success on reveal/mismatch; duplicate first or later task credited once; five total results; resumed credit; explanation revisit stays neutral.');
+}
