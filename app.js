@@ -125,7 +125,7 @@ function render(){
   const pages={home:homePage,library:libraryPage,study:studyPage,review:reviewPage,practice:reviewPracticePage,detail:detailPage,mastered:masteredPage,summary:summaryPage,mastery:masteryPage};
   app.innerHTML=(pages[view]||homePage)();
   state.lastView=view;save();history.replaceState(routeState(view),'',routeURL(view));
-  document.title=`${({home:'学习与复习',library:'语块库',study:'学习',review:'复习库',practice:'复习',detail:personalLabel(),mastered:'已掌握',mastery:'已标记掌握',summary:state.summary?.results?.length>0&&state.summary.results.every(x=>x.grade==='skip')?'本轮已结束':'本轮完成'})[view]||'语块练习'} · Beyond Words`;
+  document.title='Beyond Words';
 }
 function homePage(){return supportHomePage();}
 

@@ -1,11 +1,11 @@
 {
-  "version": "1.8.1",
+  "version": "1.8.2",
   "date": "2026-10-28",
   "files": {
     ".gitignore": "93713da3db385221282078a0be4bb0dd1e4df66068c2fc839d402ae10665efa3",
-    "AGENTS.md": "7685659d0e27a058734faa63b942d3d479e3da3590834b4182c83fe63e16f043",
+    "AGENTS.md": "a55746b11daabcd6f970f1617c3654166f9995099eb42990f039e369bd4a92ad",
     "README.md": "483fd47ebff25b12148bbf51c0b9fb003631e75c5cb42bff790f5e142c1cae9f",
-    "app.js": "92dc44ec4f9abd2e1f768eb7e885c43a8d7710afbe5f3186836df8b86da045f1",
+    "app.js": "094fc226e85322d40aca550b0981d41db94d51ea6c6206de7a865fc048d98b0e",
     "catalog-audit.js": "cae831583766e6df81e838bb410a435d519319c5d216d0b48046d23771f9e49f",
     "catalog-coverage.js": "e584825951ec93fc4b72535b87820880eac35c28b547d69c5cc82fed84930dce",
     "catalog-expansion.js": "10e677251d8c1b1fec23e941bc79089901b5d8701b9e9eb0c192a90615004e40",
@@ -42,7 +42,7 @@
     "exam-task-fit.json": "270bbaff5ca0f9184b35953a3685f9194537e85a254285f001db8aa7299ed6a9",
     "exam-taxonomy.json": "6f8f5cf4b6c3ffa71fea031a576f9448bb80e5182200be4f7978ee7881610e27",
     "hint-rules.js": "97623f89fb5e02048dbdbcd1bd39ade2b1339c5a47487c2f8c138128deec22cb",
-    "index.html": "6ae2c02551b857edac37bee91733cc491efad0efc7784642d8b7ee1f0183abcb",
+    "index.html": "36bb0f7f0a22bdc166607890e7857221fc651e8961f6e9ad82458090d0c04c6e",
     "learning-support.js": "001492e1fd33981b6c353c190f44ad4c2569f7cc04b3bb1edb93f3c70384cd16",
     "legacy-content.js": "71c9e5befd1f69b51c67697fe4097fe6bc57f949b96adcc53f597d3e762f5050",
     "pilot-ui.js": "01c4bdee1442c0d224e75d33ea97e2f3bbe5f37021024fb88a2466771428ccbf",
