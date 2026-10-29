@@ -8,16 +8,22 @@ function expressionHint(q){
  return window.JUJIAN_HINT_FOR_QUESTION?.(lesson.id,q)||rules.core;
 }
 function personalCheckPrompt(content){
- if(scenarioUnit())return `情境：${content.scene||content.zh||''}；我的态度：${content.intent||''}。用“${lesson.expression}”回应是否自然、符合态度？只给结论和一句理由，不要强行套用。`;
- return `请把“${content.zh||''}”译成自然英文，必须使用“${lesson.expression}”，可按语境调整人称和时态。只给英文；如不适用，请简短说明，不要硬套。`;
+ if(scenarioUnit())return `情境：${content.scene||content.zh||''}；想表达：${content.intent||''}
+用“${lesson.expression}”回应是否自然？给出合适的回应，再用中文简要解释必要的词语、语法或语气，最多3点、每点一句。不适用时说明原因，不要硬套。`;
+ const attempt=content.en?.trim()?`
+我的尝试：${content.en.trim()}
+请先核对并给出自然表达。`:'请给出一条自然英文。';
+ return `意思：${content.zh||''}
+必须使用“${lesson.expression}”，可按语境调整人称和时态。${attempt}
+再用中文简要解释关键单词／搭配和句式语法，最多3点、每点一句；不适用时简短说明，不要硬套。`;
 }
 function personalCheckControl(id=''){
  const ready=id|| (scenarioUnit()?state.draft.scene?.trim()&&state.draft.intent?.trim():state.draft.zh?.trim());
- return `<div class="ai-check-tools">${button('复制 AI 核对指令','copy-ai-check','button secondary',`data-id="${esc(id)}" ${ready?'':'disabled'}`)}<p class="small">${scenarioUnit()?'带上你的场景、态度和这个回应。':'带上中文意思和本轮语块。'}粘贴给你常用的 AI，再回来对照或修改。</p></div>`;
+ return `<div class="ai-check-tools">${button('复制 AI 核对指令','copy-ai-check','button secondary',`data-id="${esc(id)}" ${ready?'':'disabled'}`)}</div>`;
 }
 async function copyPersonalCheck(id){
  let content;
- if(dialog.open&&document.getElementById(scenarioUnit()?'edit-scene':'edit-zh'))content=scenarioUnit()?{scene:document.getElementById('edit-scene').value,intent:document.getElementById('edit-intent').value}:{zh:document.getElementById('edit-zh').value};
+ if(dialog.open&&document.getElementById(scenarioUnit()?'edit-scene':'edit-zh'))content=scenarioUnit()?{scene:document.getElementById('edit-scene').value,intent:document.getElementById('edit-intent').value}:{zh:document.getElementById('edit-zh').value,en:document.getElementById('edit-en').value};
  else content=id?state.custom.find(c=>c.id===id):state.draft;
  if(!content||(scenarioUnit()?!(content.scene?.trim()&&content.intent?.trim()):!content.zh?.trim())){toast(scenarioUnit()?'先写下场景和你想表达的态度':'先写下中文意思');return;}
  const text=personalCheckPrompt(content);

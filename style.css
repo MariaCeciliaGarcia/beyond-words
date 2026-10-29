@@ -373,3 +373,95 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #26
  .learning-scale .session-tools .utility-link,.learning-scale .session-tools .text-button{font-size:14px;min-height:44px}
  .learning-scale .session-tools .mastery-control{font-size:15px;min-height:48px}
 }
+
+/* Personal notes: quiet reading surfaces; no answer text before recall. */
+.personal-note{margin-top:18px;padding:16px 18px;border:1px solid #d4e2ef;border-radius:18px;background:linear-gradient(150deg,#f4f8fd,#edf4fb);box-shadow:inset 0 1px 0 #fff;text-align:left;min-width:0}
+.personal-note.is-empty{padding:0;border:0;background:none;box-shadow:none}
+.note-header,.note-editor-footer{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.note-title{display:flex;align-items:center;gap:8px;color:#375b7d;font-size:14px;font-weight:600;margin:0}
+.note-title .ui-icon,.note-reminder-toggle .ui-icon{width:20px;height:20px;flex-shrink:0}
+.note-add,.note-reminder-toggle{display:inline-flex;align-items:center;gap:8px;min-height:40px;border:0;background:none;color:#3a668e;font:inherit;font-size:14px;cursor:pointer;padding:5px 0;text-align:left}
+.note-add:hover,.note-reminder-toggle:hover{color:#0071e3}
+.note-reminder-toggle{width:100%;font-weight:500}.note-toggle-label{margin-left:auto;font-size:12px;font-weight:400;color:#58738d}
+.note-copy{white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;color:#36516b;font-size:16px;line-height:1.75;margin:10px 0 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.note-copy.is-full{display:block;overflow:visible}
+.personal-note .text-button{font-size:13px;min-height:36px;padding:4px 0;flex-shrink:0}
+.note-input{box-sizing:border-box;width:100%;min-height:120px;margin:12px 0 8px;padding:14px 16px;font:inherit;font-size:17px;line-height:1.65;resize:vertical}
+.note-editor-footer{font-size:12px;color:#637c94}.note-save-status.save-failed{color:#9b562b}
+.personal-note :is(button,textarea):focus-visible{outline:2px solid #0071e3;outline-offset:3px}
+.question-notes:empty{display:none}.entry-result .personal-note{text-align:left}
+@media(min-width:1120px) and (min-height:740px){.learning-scale .note-copy{font-size:18px}.learning-scale .note-title,.learning-scale .note-add,.learning-scale .note-reminder-toggle{font-size:16px}.learning-scale .note-input,dialog.learning-dialog .note-input{font-size:20px;min-height:126px;padding:16px 18px}.learning-scale .personal-note .text-button{font-size:14px;min-height:38px}.learning-scale .note-editor-footer{font-size:13px}}
+@media(max-width:650px){.personal-note{padding:14px;margin-top:14px}.note-title{font-size:13px}.note-copy{font-size:15px}.note-input{font-size:16px;min-height:112px}.note-editor-footer{gap:8px;font-size:11px}}
+@media(prefers-reduced-transparency:reduce){.personal-note{background:#f0f6fc}}
+@media(prefers-contrast:more){.personal-note{border-color:#7896b5}.note-title,.note-copy{color:#233e59}}
+
+/* Result pages previously missed the desktop layout pass. Results and next actions share one row. */
+.outcome-layout,.custom-layout{display:grid;gap:24px;align-items:stretch}
+.outcome-layout>.sheet,.custom-layout>.sheet{min-width:0;margin:0}
+.outcome-heading{display:flex;align-items:center;gap:16px;margin-bottom:24px}.outcome-heading .success-symbol{margin:0;flex-shrink:0}.outcome-heading .section-badge{margin:0}
+.outcome-title{font-size:32px;line-height:1.35;margin:0 0 16px;letter-spacing:-.6px}.outcome-main .lead{margin:0}
+.outcome-main .stats{margin:24px 0 20px}.outcome-main .muted-box{margin-top:18px}.outcome-record{margin-top:12px}
+.outcome-next{display:flex;flex-direction:column}.outcome-next>.continuation{background:none;border:0;box-shadow:none;padding:0;margin:24px 0}.outcome-next>.continuation h3{font-size:26px;line-height:1.45;margin:12px 0 22px}
+.outcome-next .outcome-actions{margin-top:auto;padding-top:24px;display:flex;flex-wrap:wrap;gap:12px}.outcome-actions>.button{flex:1 1 180px}.outcome-actions>.text-button{flex-basis:100%;text-align:left}
+.creation-expression{font-size:30px;font-weight:600;line-height:1.4;color:#294b6c;overflow-wrap:anywhere;margin:28px 0 16px}.custom-guide h2{font-size:30px;line-height:1.45}.custom-guide .lead{line-height:1.75}
+.custom-workspace .custom-list{margin:18px 0}.custom-workspace .custom-item{margin:0}.custom-workspace .ai-check-tools{margin-top:16px}
+.personal-detail .custom-list{display:grid;gap:18px}.personal-detail .custom-item{margin:0;min-width:0;display:flex;flex-direction:column}.personal-detail .item-actions{flex-wrap:wrap;margin-top:auto;padding-top:14px}
+@media(min-width:1120px){
+ main.learning-scale:has(.outcome-layout),main.learning-scale:has(.personal-detail){max-width:1360px}
+ .outcome-layout,.custom-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px}
+ .outcome-layout>.sheet,.custom-layout>.sheet{padding:30px;border-radius:28px}
+ .outcome-main .stat strong{font-size:46px}.outcome-main .stat{padding:22px 10px}
+ .personal-detail .custom-list{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .custom-workspace :is(#custom-en,#custom-scene,#custom-intent){min-height:112px;padding:14px 18px}
+ .custom-workspace #custom-zh{min-height:54px;padding:12px 18px}
+ .custom-workspace>.section-label{margin:14px 0 6px}.custom-workspace>.section-label:first-child{margin-top:0}
+ .custom-workspace>.actions{margin-top:20px}
+}
+@media(min-width:1120px) and (min-height:740px){
+ .outcome-title{font-size:38px}.outcome-next>.continuation h3{font-size:30px}
+ .outcome-layout .button,.custom-layout .button{font-size:17px;min-height:54px}
+ .creation-expression{font-size:36px}.custom-guide h2{font-size:34px}
+}
+@media(max-width:650px){.outcome-layout,.custom-layout{gap:16px}.outcome-title{font-size:28px}.outcome-heading{margin-bottom:18px}.outcome-next>.continuation h3{font-size:24px}.creation-expression{font-size:26px}.custom-guide h2{font-size:26px}.outcome-actions>.button{flex-basis:100%}}
+@media(min-width:1120px){
+ .outcome-layout>.sheet{padding:26px}
+ .outcome-heading{gap:12px;margin-bottom:12px}.outcome-heading .success-symbol{width:36px;height:36px}
+ .outcome-title{margin-bottom:10px}
+ .outcome-main .stats{margin:18px 0 12px}.outcome-main .stat{padding:14px 10px}.outcome-main .stat strong{font-size:40px}
+ .outcome-main .muted-box{padding:12px 16px;margin-top:12px;font-size:14px;line-height:1.6}
+ .outcome-main .personal-note{margin-top:12px;padding:12px 16px}.outcome-main .personal-note.is-empty{padding:0}
+ .outcome-main .personal-note .text-button{min-height:28px}.outcome-main .note-copy{font-size:16px;line-height:1.55;margin-top:6px}
+ .outcome-next>.section-badge{align-self:flex-start;width:auto}.outcome-actions>.text-button{order:2}
+}
+.sheet.outcome-next>.actions.outcome-actions>.button{order:0}
+.sheet.outcome-next>.actions.outcome-actions>.text-button{order:1}
+@media(min-width:1120px){.personal-detail .custom-list:has(>.custom-item:only-child){grid-template-columns:minmax(0,1fr)}}
+@media(min-width:1120px){
+ .question-sheet.has-feedback .question-workspace>.question-notes{margin-top:0}
+ .question-sheet.has-feedback .question-workspace>.question-notes>.personal-note:first-child{margin-top:0}
+ .question-sheet.has-feedback .composition.is-reviewed{margin-top:0}
+ .learning-scale .composition.is-reviewed textarea{min-height:100px;padding:14px 18px;line-height:1.55}
+ .question-workspace>.question-notes .personal-note{margin-top:12px;padding:12px 16px}
+ .question-workspace>.question-notes .personal-note.is-empty{padding:0}
+ .question-workspace>.question-notes .note-copy{font-size:16px;line-height:1.6;margin-top:6px}
+ .question-workspace>.question-notes .text-button{min-height:30px}
+}
+@media(min-width:1120px){
+ .question-workspace:has(>.question-notes>.personal-note+.personal-note){gap:16px!important}
+ .question-workspace>.question-notes:has(>.personal-note+.personal-note){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+ .question-workspace>.question-notes:has(>.personal-note+.personal-note)>.personal-note{margin-top:0;padding:12px}
+ .question-workspace>.question-notes:has(>.personal-note+.personal-note) .note-header{gap:6px}
+ .question-workspace>.question-notes:has(>.personal-note+.personal-note) .note-title{font-size:14px;gap:5px}
+ .question-workspace>.question-notes:has(>.personal-note+.personal-note) .note-copy{font-size:15px}
+ .question-workspace>.question-notes:has(>.personal-note.is-editing){grid-template-columns:minmax(0,1fr)}
+}
+/* Keep the self-created scene form's save action in the desktop reading area. */
+@media(min-width:1120px){
+ .custom-layout>.sheet{padding:24px}
+ .custom-workspace :is(#custom-en,#custom-scene,#custom-intent){min-height:96px;padding:12px 16px}
+ .custom-workspace>.actions{margin-top:14px}
+ .custom-workspace .ai-check-tools{margin-top:12px}
+ .custom-workspace .ai-check-tools .button{min-height:44px}
+ .custom-workspace>.personal-note.is-empty{margin-top:12px}
+ .custom-workspace>.personal-note.is-empty .text-button{min-height:30px}
+}

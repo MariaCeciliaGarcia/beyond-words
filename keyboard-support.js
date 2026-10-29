@@ -72,6 +72,7 @@
   if(event.key==='Tab'){tabMoving=true;deliberateDialogFocus=null;return;}
   if(event.key!=='Enter')return;
   if(event.defaultPrevented)return;
+  if(typeof handleNoteKeydown==='function'&&handleNoteKeydown(event))return;
   if(event.isComposing||event.keyCode===229||composing)return; // IME owns confirmation; do not cancel character selection.
   if(event.repeat||Date.now()-compositionEnded<180){event.preventDefault();return;}
   const target=event.target||document.activeElement,dialog=openDialog(),root=dialog||document.getElementById('app');

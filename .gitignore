@@ -11,3 +11,6 @@ outputs/
 Beyond Words-学习备份-*.json
 Beyond Words-另一标签页进度副本.json
 Beyond Words-原始进度.txt
+
+# Local-only viewport QA fixture
+/tests/viewport.html
