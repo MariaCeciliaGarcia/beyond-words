@@ -266,3 +266,110 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #26
 @media(min-width:1120px){body:has(main.has-study-layout) .site-header{padding-inline:max(40px,calc((100vw - 1280px)/2))}}
 
 .question-workspace{display:contents}
+
+/* Approved comfortable scale: shared by learning, review and explanations. */
+@media(min-width:1120px) and (min-height:740px){
+ .learning-scale{--study-copy:clamp(17px,2.15vh,21px);--study-task:clamp(32px,4.4vh,40px);--study-input:clamp(21px,2.8vh,26px)}
+ .learning-scale .question-sheet:not(.scenario-sheet){gap:26px;padding:26px}
+ .learning-scale .question-sheet:not(.scenario-sheet) .question-heading,
+ .learning-scale .question-sheet:not(.scenario-sheet) .composition,
+ .learning-scale .question-sheet.has-feedback:not(.scenario-sheet) .question-workspace,
+ .learning-scale .question-sheet:not(.scenario-sheet)>.answer-box{padding:28px}
+ .learning-scale .question-sheet.has-feedback:not(.scenario-sheet) .question-heading,
+ .learning-scale .question-sheet.has-feedback:not(.scenario-sheet) .composition{padding:0}
+ .learning-scale .context-label{font-size:14px;line-height:1.6}
+ .learning-scale .context-copy{font-size:var(--study-copy);line-height:1.75}
+ .learning-scale .prompt-background{padding:20px 22px}
+ .learning-scale .task-label{font-size:14px;padding:6px 12px}
+ .learning-scale .question-sheet:not(.scenario-sheet) .prompt{font-size:var(--study-task);line-height:1.45;margin-top:20px}
+ .learning-scale .composition .input-label{font-size:14px;gap:9px}
+ .learning-scale .composition-help{font-size:14px}
+ .learning-scale .composition .input-symbol{width:28px;height:28px}
+ .learning-scale .composition .input-toolbar{min-height:34px;margin-bottom:14px;gap:12px}
+ .learning-scale .composition textarea{min-height:clamp(130px,18vh,172px);font-size:var(--study-input);line-height:1.65;padding:20px 22px}
+ .learning-scale .composition textarea::placeholder{font-size:17px}
+ .learning-scale .composition .hint-button{font-size:14px;min-height:42px;padding:10px 15px}
+ .learning-scale .composition .hint-box{font-size:16px;line-height:1.8;padding:18px 20px}
+ .learning-scale .question-sheet .button{font-size:17px;min-height:54px;padding:14px 28px}
+ .learning-scale .composition .reveal-link{font-size:15px;min-height:46px}
+ .learning-scale .question-sheet .answer-actions{padding-top:20px}
+ .learning-scale .question-sheet .answer-en{font-size:clamp(26px,3.6vh,32px);line-height:1.55}
+ .learning-scale .answer-box .result{font-size:15px;gap:10px}
+ .learning-scale .answer-box .response-panel{padding:24px 20px;margin-top:24px}
+ .learning-scale .response-panel>.section-label{font-size:15px}
+ .learning-scale .grade-row button{font-size:17px;min-height:56px;padding:14px 12px}
+ .learning-scale .answer-box .utility-link{font-size:14px;min-height:40px}
+ .learning-scale .answer-box .grade-guide summary{font-size:13px}
+ .learning-scale .answer-box .assistance-note{font-size:13px}
+ .learning-scale .answer-box>.input-echo{font-size:16px}
+ .learning-scale .session-caption{font-size:12px}
+ .learning-scale .step-label{font-size:15px}
+ .learning-scale .session-step{font-size:14px}
+ .learning-scale .intro-sheet{font-size:var(--study-copy);line-height:1.75}
+ .learning-scale .intro-sheet .large-expression{font-size:40px}
+ .learning-scale .intro-sheet .formula{font-size:18px}
+ .learning-scale .entry-result .entry-result-title{font-size:36px}
+ .learning-scale .entry-result .entry-result-answer{font-size:25px}
+ .learning-scale .entry-result .entry-result-note{font-size:18px}
+ .learning-scale .entry-result .entry-result-next{font-size:15px}
+ .learning-scale .intro-layout .button{font-size:17px;min-height:54px;padding:14px 28px}
+}
+
+
+@media(min-width:1120px) and (min-height:740px){
+ .learning-scale .sheet:not(.question-sheet){font-size:var(--study-copy);line-height:1.75}
+ .learning-scale .sheet .button,.learning-scale .library-item .button,.learning-scale .daily-toolbar .button{font-size:17px;min-height:54px;padding:14px 28px}
+ .learning-scale .sheet .small,.learning-scale .library-item .small{font-size:15px;line-height:1.75}
+ .learning-scale .sheet .due-note{font-size:14px;line-height:1.8}
+ .learning-scale .muted-box{font-size:15px;padding:20px 22px}
+ .learning-scale .sheet .section-label{font-size:14px;line-height:1.65}
+ .learning-scale .intro-sheet .example .en{font-size:23px;line-height:1.65}
+ .learning-scale .intro-sheet .example .zh{font-size:16px;line-height:1.7}
+ .learning-scale .intro-sheet details{font-size:17px}
+ .learning-scale .intro-sheet summary{font-size:16px}
+ .learning-scale .sheet .section-badge{font-size:13px}
+ .learning-scale .checkpoint{font-size:16px;line-height:1.75}
+ .learning-scale .scenario-sheet .prompt{font-size:var(--study-task);line-height:1.45}
+ .learning-scale .scenario-option{font-size:19px;line-height:1.7;padding:20px 24px;min-height:64px}
+ .learning-scale .option-letter{width:32px;height:32px;font-size:14px}
+ .learning-scale .recall-help,.learning-scale .answer-explanation{font-size:17px;line-height:1.75}
+ .learning-scale .recall-tools .hint-button{font-size:14px;min-height:42px;padding:10px 15px}
+ .learning-scale .hint-box{font-size:16px;line-height:1.8;padding:18px 20px}
+ .learning-scale :is(#custom-zh,#custom-en,#custom-scene,#custom-intent){font-size:22px;line-height:1.65;padding:18px 20px}
+ .learning-scale :is(#custom-en,#custom-scene,#custom-intent){min-height:146px}
+ .learning-scale #custom-zh{min-height:60px}
+ .learning-scale :is(#custom-zh,#custom-en,#custom-scene,#custom-intent)::placeholder{font-size:16px}
+ .learning-scale .custom-item{font-size:17px;padding:24px}
+ .learning-scale .custom-item .en{font-size:23px;line-height:1.65}
+ .learning-scale .ai-check-tools .button{font-size:16px;min-height:50px}
+ .learning-scale .library-item h3{font-size:23px;line-height:1.45}
+ .learning-scale .category-card{font-size:15px}
+ .learning-scale .empty,.learning-scale .continuation{font-size:17px;line-height:1.75}
+ dialog.learning-dialog{font-size:17px;line-height:1.75}
+ dialog.learning-dialog :is(input[type=text],textarea){font-size:22px;line-height:1.65;padding:18px 20px}
+ dialog.learning-dialog textarea{min-height:146px}
+ dialog.learning-dialog .button{font-size:17px;min-height:54px;padding:14px 26px}
+ dialog.learning-dialog :is(.small,.due-note,.section-label){font-size:14px}
+}
+
+@media(min-width:1120px) and (min-height:740px){
+ .learning-scale .sheet .text-button,.learning-scale .library-item .text-button{font-size:15px;min-height:44px}
+ .learning-scale .sheet .utility-link{font-size:14px;min-height:40px}
+ .learning-scale .chips .chip{font-size:14px;min-height:44px}
+ .learning-scale .sheet .lead{font-size:18px;line-height:1.75}
+ dialog.learning-dialog .formula{font-size:18px;line-height:1.75}
+}
+
+.scenario-task-pane,.scenario-response-pane{display:contents}
+@media(min-width:1120px) and (min-height:740px){
+ .learning-scale .study-layout>.scenario-sheet{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:stretch;padding:26px}
+ .learning-scale .scenario-task-pane,.learning-scale .scenario-response-pane{font-size:var(--study-copy);display:block;min-width:0;padding:28px;border:1px solid #ffffffeb;border-radius:23px;background:linear-gradient(150deg,#fffffff2,#f4f9ffe6);box-shadow:inset 0 1px 0 #fff,0 0 0 1px #bfd2e845}
+ .learning-scale .scenario-response-pane .scenario-options{margin:0}
+ .learning-scale .scenario-response-pane>.answer-box{margin-top:24px;padding:24px 0 0;border:0;border-top:1px solid #dfe8f1;border-radius:0;background:none;box-shadow:none}
+ .learning-scale .scenario-response-pane>.recall-help{margin:0 0 22px}
+ .learning-scale .scenario-task-pane .prompt{margin-bottom:0}
+}
+@media(min-width:1120px) and (min-height:740px){
+ .learning-scale .session-tools .utility-link,.learning-scale .session-tools .text-button{font-size:14px;min-height:44px}
+ .learning-scale .session-tools .mastery-control{font-size:15px;min-height:48px}
+}
