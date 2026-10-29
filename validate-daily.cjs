@@ -38,7 +38,9 @@ console.log('PASS: all daily materials accounted for; public libraries isolated;
 // The daily entry is a directory, not a shortcut hardwired to the latest date.
 const directory=setup(),dr=directory.run;
 dr("view='home';render()");
-assert(dr("app.innerHTML.includes('data-action=\"cecilia-dates\"')"));
+assert(!dr("app.innerHTML.includes('data-action=\"cecilia-dates\"')"));
+click(directory,'library');
+assert(dr("app.innerHTML.includes('data-domain=\"cecilia\"')&&app.innerHTML.includes('更新于')"));
 assert(!dr("app.innerHTML.includes('data-action=\"cecilia-date\"')"));
 click(directory,'cecilia-dates');
 assert.equal(dr('domain'),'cecilia');assert.equal(dr('filter'),'all');
@@ -56,6 +58,6 @@ assert(dr("routeURL('library').endsWith('#library/cecilia')"));
 console.log('PASS: visible Cecilia directory entry; new dates appear automatically in descending order; both dates open and return independently.');
 
 click(directory,'cecilia-learning-root');assert.equal(dr('domain'),'daily');assert.equal(dr('filter'),'all');
-assert(dr("app.innerHTML.includes('每日语料 · 按日期学习')"));
+assert(dr("app.innerHTML.includes('更新于')"));
 
 click(directory,'cecilia-dates');const beforeRootBack=directory.history.entries.length;click(directory,'cecilia-learning-root');assert.equal(directory.history.entries.length,beforeRootBack+1);
