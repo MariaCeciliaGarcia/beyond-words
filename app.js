@@ -209,9 +209,9 @@ function continuationMarkup(kind='learn'){
 function masteryPage(){return `<div class="study-layout">${crumbs('已标记掌握')}<div class="outcome-layout"><section class="sheet outcome-main"><p class="eyebrow section-badge">已掌握</p><h1 class="outcome-title">${esc(lesson.meaning)}</h1><p class="lead">已从待学和待复习内容中收起。</p><p class="small">进度、自建内容和笔记都保留，随时可以在“已掌握”中恢复。</p>${notePanel('unit','','outcome')}</section><section class="sheet outcome-next"><p class="eyebrow section-badge">接下来</p>${continuationMarkup(state.masteryOrigin==='review'?'review':'learn')}<div class="actions outcome-actions">${button('撤销标记','undo-master','button secondary')}${button('查看已掌握','mastered','text-button')}${button('返回语块库',state.masteryOrigin==='review'?'library':'origin-library','text-button')}</div></section></div></div>`;}
 function sessionBar({caption,label,percent,tools,steps}) {
   const bounded=Math.max(0,Math.min(100,percent));
-  return `<section class="session-bar" aria-label="${caption}">
-    <div class="study-header"><div class="session-title"><p class="session-caption">${caption} · ${esc(lesson.meaning)}</p><span class="step-label">${label}</span></div>${tools}</div>
-    <div class="progress-track" role="progressbar" aria-label="${caption}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${bounded}" aria-valuetext="${label}"><span style="width:${bounded}%"></span></div>
+  return `<section class="session-bar topic-session" aria-label="${caption}">
+    <div class="study-header"><div class="session-title"><p class="topic-kicker">本轮主题</p><h1 class="session-topic">${esc(lesson.meaning)}</h1></div>${tools}</div>
+    <div class="topic-progress-line"><span class="step-label">${label}</span><div class="progress-track" role="progressbar" aria-label="${caption}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${bounded}" aria-valuetext="${label}"><span style="width:${bounded}%"></span></div></div>
     <div class="session-steps">${steps.map(x=>`<span class="session-step ${x.state}" ${x.state==='current'?'aria-current="step"':''}><i aria-hidden="true">${x.state==='done'?'<svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg>':x.number}</i>${x.label}</span>`).join('')}</div>
   </section>`;
 }
