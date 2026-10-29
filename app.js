@@ -289,7 +289,7 @@ function questionSheet(q, qs, context) {
       ${feedbackBanner(isCustom?'saved':correct?'success':qs.checked?'attention':'neutral',resultLabel,qs.checked&&!correct&&!isCustom?'对照下面的表达，看看结构、用词和时态。':'') }
       ${qs.checked&&!correct?expressionComparisonMarkup(qs.input,displayedAnswer):`<p class="answer-en" lang="en">${esc(displayedAnswer)}</p>`}
       ${otherAnswers.length ? `<details><summary>也可以这样说</summary><div class="variants">${otherAnswers.map(esc).join('<br>')}</div></details>` : ''}
-      ${q.feedback?`<p class="small">${esc(q.feedback)}</p>`:''}${isCustom ? '<p class="small">这是你自己写的例句，语法请自行确认。</p>' : qs.checked && !correct ? `<div class="checkpoint"><p class="section-label">核对重点</p><p>${esc(lesson.checkpoint)}</p>${button('修改再试','edit-answer','utility-link')}</div>` : ''}
+      ${q.feedback?`<p class="small">${esc(q.feedback)}</p>`:''}${isCustom ? '<p class="small">这是你自己保存的例句，也可以复制指令请 AI 核对。</p>' : ''}${qs.checked&&!correct?translationCheckControls(q,qs):''}
       ${questionNotesMarkup(q,qs,context,true)}
       ${isEntry ? `<div class="actions">${button('看看讲解', 'entry-intro')}</div>` : `
         <div class="response-panel"><p class="section-label">这次练得怎么样？</p>
@@ -392,6 +392,7 @@ document.addEventListener('click',event=>{const anchor=event.target.closest('a[h
 case 'continue-learning-home':continueLearningHome();break;
 case 'continue-review-home':continueReviewHome();break;
 case 'copy-ai-check':copyPersonalCheck(el.dataset.id);break;
+case 'copy-translation-check':copyTranslationCheck();break;
 case 'close-ai-copy':document.getElementById('ai-fallback')?.remove();document.getElementById(scenarioUnit()?'edit-scene':'edit-zh')?.focus();break;
 case 'manage-progress':progressManager();break;
 case 'export-progress':exportProgress();break;
