@@ -9,13 +9,13 @@ function expressionHint(q){
 }
 function personalCheckPrompt(content){
  if(scenarioUnit())return `情境：${content.scene||content.zh||''}；想表达：${content.intent||''}
-用“${lesson.expression}”回应是否自然？给出合适的回应，再用中文简要解释必要的词语、语法或语气；根据情境解释清楚，保持精炼。不适用时说明原因，不要硬套。`;
+用“${lesson.expression}”回应是否自然？给出合适的回应，再用中文简要解释回应中其他必要的词语、语法或语气，保持精炼。我已经熟悉正在练习的目标表达“${lesson.expression}”，不要重复解释它本身的意思、基本用法或对应知识点。解释只针对句中其他值得学习的词语、搭配和语法；若没有其他需要解释的内容，无需另加讲解。若目标表达在本句中使用有误或不适用，只指出具体问题及必要的修改理由，不展开复习它本身。`;
  const attempt=content.en?.trim()?`
 我的尝试：${content.en.trim()}
 请先核对并给出自然表达。`:'请给出自然、完整的英文表达。';
  return `意思：${content.zh||''}
 必须使用“${lesson.expression}”，可按语境调整人称和时态。${attempt}
-再用中文解释关键单词／搭配和句式语法，根据句子的长度和难点展开，复杂结构可分段拆解，讲清楚且保持精炼；语块不适用时说明原因，不要硬套。`;
+再用中文解释句中其他关键单词／搭配和句式语法，根据句子的长度和难点展开，复杂结构可分段拆解，讲清楚且保持精炼。我已经熟悉正在练习的目标表达“${lesson.expression}”，不要重复解释它本身的意思、基本用法或对应知识点。解释只针对句中其他值得学习的词语、搭配和语法；若没有其他需要解释的内容，无需另加讲解。若目标表达在本句中使用有误或不适用，只指出具体问题及必要的修改理由，不展开复习它本身。`;
 }
 function personalCheckControl(id=''){
  const ready=id|| (scenarioUnit()?state.draft.scene?.trim()&&state.draft.intent?.trim():state.draft.zh?.trim());
