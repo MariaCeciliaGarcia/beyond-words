@@ -9,13 +9,13 @@ function expressionHint(q){
 }
 function personalCheckPrompt(content){
  if(scenarioUnit())return `情境：${content.scene||content.zh||''}；想表达：${content.intent||''}
-用“${lesson.expression}”回应是否自然？给出合适的回应，再用中文简要解释必要的词语、语法或语气，最多3点、每点一句。不适用时说明原因，不要硬套。`;
+用“${lesson.expression}”回应是否自然？给出合适的回应，再用中文简要解释必要的词语、语法或语气；根据情境解释清楚，保持精炼。不适用时说明原因，不要硬套。`;
  const attempt=content.en?.trim()?`
 我的尝试：${content.en.trim()}
-请先核对并给出自然表达。`:'请给出一条自然英文。';
+请先核对并给出自然表达。`:'请给出自然、完整的英文表达。';
  return `意思：${content.zh||''}
 必须使用“${lesson.expression}”，可按语境调整人称和时态。${attempt}
-再用中文简要解释关键单词／搭配和句式语法，最多3点、每点一句；不适用时简短说明，不要硬套。`;
+再用中文解释关键单词／搭配和句式语法，根据句子的长度和难点展开，复杂结构可分段拆解，讲清楚且保持精炼；语块不适用时说明原因，不要硬套。`;
 }
 function personalCheckControl(id=''){
  const ready=id|| (scenarioUnit()?state.draft.scene?.trim()&&state.draft.intent?.trim():state.draft.zh?.trim());
