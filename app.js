@@ -107,7 +107,15 @@ function restoreNavigation(){
 window.addEventListener('popstate',restoreNavigation);
 window.addEventListener('hashchange',()=>{const [route,id]=location.hash.slice(1).split('/');if(route!==view||(id&&id!==lesson.id))restoreNavigation();});
 function button(label,action,cls='button',extra=''){return `<button class="${cls}" data-action="${action}" ${extra}>${label}</button>`;}
-function crumbs(label){return `<div class="breadcrumbs">${button('首页','home','')}<span>/</span><span>${label}</span></div>`;}
+function breadcrumbMarkup(items){
+ return `<nav class="breadcrumbs" aria-label="当前位置"><ol class="breadcrumb-list">${items.map((item,i)=>`<li class="breadcrumb-item ${i===items.length-1?'is-current':''}">${i?'<span class="breadcrumb-divider" aria-hidden="true">/</span>':''}${i===items.length-1?`<span aria-current="page">${esc(item.label)}</span>`:item.action?button(esc(item.label),item.action,'breadcrumb-link',item.extra||''):`<span>${esc(item.label)}</span>`}</li>`).join('')}</ol></nav>`;
+}
+function crumbs(label){
+ const reviewing=['review','practice','summary'].includes(view)||view==='mastery'&&state.masteryOrigin==='review'||view==='detail'&&['practice','summary','review'].includes(state.detailOrigin);
+ const origin=reviewing?reviewScopeOrigin():['study','mastery','detail'].includes(view)?learningOrigin():null;
+ const day=originDay(origin),leaf=label.startsWith('Cecilia / ')?label.split(' / ').at(-1):label;
+ return breadcrumbMarkup([{label:'首页',action:'home'},...(day?[{label:'Cecilia',action:'cecilia-dates'},{label:ceciliaDateLabel(day),action:'cecilia-date',extra:`data-day="${esc(day)}"`}]:[]),{label:leaf}]);
+}
 function newQuestionState(){return {input:'',revealed:false,hints:[],checked:false,supportSeen:false,targetSeen:false};}
 function newLearning(){return {origin:captureLearningOrigin(),contentRevision:'1.6.0',stage:'entry',index:0,q:newQuestionState(),results:[],lastResult:null,returnStage:null};}
 function enrolled(){if(!state.enrolled){state.enrolled=true;state.schedule.due=Date.now();}save();}
@@ -234,9 +242,16 @@ function promptMarkup(q){
  if(!scene&&!q.target){const m=q.zh.match(/^(.{8,180}[：:])(.{1,100})$/);if(m&&/对方|朋友|同事|你(?:想|要|接受|回应|表示|请|提醒|希望|建议|拒绝|解释|尊重|同意|补充|决定)|转述/.test(m[1])){scene=m[1];target=m[2];}}
  const type=questionType(q),label=type==='choice'?'判断一下':type==='recall'?'想一句回应':q.stem?'补全语块':lesson.examSkill&&lesson.examSkill!=='speaking'?'试着用英文写':/[？?]$/.test(target.trim())?'试着用英文问':'试着用英文说';
  const fields=[[scene,'情境'],[q.dialogue,'对方说'],[q.intent,'你的态度']].filter(x=>x[0]);
- const background=fields.length?`<div class="prompt-background">${fields.map(([text,label])=>`<div class="context-field"><p class="context-label">${label}</p><p class="context-copy">${esc(text)}</p></div>`).join('')}</div>`:'';
+ const background=fields.length?`<div class="prompt-background">${fields.map(([text,label])=>`<div class="context-field ${label==='情境'?'context-scene':label==='对方说'?'context-dialogue':'context-intent'}"><p class="context-label">${label}</p><p class="context-copy">${esc(text)}</p></div>`).join('')}</div>`:'';
  if(type==='recall'&&fields.length)target='这时，你会怎么回应？';
  return `<div class="prompt-stack ${type==='recall'?'recall-prompt':''}">${background}<div class="prompt-task"><p class="task-label">${label}</p><h2 class="prompt">${esc(target)}</h2></div>${q.candidates?`<div class="prompt-candidates"><p class="context-label">比较回应</p><p lang="en">${esc(q.candidates)}</p></div>`:''}</div>`;
+}
+function feedbackSymbol(kind){
+ const paths={success:'m6 12 4 4 8-8',attention:'M12 6v8m0 4v.01',incorrect:'m7 7 10 10M17 7 7 17',neutral:'M4 5h6l2 2 2-2h6v14h-6l-2 2-2-2H4Zm8 2v14',saved:'M6 4h12v16H6ZM9 8h6M9 12h6M9 16h4'};
+ return `<svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="${paths[kind]||paths.neutral}"/></svg>`;
+}
+function feedbackBanner(kind,title,copy=''){
+ return `<div class="feedback-banner feedback-${kind}" role="status"><span class="feedback-symbol" aria-hidden="true">${feedbackSymbol(kind)}</span><div><p class="feedback-title">${esc(title)}</p>${copy?`<p class="feedback-copy">${esc(copy)}</p>`:''}</div></div>`;
 }
 function questionSheet(q, qs, context) {
   if(questionType(q)!=='input')return pilotQuestionSheet(q,qs,context);
@@ -255,7 +270,7 @@ function questionSheet(q, qs, context) {
     ${qs.hints.includes('words') ? `<div class="hint-box">${window.renderQuestionHintContent(q,'words')}</div>` : ''}` : '';
   const resultLabel = qs.checked
     ? correct ? (isCustom ? '和你之前写的相同' : '答对了')
-      : (isCustom ? '看看你之前写的句子' : '对照一下')
+      : (isCustom ? '看看你之前写的句子' : '再对照一下')
     : isCustom ? '你之前写的句子' : '可以这样说';
   return `<section class="sheet question-sheet ${qs.revealed?'has-feedback':''}">
     <div class="question-workspace"><div class="question-heading">${promptMarkup(q)}${!qs.revealed?questionNotesMarkup(q,qs,context,false):''}
@@ -264,11 +279,11 @@ function questionSheet(q, qs, context) {
     <textarea id="answer" placeholder="在这里输入你的英文…" lang="en" spellcheck="false" autocomplete="off" autocapitalize="off">${esc(qs.input)}</textarea>
     ${hints}
     ${!qs.revealed ? `<div class="answer-actions">
-      ${button(isEntry ? '查看表达' : '查看答案', 'reveal', 'reveal-link')}
+      ${button('查看答案', 'reveal', 'button answer-reveal')}
       <div class="submit-group">${button('核对答案', 'check', 'button primary-check', qs.input.trim() ? '' : 'disabled')}</div>
     </div>` : ''}</div></div>
     ${qs.revealed ? `<div class="answer-box ${correct?'is-correct':qs.checked?'is-comparison':'is-revealed'}" aria-live="polite">
-      <p class="result ${qs.checked && !correct ? 'comparison' : ''}">${correct ? '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg>' : '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 8h14m-4-4 4 4-4 4M19 16H5m4-4-4 4 4 4"/></svg>'}${resultLabel}</p>
+      ${feedbackBanner(isCustom?'saved':correct?'success':qs.checked?'attention':'neutral',resultLabel,qs.checked&&!correct&&!isCustom?'对照下面的表达，看看结构、用词和时态。':'') }
       ${qs.checked && !correct ? `<p class="input-echo">你写的：${esc(qs.input)}</p>` : ''}
       ${qs.checked&&!correct?'<p class="section-label comparison-label">本题表达</p>':''}<p class="answer-en" lang="en">${esc(displayedAnswer)}</p>
       ${otherAnswers.length ? `<details><summary>也可以这样说</summary><div class="variants">${otherAnswers.map(esc).join('<br>')}</div></details>` : ''}

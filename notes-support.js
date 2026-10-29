@@ -96,7 +96,7 @@ function layoutQuestionNotes(){
  const root=document.getElementById('app');if(!root?.querySelector)return;
  const sheet=root.querySelector('.question-sheet'),answer=sheet?.querySelector('.answer-box');if(!answer)return;
  const notes=sheet.querySelector('.question-notes');if(!notes)return;
- const wide=!!window.matchMedia?.('(min-width:1120px)').matches;
+ const wide=!!window.matchMedia?.(sheet.classList.contains('scenario-sheet')?'(min-width:1120px) and (min-height:740px)':'(min-width:1120px)').matches;
  const pane=sheet.querySelector('.question-workspace')||sheet.querySelector('.scenario-task-pane');
  const parent=wide?pane:answer;if(!parent||notes.parentElement===parent)return;
  const active=document.activeElement,focused=notes.contains(active),selection=focused&&active.tagName==='TEXTAREA'?[active.selectionStart,active.selectionEnd]:null;
