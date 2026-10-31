@@ -92,19 +92,25 @@ function learningQuestionNav(l){
  }).join('');
  return `<div class="session-questions" role="group" aria-label="本轮学习题"><span class="session-questions-label">学习题</span>${chips}<span class="session-questions-hint">点已完成的题可回看，不影响成绩</span></div>`;
 }
+// 回看卡片：每个“标签＋内容”是同一层级（标签统一加粗放大，内容统一字号与间距）；情境和任务正文是主题，稍大。
+function recapRow(label,text,{lang='',topic=false}={}){return `<div class="recap-row"><p class="recap-label">${esc(label)}</p><p class="recap-copy${topic?' is-topic':''}"${lang?` lang="${lang}"`:''}>${esc(text)}</p></div>`;}
 function recapDialog(title,q,snap,gradeText){
- const type=questionType(q);
- let mine='',reference;
- if(type==='choice'){
-  const chosen=q.choices.find(x=>x.id===snap?.choice),right=q.choices.find(x=>x.id===q.correctChoice);
-  mine=chosen?`<div class="recap-row"><p class="recap-label">你的选择</p><p>${esc(chosen.text)}</p></div>`:'';
-  reference=`<div class="recap-row"><p class="recap-label">正确选项</p><p>${esc(right?.text||'')}</p></div>`;
- }else{
-  if(type==='input'&&snap?.input?.trim())mine=`<div class="recap-row"><p class="recap-label">你的作答</p><p lang="en">${esc(snap.input)}</p></div>`;
-  reference=`<div class="recap-row"><p class="recap-label">参考表达</p><p class="recap-reference" lang="en">${esc(q.answers[0])}</p></div>`;
+  const type=questionType(q),parts=promptParts(q);
+  const scene=parts.fields.filter(x=>x[1]==='情境').map(([text,label])=>recapRow(label,text,{topic:true})).join('');
+  const context=parts.fields.filter(x=>x[1]!=='情境').map(([text,label])=>recapRow(label,text)).join('');
+  const task=recapRow(parts.label,parts.target,{topic:true});
+  const candidates=q.candidates?recapRow('比较回应',q.candidates,{lang:'en'}):'';
+  let mine='',reference;
+  if(type==='choice'){
+   const chosen=q.choices.find(x=>x.id===snap?.choice),right=q.choices.find(x=>x.id===q.correctChoice);
+   mine=chosen?recapRow('你的选择',chosen.text):'';
+   reference=recapRow('正确选项',right?.text||'');
+  }else{
+   if(type==='input'&&snap?.input?.trim())mine=recapRow('你的作答',snap.input,{lang:'en'});
+   reference=recapRow('参考表达',q.answers[0],{lang:'en'});
+  }
+  showDialog(`<h2>${esc(title)}</h2><p class="small">仅供查看，不会改变成绩和进度。</p><div class="recap-body">${scene}${context}${task}${candidates}${mine}${reference}${q.feedback?`<p class="small">${esc(q.feedback)}</p>`:''}${gradeText?recapRow('当时的结果',gradeText):''}</div><div class="actions">${button('关闭','close-dialog','button secondary')}</div>`);
  }
- showDialog(`<h2>${esc(title)}</h2><p class="small">仅供查看，不会改变成绩和进度。</p><div class="recap-body">${promptMarkup(q)}${mine}${reference}${q.feedback?`<p class="small">${esc(q.feedback)}</p>`:''}${gradeText?`<p class="small">当时的结果：${esc(gradeText)}</p>`:''}</div><div class="actions">${button('关闭','close-dialog','button secondary')}</div>`);
-}
 function learningRecapQuestion(i){
  const l=state.learn;if(!l)return;
  const q=(l.pinnedLearning||lesson.learning)[i];if(!q)return;
@@ -156,7 +162,7 @@ function supportHomePage(){
  const learningCopy=learn?learningStatusFor(learn.unit):'按场景或表达功能，选择想练的内容';
  const reviewCopy=r?.review?`本轮已完成 ${r.review.index} / ${r.review.queue.length} 题`:review?(r.schedule.due<=Date.now()?'已到复习时间':'尚未到期，也可以提前练习'):'先学习一个表达，复习会从这里开始';
  const card=(kind,title,topic,copy,actions)=>`<article class="home-card home-${kind}" aria-labelledby="home-${kind}-title"><h2 id="home-${kind}-title" class="home-entry-title">${title}</h2><div class="home-card-center"><p class="home-topic-label">${topic?'本次主题':kind==='learn'?'从这里开始':'温故知新'}</p><h3 class="home-topic">${topic?esc(topic):kind==='learn'?'找到想说的表达':'让表达记得更牢'}</h3><p class="home-progress">${esc(copy)}</p></div><div class="home-actions">${actions}</div></article>`;
- return `<section class="home-intro"><p class="eyebrow">一点一点，把表达变成自己的。</p><h1>想说的话，<br>练到能用出来。</h1></section><section class="home-grid" aria-label="学习与复习">${card('learn','学习',learn?.unit.meaning,learningCopy,button('选择新表达','library','button home-action')+button('继续学习','continue-learning-home','button home-action',learn?'':'disabled aria-describedby="home-learn-empty"'))}${card('review','复习',review?.meaning,reviewCopy,button('查看复习库','review','button home-action')+button('继续复习','continue-review-home','button home-action',review?'':'disabled aria-describedby="home-review-empty"'))}</section>${!learn?'<p id="home-learn-empty" class="visually-hidden">暂无可继续的学习，请先选择新表达。</p>':''}${!review?'<p id="home-review-empty" class="visually-hidden">暂无可复习的表达，请先开始学习。</p>':''}`;
+ return `<section class="home-intro"><p class="eyebrow">一点一点，把表达变成自己的。</p><h1>想说的话，<br>练到能用出来。</h1></section>${moodStripMarkup()}<section class="home-grid" aria-label="学习与复习">${card('learn','学习',learn?.unit.meaning,learningCopy,button('选择新表达','library','button home-action')+button('继续学习','continue-learning-home','button home-action',learn?'':'disabled aria-describedby="home-learn-empty"'))}${card('review','复习',review?.meaning,reviewCopy,button('查看复习库','review','button home-action')+button('继续复习','continue-review-home','button home-action',review?'':'disabled aria-describedby="home-review-empty"'))}</section>${!learn?'<p id="home-learn-empty" class="visually-hidden">暂无可继续的学习，请先选择新表达。</p>':''}${!review?'<p id="home-review-empty" class="visually-hidden">暂无可复习的表达，请先开始学习。</p>':''}`;
 }
 // A scope counts expression units, never raw source lines or individual questions.
 function libraryProgress(ids,day){

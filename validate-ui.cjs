@@ -67,4 +67,31 @@ console.log('PASS: breadcrumb return preserves current question/input/hints; ans
  const data=run('completionScopeProgressData()');assert.equal(data.progress.total,4);assert.equal(data.finished,2);assert.equal(data.remaining,2);assert(data.label.includes('2026年10月28日'));
  run("domain='work';filter='all';search='changed after finishing'");assert.equal(run('completionScopeProgressData().label'),data.label);
 }
+// 自建例句保存后：保存页仍有编辑／删除入口；改完留在保存页；删掉刚保存的条目回到空白表单
+{
+ const e2=setup(),r2=e2.run;const click2=(action,extra={})=>e2.handlers.click({target:{closest:s=>s.startsWith('a[')?null:{dataset:{action,...extra}}}});
+ r2("selectLesson('ever');view='study';state.learn=newLearning();state.learn.stage='custom';state.draft={zh:'我从来没去过那里。',en:'I have never been there.'};save();render();");
+ click2('save-custom');
+ let html=r2('app.innerHTML');
+ assert(html.includes('例句已保存'),'保存后显示已保存');
+ assert(html.includes('data-action="edit-custom"')&&html.includes('data-action="delete-custom"'),'保存页有编辑和删除入口');
+ assert(html.includes('I have never been there.'));
+ const id=r2('state.custom[0].id');
+ click2('edit-custom',{id});
+ e2.el('edit-zh').value='我从来没去过那里。';e2.el('edit-en').value='I have never been there before.';
+ click2('commit-edit',{id});
+ html=r2('app.innerHTML');
+ assert(html.includes('例句已保存')&&html.includes('I have never been there before.'),'修改后仍停在保存页并显示新内容');
+ assert.equal(r2('state.custom.length'),1,'编辑不新增条目');
+ click2('confirm-delete',{id});
+ html=r2('app.innerHTML');
+ assert(!html.includes('例句已保存')&&html.includes('id="custom-zh"'),'删掉刚保存的条目后回到空白表单');
+ // 先存两条再删最后一条：不能把上一条冒充成刚保存的
+ r2("state.draft={zh:'第一句',en:'First one.'}");click2('save-custom');click2('continue-create');
+ r2("state.draft={zh:'第二句',en:'Second one.'}");click2('save-custom');
+ const last=r2('state.custom.at(-1).id');click2('confirm-delete',{id:last});
+ html=r2('app.innerHTML');
+ assert(!html.includes('例句已保存'),'删掉刚保存的这条后不把上一条当成刚保存的');
+ assert.equal(r2('state.custom.length'),1);
+}
 console.log('PASS: completion scope totals, current-round inclusion, original category/date, unique expressions, mastery, skipped-only rounds and finished scopes.');
