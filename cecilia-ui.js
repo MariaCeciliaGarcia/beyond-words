@@ -54,7 +54,7 @@ function ceciliaContinuation(kind){
 }
 function handleCeciliaAction(action,el){const day=el.dataset.day,id=el.dataset.lesson||el.dataset.next;
  switch(action){
- case 'cecilia-learning-root':domain='daily';lastSpoken='daily';filter='all';subfilter='all';search='';page=1;go('library');return true;
+ case 'cecilia-learning-root':listOpen=false;domain='daily';lastSpoken='daily';filter='all';subfilter='all';search='';page=1;go('library');return true;
  case 'cecilia-date':domain='cecilia';filter=ceciliaDay(day)?day:'all';search='';page=1;lastSpoken='cecilia';go('library');return true;
  case 'cecilia-dates':domain='cecilia';filter='all';search='';page=1;lastSpoken='cecilia';go('library');return true;
  case 'cecilia-start-day':continueCeciliaDay(day);return true;

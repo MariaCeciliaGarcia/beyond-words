@@ -66,15 +66,29 @@ upgrading.run('startReview()');assert(upgrading.run('pool().find(q=>q.id==="r2")
 upgrading.run('state.learn=newLearning();state.learn.stage="exercise";state.learn.index=3');assert(upgrading.run('learningQuestion().zh').startsWith('他'));
 // Both classification axes point to one record.
 // Filters do not fabricate unit labels.
-r("view='library';tab='scene';filter='home';subfilter='home-items';search='';render();");
+r("view='library';tab='scene';filter='home';subfilter='home-items';search='';listOpen=true;render();");
 assert(r("app.innerHTML.includes('找物与故障')"));assert(!r("app.innerHTML.includes('邀请对方参加活动或询问参加意愿')"));
-r("tab='function';filter='information';subfilter='time-left';render();");
+r("tab='function';filter='information';subfilter='time-left';listOpen=true;render();");
 assert(r("app.innerHTML.includes('还要多久')"));
+// 学习库分两级：板块页不列出表达；点板块后进入该板块的表达页；返回回到板块页。
+r("domain='daily';tab='scene';filter='all';subfilter='all';search='';page=1;listOpen=false;view='library';render();");
+assert(r("app.innerHTML.includes('category-card')"));assert(!r("app.innerHTML.includes('unit-grid')"),'板块页不应直接列出表达');
+const firstGroup=r("catalog.scenes.find(g=>g.domain==='daily'||g.domains?.includes('daily')).id");
+env.handlers.click({target:{closest:selector=>selector==='[data-action]'?{dataset:{action:'filter',filter:firstGroup}}:null}});
+assert.equal(r("listOpen"),true);assert(r("app.innerHTML.includes('unit-grid')"),'进入板块后应显示表达');assert(!r("app.innerHTML.includes('category-grid')"),'表达页不再重复显示板块列表');assert(r("app.innerHTML.includes('返回板块')"));
+env.handlers.click({target:{closest:selector=>selector==='[data-action]'?{dataset:{action:'library-back'}}:null}});
+assert.equal(r("listOpen"),false);assert(!r("app.innerHTML.includes('unit-grid')"));assert(r("filter")==='all');
+// 搜索会直接给出结果列表，清除后回到板块页。
+r("search='expression-not-existing-zzz';render();");assert(r("app.innerHTML.includes('搜索结果')"));
+r("search='';render();");assert(!r("app.innerHTML.includes('unit-grid')"));
+// 点首页“学习”入口总是回到板块页；存档与历史状态带上列表层级。
+r("listOpen=true;save();");assert.equal(JSON.parse(env.map.get('jujian.library.v2')).ui.listOpen,true);
+env.handlers.click({target:{closest:selector=>selector==='[data-action]'?{dataset:{action:'library'}}:null}});assert.equal(r("listOpen"),false);
 // Every collection has authored content, and both domains paginate without empty shells.
 assert.equal(r("units.filter(u=>u.domain==='daily').length"),137);
 assert.equal(r("units.filter(u=>u.domain==='work').length"),80);
 for(const [id,count] of [['daily1',25],['daily2',24],['daily3',24],['work1',16],['work2',16],['work3',16]])assert.equal(r(`units.filter(u=>u.collection==='${id}').length`),count);
-r("view='library';domain='work';filter='all';subfilter='all';search='';page=2;render()");
+r("view='library';domain='work';filter='all';subfilter='all';search='';page=2;listOpen=true;render()");
 assert.equal((r('app.innerHTML').match(/class="library-item unit-card"/g)||[]).length,24);
 assert(r("app.innerHTML.includes('2 / '+Math.ceil(units.filter(u=>u.domains.includes('work')).length/24))"));
 r("page=1;render()");

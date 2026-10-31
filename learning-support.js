@@ -7,7 +7,25 @@ function expressionHint(q){
  if(candidate&&candidate.zh===q.zh&&candidate.answers.some(a=>q.answers.includes(a)))return q.id==='entry'?rules.entry:rules[q.id[0]==='l'?'learning':'review'][Number(q.id.slice(1))-1]||rules.core;
  return window.JUJIAN_HINT_FOR_QUESTION?.(lesson.id,q)||rules.core;
 }
-function personalCheckPrompt(content){
+// 同一个 AI 对话只需发一次完整要求：按指令类型记录“已复制过完整版”，仅保存在本次浏览器会话（关闭页面后重置），
+// 不写入 jujian.library.v2，也不进入备份。复制失败（未真正复制）不记录。
+const aiRulesMemory={};
+function aiRulesSent(kind){
+ if(aiRulesMemory[kind])return true;
+ try{if(typeof sessionStorage!=='undefined'&&sessionStorage.getItem('jujian.aiRulesSent.'+kind)==='1'){aiRulesMemory[kind]=true;return true;}}catch{}
+ return false;
+}
+function markAiRulesSent(kind){
+ aiRulesMemory[kind]=true;
+ try{if(typeof sessionStorage!=='undefined')sessionStorage.setItem('jujian.aiRulesSent.'+kind,'1');}catch{}
+ try{if(typeof document!=='undefined'&&document.querySelectorAll)document.querySelectorAll(`[data-ai-full="${kind}"]`).forEach(el=>{el.hidden=false;});}catch{}
+}
+function aiFullButton(kind,action,id=null,cls='text-button'){
+ return `<button class="${cls}" data-action="${action}" data-ai-full="${kind}" ${id===null?'':`data-id="${esc(id)}"`} ${aiRulesSent(kind)?'':'hidden'}>复制完整指令</button>`;
+}
+function personalCheckPrompt(content,brief=false){
+ if(brief&&scenarioUnit())return `沿用前面的核对要求。\n情境：${content.scene||content.zh||''}；想表达：${content.intent||''}\n请判断用“${lesson.expression}”回应是否自然，并给出合适的回应。目标表达我已熟悉，不必讲解它本身。`;
+ if(brief)return `沿用前面的核对要求。\n意思：${content.zh||''}\n必须使用“${lesson.expression}”，可按语境调整人称和时态。${content.en?.trim()?`\n我的尝试：${content.en.trim()}\n请核对并给出自然表达。`:'\n请给出自然、完整的英文表达。'}\n目标表达我已熟悉，不必讲解它本身。`;
  if(scenarioUnit())return `情境：${content.scene||content.zh||''}；想表达：${content.intent||''}
 用“${lesson.expression}”回应是否自然？给出合适的回应，再用中文简要解释回应中其他必要的词语、语法或语气，保持精炼。我已经熟悉正在练习的目标表达“${lesson.expression}”，不要重复解释它本身的意思、基本用法或对应知识点。解释只针对句中其他值得学习的词语、搭配和语法；若没有其他需要解释的内容，无需另加讲解。若目标表达在本句中使用有误或不适用，只指出具体问题及必要的修改理由，不展开复习它本身。`;
  const attempt=content.en?.trim()?`
@@ -17,41 +35,91 @@ function personalCheckPrompt(content){
 必须使用“${lesson.expression}”，可按语境调整人称和时态。${attempt}
 再用中文解释句中其他关键单词／搭配和句式语法，根据句子的长度和难点展开，复杂结构可分段拆解，讲清楚且保持精炼。我已经熟悉正在练习的目标表达“${lesson.expression}”，不要重复解释它本身的意思、基本用法或对应知识点。解释只针对句中其他值得学习的词语、搭配和语法；若没有其他需要解释的内容，无需另加讲解。若目标表达在本句中使用有误或不适用，只指出具体问题及必要的修改理由，不展开复习它本身。`;
 }
-function translationCheckPrompt(q,qs){
+function translationCheckPrompt(q,qs,brief=false){
  const fields=[['情境',q.scene],['对方说',q.dialogue],['态度／意图',q.intent],['原题',q.zh],['要表达的意思',q.target],['填空句（如有）',q.stem],['本轮练习的目标表达',lesson.expression],['我的英语尝试（请优先核对这句）',qs.input],['页面参考表达（仅供对照，不是唯一答案）',(q.answers||[]).join('\n')]].filter(([,text])=>typeof text==='string'&&text.trim());
+ if(brief)return `沿用前面的核对要求，请核对下面这道英语表达练习。\n${fields.map(([label,text])=>label+'：'+text).join('\n')}\n仍按之前的要求：独立判断我的原句，不因与参考表达不同就判错；目标表达我已熟悉，不必讲解它本身。`;
  return `请核对下面这道英语表达练习。\n${fields.map(([label,text])=>label+'：'+text).join('\n')}\n页面只按收录答案匹配，未匹配不代表我写错。请根据题意、语境和实际英语用法，独立判断我的原句是否意思准确、语法正确、表达自然；不要因为它与参考表达不同就判错。若是填空题，请把我的填写放回题干后判断。\n如果我的原句正确且自然，请明确说可以这样说，并简要说明；不要为贴近参考答案而强行改写。口语缩略、语体差异或只是可选润色，请与真正的错误区分。\n如果不准确、不正确或不自然，请具体指出哪里有问题、为什么，给出保留原意的自然修改；不要只贴一个答案。结合修改简要解释涉及的新单词、搭配或语法，按实际难点讲清楚，不限制条数或句数。\n我已熟悉本轮目标表达，不要重复解释它本身的意思、基本用法或对应知识点；只有它在这句话里确实用错或不适用时，才说明具体问题与必要修改理由。\n请用中文讲解，英语例句保留原文。`;
 }
 function translationCheckControls(q,qs,editAction='edit-answer'){
  if(questionType(q)!=='input'||!qs.checked||!qs.revealed||!qs.input?.trim())return '';
- return `<div class="translation-check-tools"><div class="actions translation-check-actions">${button('修改再试',editAction,'button secondary')}${button('复制 AI 核对指令','copy-translation-check','button secondary')}</div><p class="small translation-check-help">复制后粘贴发送给 AI，核对你的表达是否正确、自然。</p></div>`;
+ return `<div class="translation-check-tools"><div class="actions translation-check-actions">${button('修改再试',editAction,'button secondary')}${button('复制 AI 核对指令','copy-translation-check','button secondary')}</div><p class="small translation-check-help">复制后粘贴发送给 AI，核对你的表达是否正确、自然。同一个 AI 对话里，第一次复制完整要求，之后只复制本题内容。${aiFullButton('translation','copy-translation-check-full')}</p></div>`;
 }
-async function copyTranslationCheck(){
+async function copyTranslationCheck(forceFull=false){
  const c=currentContext()||(view==='study'&&state.learn?.stage==='intro'?{q:state.learn.pinnedEntry||lesson.entry,qs:state.learn.entryAttempt||state.learn.q}:null);
  if(!c||questionType(c.q)!=='input'||!c.qs.checked||!c.qs.revealed||!c.qs.input?.trim())return;
- await copyCheckText(translationCheckPrompt(c.q,c.qs));
+ const brief=!forceFull&&aiRulesSent('translation');
+ await copyCheckText(translationCheckPrompt(c.q,c.qs,brief),'translation',brief);
 }
+function personalAiKind(){return scenarioUnit()?'scenario':'personal';}
 function personalCheckControl(id=''){
  const ready=id|| (scenarioUnit()?state.draft.scene?.trim()&&state.draft.intent?.trim():state.draft.zh?.trim());
- return `<div class="ai-check-tools">${button('复制 AI 核对指令','copy-ai-check','button secondary',`data-id="${esc(id)}" ${ready?'':'disabled'}`)}</div>`;
+ return `<div class="ai-check-tools">${button('复制 AI 核对指令','copy-ai-check','button secondary',`data-id="${esc(id)}" ${ready?'':'disabled'}`)}${aiFullButton(personalAiKind(),'copy-ai-check-full',id,'text-button')}</div>`;
 }
-async function copyPersonalCheck(id){
+async function copyPersonalCheck(id,forceFull=false){
  let content;
  if(dialog.open&&document.getElementById(scenarioUnit()?'edit-scene':'edit-zh'))content=scenarioUnit()?{scene:document.getElementById('edit-scene').value,intent:document.getElementById('edit-intent').value}:{zh:document.getElementById('edit-zh').value,en:document.getElementById('edit-en').value};
  else content=id?state.custom.find(c=>c.id===id):state.draft;
  if(!content||(scenarioUnit()?!(content.scene?.trim()&&content.intent?.trim()):!content.zh?.trim())){toast(scenarioUnit()?'先写下场景和你想表达的态度':'先写下中文意思');return;}
- await copyCheckText(personalCheckPrompt(content));
+ const kind=personalAiKind(),brief=!forceFull&&aiRulesSent(kind);
+ await copyCheckText(personalCheckPrompt(content,brief),kind,brief);
 }
-async function copyCheckText(text){
- try{if(typeof navigator==='undefined'||!navigator.clipboard?.writeText)throw Error('clipboard');await navigator.clipboard.writeText(text);toast('指令已复制，粘贴给你常用的 AI 即可');}
+async function copyCheckText(text,kind,brief=false){
+ let copied=false;
+ try{if(typeof navigator==='undefined'||!navigator.clipboard?.writeText)throw Error('clipboard');await navigator.clipboard.writeText(text);copied=true;}
  catch{
   const editor=dialog.open&&/id="edit-(?:zh|scene)"/.test(dialog.innerHTML);
   if(editor){const markup=`<h3>核对指令</h3><p class="small">当前浏览器未能自动复制，可以选中下方文字复制。填写中的内容已保留。</p><textarea id="ai-copy-text" readonly>${esc(text)}</textarea>${button('收起指令','close-ai-copy','button secondary')}`;let region=dialog.querySelector('#ai-fallback');if(region)region.innerHTML=markup;else dialog.insertAdjacentHTML('beforeend',`<div id="ai-fallback">${markup}</div>`);}
   else showDialog(`<h2>AI 核对指令</h2><p class="small">当前浏览器未能自动复制，已为你准备好文字。</p><textarea id="ai-copy-text" readonly>${esc(text)}</textarea><p class="small">选中复制后，粘贴给你常用的 AI。</p><div class="actions">${button('返回继续填写','close-dialog')}</div>`);
   const field=document.getElementById('ai-copy-text');field.focus();field.select?.();
  }
-
+ if(copied){if(kind)markAiRulesSent(kind);toast(brief?'已复制简短指令，沿用前面的核对要求':'已复制完整指令，粘贴给你常用的 AI 即可');}
 }
-function updateCopyControls(){const el=app.querySelector('[data-action="copy-ai-check"][data-id=""]');if(el)el.disabled=scenarioUnit()?!(state.draft.scene?.trim()&&state.draft.intent?.trim()):!state.draft.zh?.trim();}
+function updateCopyControls(){const off=scenarioUnit()?!(state.draft.scene?.trim()&&state.draft.intent?.trim()):!state.draft.zh?.trim();app.querySelectorAll('[data-action="copy-ai-check"][data-id=""],[data-action="copy-ai-check-full"][data-id=""]').forEach(el=>{el.disabled=off;});}
+// 学习进度条上的回看入口：只读查看，不修改成绩、进度、笔记或复习安排。
+function learningStepAction(l,i,current){
+ if(i>=current)return '';
+ if(i===0)return l.entryAttempt?.revealed?'recap-entry':'';
+ if(i===1)return 'recap-intro';
+ return '';
+}
+function learningQuestionNav(l){
+ if(!['exercise','custom'].includes(l.stage))return '';
+ const questions=l.pinnedLearning||lesson.learning;
+ const chips=questions.map((q,i)=>{
+  const done=l.results.some(r=>r.id===q.id),current=l.stage==='exercise'&&i===l.index&&!done;
+  if(done)return `<button type="button" class="question-chip done" data-action="recap-question" data-q="${i}" aria-label="回看第 ${i+1} 题">${i+1}</button>`;
+  return `<span class="question-chip ${current?'current':'upcoming'}" ${current?'aria-current="step"':''}>${i+1}</span>`;
+ }).join('');
+ return `<div class="session-questions" role="group" aria-label="本轮学习题"><span class="session-questions-label">学习题</span>${chips}<span class="session-questions-hint">点已完成的题可回看，不影响成绩</span></div>`;
+}
+function recapDialog(title,q,snap,gradeText){
+ const type=questionType(q);
+ let mine='',reference;
+ if(type==='choice'){
+  const chosen=q.choices.find(x=>x.id===snap?.choice),right=q.choices.find(x=>x.id===q.correctChoice);
+  mine=chosen?`<div class="recap-row"><p class="recap-label">你的选择</p><p>${esc(chosen.text)}</p></div>`:'';
+  reference=`<div class="recap-row"><p class="recap-label">正确选项</p><p>${esc(right?.text||'')}</p></div>`;
+ }else{
+  if(type==='input'&&snap?.input?.trim())mine=`<div class="recap-row"><p class="recap-label">你的作答</p><p lang="en">${esc(snap.input)}</p></div>`;
+  reference=`<div class="recap-row"><p class="recap-label">参考表达</p><p class="recap-reference" lang="en">${esc(q.answers[0])}</p></div>`;
+ }
+ showDialog(`<h2>${esc(title)}</h2><p class="small">仅供查看，不会改变成绩和进度。</p><div class="recap-body">${promptMarkup(q)}${mine}${reference}${q.feedback?`<p class="small">${esc(q.feedback)}</p>`:''}${gradeText?`<p class="small">当时的结果：${esc(gradeText)}</p>`:''}</div><div class="actions">${button('关闭','close-dialog','button secondary')}</div>`);
+}
+function learningRecapQuestion(i){
+ const l=state.learn;if(!l)return;
+ const q=(l.pinnedLearning||lesson.learning)[i];if(!q)return;
+ const r=[...l.results].reverse().find(x=>x.id===q.id);if(!r)return;
+ const snap=r.source==='entry-check'?l.entryAttempt:r.snap;
+ const text=r.source==='entry-check'?'初次尝试答对，已计入本题':questionType(q)==='choice'?(r.choiceCorrect?'判断正确':'这次选错了'):({good:'会了',hard:'不熟',again:'不会'}[r.grade]||'');
+ recapDialog(`回看第 ${i+1} 题`,q,snap||null,text);
+}
+function learningRecapEntry(){
+ const l=state.learn;if(!l?.entryAttempt?.revealed)return;
+ recapDialog('回看初次尝试',l.pinnedEntry||lesson.entry,l.entryAttempt,'');
+}
+function learningRecapIntro(){
+ showDialog(`<h2>${esc(lesson.expression)}</h2><p class="small">仅供查看，不会改变成绩和进度。</p><p>${esc(lesson.explanation)}</p><div class="formula">${esc(lesson.formula)}</div>${lesson.examples.map(e=>`<div class="example"><p class="en" lang="en">${esc(e.en)}</p><p class="zh">${esc(e.zh)}</p></div>`).join('')}${lesson.boundary?`<p class="small">${esc(lesson.boundary)}</p>`:''}<div class="actions">${button('关闭','close-dialog','button secondary')}</div>`);
+}
 function orderedContinuation(id,origin){
  const scope=origin&&catalog.domains.some(d=>d.id===origin.domain)?origin:{domain:unitById.get(id)?.domain||domain,tab:'scene',filter:'all',subfilter:'all',search:''};
  const ordered=(scope.ids||learningSelection(scope).map(u=>u.id)).map(id=>unitById.get(id)).filter(u=>unitInOrigin(u,scope));

@@ -51,7 +51,7 @@ function pilotStatsMarkup(results){
 }
 function editScenario(id){
  editingCustom=id||null;const c=state.custom.find(x=>x.id===id);
- showDialog(`<h2>${c?'修改场景':'新增场景'}</h2><label class="section-label" for="edit-scene">发生了什么？</label><textarea id="edit-scene" maxlength="600">${esc(c?.scene||c?.zh||state.draft.scene||'')}</textarea><label class="section-label" for="edit-intent">你想表达什么态度？</label><textarea id="edit-intent" maxlength="300">${esc(c?.intent||state.draft.intent||'')}</textarea><p class="small">对照：${esc(lesson.personalPrompt||'这个回应能表达你当时的态度吗？')}</p><div class="ai-check-tools">${button('复制 AI 核对指令','copy-ai-check','button secondary',`data-id="${id||''}"`)}</div>${personalEditNotes(id)}<div class="actions">${button('保存','commit-scenario','button',`data-id="${id||''}"`)}${button('取消','close-dialog','button secondary')}</div>`);
+ showDialog(`<h2>${c?'修改场景':'新增场景'}</h2><label class="section-label" for="edit-scene">发生了什么？</label><textarea id="edit-scene" maxlength="600">${esc(c?.scene||c?.zh||state.draft.scene||'')}</textarea><label class="section-label" for="edit-intent">你想表达什么态度？</label><textarea id="edit-intent" maxlength="300">${esc(c?.intent||state.draft.intent||'')}</textarea><p class="small">对照：${esc(lesson.personalPrompt||'这个回应能表达你当时的态度吗？')}</p><div class="ai-check-tools">${button('复制 AI 核对指令','copy-ai-check','button secondary',`data-id="${id||''}"`)}${aiFullButton('scenario','copy-ai-check-full',id||'')}</div>${personalEditNotes(id)}<div class="actions">${button('保存','commit-scenario','button',`data-id="${id||''}"`)}${button('取消','close-dialog','button secondary')}</div>`);
 }
 function saveScenario(scene,intent,id){
  if(!scene.trim()||!intent.trim()){toast('请写下场景和你想表达的态度');return false;}
