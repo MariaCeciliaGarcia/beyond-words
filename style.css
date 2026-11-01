@@ -745,3 +745,15 @@ div.note-input.note-rich:empty::before{content:attr(data-placeholder);color:#7a8
 .ai-check-tools [data-ai-full]{margin-left:0;padding:8px 10px}
 .translation-check-help [data-ai-full]{margin-left:20px;padding:0 6px}
 @media(max-width:650px){.ai-check-tools{column-gap:20px}.translation-check-help [data-ai-full]{margin-left:14px}}
+
+/* 讲解页没有初试反馈时：桌面左右双栏，不再是居中的窄竖版 */
+@media(min-width:1120px){
+ .intro-layout:not(.has-entry-result){max-width:none;margin:0}
+ .intro-layout:not(.has-entry-result) .intro-sheet{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 48px;align-items:start;padding:34px 40px}
+ .intro-layout:not(.has-entry-result) .intro-main,.intro-layout:not(.has-entry-result) .intro-side{min-width:0}
+ .intro-layout:not(.has-entry-result) .intro-side{padding-left:40px;border-left:1px solid #dce7f0}
+}
+.intro-sheet details>summary{cursor:pointer}
+
+/* 我答对了：第三个按钮（复制 AI 核对指令）独占一行，前两个决定性操作并排 */
+.translation-check-actions>.button:nth-child(3){grid-column:1/-1}

@@ -8,7 +8,7 @@ function setup(legacy=null,saved=null,options={}){
  const history={state:null,entries:[],replaceState(state,_,url){this.state=state;this.entries[this.entries.length-1]={state,url};},pushState(state,_,url){this.state=state;this.entries.push({state,url});}};
  const ctx={window:{addEventListener:(t,f)=>listeners[t]=f,scrollTo(){}},localStorage:{getItem:k=>map.get(k)||null,setItem:(k,v)=>{if(options.failWrites)throw Error('quota');if(options.failKey===k&&options.failCount>0){options.failCount--;throw Error('quota once');}map.set(k,v)},removeItem:k=>map.delete(k)},Blob:class{constructor(parts){this.parts=parts}},URL:{createObjectURL:b=>{const id='blob:test-'+blobs.size;blobs.set(id,b);return id},revokeObjectURL(){}},document:{body:{appendChild(){}},createElement:()=>({click(){downloads.push({filename:this.download,text:blobs.get(this.href).parts.join('')})},remove(){}}),getElementById:el,addEventListener:(t,f)=>handlers[t]=f},history,location:{pathname:'/',search:'',hash:''},crypto:require('crypto').webcrypto,setTimeout:()=>0,clearTimeout(){},Date,console};
  vm.createContext(ctx);
- const files=[...fs.readFileSync(root+'index.html','utf8').matchAll(/<script src="([^"?]+)/g)].map(x=>x[1]);
+ const files=[...fs.readFileSync(root+'index.html','utf8').matchAll(/<script src="([^"?]+)/g)].map(x=>x[1]).filter(f=>f!=='question-plan.js'||process.env.BW_PLAN==='1'); // 题量方案另由 validate-plan.cjs 检查
  for(const file of files)vm.runInContext(fs.readFileSync(root+file,'utf8'),ctx,{filename:file});
  return {ctx,map,handlers,listeners,history,el,downloads,run:source=>vm.runInContext(source,ctx)};
 }
@@ -36,13 +36,14 @@ r(`for(const u of units){
  state.learn.stage='intro';render();if(!app.innerHTML.includes(esc(u.expression)))throw Error('intro '+u.id);
  state.learn.stage='exercise';enrolled();
  for(let i=0;i<5;i++){const q=u.learning[i];state.learn.q.input=q.answers[0];state.learn.q.checked=true;state.learn.q.revealed=true;render();if(questionType(q)==='choice'){state.learn.q.choice=q.correctChoice;render();if(!app.innerHTML.includes('判断正确'))throw Error('choice feedback '+u.id);}else if(!app.innerHTML.includes(questionType(q)==='input'?'答对了':'可以这样回应'))throw Error('feedback '+u.id);grade('good');}
- if(state.learn.stage!=='custom'||state.learn.index!==5)throw Error('custom stage '+u.id);
- state.custom.push({id:'c-'+u.id,zh:'我自己的意思',en:'My own sentence.'});finishLearning();
+ if(u.practiceProfile==='scenario'){if(state.learn.stage!=='done'||state.custom.length)throw Error('scenario has no custom stage '+u.id);}
+ else{if(state.learn.stage!=='custom'||state.learn.index!==5)throw Error('custom stage '+u.id);
+ state.custom.push({id:'c-'+u.id,zh:'我自己的意思',en:'My own sentence.'});finishLearning();}
  startReview();for(let i=0;i<3;i++){if(!reviewQuestion())throw Error('review '+u.id);if(questionType(reviewQuestion())==='choice')state.review.q.choice=reviewQuestion().correctChoice;grade('good');}
  if(state.review||!state.summary||state.schedule.streak!==1)throw Error('schedule '+u.id);
 }`);
 assert.equal(r('availableUnits().length'),total);
-assert.equal(r('units.filter(u=>record(u.id).custom.length===1).length'),total);
+assert.equal(r("units.filter(u=>record(u.id).custom.length===(u.practiceProfile==='scenario'?0:1)).length"),total);
 // Record isolation, mastery and round-trip local persistence.
 r("selectLesson('ever');state.mastered=true;save();selectLesson('order');state.draft.zh='订单草稿';save();");
 assert.equal(r("record('ever').mastered"),true);assert.equal(r("record('order').mastered"),false);
@@ -268,14 +269,16 @@ for(const id of ['p-in-the-evening','p-done-with','p-fair-enough']){
   }else{assert(!pRun('app.innerHTML.includes(\'id="answer"\')'));pClick('reveal');pClick('grade',{grade:'good'});}
   assert.equal(pRun('state.learn.index'),i+1);
  }
- assert.equal(pRun('state.learn.stage'),'custom');
- if(scenario)pRun("state.draft.scene='朋友想独自休息';state.draft.intent='';");else pRun("state.draft.zh='我晚上处理这件事';state.draft.en='';");
- pClick('finish-learn');assert.equal(pRun('state.learn.stage'),'done');assert.equal(pRun('state.custom.length'),0);assert(pRun('app.innerHTML.includes(\'继续填写草稿\')'));
- pClick('resume-custom');assert.equal(pRun('state.learn.stage'),'custom');assert(pRun('draftPresent()'));
- if(scenario){pRun("state.draft.intent='我愿意尊重他';");pClick('save-scenario');assert.equal(pRun('state.custom[0].kind'),'scenario');assert(!pRun('app.innerHTML.includes(\'id="custom-en"\')'));}
- else{pRun("state.draft.en='I work on it in the evening.'");pClick('save-custom');}
- assert.equal(pRun('state.custom.length'),1);assert(!pRun('draftPresent()'));pClick('continue-create');assert.equal(pRun('state.learn.savedCustom'),false);pClick('finish-learn');
- pClick('detail');if(scenario){assert(pRun('app.innerHTML.includes(\'我的场景\')'));pClick('edit-custom',{id:pRun('state.custom[0].id')});assert(!pRun('dialog.innerHTML.includes(\'edit-en\')'));pClick('close-dialog');}pClick('return-detail');assert.equal(pRun('view'),'study');
+  if(scenario){assert.equal(pRun('state.learn.stage'),'done');assert.equal(pRun('state.custom.length'),0);assert(!pRun("app.innerHTML.includes('查看我的场景')"));}
+  else{
+   assert.equal(pRun('state.learn.stage'),'custom');
+   pRun("state.draft.zh='我晚上处理这件事';state.draft.en='';");
+   pClick('finish-learn');assert.equal(pRun('state.learn.stage'),'done');assert.equal(pRun('state.custom.length'),0);assert(pRun("app.innerHTML.includes('继续填写草稿')"));
+   pClick('resume-custom');assert.equal(pRun('state.learn.stage'),'custom');assert(pRun('draftPresent()'));
+   pRun("state.draft.en='I work on it in the evening.'");pClick('save-custom');
+   assert.equal(pRun('state.custom.length'),1);assert(!pRun('draftPresent()'));pClick('continue-create');assert.equal(pRun('state.learn.savedCustom'),false);pClick('finish-learn');
+   pClick('detail');pClick('return-detail');assert.equal(pRun('view'),'study');
+  }
  pClick('start-review');let rounds=0;
  while(pRun('!!state.review')){
   const type=pRun('questionType(reviewQuestion())');
@@ -295,6 +298,7 @@ assert.equal(oldFairReload.run('state.custom[0].en'),'Fair enough.');assert.equa
 console.log('PASS: three pilot profiles, opt-in hints, actual answer/choice actions, snapshot refresh, no Fair typing, personal scenario edit/review, reachable drafts, old progress preservation, bounded review and accurate result labels.');
 
 // Editing an existing personal scene must not consume a separate unfinished draft.
+pRun("state.custom=[{id:'c-legacy-scene',kind:'scenario',scene:'旧版保存的场景',intent:'我愿意接受',time:Date.now()}];"); // 独立表达不再新建场景，旧版已保存的场景仍可编辑
 pRun("state.draft.scene='另一个没写完的场景';state.draft.intent='未完成的态度';");
 const existingScene=pRun('state.custom[0].id');pClick('detail');pClick('edit-custom',{id:existingScene});
 pilotEnv.el('edit-scene').value='改好的旧场景';pilotEnv.el('edit-intent').value='我愿意接受';pClick('commit-scenario',{id:existingScene});
