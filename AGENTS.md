@@ -250,4 +250,6 @@ AI核对指令默认学习者已熟悉目标表达，不重复讲解其意思、
 
 用户发来的每日材料常是中、英、日合在一起（短语清单＋完整三语原文）。更新英语语料时只看英语内容：清单里的英文短语、完整原文里的英文句；中文仅用来理解和写 meaning，日语一律忽略，不入本库、不问用户。可据英文内容设置练习题。
 
-**11-04 起的单元文件结构**：`content-cecilia-c0.js` 是共用工具包（`window.BW_CECILIA_KIT`：unit/q/finish，finish 自动补缩写变体）；`content-cecilia-c1..c5.js` 是 2026-11-04 的 20 个单元，都往 `window.BW_CECILIA_C` 追加（app.js、catalog-cecilia.js、hint-support.js、validate.cjs 已读取它）。以后新日期照此新建 `content-cecilia-<日期批次>.js`，每个子智能体只写 4 个单元以内，避免一次写太多耗尽上下文；日期材料由主会话写进 `cecilia-materials.js` 末尾（只追加）。当前线上仍为 v1.19.1，11-04 内容只在本地，未推送。
+**11-04 起的单元文件结构**：`content-cecilia-c0.js` 是共用工具包（`window.BW_CECILIA_KIT`：unit/q/finish，finish 自动补缩写变体）；`content-cecilia-c1..c5.js` 是 2026-11-04 的 20 个单元，都往 `window.BW_CECILIA_C` 追加（app.js、catalog-cecilia.js、hint-support.js、validate.cjs 已读取它）。以后新日期照此新建 `content-cecilia-<日期批次>.js`，每个子智能体只写 4 个单元以内，避免一次写太多耗尽上下文；日期材料由主会话写进 `cecilia-materials.js` 末尾（只追加）。11-04 内容已推送（2026-11-03）。
+
+**每日语料更新完直接推送（2026-11-03 用户定）**：更新每日语料、验证通过并本地提交后，直接推送英语仓库（GitHub Pages）并核对线上，不再征求同意；回执说明已推送。仅限每日语料；页面功能或其他修改的发布仍按当次授权。不碰日语版，不提交 preview/、个人进度和备份。
