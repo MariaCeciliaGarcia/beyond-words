@@ -105,7 +105,7 @@
  // Compatibility map for the existing expressionHint API: only authored rules,
  // never answer-derived grammar. The new renderer still prefers explicit fields.
  const compatibility=window.JUJIAN_HINT_RULES||(window.JUJIAN_HINT_RULES={});
- for(const unit of [...(window.BW_CECILIA_A||[]),...(window.BW_CECILIA_B||[])]){
+ for(const unit of [...(window.BW_CECILIA_A||[]),...(window.BW_CECILIA_B||[]),...(window.BW_CECILIA_C||[])]){
   if(compatibility[unit.id])continue;
   const core=`句式：${unit.formula}`;
   const authored=q=>{const first=(q.grammarHints||[]).map(x=>typeof x==='string'?x:x.text).find(Boolean);return first?(first.includes('：')?first:`用法：${first}`):core;};

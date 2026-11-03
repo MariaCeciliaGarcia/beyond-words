@@ -15,7 +15,7 @@ function setup(legacy=null,saved=null,options={}){
 module.exports={setup};
 if(require.main===module){
 const env=setup();const r=env.run;
-const total=r('units.length');assert.equal(total,261+r('(window.BW_CECILIA_A||[]).length+(window.BW_CECILIA_B||[]).length'));
+const total=r('units.length');assert.equal(total,261+r('(window.BW_CECILIA_A||[]).length+(window.BW_CECILIA_B||[]).length+(window.BW_CECILIA_C||[]).length'));
 assert.equal(r('new Set(units.map(u=>u.id)).size'),total);
 assert.equal(r('units.reduce((n,u)=>n+u.learning.length+u.review.length,0)'),total*10);
 r(`for(const u of units){

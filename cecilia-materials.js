@@ -844,5 +844,398 @@ window.BW_DAILY_MATERIALS=[
         "usageNote": "口语中stress about + 事情，和stress someone out的施受关系不同。"
       }
     ]
+  },
+  {
+    "id": "2026-11-04",
+    "date": "2026-11-04",
+    "items": [
+      {
+        "expression": "snoring",
+        "meaning": "打鼾",
+        "kind": "support",
+        "editorNote": "单独的词，与本日自我介绍无关，作配套词语保留。",
+        "usageNote": "snoring 是动名词/名词，指睡觉时打鼾；动词是 snore。"
+      },
+      {
+        "expression": "a master's student majoring in",
+        "meaning": "攻读……专业的硕士研究生",
+        "kind": "unit",
+        "unitId": "c1104-majoring-in",
+        "editorNote": "自我介绍中说明学历与专业。",
+        "usageNote": "a master's student majoring in + 专业，再接 at + 学校。"
+      },
+      {
+        "expression": "be expected to",
+        "meaning": "预计会……；被期待/要求做……",
+        "kind": "unit",
+        "unitId": "c1104-be-expected-to",
+        "editorNote": "区分“预计”与“被要求”两种意思。",
+        "usageNote": "be expected to + 动词原形。"
+      },
+      {
+        "expression": "In terms of",
+        "meaning": "就……方面而言",
+        "kind": "unit",
+        "unitId": "c1104-in-terms-of",
+        "editorNote": "用来概括某一方面再展开。",
+        "usageNote": "In terms of + 名词，逗号后接完整句。"
+      },
+      {
+        "expression": "score ... on",
+        "meaning": "在……（考试）中得……分",
+        "kind": "unit",
+        "unitId": "c1104-score-on",
+        "editorNote": "分数在前，考试在后。",
+        "usageNote": "score + 分数 + on + 考试。"
+      },
+      {
+        "expression": "the national Japanese-major exams",
+        "meaning": "全国日语专业四、八级考试（TJM）",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-score-on",
+          "c1104-pass-distinction"
+        ],
+        "editorNote": "向外国面试官解释 TJM-4/TJM-8 时的说明性名词短语。",
+        "usageNote": "常放在 TJM-4 and TJM-8 之后的括号里作解释。"
+      },
+      {
+        "expression": "pass ... with distinction",
+        "meaning": "以优异成绩通过……",
+        "kind": "unit",
+        "unitId": "c1104-pass-distinction",
+        "editorNote": "distinction 偏英式、学术性的评级说法。",
+        "usageNote": "pass + 考试 + with distinction。"
+      },
+      {
+        "expression": "won the grand prize in",
+        "meaning": "在……中获得特等奖",
+        "kind": "unit",
+        "unitId": "c1104-win-grand-prize",
+        "editorNote": "比赛类别用 in，活动或展会用 at。",
+        "usageNote": "win the grand prize in + 比赛。"
+      },
+      {
+        "expression": "took part in a training program",
+        "meaning": "参加了一个培训项目",
+        "kind": "unit",
+        "unitId": "c1104-take-part-in",
+        "editorNote": "take part in 后接活动或项目。",
+        "usageNote": "take part in + 名词/动名词。"
+      },
+      {
+        "expression": "mainly revolve around",
+        "meaning": "主要围绕……展开",
+        "kind": "unit",
+        "unitId": "c1104-revolve-around",
+        "editorNote": "主语是事物，不是人。",
+        "usageNote": "revolve around + 名词/动名词；主语复数时用 revolve。"
+      },
+      {
+        "expression": "turning user needs into content and workflows",
+        "meaning": "把用户需求落实为内容和流程",
+        "kind": "unit",
+        "unitId": "c1104-turn-into",
+        "editorNote": "turn A into B 的动名词用法。",
+        "usageNote": "My work revolves around turning A into B。"
+      },
+      {
+        "expression": "overseas operations",
+        "meaning": "海外运营",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include"
+        ],
+        "editorNote": "岗位/部门名称式名词短语，作配套词语。",
+        "usageNote": "operations 常用复数；overseas operations intern 指海外运营实习生。"
+      },
+      {
+        "expression": "was responsible for",
+        "meaning": "负责……",
+        "kind": "unit",
+        "unitId": "w-responsible",
+        "editorNote": "复用已有单元，不重建。",
+        "usageNote": "be responsible for + 名词/动名词。"
+      },
+      {
+        "expression": "That covered",
+        "meaning": "这包括……（概述工作范围）",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include"
+        ],
+        "editorNote": "概述上一句工作范围时的承接说法，已并入 responsibilities include / covered 单元。",
+        "usageNote": "That covered + 并列的名词或动名词。"
+      },
+      {
+        "expression": "research on",
+        "meaning": "对……的研究/调研",
+        "kind": "unit",
+        "unitId": "c1104-research-on",
+        "editorNote": "research 不可数。",
+        "usageNote": "research on + 主题。"
+      },
+      {
+        "expression": "search traffic",
+        "meaning": "搜索流量",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include"
+        ],
+        "editorNote": "运营类名词短语，作配套词语。",
+        "usageNote": "traffic 不可数；search traffic 指来自搜索的访问量。"
+      },
+      {
+        "expression": "optimize",
+        "meaning": "优化",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include"
+        ],
+        "editorNote": "单个动词，作配套词语；英式拼写 optimise。",
+        "usageNote": "creating and optimizing content 中与 creating 并列。"
+      },
+      {
+        "expression": "share feedback on",
+        "meaning": "就……分享反馈",
+        "kind": "unit",
+        "unitId": "c1104-share-feedback-on",
+        "editorNote": "重点是主动给出反馈，与请求反馈的 w-feedback 方向相反。",
+        "usageNote": "share/give/provide feedback on + 对象；feedback 不可数。"
+      },
+      {
+        "expression": "follow up with",
+        "meaning": "向……跟进",
+        "kind": "unit",
+        "unitId": "c1104-follow-up-with",
+        "editorNote": "follow up with 人，follow up on 事情。",
+        "usageNote": "follow up with + 人或团队。"
+      },
+      {
+        "expression": "diagnosis",
+        "meaning": "诊断",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include"
+        ],
+        "editorNote": "单个名词，作配套词语；复数 diagnoses。",
+        "usageNote": "business research and diagnosis。"
+      },
+      {
+        "expression": "analysis",
+        "meaning": "分析",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include"
+        ],
+        "editorNote": "单个名词，作配套词语；复数 analyses。",
+        "usageNote": "customer segment and needs analysis。"
+      },
+      {
+        "expression": "support on",
+        "meaning": "在……方面提供支持",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-research-on"
+        ],
+        "editorNote": "与 research on 同属 名词 + on + 主题，已并入该单元。",
+        "usageNote": "support on the operations plan；也可说 support with。"
+      },
+      {
+        "expression": "distill sth into sth",
+        "meaning": "把……提炼/沉淀为……",
+        "kind": "unit",
+        "unitId": "c1104-distill-into",
+        "editorNote": "比喻义，常见于总结方法与经验。",
+        "usageNote": "distill A into B。"
+      },
+      {
+        "expression": "My responsibilities include...",
+        "meaning": "我的职责包括……",
+        "kind": "unit",
+        "unitId": "c1104-responsibilities-include",
+        "editorNote": "用 include 列举职责，并列项保持平行。",
+        "usageNote": "My responsibilities include + 名词/动名词并列。"
+      },
+      {
+        "expression": "community moderation",
+        "meaning": "社区管理（治理）",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include"
+        ],
+        "editorNote": "运营职责名词短语，作配套词语。",
+        "usageNote": "moderation 指对社区内容与秩序的管理。"
+      },
+      {
+        "expression": "customer segment",
+        "meaning": "客户群体（客群）",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include"
+        ],
+        "editorNote": "运营/咨询常用名词短语，作配套词语。",
+        "usageNote": "customer segment and needs analysis。"
+      },
+      {
+        "expression": "event execution",
+        "meaning": "活动执行",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include"
+        ],
+        "editorNote": "运营职责名词短语，作配套词语。",
+        "usageNote": "event execution and communication。"
+      },
+      {
+        "expression": "I haven't done sth (I haven't had experience doing sth)",
+        "meaning": "我没有做过……（我没有……的经验）",
+        "kind": "unit",
+        "unitId": "c1104-no-hands-on-experience",
+        "editorNote": "承认欠缺并转向相关能力的面试说法。",
+        "usageNote": "I haven't had (hands-on) experience in/with + 名词/动名词。"
+      },
+      {
+        "expression": "run a store backend",
+        "meaning": "运营店铺后台",
+        "kind": "unit",
+        "unitId": "c1104-run-store-backend",
+        "editorNote": "run 表示经营、运营。",
+        "usageNote": "run a store / page / account / campaign。"
+      },
+      {
+        "expression": "the skills I've built",
+        "meaning": "我已积累的技能",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-transferable-to"
+        ],
+        "editorNote": "名词短语加定语从句，作配套词语，并入 transferable 单元。",
+        "usageNote": "the skills I've built are transferable to…"
+      },
+      {
+        "expression": "understand how...",
+        "meaning": "理解……是怎样运作的",
+        "kind": "unit",
+        "unitId": "c1104-understand-how",
+        "editorNote": "how 从句用陈述语序。",
+        "usageNote": "understand how + 主语 + 动词。"
+      },
+      {
+        "expression": "make data-driven judgments",
+        "meaning": "基于数据做判断",
+        "kind": "unit",
+        "unitId": "c1104-data-driven",
+        "editorNote": "data-driven 是带连字符的复合形容词。",
+        "usageNote": "make a judgment / decision / call。"
+      },
+      {
+        "expression": "be transferable to",
+        "meaning": "可迁移到……",
+        "kind": "unit",
+        "unitId": "c1104-transferable-to",
+        "editorNote": "主语是能力或经验，不是人。",
+        "usageNote": "be transferable to + 领域。"
+      },
+      {
+        "expression": "e-commerce operations",
+        "meaning": "电商运营",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-run-store-backend"
+        ],
+        "editorNote": "岗位领域名词短语，作配套词语，并入 run a store backend 单元。",
+        "usageNote": "operations 用复数。"
+      },
+      {
+        "expression": "present sth (its products) more clearly to",
+        "meaning": "向……更清楚地呈现……",
+        "kind": "unit",
+        "unitId": "c1104-present-more-clearly-to",
+        "editorNote": "present sth to sb；more clearly 修饰动作。",
+        "usageNote": "help X present its products more clearly to Y。"
+      },
+      {
+        "expression": "Hello, my name is Huang Zeqiao. I'm a master's student majoring in Japanese Language and Literature at Sichuan University, and I'm expected to graduate in June 2027.",
+        "meaning": "面试官您好,我叫黄泽巧,是四川大学日语语言文学专业的硕士研究生,预计 2027 年 6 月毕业。",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-majoring-in",
+          "c1104-be-expected-to"
+        ],
+        "editorNote": "来自面试自我介绍。完整原文，拆出的可迁移结构见相关单元。",
+        "usageNote": "来自面试自我介绍。"
+      },
+      {
+        "expression": "In terms of languages, I scored 173 on the JLPT N1, and I passed both the TJM-4 and TJM-8 (the national Japanese-major exams) with distinction. I won the grand prize in a Japanese speech contest, and I took part in a training program in Japan. For English, I've passed CET-4 and CET-6.",
+        "meaning": "语言方面,我日语 N1 173 分,专业四级、专业八级均为优秀,获得过日语演讲比赛特等奖,并有日本研修经历;英语通过了 CET-4 和 CET-6。",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-in-terms-of",
+          "c1104-score-on",
+          "c1104-pass-distinction",
+          "c1104-win-grand-prize",
+          "c1104-take-part-in"
+        ],
+        "editorNote": "来自面试自我介绍。完整原文，拆出的可迁移结构见相关单元。",
+        "usageNote": "来自面试自我介绍。"
+      },
+      {
+        "expression": "My work experience mainly revolves around turning user needs into content and workflows. As an overseas operations intern at Kingsoft Office (WPS), I was responsible for the PDF product's operations in the Japanese market. That covered research on the Japanese market, competitors, user needs and search traffic; creating and optimizing content for the official website; localizing the website and the product and sharing feedback on the user experience; and researching channels and following up with them.",
+        "meaning": "我的工作经历主要围绕“把用户需求落实到内容和流程上”。在金山办公做海外运营实习生,负责 PDF 产品的日本市场运营,包括日本市场、竞品、用户需求和搜索流量研究,官网内容制作与优化,官网和产品的本地化与体验反馈,以及渠道调研与跟进。",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-revolve-around",
+          "c1104-turn-into",
+          "w-responsible",
+          "c1104-responsibilities-include",
+          "c1104-research-on",
+          "c1104-share-feedback-on",
+          "c1104-follow-up-with"
+        ],
+        "editorNote": "来自面试自我介绍。完整原文，拆出的可迁移结构见相关单元。",
+        "usageNote": "来自面试自我介绍。"
+      },
+      {
+        "expression": "As a consulting intern at Zaowuzhe Consulting, I took part in a WeCom operations project for a bank. I was responsible for business research and diagnosis, customer segment and needs analysis, customer journey and pain-point analysis, and support on the operations plan. I also helped distill cases and methods into reusable know-how.",
+        "meaning": "在造物者咨询做咨询实习生时,参与银行企业微信运营项目,负责业务调研与诊断、客群与需求分析、客户旅程与障碍分析、运营方案支持,以及案例和方法的沉淀。",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-take-part-in",
+          "w-responsible",
+          "c1104-responsibilities-include",
+          "c1104-research-on",
+          "c1104-distill-into"
+        ],
+        "editorNote": "来自面试自我介绍。完整原文，拆出的可迁移结构见相关单元。",
+        "usageNote": "来自面试自我介绍。"
+      },
+      {
+        "expression": "I've also managed a community for over 1,800 Japanese users. My responsibilities included user support and community moderation, event execution and communication, and collecting feedback and following up with users.",
+        "meaning": "此外,我还做过日本用户社区运营,面向 1,800 多名日本用户,负责用户服务与社区治理、活动执行与沟通、需求反馈与跟进。",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-responsibilities-include",
+          "c1104-follow-up-with"
+        ],
+        "editorNote": "来自面试自我介绍。完整原文，拆出的可迁移结构见相关单元。",
+        "usageNote": "来自面试自我介绍。"
+      },
+      {
+        "expression": "I haven't had hands-on experience running a store backend, but the skills I've built, which are understanding how users search, how a page communicates, and making data-driven judgments, are transferable to e-commerce operations. I hope to use my Japanese and data skills to help Xiaomi present its products more clearly to Japanese users.",
+        "meaning": "我没有做过店铺后台的实际运营,但用户搜索、页面表达和数据判断这条线和电商运营是相通的,希望用日语和数据能力,帮助小米把商品更清楚地呈现给日本用户。",
+        "kind": "support",
+        "relatedIds": [
+          "c1104-no-hands-on-experience",
+          "c1104-run-store-backend",
+          "c1104-understand-how",
+          "c1104-data-driven",
+          "c1104-transferable-to",
+          "c1104-present-more-clearly-to"
+        ],
+        "editorNote": "来自面试自我介绍。完整原文，拆出的可迁移结构见相关单元。",
+        "usageNote": "来自面试自我介绍。"
+      }
+    ]
   }
 ];
